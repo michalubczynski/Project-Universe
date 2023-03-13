@@ -1,11 +1,19 @@
-﻿namespace Universe.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Universe.Models
 {
-    public class Galaxy
+    [Table("Galaxies")]
+    public class Galaxy 
     {
-        public int GalaxyId { get; set; }
-        public string Name { get; set; }
-       // public enum type { get; set; } // enum
-        public double mass { get; set; }
+
+        [Required] public int GalaxyId { get; set; }
+        [Required] public string Name { get; set; }
+         public string Type { get; set; }
+         public double Mass { get; set; }
+
+        // 1:Galaxy-N:StarSystems
+        public ICollection<Planet>? StarSystems { get; set; } 
 
     }
 }

@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Andrzej\\Documents\\GitHub\\UniverseDB\\Universe\\Universe.csproj": {}
+    "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\Universe\\Universe.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Andrzej\\Documents\\GitHub\\UniverseDB\\Universe\\Universe.csproj": {
+    "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\Universe\\Universe.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Andrzej\\Documents\\GitHub\\UniverseDB\\Universe\\Universe.csproj",
+        "projectUniqueName": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\Universe\\Universe.csproj",
         "projectName": "Universe",
-        "projectPath": "C:\\Users\\Andrzej\\Documents\\GitHub\\UniverseDB\\Universe\\Universe.csproj",
-        "packagesPath": "C:\\Users\\Andrzej\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Andrzej\\Documents\\GitHub\\UniverseDB\\Universe\\obj\\",
+        "projectPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\Universe\\Universe.csproj",
+        "packagesPath": "C:\\Users\\Majkel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\Universe\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\SDKVisual\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Andrzej\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Majkel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,6 +43,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -58,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
