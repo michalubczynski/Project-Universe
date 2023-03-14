@@ -15,6 +15,7 @@ namespace Universe.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.Message = "Welcome into Universe";
             return View();
         }
 

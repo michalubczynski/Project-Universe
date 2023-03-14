@@ -12,5 +12,7 @@ namespace Universe.Models
         [Required] public int Age { get; set; }
         // 1:Discoverer-1:Ship
          public Ship? Ship { get; set; }
+        // N:StarSystems-N:Discoverers
+        public virtual ICollection<StarSystem> StarSystems { get; set; }
     }
 }

@@ -21,7 +21,7 @@ namespace Universe.Models
         public ICollection<Star> Stars { get; set; }
 
         // N:StarSystems-N:Discoverers
-        public ICollection<Discoverer> Discoverers { get; set;}
+        public virtual ICollection<Discoverer> Discoverers { get; set;}
         }
 }
 
