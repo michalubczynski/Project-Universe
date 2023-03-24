@@ -9,15 +9,24 @@ namespace Universe.Models.star
     [Table("Stars")]
     public class Star : IEntityTypeConfiguration<Star>
     {
+        public enum TypeOfStar
+        {
+            Main_sequence_stars,
+            Red_giant_stars,
+            White_dwarf_stars,
+            Neutron_stars,
+            Black_holes
+        }
+
         [Key]
         public int StarId { get; set; }
         [Required] public string Name { get; set; }
-        [Required] public string Type { get; set; }
+        [Required] public TypeOfStar Type { get; set; }
         [Required] public double Temperature { get; set; }
         [Required] public double Radius { get; set; }
         [Required] public int Age { get; set; }
-        [Required] public int Luminosity { get; set;}
-        [Required] public int Mass { get; set;}
+        [Required] public double Luminosity { get; set;}
+        [Required] public double Mass { get; set;}
 
         public int StarSystemId { get; set; }
         [ForeignKey(nameof(StarSystemId))]

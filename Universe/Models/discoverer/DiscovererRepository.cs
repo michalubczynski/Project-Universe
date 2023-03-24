@@ -2,48 +2,58 @@
 {
     public class DiscovererRepository : IRepository<Discoverer>, IDisposable
     {
-        private UniverseContext context;
-
-        public DiscovererRepository(UniverseContext context)
+        private DbUniverse context;
+        private bool disposed = false;
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!this.disposed)
+            {
+                if (disposing)
+                {
+                    context.Dispose();
+                }
+            }
+            this.disposed = true;
+        }
+        public DiscovererRepository(DbUniverse context)
         {
             this.context = context;
         }
-
-        public void Delete(int discovererID)
+        public void Delete(int deletedId)
         {
-            throw new NotImplementedException();
+            Discoverer discoverer = context.Discoverers.Find(deletedId);
+            context.Discoverers.Remove(discoverer);
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
 
         public Discoverer GetByID(int id)
         {
-            throw new NotImplementedException();
+            return context.Discoverers.Find(id);
         }
 
         public IEnumerable<Discoverer> GetList()
         {
-            //return context.Discoverers.ToList();
-            throw new NotImplementedException();
-
+            return context.Discoverers.ToList();
         }
 
-        public void Insert(Discoverer discoverer)
+        public void Insert(Discoverer inserted)
         {
-            throw new NotImplementedException();
+            context.Discoverers.Add(inserted);
         }
 
         public void Save()
         {
-            throw new NotImplementedException();
+            context.SaveChanges();
         }
 
-        public void Update(Discoverer discoverer)
+        public void Update(Discoverer updater)
         {
-            throw new NotImplementedException();
+            context.Entry(updater).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
         }
     }
 }

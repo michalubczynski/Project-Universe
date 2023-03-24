@@ -9,9 +9,9 @@ namespace Universe.Models.starsystem
 {
     [Table("StarSystems")]
     public class StarSystem
-    {
+    {   //Wymaga poprawy w strukturze bo StarSystem nie ma Masy. To tylko kierunkowe skupiska gwiazd na sferze niebieskiej, a nie obiekty fizyczne z określoną masą. 
         [Key] public int StarSystemId { get; set; }
-        [Required] public int name { get; set; }
+        [Required] public String Name { get; set; }
 
         // N:Starsystems-1:Galaxy
         public int GalaxyId { get; set; }

@@ -12,6 +12,8 @@ namespace Universe.Models.discoverer
         [Required] public string Name { get; set; }
         [Required] public string Surname { get; set; }
         [Required] public int Age { get; set; }
+        public int? ShipId { get; set; }
+        [ForeignKey(nameof(ShipId))]
         // 1:Discoverer-1:Ship
          public Ship? Ship { get; set; }
         // N:StarSystems-N:Discoverers

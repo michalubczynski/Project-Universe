@@ -1,0 +1,69 @@
+protected override void Up(MigrationBuilder migrationBuilder)
+{
+    // ... wprowadzenie zmian w bazie danych ...
+
+    SeedData(migrationBuilder);
+}
+
+private void SeedData(MigrationBuilder migrationBuilder)
+{
+    var context = new MyDbContext();
+    // ... dodanie danych do bazy ...
+    context.SaveChanges();
+}        
+
+private void SeedData(MigrationBuilder migrationBuilder)
+        {
+            var context = new DbUniverse();
+
+            var galaxies = new List<Galaxy> {
+            new Models.galaxy.Galaxy { GalaxyId = 1, Mass = 10e12, Name = "Droga Mleczna", Type = TypeOfGalaxy.spiral },
+            new Models.galaxy.Galaxy { GalaxyId = 2, Mass = 10e12, Name = "Messier 87", Type = TypeOfGalaxy.elliptical },
+            new Models.galaxy.Galaxy { GalaxyId = 3, Mass = 10e15, Name = "GAL-CLUS-022058s", Type = TypeOfGalaxy.peculiar },
+            new Models.galaxy.Galaxy { GalaxyId = 4, Mass = 10e9, Name = "Wielka Mgławica Magellana", Type = TypeOfGalaxy.irregular }
+            };
+
+            var starSystems = new List<StarSystem>{
+            new StarSystem { StarSystemId = 1, Name = "Wolarz" },
+            new StarSystem { StarSystemId = 2, Name = "Orzel" },
+            new StarSystem { StarSystemId = 3, Name = "Skorpion" },
+            new StarSystem { StarSystemId = 4, Name = "Strzelec" },
+            };
+            var planets = new List<Planet>{
+                new Planet { PlanetId = 1, Mass = 2e12, Type = TypeOfPlanets.Gas_Giants, Name = "Jupiter"},
+                new Planet { PlanetId = 2, Mass = 2e12, Type = TypeOfPlanets.Gas_Giants, Name = "Neptune"},
+                new Planet { PlanetId = 3, Mass = 2e12, Type = TypeOfPlanets.Gas_Giants, Name = "Uranus"},
+                new Planet { PlanetId = 4, Mass = 2e12, Type = TypeOfPlanets.Gas_Giants, Name = "Saturn"},
+                new Planet { PlanetId = 5, Mass = 3e12, Type = TypeOfPlanets.Dwarf_Planets, Name = "Pluto"},
+                new Planet { PlanetId = 6, Mass = 4e12, Type = TypeOfPlanets.Super_Earth, Name = "Kepler-438b"},
+                new Planet { PlanetId = 7, Mass = 5e12, Type = TypeOfPlanets.Terrestrial_Planets, Name = "Earth"},
+                new Planet { PlanetId = 8, Mass = 5e12, Type = TypeOfPlanets.Terrestrial_Planets, Name = "Mars"},
+                new Planet { PlanetId = 9, Mass = 6e12, Type = TypeOfPlanets.Outer_Planets, Name = "Charon"},
+            };
+            var stars = new List<Star>{
+                new Star{ StarId = 1, Age = (int)10e3, Luminosity = 23, Mass = 10e5, Name = "Zeta", Radius = 22.1, Temperature = 30, Type = Star.TypeOfStar.Main_sequence_stars},
+                new Star{ StarId = 2, Age = (int)10e2, Luminosity = 233, Mass = 10e4, Name = "Aldebaran", Radius = 232.1, Temperature = 303, Type = Star.TypeOfStar.Red_giant_stars},
+                new Star{ StarId = 3, Age = (int)10e3, Luminosity = 3, Mass = 10e5, Name = "SiriusB", Radius = 322.1, Temperature = 130, Type = Star.TypeOfStar.White_dwarf_stars},
+                new Star{ StarId = 4, Age = (int)10e4, Luminosity = 235, Mass = 10e7, Name = "PSR_B1509-58", Radius = 2.1, Temperature = 0, Type = Star.TypeOfStar.Neutron_stars},
+                new Star{ StarId = 5, Age = (int)10e4, Luminosity = 0, Mass = 10e7, Name = "Cygnus X-1", Radius = 33334.1, Temperature = -22, Type = Star.TypeOfStar.Black_holes}
+            };
+            var discoverers = new List<Discoverer>{
+                new Discoverer { DiscovererId=1, Name = "Piotrek", Surname = "Piotrowski", Age = 43},
+                new Discoverer { DiscovererId=2, Name = "Marek", Surname = "Markowski", Age = 34},
+                new Discoverer { DiscovererId=3, Name = "Darek", Surname = "Darkowski", Age = 30}
+            };
+            var ships = new List<Ship>
+            {
+                new Ship { ShipId = 1, MaxSpeed = 10, ShipModel = "Super", ShipName = "Mewa" , SingleChargeRange = 12},
+                new Ship { ShipId = 2, MaxSpeed = 100, ShipModel = "Duper", ShipName = " Jaszczomp" , SingleChargeRange = 120},
+                new Ship { ShipId = 3, MaxSpeed = 1000, ShipModel = "DuperSuper", ShipName = "Orzel" , SingleChargeRange = 122},
+            };
+            ships.ForEach(ships => context.Ships.Add(ships));
+            discoverers.ForEach(discoverer => context.Discoverers.Add(discoverer));
+            stars.ForEach(st => context.Stars.Add(st));
+            planets.ForEach(p => context.Planets.Add(p));
+            starSystems.ForEach(s => context.StarSystems.Add(s));
+            galaxies.ForEach(g=> context.Galaxies.Add(g));
+            
+            context.SaveChanges();
+        }

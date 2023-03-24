@@ -2,39 +2,60 @@
 {
     public class StarRepository : IRepository<Star>, IDisposable
     {
+        private DbUniverse context;
+        private bool disposed = false;
+
+
+        public StarRepository(DbUniverse context)
+        {
+            this.context = context;
+        }
         public void Delete(int deletedId)
         {
-            throw new NotImplementedException();
+            Star star = context.Stars.Find(deletedId);
+            context.Stars.Remove(star);
         }
 
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!this.disposed)
+            {
+                if (disposing)
+                {
+                    context.Dispose();
+                }
+            }
+            this.disposed = true;
+        }
         public void Dispose()
         {
-            throw new NotImplementedException();
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
 
         public Star GetByID(int id)
         {
-            throw new NotImplementedException();
+            return context.Stars.Find(id);
         }
 
         public IEnumerable<Star> GetList()
         {
-            throw new NotImplementedException();
+            return context.Stars.ToList();
         }
 
         public void Insert(Star inserted)
         {
-            throw new NotImplementedException();
+            context.Stars.Add(inserted);
         }
 
         public void Save()
         {
-            throw new NotImplementedException();
+            context.SaveChanges();
         }
 
         public void Update(Star updater)
         {
-            throw new NotImplementedException();
+            context.Entry(updater).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
         }
     }
 }

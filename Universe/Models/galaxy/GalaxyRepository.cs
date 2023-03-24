@@ -1,63 +1,61 @@
-﻿using Microsoft.EntityFrameworkCore;
-
-namespace Universe.Models.galaxy
+﻿namespace Universe.Models.galaxy
 {
     public class GalaxyRepository : IRepository<Galaxy>, IDisposable
     {
+        private DbUniverse context;
+        private bool disposed = false;
+
+
+        public GalaxyRepository(DbUniverse context)
+        {
+            this.context = context;
+        }
         public void Delete(int deletedId)
         {
-            using (var db = new DbUniverse())
-            {
-                var discoverer = db.Discoverers.
-                    Where(d => d.DiscovererId == deletedId).
-                    FirstOrDefault();
-                db.Discoverers.Remove(discoverer);
-
-                // use save
-                db.SaveChanges();
-            }
-
+            Galaxy galaxy = context.Galaxies.Find(deletedId);
+            context.Galaxies.Remove(galaxy);
         }
 
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!this.disposed)
+            {
+                if (disposing)
+                {
+                    context.Dispose();
+                }
+            }
+            this.disposed = true;
+        }
         public void Dispose()
         {
-            throw new NotImplementedException();
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
 
         public Galaxy GetByID(int id)
         {
-            using (var db = new DbUniverse())
-            {
-                return db.Galaxies.Where(g => g.GalaxyId == id).FirstOrDefault();
-            }
+            return context.Galaxies.Find(id);
         }
 
         public IEnumerable<Galaxy> GetList()
         {
-            using (var db = new DbUniverse())
-            {
-                return db.Galaxies.ToList();
-            }
+            return context.Galaxies.ToList();
         }
 
         public void Insert(Galaxy inserted)
         {
-            using (var db = new DbUniverse())
-            {
-                db.Galaxies.Add(inserted);
-
-                // use save
-                db.SaveChanges();
-            }
+            context.Galaxies.Add(inserted);
         }
+
         public void Save()
         {
-            throw new NotImplementedException();
+            context.SaveChanges();
         }
 
         public void Update(Galaxy updater)
         {
-            throw new NotImplementedException();
+            context.Entry(updater).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
         }
     }
 }
