@@ -73,6 +73,7 @@ namespace Universe.Migrations
                             DiscovererId = 1,
                             Age = 43,
                             Name = "Piotrek",
+                            ShipId = 1,
                             Surname = "Piotrowski"
                         },
                         new
@@ -182,6 +183,7 @@ namespace Universe.Migrations
                             PlanetId = 1,
                             Mass = 2000000000000.0,
                             Name = "Jupiter",
+                            StarSystemId = 1,
                             Type = 0
                         },
                         new
@@ -189,6 +191,7 @@ namespace Universe.Migrations
                             PlanetId = 2,
                             Mass = 2000000000000.0,
                             Name = "Neptune",
+                            StarSystemId = 1,
                             Type = 0
                         },
                         new
@@ -196,6 +199,7 @@ namespace Universe.Migrations
                             PlanetId = 3,
                             Mass = 2000000000000.0,
                             Name = "Uranus",
+                            StarSystemId = 1,
                             Type = 0
                         },
                         new
@@ -203,6 +207,7 @@ namespace Universe.Migrations
                             PlanetId = 4,
                             Mass = 2000000000000.0,
                             Name = "Saturn",
+                            StarSystemId = 1,
                             Type = 0
                         },
                         new
@@ -210,6 +215,7 @@ namespace Universe.Migrations
                             PlanetId = 5,
                             Mass = 3000000000000.0,
                             Name = "Pluto",
+                            StarSystemId = 1,
                             Type = 1
                         },
                         new
@@ -217,6 +223,7 @@ namespace Universe.Migrations
                             PlanetId = 6,
                             Mass = 4000000000000.0,
                             Name = "Kepler-438b",
+                            StarSystemId = 2,
                             Type = 2
                         },
                         new
@@ -224,6 +231,7 @@ namespace Universe.Migrations
                             PlanetId = 7,
                             Mass = 5000000000000.0,
                             Name = "Earth",
+                            StarSystemId = 1,
                             Type = 3
                         },
                         new
@@ -231,6 +239,7 @@ namespace Universe.Migrations
                             PlanetId = 8,
                             Mass = 5000000000000.0,
                             Name = "Mars",
+                            StarSystemId = 1,
                             Type = 3
                         },
                         new
@@ -238,6 +247,7 @@ namespace Universe.Migrations
                             PlanetId = 9,
                             Mass = 6000000000000.0,
                             Name = "Charon",
+                            StarSystemId = 3,
                             Type = 4
                         });
                 });
@@ -343,7 +353,7 @@ namespace Universe.Migrations
                             Mass = 1000000.0,
                             Name = "Zeta",
                             Radius = 22.100000000000001,
-                            StarSystemId = 0,
+                            StarSystemId = 1,
                             Temperature = 30.0,
                             Type = 0
                         },
@@ -355,7 +365,7 @@ namespace Universe.Migrations
                             Mass = 100000.0,
                             Name = "Aldebaran",
                             Radius = 232.09999999999999,
-                            StarSystemId = 0,
+                            StarSystemId = 1,
                             Temperature = 303.0,
                             Type = 1
                         },
@@ -367,7 +377,7 @@ namespace Universe.Migrations
                             Mass = 1000000.0,
                             Name = "SiriusB",
                             Radius = 322.10000000000002,
-                            StarSystemId = 0,
+                            StarSystemId = 1,
                             Temperature = 130.0,
                             Type = 2
                         },
@@ -379,7 +389,7 @@ namespace Universe.Migrations
                             Mass = 100000000.0,
                             Name = "PSR_B1509-58",
                             Radius = 2.1000000000000001,
-                            StarSystemId = 0,
+                            StarSystemId = 3,
                             Temperature = 0.0,
                             Type = 3
                         },
@@ -391,7 +401,7 @@ namespace Universe.Migrations
                             Mass = 100000000.0,
                             Name = "Cygnus X-1",
                             Radius = 33334.099999999999,
-                            StarSystemId = 0,
+                            StarSystemId = 2,
                             Temperature = -22.0,
                             Type = 4
                         });
@@ -422,25 +432,25 @@ namespace Universe.Migrations
                         new
                         {
                             StarSystemId = 1,
-                            GalaxyId = 0,
+                            GalaxyId = 1,
                             Name = "Wolarz"
                         },
                         new
                         {
                             StarSystemId = 2,
-                            GalaxyId = 0,
+                            GalaxyId = 2,
                             Name = "Orzel"
                         },
                         new
                         {
                             StarSystemId = 3,
-                            GalaxyId = 0,
+                            GalaxyId = 3,
                             Name = "Skorpion"
                         },
                         new
                         {
                             StarSystemId = 4,
-                            GalaxyId = 0,
+                            GalaxyId = 4,
                             Name = "Strzelec"
                         });
                 });

@@ -7,7 +7,7 @@
 namespace Universe.Migrations
 {
     /// <inheritdoc />
-    public partial class First : Migration
+    public partial class first : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -167,7 +167,6 @@ namespace Universe.Migrations
                 columns: new[] { "DiscovererId", "Age", "Name", "ShipId", "Surname" },
                 values: new object[,]
                 {
-                    { 1, 43, "Piotrek", null, "Piotrowski" },
                     { 2, 34, "Marek", null, "Markowski" },
                     { 3, 30, "Darek", null, "Darkowski" }
                 });
@@ -184,22 +183,6 @@ namespace Universe.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Planets",
-                columns: new[] { "PlanetId", "GalaxyId", "Mass", "Name", "StarSystemId", "Type" },
-                values: new object[,]
-                {
-                    { 1, null, 2000000000000.0, "Jupiter", null, 0 },
-                    { 2, null, 2000000000000.0, "Neptune", null, 0 },
-                    { 3, null, 2000000000000.0, "Uranus", null, 0 },
-                    { 4, null, 2000000000000.0, "Saturn", null, 0 },
-                    { 5, null, 3000000000000.0, "Pluto", null, 1 },
-                    { 6, null, 4000000000000.0, "Kepler-438b", null, 2 },
-                    { 7, null, 5000000000000.0, "Earth", null, 3 },
-                    { 8, null, 5000000000000.0, "Mars", null, 3 },
-                    { 9, null, 6000000000000.0, "Charon", null, 4 }
-                });
-
-            migrationBuilder.InsertData(
                 table: "Ships",
                 columns: new[] { "ShipId", "MaxSpeed", "ShipModel", "ShipName", "SingleChargeRange" },
                 values: new object[,]
@@ -210,14 +193,35 @@ namespace Universe.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "Discoverers",
+                columns: new[] { "DiscovererId", "Age", "Name", "ShipId", "Surname" },
+                values: new object[] { 1, 43, "Piotrek", 1, "Piotrowski" });
+
+            migrationBuilder.InsertData(
                 table: "StarSystems",
                 columns: new[] { "StarSystemId", "GalaxyId", "Name" },
                 values: new object[,]
                 {
-                    { 1, 0, "Wolarz" },
-                    { 2, 0, "Orzel" },
-                    { 3, 0, "Skorpion" },
-                    { 4, 0, "Strzelec" }
+                    { 1, 1, "Wolarz" },
+                    { 2, 2, "Orzel" },
+                    { 3, 3, "Skorpion" },
+                    { 4, 4, "Strzelec" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Planets",
+                columns: new[] { "PlanetId", "GalaxyId", "Mass", "Name", "StarSystemId", "Type" },
+                values: new object[,]
+                {
+                    { 1, null, 2000000000000.0, "Jupiter", 1, 0 },
+                    { 2, null, 2000000000000.0, "Neptune", 1, 0 },
+                    { 3, null, 2000000000000.0, "Uranus", 1, 0 },
+                    { 4, null, 2000000000000.0, "Saturn", 1, 0 },
+                    { 5, null, 3000000000000.0, "Pluto", 1, 1 },
+                    { 6, null, 4000000000000.0, "Kepler-438b", 2, 2 },
+                    { 7, null, 5000000000000.0, "Earth", 1, 3 },
+                    { 8, null, 5000000000000.0, "Mars", 1, 3 },
+                    { 9, null, 6000000000000.0, "Charon", 3, 4 }
                 });
 
             migrationBuilder.InsertData(
@@ -225,11 +229,11 @@ namespace Universe.Migrations
                 columns: new[] { "StarId", "Age", "Luminosity", "Mass", "Name", "Radius", "StarSystemId", "Temperature", "Type" },
                 values: new object[,]
                 {
-                    { 1, 10000, 23.0, 1000000.0, "Zeta", 22.100000000000001, 0, 30.0, 0 },
-                    { 2, 1000, 233.0, 100000.0, "Aldebaran", 232.09999999999999, 0, 303.0, 1 },
-                    { 3, 10000, 3.0, 1000000.0, "SiriusB", 322.10000000000002, 0, 130.0, 2 },
-                    { 4, 100000, 235.0, 100000000.0, "PSR_B1509-58", 2.1000000000000001, 0, 0.0, 3 },
-                    { 5, 100000, 0.0, 100000000.0, "Cygnus X-1", 33334.099999999999, 0, -22.0, 4 }
+                    { 1, 10000, 23.0, 1000000.0, "Zeta", 22.100000000000001, 1, 30.0, 0 },
+                    { 2, 1000, 233.0, 100000.0, "Aldebaran", 232.09999999999999, 1, 303.0, 1 },
+                    { 3, 10000, 3.0, 1000000.0, "SiriusB", 322.10000000000002, 1, 130.0, 2 },
+                    { 4, 100000, 235.0, 100000000.0, "PSR_B1509-58", 2.1000000000000001, 3, 0.0, 3 },
+                    { 5, 100000, 0.0, 100000000.0, "Cygnus X-1", 33334.099999999999, 2, -22.0, 4 }
                 });
 
             migrationBuilder.CreateIndex(
