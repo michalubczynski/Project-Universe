@@ -18,7 +18,6 @@ namespace Universe.Models
             _context = context;
             _repositories = new Dictionary<Type, object>();
         }
-
         private bool _disposed = false;
 
         public IRepository<T> GetRepository<T>() where T : class

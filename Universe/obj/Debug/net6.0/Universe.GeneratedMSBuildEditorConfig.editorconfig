@@ -16,8 +16,24 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Majkel\Documents\GitHub\UniverseDB\Universe
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/Home/Galaxies.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHYWxheGllcy5jc2h0bWw=
+[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/Galaxies/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FsYXhpZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/Galaxies/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FsYXhpZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/Galaxies/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FsYXhpZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/Galaxies/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FsYXhpZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/Galaxies/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FsYXhpZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/Home/Index.cshtml]
