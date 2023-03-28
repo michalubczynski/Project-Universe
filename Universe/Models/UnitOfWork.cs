@@ -39,9 +39,9 @@ namespace Universe.Models
             _context.SaveChanges();
         }
 
-        public Task SaveChangesAsync(CancellationToken cancellationToken = default)
+        public async Task SaveChangesAsync(CancellationToken cancellationToken = default)
         {
-            throw new NotImplementedException();
+             await _context.SaveChangesAsync(cancellationToken);
         }
         protected virtual void Dispose(bool disposing)
         {

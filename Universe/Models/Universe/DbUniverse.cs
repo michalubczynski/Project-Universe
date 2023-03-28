@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System.Linq.Expressions;
 using Universe.Models.discoverer;
 using Universe.Models.galaxy;
 using Universe.Models.planet;
@@ -18,6 +19,34 @@ namespace Universe.Models
         public DbSet<Ship> Ships { get; set; }
         public DbSet<Planet> Planets { get; set; }
 
+        public async Task<int> CountAsync<T>(Expression<Func<T, bool>> predicate = null) where T : class
+        {
+            var entities = Set<T>();
+            if (predicate == null)
+            {
+                return await entities.CountAsync();
+            }
+            else
+            {
+                return await entities.CountAsync(predicate);
+            }
+        }
+        public async Task<bool> AnyAsync<T>(Expression<Func<T, bool>> predicate = null) where T : class
+        {
+            var entities = Set<T>();
+            if (predicate == null)
+            {
+                return await entities.AnyAsync();
+            }
+            else
+            {
+                return await entities.AnyAsync(predicate);
+            }
+        }
+        public async Task<T> FirstOrDefaultAsync<T>(Expression<Func<T, bool>> predicate = null) where T : class
+        {
+            return await Set<T>().FirstOrDefaultAsync(predicate);
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

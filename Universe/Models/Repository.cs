@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Linq;
+using System.Linq.Expressions;
 using Universe.Models.starsystem;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
@@ -17,7 +19,11 @@ namespace Universe.Models
 
         public void Delete(int deletedId)
         {
-            throw new NotImplementedException();
+            T? entityToDelete = context.Find(typeof(T), deletedId) as T;
+            if (entityToDelete != null)
+            {
+                context.Remove(entityToDelete);
+            }
         }
         protected virtual void Dispose(bool disposing)
         {
@@ -45,6 +51,10 @@ namespace Universe.Models
         {
             return context.Set<T>().ToList();
         }
+        public async Task<IEnumerable<T>> GetListAsync()
+        {
+            return await context.Set<T>().ToListAsync();
+        }
 
         public void Insert(T inserted)
         {
@@ -52,6 +62,10 @@ namespace Universe.Models
             context.Set<T>().Add(inserted);
         }
 
+        public async Task<int> SaveAsync()
+        {
+            return await context.SaveChangesAsync();
+        }
         public void Save()
         {
             context.SaveChanges();
@@ -61,6 +75,43 @@ namespace Universe.Models
         {
             context.Entry(updated).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
 
+        }
+
+        public async Task<int> CountAsync(Expression<Func<T, bool>> predicate = null)
+        {
+            if (predicate == null)
+            {
+                return await context.CountAsync<T>(); 
+            }
+            else
+            {
+                return await context.CountAsync(predicate);
+            }
+        }
+
+        public async Task<bool> AnyAsync(Expression<Func<T, bool>> predicate = null)
+        {
+            return predicate == null ? await context.AnyAsync<T>() : await context.AnyAsync(predicate);
+        }
+
+        public async Task<T> FirstOrDefaultAsync(Expression<Func<T, bool>> predicate = null)
+        {
+            return predicate == null ? await context.FirstOrDefaultAsync<T>() : await context.FirstOrDefaultAsync(predicate);
+        }
+
+        public async Task<T> GetByIDAsync(int? id)
+        {
+            return await context.Set<T>().FindAsync(id);
+        }
+
+        public bool Any(Expression<Func<T, bool>> predicate = null)
+        {
+            IQueryable<T> query = (IQueryable<T>)context;
+            if (predicate != null)
+            {
+                query = query.Where(predicate);
+            }
+            return query.Any();
         }
     }
 }

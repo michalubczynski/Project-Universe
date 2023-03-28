@@ -12,31 +12,34 @@ namespace Universe.Controllers
 {
     public class GalaxiesController : Controller
     {
-        private readonly DbUniverse _context;
         private readonly IUnitOfWork _unitOfWork;
 
-        public GalaxiesController(DbUniverse context)
+        public GalaxiesController(IUnitOfWork unitOfWork)
         {
-            _context = context;
+            _unitOfWork = unitOfWork;
         }
 
         // GET: Galaxies
         public async Task<IActionResult> Index()
         {
-              return _context.Galaxies != null ? 
-                View(await _context.Galaxies.ToListAsync()) :
-                          Problem("Entity set 'DbUniverse.Galaxies'  is null.");
+              var galaxies = await _unitOfWork.GetRepository<Galaxy>().GetListAsync(); //TU
+
+            if (galaxies == null)
+            {
+                return NotFound();
+            } //TU
+
+            return View(galaxies);
         }
 
         // GET: Galaxies/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Galaxies == null)
+            if (id == null || _unitOfWork.GetRepository<Galaxy>() == null) // TU
             {
                 return NotFound();
             }
-
-            var galaxy = await _context.Galaxies
+            var galaxy = await _unitOfWork.GetRepository<Galaxy>() //TU
                 .FirstOrDefaultAsync(m => m.GalaxyId == id);
             if (galaxy == null)
             {
@@ -61,8 +64,8 @@ namespace Universe.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(galaxy);
-                await _context.SaveChangesAsync();
+                _unitOfWork.GetRepository<Galaxy>().Insert(galaxy);   //TU
+                await _unitOfWork.SaveChangesAsync();  //TU
                 return RedirectToAction(nameof(Index));
             }
             return View(galaxy);
@@ -71,12 +74,12 @@ namespace Universe.Controllers
         // GET: Galaxies/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Galaxies == null)
+            if (id == null || _unitOfWork.GetRepository<Galaxy>() == null)
             {
                 return NotFound();
             }
 
-            var galaxy = await _context.Galaxies.FindAsync(id);
+            var galaxy = await _unitOfWork.GetRepository<Galaxy>().GetByIDAsync(id);
             if (galaxy == null)
             {
                 return NotFound();
@@ -100,8 +103,8 @@ namespace Universe.Controllers
             {
                 try
                 {
-                    _context.Update(galaxy);
-                    await _context.SaveChangesAsync();
+                    _unitOfWork.GetRepository<Galaxy>().Update(galaxy);
+                    await _unitOfWork.GetRepository<Galaxy>().SaveAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -122,12 +125,12 @@ namespace Universe.Controllers
         // GET: Galaxies/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Galaxies == null)
+            if (id == null || _unitOfWork.GetRepository<Galaxy>() == null)
             {
                 return NotFound();
             }
 
-            var galaxy = await _context.Galaxies
+            var galaxy = await _unitOfWork.GetRepository<Galaxy>()
                 .FirstOrDefaultAsync(m => m.GalaxyId == id);
             if (galaxy == null)
             {
@@ -142,23 +145,23 @@ namespace Universe.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Galaxies == null)
+            if (_unitOfWork.GetRepository<Galaxy>() == null)
             {
                 return Problem("Entity set 'DbUniverse.Galaxies'  is null.");
             }
-            var galaxy = await _context.Galaxies.FindAsync(id);
+            var galaxy = await _unitOfWork.GetRepository<Galaxy>().GetByIDAsync(id);
             if (galaxy != null)
             {
-                _context.Galaxies.Remove(galaxy);
+                _unitOfWork.GetRepository<Galaxy>().Delete(id);
             }
             
-            await _context.SaveChangesAsync();
+            await _unitOfWork.GetRepository<Galaxy>().SaveAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool GalaxyExists(int id)
         {
-          return (_context.Galaxies?.Any(e => e.GalaxyId == id)).GetValueOrDefault();
+            return (bool)(_unitOfWork.GetRepository<Galaxy>()?.Any(e => e.GalaxyId == id));
         }
     }
 }
