@@ -18,6 +18,6 @@ namespace Universe.Models
         Task<bool> AnyAsync(Expression<Func<T, bool>> predicate = null);
         Task<T> FirstOrDefaultAsync(Expression<Func<T, bool>> predicate = null);
         bool Any(Expression<Func<T, bool>> predicate = null);
-
+        IQueryable<T> Include(params Expression<Func<T, object>>[] includes);
     }
 }

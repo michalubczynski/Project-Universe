@@ -1,4 +1,5 @@
-﻿using Universe.Models.discoverer;
+﻿using Microsoft.EntityFrameworkCore;
+using Universe.Models.discoverer;
 using Universe.Models.galaxy;
 using Universe.Models.planet;
 using Universe.Models.ship;
@@ -59,6 +60,11 @@ namespace Universe.Models
         {
             Dispose(true);
             GC.SuppressFinalize(this);
+        }
+        public void Update<T>(T entity) where T : class
+        {
+            _context.Entry(entity).State = EntityState.Modified;
+            GetRepository<T>().Update(entity);
         }
     }
 }

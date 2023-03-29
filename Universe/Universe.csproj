@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20230328182706_first.cs" />
+    <Compile Remove="Migrations\20230328182706_first.Designer.cs" />
     <Compile Remove="Models\discoverer\DiscovererRepository.cs" />
     <Compile Remove="Models\galaxy\GalaxyRepository.cs" />
     <Compile Remove="Models\planet\PlanetRepository.cs" />

@@ -9,10 +9,14 @@ namespace Universe.Models
     public class Repository<T> : IRepository<T>, IDisposable where T : class
     {
         private DbUniverse context;
+        private readonly DbSet<T> _dbSet;
+
 
         public Repository(DbUniverse context)
         {
             this.context = context;
+            _dbSet = context.Set<T>();
+
         }
 
         private bool disposed = false;
@@ -56,11 +60,11 @@ namespace Universe.Models
             return await context.Set<T>().ToListAsync();
         }
 
-        public void Insert(T inserted)
+/*        public void Insert(T inserted)
         {
 
             context.Set<T>().Add(inserted);
-        }
+        }*/
 
         public async Task<int> SaveAsync()
         {
@@ -71,11 +75,11 @@ namespace Universe.Models
             context.SaveChanges();
         }
 
-        public void Update(T updated)
+/*        public void Update(T updated)
         {
             context.Entry(updated).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
 
-        }
+        }*/
 
         public async Task<int> CountAsync(Expression<Func<T, bool>> predicate = null)
         {
@@ -113,5 +117,55 @@ namespace Universe.Models
             }
             return query.Any();
         }
+
+        public IQueryable<T> GetAll()
+        {
+            return _dbSet.AsNoTracking();
+        }
+
+        public IQueryable<T> Include(params Expression<Func<T, object>>[] includes)
+        {
+            var query = GetAll();
+            if (includes != null)
+            {
+                foreach (var include in includes)
+                {
+                    query = query.Include(include);
+                }
+            }
+            return query;
+        }
+
+        public T GetById(object id)
+        {
+            return _dbSet.Find(id);
+        }
+
+        public void Insert(T entity)
+        {
+            _dbSet.Add(entity);
+        }
+
+        public void Update(T entity)
+        {
+            _dbSet.Attach(entity);
+            context.Entry(entity).State = EntityState.Modified;
+        }
+
+        public void Delete(object id)
+        {
+            T entityToDelete = _dbSet.Find(id);
+            Delete(entityToDelete);
+        }
+
+        public void Delete(T entityToDelete)
+        {
+            if (context.Entry(entityToDelete).State == EntityState.Detached)
+            {
+                _dbSet.Attach(entityToDelete);
+            }
+            _dbSet.Remove(entityToDelete);
+        }
+
     }
 }
