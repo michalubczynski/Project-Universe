@@ -1,0 +1,48 @@
+﻿@model Universe.Models.ship.Ship
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Ship</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ShipName" class="control-label"></label>
+                <input asp-for="ShipName" class="form-control" />
+                <span asp-validation-for="ShipName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShipModel" class="control-label"></label>
+                <input asp-for="ShipModel" class="form-control" />
+                <span asp-validation-for="ShipModel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaxSpeed" class="control-label"></label>
+                <input asp-for="MaxSpeed" class="form-control" />
+                <span asp-validation-for="MaxSpeed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SingleChargeRange" class="control-label"></label>
+                <input asp-for="SingleChargeRange" class="form-control" />
+                <span asp-validation-for="SingleChargeRange" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

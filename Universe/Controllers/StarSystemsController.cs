@@ -115,7 +115,6 @@ namespace Universe.Controllers
             {
                 try
                 {
-                    
                     _unitOfWork.Update(starSystem);
                     await _unitOfWork.SaveChangesAsync();
                 }
