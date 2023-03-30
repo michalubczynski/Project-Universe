@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -70,7 +72,7 @@ namespace Universe.Controllers
                 await _unitOfWork.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ShipId"] = new SelectList(_unitOfWork.GetRepository<Ship>().GetList(), "DiscovererId", "Name", discoverer.ShipId);
+            ViewData["ShipId"] = new SelectList(_unitOfWork.GetRepository<Ship>()?.GetList(), "DiscovererId", "Name", discoverer.ShipId);
             return View(discoverer);
         }
 
@@ -87,7 +89,10 @@ namespace Universe.Controllers
             {
                 return NotFound();
             }
-            ViewData["ShipId"] = new SelectList(_unitOfWork.GetRepository<Ship>().Include(m => m.Discoverer), "DiscovererId", "Name", dis.ShipId);
+            if (dis.ShipId != null)
+                ViewData["ShipId"] = new SelectList(_unitOfWork.GetRepository<Ship>().Include(m => m.Discoverer), "DiscovererId", "Name", dis.ShipId);
+            else
+                ViewData["ShipId"] = new SelectList(new ArrayList(0));
             return View(dis);
         }
 
@@ -123,7 +128,10 @@ namespace Universe.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ShipId"] = new SelectList(_unitOfWork.GetRepository<Ship>().Include(m => m.Discoverer), "ShipId", "Name", discoverer.ShipId);
+            if (discoverer.ShipId != null)
+                ViewData["ShipId"] = new SelectList(_unitOfWork.GetRepository<Ship>().Include(m => m.Discoverer), "DiscovererId", "Name", discoverer.ShipId);
+            else
+                ViewData["ShipId"] = new SelectList(new ArrayList(0));
             return View(discoverer);
         }
 
