@@ -1053,7 +1053,7 @@
           "buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Abstractions/7.0.4": {
+      "Microsoft.EntityFrameworkCore.Abstractions/7.0.5": {
         "type": "package",
         "compile": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
@@ -3694,6 +3694,53 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "BLL(BuisnessLogicLayer)/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "BOL(BussinesObjectLayer)": "1.0.0",
+          "DAL(DataAccessLayer)": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BLL(BuisnessLogicLayer).dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BLL(BuisnessLogicLayer).dll": {}
+        }
+      },
+      "BOL(BussinesObjectLayer)/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "7.0.5",
+          "Microsoft.EntityFrameworkCore.Abstractions": "7.0.5",
+          "Microsoft.EntityFrameworkCore.Relational": "7.0.5",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.5"
+        },
+        "compile": {
+          "bin/placeholder/BOL(BussinesObjectLayer).dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BOL(BussinesObjectLayer).dll": {}
+        }
+      },
+      "DAL(DataAccessLayer)/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "BOL(BussinesObjectLayer)": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "7.0.5",
+          "Microsoft.EntityFrameworkCore.Abstractions": "7.0.5",
+          "Microsoft.EntityFrameworkCore.Relational": "7.0.5",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.5"
+        },
+        "compile": {
+          "bin/placeholder/DAL(DataAccessLayer).dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DAL(DataAccessLayer).dll": {}
+        }
       }
     }
   },
@@ -4759,17 +4806,17 @@
         "microsoft.entityframeworkcore.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Abstractions/7.0.4": {
-      "sha512": "6GbYvs4L5oFpYpMzwF05kdDgvX09UmMX7MpDtDlGI5ymijFwquwv+yvdijbtodOuu0yLUpc4n71x6eBdJ8v1xQ==",
+    "Microsoft.EntityFrameworkCore.Abstractions/7.0.5": {
+      "sha512": "iwQso+hFRsEWjhH2WsEQj1D2QE5BlEXiXEt6A3SlYTPRPdZsyTNDeDDEdtxL+H/UJPQgQYY+9SMMRcEiXBmCAA==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.abstractions/7.0.4",
+      "path": "microsoft.entityframeworkcore.abstractions/7.0.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.xml",
-        "microsoft.entityframeworkcore.abstractions.7.0.4.nupkg.sha512",
+        "microsoft.entityframeworkcore.abstractions.7.0.5.nupkg.sha512",
         "microsoft.entityframeworkcore.abstractions.nuspec"
       ]
     },
@@ -10499,10 +10546,27 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "BLL(BuisnessLogicLayer)/1.0.0": {
+      "type": "project",
+      "path": "../BuisnessLogicLayer/BLL(BuisnessLogicLayer).csproj",
+      "msbuildProject": "../BuisnessLogicLayer/BLL(BuisnessLogicLayer).csproj"
+    },
+    "BOL(BussinesObjectLayer)/1.0.0": {
+      "type": "project",
+      "path": "../BOL(BussinesObjectLayes/BOL(BussinesObjectLayer).csproj",
+      "msbuildProject": "../BOL(BussinesObjectLayes/BOL(BussinesObjectLayer).csproj"
+    },
+    "DAL(DataAccessLayer)/1.0.0": {
+      "type": "project",
+      "path": "../DataAccessLayer/DAL(DataAccessLayer).csproj",
+      "msbuildProject": "../DataAccessLayer/DAL(DataAccessLayer).csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "BLL(BuisnessLogicLayer) >= 1.0.0",
+      "BOL(BussinesObjectLayer) >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.4",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.4",
       "Microsoft.EntityFrameworkCore.Relational >= 7.0.4",
@@ -10512,23 +10576,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Andrew\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Majkel\\.nuget\\packages\\": {},
+    "D:\\SDKVisual\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\Universe\\Universe.csproj",
-      "projectName": "Universe",
-      "projectPath": "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\Universe\\Universe.csproj",
-      "packagesPath": "C:\\Users\\Andrew\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\Universe\\obj\\",
+      "projectUniqueName": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\Universe\\UI(Universe).csproj",
+      "projectName": "UI(Universe)",
+      "projectPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\Universe\\UI(Universe).csproj",
+      "packagesPath": "C:\\Users\\Majkel\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\Universe\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "D:\\SDKVisual\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Andrew\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Majkel\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -10542,7 +10606,14 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL(BussinesObjectLayer).csproj": {
+              "projectPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL(BussinesObjectLayer).csproj"
+            },
+            "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BuisnessLogicLayer\\BLL(BuisnessLogicLayer).csproj": {
+              "projectPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BuisnessLogicLayer\\BLL(BuisnessLogicLayer).csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -10603,8 +10674,64 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Warning As Error: Wykryto obniżenie wersji pakietu: Microsoft.EntityFrameworkCore z 7.0.5 na 7.0.4. Aby wybrać inną wersję, odwołaj się do pakietu bezpośrednio z projektu. \r\n UI(Universe) -> BOL(BussinesObjectLayer) -> Microsoft.EntityFrameworkCore (>= 7.0.5) \r\n UI(Universe) -> Microsoft.EntityFrameworkCore (>= 7.0.4)",
+      "libraryId": "Microsoft.EntityFrameworkCore",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Warning As Error: Wykryto obniżenie wersji pakietu: Microsoft.EntityFrameworkCore.SqlServer z 7.0.5 na 7.0.4. Aby wybrać inną wersję, odwołaj się do pakietu bezpośrednio z projektu. \r\n UI(Universe) -> BOL(BussinesObjectLayer) -> Microsoft.EntityFrameworkCore.SqlServer (>= 7.0.5) \r\n UI(Universe) -> Microsoft.EntityFrameworkCore.SqlServer (>= 7.0.4)",
+      "libraryId": "Microsoft.EntityFrameworkCore.SqlServer",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Warning As Error: Wykryto obniżenie wersji pakietu: Microsoft.EntityFrameworkCore.Relational z 7.0.5 na 7.0.4. Aby wybrać inną wersję, odwołaj się do pakietu bezpośrednio z projektu. \r\n UI(Universe) -> BOL(BussinesObjectLayer) -> Microsoft.EntityFrameworkCore.Relational (>= 7.0.5) \r\n UI(Universe) -> Microsoft.EntityFrameworkCore.Relational (>= 7.0.4)",
+      "libraryId": "Microsoft.EntityFrameworkCore.Relational",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Warning As Error: Wykryto obniżenie wersji pakietu: Microsoft.EntityFrameworkCore z 7.0.5 na 7.0.4. Aby wybrać inną wersję, odwołaj się do pakietu bezpośrednio z projektu. \r\n UI(Universe) -> BLL(BuisnessLogicLayer) -> DAL(DataAccessLayer) -> Microsoft.EntityFrameworkCore (>= 7.0.5) \r\n UI(Universe) -> Microsoft.EntityFrameworkCore (>= 7.0.4)",
+      "libraryId": "Microsoft.EntityFrameworkCore",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Warning As Error: Wykryto obniżenie wersji pakietu: Microsoft.EntityFrameworkCore.SqlServer z 7.0.5 na 7.0.4. Aby wybrać inną wersję, odwołaj się do pakietu bezpośrednio z projektu. \r\n UI(Universe) -> BLL(BuisnessLogicLayer) -> DAL(DataAccessLayer) -> Microsoft.EntityFrameworkCore.SqlServer (>= 7.0.5) \r\n UI(Universe) -> Microsoft.EntityFrameworkCore.SqlServer (>= 7.0.4)",
+      "libraryId": "Microsoft.EntityFrameworkCore.SqlServer",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Warning As Error: Wykryto obniżenie wersji pakietu: Microsoft.EntityFrameworkCore.Relational z 7.0.5 na 7.0.4. Aby wybrać inną wersję, odwołaj się do pakietu bezpośrednio z projektu. \r\n UI(Universe) -> BLL(BuisnessLogicLayer) -> DAL(DataAccessLayer) -> Microsoft.EntityFrameworkCore.Relational (>= 7.0.5) \r\n UI(Universe) -> Microsoft.EntityFrameworkCore.Relational (>= 7.0.4)",
+      "libraryId": "Microsoft.EntityFrameworkCore.Relational",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

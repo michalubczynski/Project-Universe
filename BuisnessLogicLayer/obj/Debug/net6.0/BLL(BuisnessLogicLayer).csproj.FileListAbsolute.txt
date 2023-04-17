@@ -1,0 +1,17 @@
+C:\Users\Majkel\Documents\GitHub\UniverseDB\BuisnessLogicLayer\obj\Debug\net6.0\BLL(BuisnessLogicLayer).csproj.AssemblyReference.cache
+C:\Users\Majkel\Documents\GitHub\UniverseDB\BuisnessLogicLayer\obj\Debug\net6.0\BLL(BuisnessLogicLayer).GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Majkel\Documents\GitHub\UniverseDB\BuisnessLogicLayer\obj\Debug\net6.0\BLL(BuisnessLogicLayer).AssemblyInfoInputs.cache
+C:\Users\Majkel\Documents\GitHub\UniverseDB\BuisnessLogicLayer\obj\Debug\net6.0\BLL(BuisnessLogicLayer).AssemblyInfo.cs
+C:\Users\Majkel\Documents\GitHub\UniverseDB\BuisnessLogicLayer\obj\Debug\net6.0\BLL(BuisnessLogicLayer).csproj.CoreCompileInputs.cache
+C:\Users\Majkel\Documents\GitHub\UniverseDB\BuisnessLogicLayer\bin\Debug\net6.0\BLL(BuisnessLogicLayer).deps.json
+C:\Users\Majkel\Documents\GitHub\UniverseDB\BuisnessLogicLayer\bin\Debug\net6.0\BLL(BuisnessLogicLayer).dll
+C:\Users\Majkel\Documents\GitHub\UniverseDB\BuisnessLogicLayer\bin\Debug\net6.0\BLL(BuisnessLogicLayer).pdb
+C:\Users\Majkel\Documents\GitHub\UniverseDB\BuisnessLogicLayer\bin\Debug\net6.0\BOL(BussinesObjectLayer).dll
+C:\Users\Majkel\Documents\GitHub\UniverseDB\BuisnessLogicLayer\bin\Debug\net6.0\DAL(DataAccessLayer).dll
+C:\Users\Majkel\Documents\GitHub\UniverseDB\BuisnessLogicLayer\bin\Debug\net6.0\BOL(BussinesObjectLayer).pdb
+C:\Users\Majkel\Documents\GitHub\UniverseDB\BuisnessLogicLayer\bin\Debug\net6.0\DAL(DataAccessLayer).pdb
+C:\Users\Majkel\Documents\GitHub\UniverseDB\BuisnessLogicLayer\obj\Debug\net6.0\BLL(BuisnessLogicLayer).csproj.CopyComplete
+C:\Users\Majkel\Documents\GitHub\UniverseDB\BuisnessLogicLayer\obj\Debug\net6.0\BLL(BuisnessLogicLayer).dll
+C:\Users\Majkel\Documents\GitHub\UniverseDB\BuisnessLogicLayer\obj\Debug\net6.0\refint\BLL(BuisnessLogicLayer).dll
+C:\Users\Majkel\Documents\GitHub\UniverseDB\BuisnessLogicLayer\obj\Debug\net6.0\BLL(BuisnessLogicLayer).pdb
+C:\Users\Majkel\Documents\GitHub\UniverseDB\BuisnessLogicLayer\obj\Debug\net6.0\ref\BLL(BuisnessLogicLayer).dll

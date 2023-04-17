@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Models;
 using Universe.Models.discoverer;
 using Universe.Models.galaxy;
 using Universe.Models.planet;

@@ -1,0 +1,12 @@
+C:\Users\Majkel\Documents\GitHub\UniverseDB\BOL(BussinesObjectLayes\bin\Debug\net6.0\BOL(BussinesObjectLayer).deps.json
+C:\Users\Majkel\Documents\GitHub\UniverseDB\BOL(BussinesObjectLayes\bin\Debug\net6.0\BOL(BussinesObjectLayer).dll
+C:\Users\Majkel\Documents\GitHub\UniverseDB\BOL(BussinesObjectLayes\bin\Debug\net6.0\BOL(BussinesObjectLayer).pdb
+C:\Users\Majkel\Documents\GitHub\UniverseDB\BOL(BussinesObjectLayes\obj\Debug\net6.0\BOL(BussinesObjectLayer).csproj.AssemblyReference.cache
+C:\Users\Majkel\Documents\GitHub\UniverseDB\BOL(BussinesObjectLayes\obj\Debug\net6.0\BOL(BussinesObjectLayer).GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Majkel\Documents\GitHub\UniverseDB\BOL(BussinesObjectLayes\obj\Debug\net6.0\BOL(BussinesObjectLayer).AssemblyInfoInputs.cache
+C:\Users\Majkel\Documents\GitHub\UniverseDB\BOL(BussinesObjectLayes\obj\Debug\net6.0\BOL(BussinesObjectLayer).AssemblyInfo.cs
+C:\Users\Majkel\Documents\GitHub\UniverseDB\BOL(BussinesObjectLayes\obj\Debug\net6.0\BOL(BussinesObjectLayer).csproj.CoreCompileInputs.cache
+C:\Users\Majkel\Documents\GitHub\UniverseDB\BOL(BussinesObjectLayes\obj\Debug\net6.0\BOL(BussinesObjectLayer).dll
+C:\Users\Majkel\Documents\GitHub\UniverseDB\BOL(BussinesObjectLayes\obj\Debug\net6.0\refint\BOL(BussinesObjectLayer).dll
+C:\Users\Majkel\Documents\GitHub\UniverseDB\BOL(BussinesObjectLayes\obj\Debug\net6.0\BOL(BussinesObjectLayer).pdb
+C:\Users\Majkel\Documents\GitHub\UniverseDB\BOL(BussinesObjectLayes\obj\Debug\net6.0\ref\BOL(BussinesObjectLayer).dll

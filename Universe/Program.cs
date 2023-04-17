@@ -1,3 +1,4 @@
+using Models;
 using Universe.Models;
 
 var builder = WebApplication.CreateBuilder(args);

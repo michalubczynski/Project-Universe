@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "DAL(DataAccessLayer)/1.0.0": {
+        "dependencies": {
+          "BOL(BussinesObjectLayer)": "1.0.0"
+        },
+        "runtime": {
+          "DAL(DataAccessLayer).dll": {}
+        }
+      },
+      "BOL(BussinesObjectLayer)/1.0.0": {
+        "runtime": {
+          "BOL(BussinesObjectLayer).dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DAL(DataAccessLayer)/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BOL(BussinesObjectLayer)/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
