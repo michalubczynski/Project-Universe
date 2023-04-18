@@ -1,0 +1,17 @@
+C:\Users\Majkel\Documents\GitHub\UniverseDB\DataAccessLayer\bin\Release\net6.0\DAL_DataAccessLayer.deps.json
+C:\Users\Majkel\Documents\GitHub\UniverseDB\DataAccessLayer\bin\Release\net6.0\DAL_DataAccessLayer.runtimeconfig.json
+C:\Users\Majkel\Documents\GitHub\UniverseDB\DataAccessLayer\bin\Release\net6.0\DAL_DataAccessLayer.dll
+C:\Users\Majkel\Documents\GitHub\UniverseDB\DataAccessLayer\bin\Release\net6.0\DAL_DataAccessLayer.pdb
+C:\Users\Majkel\Documents\GitHub\UniverseDB\DataAccessLayer\bin\Release\net6.0\BOL_BussinesObjectLayer.dll
+C:\Users\Majkel\Documents\GitHub\UniverseDB\DataAccessLayer\bin\Release\net6.0\BOL_BussinesObjectLayer.pdb
+C:\Users\Majkel\Documents\GitHub\UniverseDB\DataAccessLayer\obj\Release\net6.0\DAL_DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\Majkel\Documents\GitHub\UniverseDB\DataAccessLayer\obj\Release\net6.0\DAL_DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Majkel\Documents\GitHub\UniverseDB\DataAccessLayer\obj\Release\net6.0\DAL_DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\Majkel\Documents\GitHub\UniverseDB\DataAccessLayer\obj\Release\net6.0\DAL_DataAccessLayer.AssemblyInfo.cs
+C:\Users\Majkel\Documents\GitHub\UniverseDB\DataAccessLayer\obj\Release\net6.0\DAL_DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Majkel\Documents\GitHub\UniverseDB\DataAccessLayer\obj\Release\net6.0\DAL_DataAccessLayer.csproj.CopyComplete
+C:\Users\Majkel\Documents\GitHub\UniverseDB\DataAccessLayer\obj\Release\net6.0\DAL_DataAccessLayer.dll
+C:\Users\Majkel\Documents\GitHub\UniverseDB\DataAccessLayer\obj\Release\net6.0\refint\DAL_DataAccessLayer.dll
+C:\Users\Majkel\Documents\GitHub\UniverseDB\DataAccessLayer\obj\Release\net6.0\DAL_DataAccessLayer.pdb
+C:\Users\Majkel\Documents\GitHub\UniverseDB\DataAccessLayer\obj\Release\net6.0\DAL_DataAccessLayer.genruntimeconfig.cache
+C:\Users\Majkel\Documents\GitHub\UniverseDB\DataAccessLayer\obj\Release\net6.0\ref\DAL_DataAccessLayer.dll

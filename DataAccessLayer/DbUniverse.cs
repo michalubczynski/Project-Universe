@@ -19,6 +19,11 @@ namespace Models
         public DbSet<Ship> Ships { get; set; }
         public DbSet<Planet> Planets { get; set; }
 
+
+        public DbUniverse(DbContextOptions<DbUniverse> options):base(options) { 
+        
+        }
+
         public async Task<int> CountAsync<T>(Expression<Func<T, bool>> predicate = null) where T : class
         {
             var entities = Set<T>();
@@ -48,11 +53,11 @@ namespace Models
             return await Set<T>().FirstOrDefaultAsync(predicate);
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+/*        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=dupa;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
+            string connectionString = ;
             optionsBuilder.UseSqlServer(connectionString);
-        }
+        }*/
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Ship>().HasOne(d => d.Discoverer).WithOne(s => s.Ship).HasForeignKey<Discoverer>(d => d.ShipId);

@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BOL(BussinesObjectLayes\BOL_BussinesObjectLayer.csproj" />
+    <ProjectReference Include="..\DataAccessLayer\DAL_DataAccessLayer.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1RZxY1dnXN/TE/vSFFPm0i2KOKz1/brbYf5CcXe9L66vE4itQWKfQD2is+ciQfTBdTqwqblhAod4YV0XDuq7oA==",
+  "dgSpecHash": "kE3iU4mJvq+SrsfN0TbgLhtkco0uG/QDJqfi1uqNjilhfjK/d2MNZWMGmgbYSch6eEGoZUI790TH7dD1BiTtBg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\DAL(DataAccessLayer).csproj",
+  "projectFilePath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\DAL_DataAccessLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Majkel\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Majkel\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

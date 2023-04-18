@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HHzVR1165+BonKplQNi2N9LVlSYSeuxcvuCe/0uGVOWWQIkTov40O2Ua9qLu12GLM7U4fINO+CeQZgV+KclT3Q==",
+  "dgSpecHash": "TImgMVDnsyivckb9BeAFLCRARRZgBuBhS4E4cSn14+U3gKTS/jjXs3z6fGAAakYamKRnu6PKlTKBtX3FDIhP1g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL(BussinesObjectLayer).csproj",
+  "projectFilePath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Majkel\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Majkel\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vQ6lILPgOd1aELjrD9YjoM/ioH2WCkRAArGkt/vwOMs01Goqn4jw/XWfIamUK0lIOrzCu/oex6DhY9hEiTCQUA==",
-  "success": false,
-  "projectFilePath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\Universe\\UI(Universe).csproj",
+  "dgSpecHash": "/Kj4PgzBop3hD5PilGDp3TViS/WqNJwYU6vwXDiq1gJFgBRklUUnZj+zVYrgypfhzTqzE/9OwVi1GhAnKJZX6Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\Universe\\UI_Universe.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Majkel\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Majkel\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
@@ -34,15 +34,16 @@
     "C:\\Users\\Majkel\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\5.0.1\\microsoft.data.sqlclient.sni.runtime.5.0.1.nupkg.sha512",
     "C:\\Users\\Majkel\\.nuget\\packages\\microsoft.diasymreader\\1.3.0\\microsoft.diasymreader.1.3.0.nupkg.sha512",
     "C:\\Users\\Majkel\\.nuget\\packages\\microsoft.dotnet.scaffolding.shared\\6.0.13\\microsoft.dotnet.scaffolding.shared.6.0.13.nupkg.sha512",
-    "C:\\Users\\Majkel\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.4\\microsoft.entityframeworkcore.7.0.4.nupkg.sha512",
+    "C:\\Users\\Majkel\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.5\\microsoft.entityframeworkcore.7.0.5.nupkg.sha512",
     "C:\\Users\\Majkel\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.5\\microsoft.entityframeworkcore.abstractions.7.0.5.nupkg.sha512",
-    "C:\\Users\\Majkel\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.4\\microsoft.entityframeworkcore.analyzers.7.0.4.nupkg.sha512",
-    "C:\\Users\\Majkel\\.nuget\\packages\\microsoft.entityframeworkcore.design\\7.0.4\\microsoft.entityframeworkcore.design.7.0.4.nupkg.sha512",
-    "C:\\Users\\Majkel\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\7.0.4\\microsoft.entityframeworkcore.relational.7.0.4.nupkg.sha512",
-    "C:\\Users\\Majkel\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\7.0.4\\microsoft.entityframeworkcore.sqlserver.7.0.4.nupkg.sha512",
-    "C:\\Users\\Majkel\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\7.0.4\\microsoft.entityframeworkcore.tools.7.0.4.nupkg.sha512",
+    "C:\\Users\\Majkel\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.5\\microsoft.entityframeworkcore.analyzers.7.0.5.nupkg.sha512",
+    "C:\\Users\\Majkel\\.nuget\\packages\\microsoft.entityframeworkcore.design\\7.0.5\\microsoft.entityframeworkcore.design.7.0.5.nupkg.sha512",
+    "C:\\Users\\Majkel\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\7.0.5\\microsoft.entityframeworkcore.relational.7.0.5.nupkg.sha512",
+    "C:\\Users\\Majkel\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\7.0.5\\microsoft.entityframeworkcore.sqlserver.7.0.5.nupkg.sha512",
+    "C:\\Users\\Majkel\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\7.0.5\\microsoft.entityframeworkcore.tools.7.0.5.nupkg.sha512",
     "C:\\Users\\Majkel\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\7.0.0\\microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\Majkel\\.nuget\\packages\\microsoft.extensions.caching.memory\\7.0.0\\microsoft.extensions.caching.memory.7.0.0.nupkg.sha512",
+    "C:\\Users\\Majkel\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
     "C:\\Users\\Majkel\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\Majkel\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
     "C:\\Users\\Majkel\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
@@ -187,60 +188,5 @@
     "C:\\Users\\Majkel\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Majkel\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Warning As Error: Wykryto obniżenie wersji pakietu: Microsoft.EntityFrameworkCore z 7.0.5 na 7.0.4. Aby wybrać inną wersję, odwołaj się do pakietu bezpośrednio z projektu. \r\n UI(Universe) -> BOL(BussinesObjectLayer) -> Microsoft.EntityFrameworkCore (>= 7.0.5) \r\n UI(Universe) -> Microsoft.EntityFrameworkCore (>= 7.0.4)",
-      "libraryId": "Microsoft.EntityFrameworkCore",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Warning As Error: Wykryto obniżenie wersji pakietu: Microsoft.EntityFrameworkCore.SqlServer z 7.0.5 na 7.0.4. Aby wybrać inną wersję, odwołaj się do pakietu bezpośrednio z projektu. \r\n UI(Universe) -> BOL(BussinesObjectLayer) -> Microsoft.EntityFrameworkCore.SqlServer (>= 7.0.5) \r\n UI(Universe) -> Microsoft.EntityFrameworkCore.SqlServer (>= 7.0.4)",
-      "libraryId": "Microsoft.EntityFrameworkCore.SqlServer",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Warning As Error: Wykryto obniżenie wersji pakietu: Microsoft.EntityFrameworkCore.Relational z 7.0.5 na 7.0.4. Aby wybrać inną wersję, odwołaj się do pakietu bezpośrednio z projektu. \r\n UI(Universe) -> BOL(BussinesObjectLayer) -> Microsoft.EntityFrameworkCore.Relational (>= 7.0.5) \r\n UI(Universe) -> Microsoft.EntityFrameworkCore.Relational (>= 7.0.4)",
-      "libraryId": "Microsoft.EntityFrameworkCore.Relational",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Warning As Error: Wykryto obniżenie wersji pakietu: Microsoft.EntityFrameworkCore z 7.0.5 na 7.0.4. Aby wybrać inną wersję, odwołaj się do pakietu bezpośrednio z projektu. \r\n UI(Universe) -> BLL(BuisnessLogicLayer) -> DAL(DataAccessLayer) -> Microsoft.EntityFrameworkCore (>= 7.0.5) \r\n UI(Universe) -> Microsoft.EntityFrameworkCore (>= 7.0.4)",
-      "libraryId": "Microsoft.EntityFrameworkCore",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Warning As Error: Wykryto obniżenie wersji pakietu: Microsoft.EntityFrameworkCore.SqlServer z 7.0.5 na 7.0.4. Aby wybrać inną wersję, odwołaj się do pakietu bezpośrednio z projektu. \r\n UI(Universe) -> BLL(BuisnessLogicLayer) -> DAL(DataAccessLayer) -> Microsoft.EntityFrameworkCore.SqlServer (>= 7.0.5) \r\n UI(Universe) -> Microsoft.EntityFrameworkCore.SqlServer (>= 7.0.4)",
-      "libraryId": "Microsoft.EntityFrameworkCore.SqlServer",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Warning As Error: Wykryto obniżenie wersji pakietu: Microsoft.EntityFrameworkCore.Relational z 7.0.5 na 7.0.4. Aby wybrać inną wersję, odwołaj się do pakietu bezpośrednio z projektu. \r\n UI(Universe) -> BLL(BuisnessLogicLayer) -> DAL(DataAccessLayer) -> Microsoft.EntityFrameworkCore.Relational (>= 7.0.5) \r\n UI(Universe) -> Microsoft.EntityFrameworkCore.Relational (>= 7.0.4)",
-      "libraryId": "Microsoft.EntityFrameworkCore.Relational",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  "logs": []
 }

@@ -10,3 +10,5 @@ C:\Users\Majkel\Documents\GitHub\UniverseDB\BOL(BussinesObjectLayes\obj\Debug\ne
 C:\Users\Majkel\Documents\GitHub\UniverseDB\BOL(BussinesObjectLayes\obj\Debug\net6.0\refint\BOL(BussinesObjectLayer).dll
 C:\Users\Majkel\Documents\GitHub\UniverseDB\BOL(BussinesObjectLayes\obj\Debug\net6.0\BOL(BussinesObjectLayer).pdb
 C:\Users\Majkel\Documents\GitHub\UniverseDB\BOL(BussinesObjectLayes\obj\Debug\net6.0\ref\BOL(BussinesObjectLayer).dll
+C:\Users\Majkel\Documents\GitHub\UniverseDB\BOL(BussinesObjectLayes\bin\Debug\net6.0\BOL(BussinesObjectLayer).runtimeconfig.json
+C:\Users\Majkel\Documents\GitHub\UniverseDB\BOL(BussinesObjectLayes\obj\Debug\net6.0\BOL(BussinesObjectLayer).genruntimeconfig.cache

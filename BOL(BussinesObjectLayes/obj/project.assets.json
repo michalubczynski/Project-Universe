@@ -3519,9 +3519,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL(BussinesObjectLayer).csproj",
-      "projectName": "BOL(BussinesObjectLayer)",
-      "projectPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL(BussinesObjectLayer).csproj",
+      "projectUniqueName": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj",
+      "projectName": "BOL_BussinesObjectLayer",
+      "projectPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj",
       "packagesPath": "C:\\Users\\Majkel\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\obj\\",
       "projectStyle": "PackageReference",

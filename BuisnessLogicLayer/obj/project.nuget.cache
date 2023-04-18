@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zPmCkiKgIFU7fTfXYKb53EQdd118N9xBXj2ROUwTsVfJKP2H69UgUhNpdt5mbrVDJ3D4es/AV6icEcKrOiEkpw==",
+  "dgSpecHash": "iqWYidMXuBvVKy15xHFDuQwZhxgrqRcsRjCUGNddrZyCId8+D0l/WSbuGkneCyYYj4XuJDwZbFFewI4BjsBx6g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BuisnessLogicLayer\\BLL(BuisnessLogicLayer).csproj",
+  "projectFilePath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BuisnessLogicLayer\\BLL_BuisnessLogicLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Majkel\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Majkel\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

@@ -7,9 +7,9 @@ C:\Users\Majkel\Documents\GitHub\UniverseDB\Universe\obj\Debug\net6.0\UI(Univers
 C:\Users\Majkel\Documents\GitHub\UniverseDB\Universe\obj\Debug\net6.0\UI(Universe).RazorAssemblyInfo.cache
 C:\Users\Majkel\Documents\GitHub\UniverseDB\Universe\obj\Debug\net6.0\UI(Universe).RazorAssemblyInfo.cs
 C:\Users\Majkel\Documents\GitHub\UniverseDB\Universe\bin\Debug\net6.0\appsettings.Development.json
-C:\Users\Majkel\Documents\GitHub\UniverseDB\Universe\bin\Debug\net6.0\appsettings.json
 C:\Users\Majkel\Documents\GitHub\UniverseDB\Universe\bin\Debug\net6.0\UI(Universe).staticwebassets.runtime.json
 C:\Users\Majkel\Documents\GitHub\UniverseDB\Universe\bin\Debug\net6.0\UI(Universe).exe
+C:\Users\Majkel\Documents\GitHub\UniverseDB\Universe\bin\Debug\net6.0\appsettings.json
 C:\Users\Majkel\Documents\GitHub\UniverseDB\Universe\bin\Debug\net6.0\UI(Universe).deps.json
 C:\Users\Majkel\Documents\GitHub\UniverseDB\Universe\bin\Debug\net6.0\UI(Universe).runtimeconfig.json
 C:\Users\Majkel\Documents\GitHub\UniverseDB\Universe\bin\Debug\net6.0\UI(Universe).dll
@@ -47,6 +47,7 @@ C:\Users\Majkel\Documents\GitHub\UniverseDB\Universe\bin\Debug\net6.0\Microsoft.
 C:\Users\Majkel\Documents\GitHub\UniverseDB\Universe\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\Majkel\Documents\GitHub\UniverseDB\Universe\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
 C:\Users\Majkel\Documents\GitHub\UniverseDB\Universe\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Majkel\Documents\GitHub\UniverseDB\Universe\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
 C:\Users\Majkel\Documents\GitHub\UniverseDB\Universe\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\Users\Majkel\Documents\GitHub\UniverseDB\Universe\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\Majkel\Documents\GitHub\UniverseDB\Universe\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll

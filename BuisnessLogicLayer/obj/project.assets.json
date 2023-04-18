@@ -1047,7 +1047,7 @@
           }
         }
       },
-      "BOL(BussinesObjectLayer)/1.0.0": {
+      "BOL_BussinesObjectLayer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
@@ -1057,27 +1057,27 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.5"
         },
         "compile": {
-          "bin/placeholder/BOL(BussinesObjectLayer).dll": {}
+          "bin/placeholder/BOL_BussinesObjectLayer.dll": {}
         },
         "runtime": {
-          "bin/placeholder/BOL(BussinesObjectLayer).dll": {}
+          "bin/placeholder/BOL_BussinesObjectLayer.dll": {}
         }
       },
-      "DAL(DataAccessLayer)/1.0.0": {
+      "DAL_DataAccessLayer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "BOL(BussinesObjectLayer)": "1.0.0",
+          "BOL_BussinesObjectLayer": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.5",
           "Microsoft.EntityFrameworkCore.Abstractions": "7.0.5",
           "Microsoft.EntityFrameworkCore.Relational": "7.0.5",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.5"
         },
         "compile": {
-          "bin/placeholder/DAL(DataAccessLayer).dll": {}
+          "bin/placeholder/DAL_DataAccessLayer.dll": {}
         },
         "runtime": {
-          "bin/placeholder/DAL(DataAccessLayer).dll": {}
+          "bin/placeholder/DAL_DataAccessLayer.dll": {}
         }
       }
     }
@@ -3249,21 +3249,21 @@
         "version.txt"
       ]
     },
-    "BOL(BussinesObjectLayer)/1.0.0": {
+    "BOL_BussinesObjectLayer/1.0.0": {
       "type": "project",
-      "path": "../BOL(BussinesObjectLayes/BOL(BussinesObjectLayer).csproj",
-      "msbuildProject": "../BOL(BussinesObjectLayes/BOL(BussinesObjectLayer).csproj"
+      "path": "../BOL(BussinesObjectLayes/BOL_BussinesObjectLayer.csproj",
+      "msbuildProject": "../BOL(BussinesObjectLayes/BOL_BussinesObjectLayer.csproj"
     },
-    "DAL(DataAccessLayer)/1.0.0": {
+    "DAL_DataAccessLayer/1.0.0": {
       "type": "project",
-      "path": "../DataAccessLayer/DAL(DataAccessLayer).csproj",
-      "msbuildProject": "../DataAccessLayer/DAL(DataAccessLayer).csproj"
+      "path": "../DataAccessLayer/DAL_DataAccessLayer.csproj",
+      "msbuildProject": "../DataAccessLayer/DAL_DataAccessLayer.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "BOL(BussinesObjectLayer) >= 1.0.0",
-      "DAL(DataAccessLayer) >= 1.0.0"
+      "BOL_BussinesObjectLayer >= 1.0.0",
+      "DAL_DataAccessLayer >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -3273,9 +3273,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BuisnessLogicLayer\\BLL(BuisnessLogicLayer).csproj",
-      "projectName": "BLL(BuisnessLogicLayer)",
-      "projectPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BuisnessLogicLayer\\BLL(BuisnessLogicLayer).csproj",
+      "projectUniqueName": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BuisnessLogicLayer\\BLL_BuisnessLogicLayer.csproj",
+      "projectName": "BLL_BuisnessLogicLayer",
+      "projectPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BuisnessLogicLayer\\BLL_BuisnessLogicLayer.csproj",
       "packagesPath": "C:\\Users\\Majkel\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BuisnessLogicLayer\\obj\\",
       "projectStyle": "PackageReference",
@@ -3298,11 +3298,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL(BussinesObjectLayer).csproj": {
-              "projectPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL(BussinesObjectLayer).csproj"
+            "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj": {
+              "projectPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj"
             },
-            "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\DAL(DataAccessLayer).csproj": {
-              "projectPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\DAL(DataAccessLayer).csproj"
+            "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\DAL_DataAccessLayer.csproj": {
+              "projectPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\DAL_DataAccessLayer.csproj"
             }
           }
         }

@@ -4,12 +4,12 @@
     "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BuisnessLogicLayer\\BLL(BuisnessLogicLayer).csproj": {}
   },
   "projects": {
-    "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL(BussinesObjectLayer).csproj": {
+    "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL(BussinesObjectLayer).csproj",
-        "projectName": "BOL(BussinesObjectLayer)",
-        "projectPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL(BussinesObjectLayer).csproj",
+        "projectUniqueName": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj",
+        "projectName": "BOL_BussinesObjectLayer",
+        "projectPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj",
         "packagesPath": "C:\\Users\\Majkel\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\obj\\",
         "projectStyle": "PackageReference",
@@ -121,11 +121,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL(BussinesObjectLayer).csproj": {
-                "projectPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL(BussinesObjectLayer).csproj"
+              "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj": {
+                "projectPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj"
               },
-              "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\DAL(DataAccessLayer).csproj": {
-                "projectPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\DAL(DataAccessLayer).csproj"
+              "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\DAL_DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\DAL_DataAccessLayer.csproj"
               }
             }
           }
@@ -159,12 +159,12 @@
         }
       }
     },
-    "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\DAL(DataAccessLayer).csproj": {
+    "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\DAL_DataAccessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\DAL(DataAccessLayer).csproj",
-        "projectName": "DAL(DataAccessLayer)",
-        "projectPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\DAL(DataAccessLayer).csproj",
+        "projectUniqueName": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\DAL_DataAccessLayer.csproj",
+        "projectName": "DAL_DataAccessLayer",
+        "projectPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\DAL_DataAccessLayer.csproj",
         "packagesPath": "C:\\Users\\Majkel\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\obj\\",
         "projectStyle": "PackageReference",
@@ -187,8 +187,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL(BussinesObjectLayer).csproj": {
-                "projectPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL(BussinesObjectLayer).csproj"
+              "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj": {
+                "projectPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj"
               }
             }
           }

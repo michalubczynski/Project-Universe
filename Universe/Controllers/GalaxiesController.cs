@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BLL;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -12,17 +13,17 @@ namespace Universe.Controllers
 {
     public class GalaxiesController : Controller
     {
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly IGalaxyService _galaxyService;
 
-        public GalaxiesController(IUnitOfWork unitOfWork)
+        public GalaxiesController(IGalaxyService galaxyService)
         {
-            _unitOfWork = unitOfWork;
+            _galaxyService = galaxyService;
         }
 
         // GET: Galaxies
         public async Task<IActionResult> Index()
         {
-              var galaxies = await _unitOfWork.GetRepository<Galaxy>().GetListAsync(); //TU
+            var galaxies = await _galaxyService.GetAllGalaxiesAsync(); //TU
 
             if (galaxies == null)
             {
@@ -35,12 +36,11 @@ namespace Universe.Controllers
         // GET: Galaxies/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _unitOfWork.GetRepository<Galaxy>() == null) // TU
+            if (id == null || _galaxyService.GetGalaxyByIdAsync(id) == null) // TU
             {
                 return NotFound();
             }
-            var galaxy = await _unitOfWork.GetRepository<Galaxy>() //TU
-                .FirstOrDefaultAsync(m => m.GalaxyId == id);
+            var galaxy = await _galaxyService.GetGalaxyByIdAsync((int)id);
             if (galaxy == null)
             {
                 return NotFound();
@@ -50,11 +50,6 @@ namespace Universe.Controllers
         }
 
         // GET: Galaxies/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
-
         // POST: Galaxies/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -64,8 +59,7 @@ namespace Universe.Controllers
         {
             if (ModelState.IsValid)
             {
-                _unitOfWork.GetRepository<Galaxy>().Insert(galaxy);   //TU
-                await _unitOfWork.SaveChangesAsync();  //TU
+                await _galaxyService.AddGalaxyAsync(galaxy);   //TU
                 return RedirectToAction(nameof(Index));
             }
             return View(galaxy);
@@ -74,12 +68,12 @@ namespace Universe.Controllers
         // GET: Galaxies/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _unitOfWork.GetRepository<Galaxy>() == null)
+            if (id == null || _galaxyService.GetGalaxyByIdAsync(id) == null)
             {
                 return NotFound();
             }
 
-            var galaxy = await _unitOfWork.GetRepository<Galaxy>().GetByIDAsync(id);
+            var galaxy = await _galaxyService.GetGalaxyByIdAsync(id);
             if (galaxy == null)
             {
                 return NotFound();
@@ -103,8 +97,8 @@ namespace Universe.Controllers
             {
                 try
                 {
-                    _unitOfWork.GetRepository<Galaxy>().Update(galaxy);
-                    await _unitOfWork.GetRepository<Galaxy>().SaveAsync();
+                    await _galaxyService.UpdateGalaxyAsync(galaxy);
+                    //await _unitOfWork.GetRepository<Galaxy>().SaveAsync(); // Może być bez tego bo wywoływana jest w UpdateGalaxyAsync()
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -125,13 +119,15 @@ namespace Universe.Controllers
         // GET: Galaxies/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _unitOfWork.GetRepository<Galaxy>() == null)
+            if (id == null || _galaxyService.GetGalaxyByIdAsync(id) == null)
             {
                 return NotFound();
             }
-
-            var galaxy = await _unitOfWork.GetRepository<Galaxy>()
-                .FirstOrDefaultAsync(m => m.GalaxyId == id);
+            else // To poprawiono ale nie zostalo to wykonane jawnie !! poprawić w innych projektach metode delete bo nigdzie wczesniej nie usuwala tej encji
+            {
+                await _galaxyService.RemoveGalaxyAsync((int)id);
+            }
+            var galaxy = await _galaxyService.GetGalaxyByIdAsync(id);
             if (galaxy == null)
             {
                 return NotFound();
@@ -145,23 +141,22 @@ namespace Universe.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_unitOfWork.GetRepository<Galaxy>() == null)
+            if (_galaxyService.GetGalaxyByIdAsync(id) == null)
             {
                 return Problem("Entity set 'DbUniverse.Galaxies'  is null.");
             }
-            var galaxy = await _unitOfWork.GetRepository<Galaxy>().GetByIDAsync(id);
+            var galaxy = await _galaxyService.GetGalaxyByIdAsync(id);
             if (galaxy != null)
             {
-                _unitOfWork.GetRepository<Galaxy>().Delete(id);
+                await _galaxyService.RemoveGalaxyAsync(id);
             }
             
-            await _unitOfWork.GetRepository<Galaxy>().SaveAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool GalaxyExists(int id)
         {
-            return (bool)(_unitOfWork.GetRepository<Galaxy>()?.Any(e => e.GalaxyId == id));
+            return _galaxyService.GalaxyExists(id);
         }
     }
 }

@@ -8,7 +8,7 @@ using Models;
 
 #nullable disable
 
-namespace Universe.Migrations
+namespace UI_Universe.Migrations
 {
     [DbContext(typeof(DbUniverse))]
     partial class DbUniverseModelSnapshot : ModelSnapshot
@@ -17,7 +17,7 @@ namespace Universe.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.4")
+                .HasAnnotation("ProductVersion", "7.0.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -487,8 +487,7 @@ namespace Universe.Migrations
 
                     b.HasOne("Universe.Models.starsystem.StarSystem", "StarSystem")
                         .WithMany("Planets")
-                        .HasForeignKey("StarSystemId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("StarSystemId");
 
                     b.Navigation("StarSystem");
                 });
