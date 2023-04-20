@@ -35,7 +35,7 @@ namespace Universe.Controllers
         // GET: Galaxies/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _galaxyService.GetSpaceObjectByIdAsync(id) == null) // TU
+            if (id == null) // TU
             {
                 return NotFound();
             }
@@ -67,7 +67,7 @@ namespace Universe.Controllers
         // GET: Galaxies/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _galaxyService.GetSpaceObjectByIdAsync(id) == null)
+            if (id == null)
             {
                 return NotFound();
             }
@@ -118,7 +118,7 @@ namespace Universe.Controllers
         // GET: Galaxies/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _galaxyService.GetSpaceObjectByIdAsync(id) == null)
+            if (id == null)
             {
                 return NotFound();
             }
@@ -126,13 +126,12 @@ namespace Universe.Controllers
             {
                 await _galaxyService.RemoveSpaceObjectAsync((int)id);
             }
-            var galaxy = await _galaxyService.GetSpaceObjectByIdAsync(id);
-            if (galaxy == null)
-            {
-                return NotFound();
-            }
-
-            return View(galaxy);
+            //var galaxy = await _galaxyService.GetSpaceObjectByIdAsync(id);
+            //if (galaxy == null)
+            //{
+            //    return NotFound();
+            //}
+            return RedirectToAction(nameof(Index));
         }
 
         // POST: Galaxies/Delete/5
@@ -140,13 +139,11 @@ namespace Universe.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_galaxyService.GetSpaceObjectByIdAsync(id) == null)
-            {
+            var galaxy = await _galaxyService.GetSpaceObjectByIdAsync(id);
+            if (galaxy == null) {
                 return Problem("Entity set 'DbUniverse.Galaxies'  is null.");
             }
-            var galaxy = await _galaxyService.GetSpaceObjectByIdAsync(id);
-            if (galaxy != null)
-            {
+            else {
                 await _galaxyService.RemoveSpaceObjectAsync(id);
             }
             

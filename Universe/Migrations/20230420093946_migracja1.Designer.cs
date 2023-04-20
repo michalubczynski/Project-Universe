@@ -12,8 +12,8 @@ using Models;
 namespace UI_Universe.Migrations
 {
     [DbContext(typeof(DbUniverse))]
-    [Migration("20230418163856_first")]
-    partial class first
+    [Migration("20230420093946_migracja1")]
+    partial class migracja1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,26 +27,26 @@ namespace UI_Universe.Migrations
 
             modelBuilder.Entity("DiscovererStarSystem", b =>
                 {
-                    b.Property<int>("DiscoverersDiscovererId")
+                    b.Property<int>("DiscoverersId")
                         .HasColumnType("int");
 
-                    b.Property<int>("StarSystemsStarSystemId")
+                    b.Property<int>("StarSystemsId")
                         .HasColumnType("int");
 
-                    b.HasKey("DiscoverersDiscovererId", "StarSystemsStarSystemId");
+                    b.HasKey("DiscoverersId", "StarSystemsId");
 
-                    b.HasIndex("StarSystemsStarSystemId");
+                    b.HasIndex("StarSystemsId");
 
                     b.ToTable("DiscovererStarSystem");
                 });
 
             modelBuilder.Entity("Universe.Models.discoverer.Discoverer", b =>
                 {
-                    b.Property<int>("DiscovererId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DiscovererId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("Age")
                         .HasColumnType("int");
@@ -62,7 +62,7 @@ namespace UI_Universe.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("DiscovererId");
+                    b.HasKey("Id");
 
                     b.HasIndex("ShipId")
                         .IsUnique()
@@ -73,7 +73,7 @@ namespace UI_Universe.Migrations
                     b.HasData(
                         new
                         {
-                            DiscovererId = 1,
+                            Id = 1,
                             Age = 43,
                             Name = "Piotrek",
                             ShipId = 1,
@@ -81,14 +81,14 @@ namespace UI_Universe.Migrations
                         },
                         new
                         {
-                            DiscovererId = 2,
+                            Id = 2,
                             Age = 34,
                             Name = "Marek",
                             Surname = "Markowski"
                         },
                         new
                         {
-                            DiscovererId = 3,
+                            Id = 3,
                             Age = 30,
                             Name = "Darek",
                             Surname = "Darkowski"
@@ -97,11 +97,11 @@ namespace UI_Universe.Migrations
 
             modelBuilder.Entity("Universe.Models.galaxy.Galaxy", b =>
                 {
-                    b.Property<int>("GalaxyId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("GalaxyId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<double>("Mass")
                         .HasColumnType("float");
@@ -113,35 +113,35 @@ namespace UI_Universe.Migrations
                     b.Property<int>("Type")
                         .HasColumnType("int");
 
-                    b.HasKey("GalaxyId");
+                    b.HasKey("Id");
 
                     b.ToTable("Galaxies");
 
                     b.HasData(
                         new
                         {
-                            GalaxyId = 1,
+                            Id = 1,
                             Mass = 10000000000000.0,
                             Name = "Droga Mleczna",
                             Type = 0
                         },
                         new
                         {
-                            GalaxyId = 2,
+                            Id = 2,
                             Mass = 10000000000000.0,
                             Name = "Messier 87",
                             Type = 1
                         },
                         new
                         {
-                            GalaxyId = 3,
+                            Id = 3,
                             Mass = 10000000000000000.0,
                             Name = "GAL-CLUS-022058s",
                             Type = 2
                         },
                         new
                         {
-                            GalaxyId = 4,
+                            Id = 4,
                             Mass = 10000000000.0,
                             Name = "Wielka Mgławica Magellana",
                             Type = 3
@@ -150,11 +150,11 @@ namespace UI_Universe.Migrations
 
             modelBuilder.Entity("Universe.Models.planet.Planet", b =>
                 {
-                    b.Property<int>("PlanetId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PlanetId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int?>("GalaxyId")
                         .HasColumnType("int");
@@ -172,7 +172,7 @@ namespace UI_Universe.Migrations
                     b.Property<int>("Type")
                         .HasColumnType("int");
 
-                    b.HasKey("PlanetId");
+                    b.HasKey("Id");
 
                     b.HasIndex("GalaxyId");
 
@@ -183,7 +183,7 @@ namespace UI_Universe.Migrations
                     b.HasData(
                         new
                         {
-                            PlanetId = 1,
+                            Id = 1,
                             Mass = 2000000000000.0,
                             Name = "Jupiter",
                             StarSystemId = 1,
@@ -191,7 +191,7 @@ namespace UI_Universe.Migrations
                         },
                         new
                         {
-                            PlanetId = 2,
+                            Id = 2,
                             Mass = 2000000000000.0,
                             Name = "Neptune",
                             StarSystemId = 1,
@@ -199,7 +199,7 @@ namespace UI_Universe.Migrations
                         },
                         new
                         {
-                            PlanetId = 3,
+                            Id = 3,
                             Mass = 2000000000000.0,
                             Name = "Uranus",
                             StarSystemId = 1,
@@ -207,7 +207,7 @@ namespace UI_Universe.Migrations
                         },
                         new
                         {
-                            PlanetId = 4,
+                            Id = 4,
                             Mass = 2000000000000.0,
                             Name = "Saturn",
                             StarSystemId = 1,
@@ -215,7 +215,7 @@ namespace UI_Universe.Migrations
                         },
                         new
                         {
-                            PlanetId = 5,
+                            Id = 5,
                             Mass = 3000000000000.0,
                             Name = "Pluto",
                             StarSystemId = 1,
@@ -223,7 +223,7 @@ namespace UI_Universe.Migrations
                         },
                         new
                         {
-                            PlanetId = 6,
+                            Id = 6,
                             Mass = 4000000000000.0,
                             Name = "Kepler-438b",
                             StarSystemId = 2,
@@ -231,7 +231,7 @@ namespace UI_Universe.Migrations
                         },
                         new
                         {
-                            PlanetId = 7,
+                            Id = 7,
                             Mass = 5000000000000.0,
                             Name = "Earth",
                             StarSystemId = 1,
@@ -239,7 +239,7 @@ namespace UI_Universe.Migrations
                         },
                         new
                         {
-                            PlanetId = 8,
+                            Id = 8,
                             Mass = 5000000000000.0,
                             Name = "Mars",
                             StarSystemId = 1,
@@ -247,7 +247,7 @@ namespace UI_Universe.Migrations
                         },
                         new
                         {
-                            PlanetId = 9,
+                            Id = 9,
                             Mass = 6000000000000.0,
                             Name = "Charon",
                             StarSystemId = 3,
@@ -257,11 +257,11 @@ namespace UI_Universe.Migrations
 
             modelBuilder.Entity("Universe.Models.ship.Ship", b =>
                 {
-                    b.Property<int>("ShipId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ShipId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("MaxSpeed")
                         .HasColumnType("int");
@@ -277,14 +277,14 @@ namespace UI_Universe.Migrations
                     b.Property<int>("SingleChargeRange")
                         .HasColumnType("int");
 
-                    b.HasKey("ShipId");
+                    b.HasKey("Id");
 
                     b.ToTable("Ships");
 
                     b.HasData(
                         new
                         {
-                            ShipId = 1,
+                            Id = 1,
                             MaxSpeed = 10,
                             ShipModel = "Super",
                             ShipName = "Mewa",
@@ -292,7 +292,7 @@ namespace UI_Universe.Migrations
                         },
                         new
                         {
-                            ShipId = 2,
+                            Id = 2,
                             MaxSpeed = 100,
                             ShipModel = "Duper",
                             ShipName = " Jaszczomp",
@@ -300,7 +300,7 @@ namespace UI_Universe.Migrations
                         },
                         new
                         {
-                            ShipId = 3,
+                            Id = 3,
                             MaxSpeed = 1000,
                             ShipModel = "DuperSuper",
                             ShipName = "Orzel",
@@ -310,11 +310,11 @@ namespace UI_Universe.Migrations
 
             modelBuilder.Entity("Universe.Models.star.Star", b =>
                 {
-                    b.Property<int>("StarId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StarId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("Age")
                         .HasColumnType("int");
@@ -341,7 +341,7 @@ namespace UI_Universe.Migrations
                     b.Property<int>("Type")
                         .HasColumnType("int");
 
-                    b.HasKey("StarId");
+                    b.HasKey("Id");
 
                     b.HasIndex("StarSystemId");
 
@@ -350,7 +350,7 @@ namespace UI_Universe.Migrations
                     b.HasData(
                         new
                         {
-                            StarId = 1,
+                            Id = 1,
                             Age = 10000,
                             Luminosity = 23.0,
                             Mass = 1000000.0,
@@ -362,7 +362,7 @@ namespace UI_Universe.Migrations
                         },
                         new
                         {
-                            StarId = 2,
+                            Id = 2,
                             Age = 1000,
                             Luminosity = 233.0,
                             Mass = 100000.0,
@@ -374,7 +374,7 @@ namespace UI_Universe.Migrations
                         },
                         new
                         {
-                            StarId = 3,
+                            Id = 3,
                             Age = 10000,
                             Luminosity = 3.0,
                             Mass = 1000000.0,
@@ -386,7 +386,7 @@ namespace UI_Universe.Migrations
                         },
                         new
                         {
-                            StarId = 4,
+                            Id = 4,
                             Age = 100000,
                             Luminosity = 235.0,
                             Mass = 100000000.0,
@@ -398,7 +398,7 @@ namespace UI_Universe.Migrations
                         },
                         new
                         {
-                            StarId = 5,
+                            Id = 5,
                             Age = 100000,
                             Luminosity = 0.0,
                             Mass = 100000000.0,
@@ -412,11 +412,11 @@ namespace UI_Universe.Migrations
 
             modelBuilder.Entity("Universe.Models.starsystem.StarSystem", b =>
                 {
-                    b.Property<int>("StarSystemId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StarSystemId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("GalaxyId")
                         .HasColumnType("int");
@@ -425,7 +425,7 @@ namespace UI_Universe.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("StarSystemId");
+                    b.HasKey("Id");
 
                     b.HasIndex("GalaxyId");
 
@@ -434,25 +434,25 @@ namespace UI_Universe.Migrations
                     b.HasData(
                         new
                         {
-                            StarSystemId = 1,
+                            Id = 1,
                             GalaxyId = 1,
                             Name = "Wolarz"
                         },
                         new
                         {
-                            StarSystemId = 2,
+                            Id = 2,
                             GalaxyId = 2,
                             Name = "Orzel"
                         },
                         new
                         {
-                            StarSystemId = 3,
+                            Id = 3,
                             GalaxyId = 3,
                             Name = "Skorpion"
                         },
                         new
                         {
-                            StarSystemId = 4,
+                            Id = 4,
                             GalaxyId = 4,
                             Name = "Strzelec"
                         });
@@ -462,13 +462,13 @@ namespace UI_Universe.Migrations
                 {
                     b.HasOne("Universe.Models.discoverer.Discoverer", null)
                         .WithMany()
-                        .HasForeignKey("DiscoverersDiscovererId")
+                        .HasForeignKey("DiscoverersId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Universe.Models.starsystem.StarSystem", null)
                         .WithMany()
-                        .HasForeignKey("StarSystemsStarSystemId")
+                        .HasForeignKey("StarSystemsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

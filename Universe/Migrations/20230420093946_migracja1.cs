@@ -7,7 +7,7 @@
 namespace UI_Universe.Migrations
 {
     /// <inheritdoc />
-    public partial class first : Migration
+    public partial class migracja1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -16,7 +16,7 @@ namespace UI_Universe.Migrations
                 name: "Galaxies",
                 columns: table => new
                 {
-                    GalaxyId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Type = table.Column<int>(type: "int", nullable: false),
@@ -24,14 +24,14 @@ namespace UI_Universe.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Galaxies", x => x.GalaxyId);
+                    table.PrimaryKey("PK_Galaxies", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Ships",
                 columns: table => new
                 {
-                    ShipId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ShipName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ShipModel = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -40,26 +40,26 @@ namespace UI_Universe.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Ships", x => x.ShipId);
+                    table.PrimaryKey("PK_Ships", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "StarSystems",
                 columns: table => new
                 {
-                    StarSystemId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     GalaxyId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_StarSystems", x => x.StarSystemId);
+                    table.PrimaryKey("PK_StarSystems", x => x.Id);
                     table.ForeignKey(
                         name: "FK_StarSystems_Galaxies_GalaxyId",
                         column: x => x.GalaxyId,
                         principalTable: "Galaxies",
-                        principalColumn: "GalaxyId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -67,7 +67,7 @@ namespace UI_Universe.Migrations
                 name: "Discoverers",
                 columns: table => new
                 {
-                    DiscovererId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Surname = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -76,19 +76,19 @@ namespace UI_Universe.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Discoverers", x => x.DiscovererId);
+                    table.PrimaryKey("PK_Discoverers", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Discoverers_Ships_ShipId",
                         column: x => x.ShipId,
                         principalTable: "Ships",
-                        principalColumn: "ShipId");
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
                 name: "Planets",
                 columns: table => new
                 {
-                    PlanetId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Type = table.Column<int>(type: "int", nullable: false),
@@ -98,24 +98,24 @@ namespace UI_Universe.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Planets", x => x.PlanetId);
+                    table.PrimaryKey("PK_Planets", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Planets_Galaxies_GalaxyId",
                         column: x => x.GalaxyId,
                         principalTable: "Galaxies",
-                        principalColumn: "GalaxyId");
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Planets_StarSystems_StarSystemId",
                         column: x => x.StarSystemId,
                         principalTable: "StarSystems",
-                        principalColumn: "StarSystemId");
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
                 name: "Stars",
                 columns: table => new
                 {
-                    StarId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Type = table.Column<int>(type: "int", nullable: false),
@@ -128,12 +128,12 @@ namespace UI_Universe.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Stars", x => x.StarId);
+                    table.PrimaryKey("PK_Stars", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Stars_StarSystems_StarSystemId",
                         column: x => x.StarSystemId,
                         principalTable: "StarSystems",
-                        principalColumn: "StarSystemId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -141,29 +141,29 @@ namespace UI_Universe.Migrations
                 name: "DiscovererStarSystem",
                 columns: table => new
                 {
-                    DiscoverersDiscovererId = table.Column<int>(type: "int", nullable: false),
-                    StarSystemsStarSystemId = table.Column<int>(type: "int", nullable: false)
+                    DiscoverersId = table.Column<int>(type: "int", nullable: false),
+                    StarSystemsId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_DiscovererStarSystem", x => new { x.DiscoverersDiscovererId, x.StarSystemsStarSystemId });
+                    table.PrimaryKey("PK_DiscovererStarSystem", x => new { x.DiscoverersId, x.StarSystemsId });
                     table.ForeignKey(
-                        name: "FK_DiscovererStarSystem_Discoverers_DiscoverersDiscovererId",
-                        column: x => x.DiscoverersDiscovererId,
+                        name: "FK_DiscovererStarSystem_Discoverers_DiscoverersId",
+                        column: x => x.DiscoverersId,
                         principalTable: "Discoverers",
-                        principalColumn: "DiscovererId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_DiscovererStarSystem_StarSystems_StarSystemsStarSystemId",
-                        column: x => x.StarSystemsStarSystemId,
+                        name: "FK_DiscovererStarSystem_StarSystems_StarSystemsId",
+                        column: x => x.StarSystemsId,
                         principalTable: "StarSystems",
-                        principalColumn: "StarSystemId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.InsertData(
                 table: "Discoverers",
-                columns: new[] { "DiscovererId", "Age", "Name", "ShipId", "Surname" },
+                columns: new[] { "Id", "Age", "Name", "ShipId", "Surname" },
                 values: new object[,]
                 {
                     { 2, 34, "Marek", null, "Markowski" },
@@ -172,7 +172,7 @@ namespace UI_Universe.Migrations
 
             migrationBuilder.InsertData(
                 table: "Galaxies",
-                columns: new[] { "GalaxyId", "Mass", "Name", "Type" },
+                columns: new[] { "Id", "Mass", "Name", "Type" },
                 values: new object[,]
                 {
                     { 1, 10000000000000.0, "Droga Mleczna", 0 },
@@ -183,7 +183,7 @@ namespace UI_Universe.Migrations
 
             migrationBuilder.InsertData(
                 table: "Ships",
-                columns: new[] { "ShipId", "MaxSpeed", "ShipModel", "ShipName", "SingleChargeRange" },
+                columns: new[] { "Id", "MaxSpeed", "ShipModel", "ShipName", "SingleChargeRange" },
                 values: new object[,]
                 {
                     { 1, 10, "Super", "Mewa", 12 },
@@ -193,12 +193,12 @@ namespace UI_Universe.Migrations
 
             migrationBuilder.InsertData(
                 table: "Discoverers",
-                columns: new[] { "DiscovererId", "Age", "Name", "ShipId", "Surname" },
+                columns: new[] { "Id", "Age", "Name", "ShipId", "Surname" },
                 values: new object[] { 1, 43, "Piotrek", 1, "Piotrowski" });
 
             migrationBuilder.InsertData(
                 table: "StarSystems",
-                columns: new[] { "StarSystemId", "GalaxyId", "Name" },
+                columns: new[] { "Id", "GalaxyId", "Name" },
                 values: new object[,]
                 {
                     { 1, 1, "Wolarz" },
@@ -209,7 +209,7 @@ namespace UI_Universe.Migrations
 
             migrationBuilder.InsertData(
                 table: "Planets",
-                columns: new[] { "PlanetId", "GalaxyId", "Mass", "Name", "StarSystemId", "Type" },
+                columns: new[] { "Id", "GalaxyId", "Mass", "Name", "StarSystemId", "Type" },
                 values: new object[,]
                 {
                     { 1, null, 2000000000000.0, "Jupiter", 1, 0 },
@@ -225,7 +225,7 @@ namespace UI_Universe.Migrations
 
             migrationBuilder.InsertData(
                 table: "Stars",
-                columns: new[] { "StarId", "Age", "Luminosity", "Mass", "Name", "Radius", "StarSystemId", "Temperature", "Type" },
+                columns: new[] { "Id", "Age", "Luminosity", "Mass", "Name", "Radius", "StarSystemId", "Temperature", "Type" },
                 values: new object[,]
                 {
                     { 1, 10000, 23.0, 1000000.0, "Zeta", 22.100000000000001, 1, 30.0, 0 },
@@ -243,9 +243,9 @@ namespace UI_Universe.Migrations
                 filter: "[ShipId] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_DiscovererStarSystem_StarSystemsStarSystemId",
+                name: "IX_DiscovererStarSystem_StarSystemsId",
                 table: "DiscovererStarSystem",
-                column: "StarSystemsStarSystemId");
+                column: "StarSystemsId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Planets_GalaxyId",

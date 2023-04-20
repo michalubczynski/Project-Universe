@@ -1,0 +1,17 @@
+C:\Users\Administrator\Documents\GitHub\UniverseDB\BuisnessLogicLayer\bin\Debug\net6.0\BLL_BuisnessLogicLayer.deps.json
+C:\Users\Administrator\Documents\GitHub\UniverseDB\BuisnessLogicLayer\bin\Debug\net6.0\BLL_BuisnessLogicLayer.dll
+C:\Users\Administrator\Documents\GitHub\UniverseDB\BuisnessLogicLayer\bin\Debug\net6.0\BLL_BuisnessLogicLayer.pdb
+C:\Users\Administrator\Documents\GitHub\UniverseDB\BuisnessLogicLayer\bin\Debug\net6.0\BOL_BussinesObjectLayer.dll
+C:\Users\Administrator\Documents\GitHub\UniverseDB\BuisnessLogicLayer\bin\Debug\net6.0\DAL_DataAccessLayer.dll
+C:\Users\Administrator\Documents\GitHub\UniverseDB\BuisnessLogicLayer\bin\Debug\net6.0\BOL_BussinesObjectLayer.pdb
+C:\Users\Administrator\Documents\GitHub\UniverseDB\BuisnessLogicLayer\bin\Debug\net6.0\DAL_DataAccessLayer.pdb
+C:\Users\Administrator\Documents\GitHub\UniverseDB\BuisnessLogicLayer\obj\Debug\net6.0\BLL_BuisnessLogicLayer.csproj.AssemblyReference.cache
+C:\Users\Administrator\Documents\GitHub\UniverseDB\BuisnessLogicLayer\obj\Debug\net6.0\BLL_BuisnessLogicLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Documents\GitHub\UniverseDB\BuisnessLogicLayer\obj\Debug\net6.0\BLL_BuisnessLogicLayer.AssemblyInfoInputs.cache
+C:\Users\Administrator\Documents\GitHub\UniverseDB\BuisnessLogicLayer\obj\Debug\net6.0\BLL_BuisnessLogicLayer.AssemblyInfo.cs
+C:\Users\Administrator\Documents\GitHub\UniverseDB\BuisnessLogicLayer\obj\Debug\net6.0\BLL_BuisnessLogicLayer.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Documents\GitHub\UniverseDB\BuisnessLogicLayer\obj\Debug\net6.0\BLL_BuisnessLogicLayer.csproj.CopyComplete
+C:\Users\Administrator\Documents\GitHub\UniverseDB\BuisnessLogicLayer\obj\Debug\net6.0\BLL_BuisnessLogicLayer.dll
+C:\Users\Administrator\Documents\GitHub\UniverseDB\BuisnessLogicLayer\obj\Debug\net6.0\refint\BLL_BuisnessLogicLayer.dll
+C:\Users\Administrator\Documents\GitHub\UniverseDB\BuisnessLogicLayer\obj\Debug\net6.0\BLL_BuisnessLogicLayer.pdb
+C:\Users\Administrator\Documents\GitHub\UniverseDB\BuisnessLogicLayer\obj\Debug\net6.0\ref\BLL_BuisnessLogicLayer.dll
