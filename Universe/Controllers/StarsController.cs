@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BLL;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -14,51 +15,37 @@ namespace Universe.Controllers
 {
     public class StarsController : Controller
     {
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly ISpaceObjectService<Star> _service;
 
-        public StarsController(IUnitOfWork context)
+        public StarsController(ISpaceObjectService<Star> context)
         {
-            _unitOfWork = context;
+            _service = context;
         }
 
         // GET: Stars
         public async Task<IActionResult> Index()
         {
-            var stars = await _unitOfWork.GetRepository<Star>().GetListAsync(); //TU
-
-            if (stars == null)
+            var objs = await _service.GetAllSpaceObjectsAsync(); //
+            if (objs == null)
             {
                 return NotFound();
-            }
-            return View(stars);
-            //var dbUniverse = _context.Stars.Include(s => s.StarSystem);
-            //return View(await dbUniverse.ToListAsync());
+            } //TU
+            return View(objs);
         }
 
         // GET: Stars/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _unitOfWork.GetRepository<Star>() == null)
+            if (id == null) // TU
             {
                 return NotFound();
             }
-
-            var star = await _unitOfWork.GetRepository<Star>()
-                .Include(s => s.StarSystem)
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (star == null)
+            var obj = await _service.GetSpaceObjectByIdAsync((int)id);
+            if (obj == null)
             {
                 return NotFound();
             }
-
-            return View(star);
-        }
-
-        // GET: Stars/Create
-        public IActionResult Create()
-        {
-            ViewData["StarId"] = new SelectList(_unitOfWork.GetRepository<Star>().GetList(), "StarId", "Name");
-            return View();
+            return View(obj);
         }
 
         // POST: Stars/Create
@@ -70,29 +57,28 @@ namespace Universe.Controllers
         {
             if (ModelState.IsValid)
             {
-                _unitOfWork.GetRepository<Star>().Insert(star);
-                await _unitOfWork.SaveChangesAsync();
+                await _service.AddSpaceObjectAsync(star);   //TU
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["StarSystemId"] = new SelectList(_unitOfWork.GetRepository<StarSystem>().GetList(), "StarId", "Name", star.Id);
+            //ViewData["StarSystemId"] = new SelectList(_unitOfWork.GetRepository<StarSystem>().GetList(), "StarId", "Name", star.Id);
             return View(star);
         }
 
         // GET: Stars/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _unitOfWork.GetRepository<Star>() == null)
+            if (id == null)
             {
                 return NotFound();
             }
 
-            var star = await _unitOfWork.GetRepository<Star>().GetByIDAsync(id);
-            if (star == null)
+            var obj = await _service.GetSpaceObjectByIdAsync(id);
+            if (obj == null)
             {
                 return NotFound();
             }
-            ViewData["StarSystemId"] = new SelectList(_unitOfWork.GetRepository<StarSystem>().GetList(), "StarSystemId", "Name", star.StarSystemId);
-            return View(star);
+            //ViewData["StarSystemId"] = new SelectList(_unitOfWork.GetRepository<StarSystem>().GetList(), "StarSystemId", "Name", star.StarSystemId
+            return View(obj);
         }
 
         // POST: Stars/Edit/5
@@ -111,8 +97,8 @@ namespace Universe.Controllers
             {
                 try
                 {
-                    _unitOfWork.Update(star);
-                    await _unitOfWork.SaveChangesAsync();
+                    await _service.UpdateSpaceObjectAsync(star);
+                    //await _unitOfWork.GetRepository<Galaxy>().SaveAsync(); // Może być bez tego bo wywoływana jest w UpdateGalaxyAsync()
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -127,26 +113,23 @@ namespace Universe.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["StarSystemId"] = new SelectList(_unitOfWork.GetRepository<StarSystem>().GetList(), "StarSysyemId", "Name", star.StarSystemId);
+            //ViewData["StarSystemId"] = new SelectList(_unitOfWork.GetRepository<StarSystem>().GetList(), "StarSysyemId", "Name", star.StarSystemId);
             return View(star);
         }
 
         // GET: Stars/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _unitOfWork.GetRepository<Star>() == null)
+            if (id == null)
             {
                 return NotFound();
             }
-
-            var star = await _unitOfWork.GetRepository<Star>().Include(s => s.StarSystem).FirstOrDefaultAsync(m => m.Id == id);
-
-            if (star == null)
+            var obj = await _service.GetSpaceObjectByIdAsync(id);
+            if (obj == null)
             {
                 return NotFound();
             }
-
-            return View(star);
+            return View(obj);
         }
 
         // POST: Stars/Delete/5
@@ -154,23 +137,18 @@ namespace Universe.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_unitOfWork.GetRepository<Star>() == null)
+            var obj = await _service.GetSpaceObjectByIdAsync(id);
+            if (obj == null)
             {
-                return Problem("Entity set 'DbUniverse.StarSystems'  is null.");
+                return Problem("Entity set 'DbUniverse.Galaxies'  is null.");
             }
-            var star = await _unitOfWork.GetRepository<Star>().GetByIDAsync(id);
-            if (star != null)
-            {
-                _unitOfWork.GetRepository<Star>().Delete(id);
-            }
-
-            await _unitOfWork.SaveChangesAsync();
+            await _service.RemoveSpaceObjectAsync(id);
             return RedirectToAction(nameof(Index));
         }
 
         private bool StarExists(int id)
         {
-            return (_unitOfWork.GetRepository<Star>()?.Any(e => e.Id == id)).GetValueOrDefault();
+            return _service.SpaceObjectExists(id);
         }
     }
 }

@@ -17,17 +17,17 @@ namespace Universe.Controllers
 {
     public class DiscoverersController : Controller
     {
-        private readonly ISpaceObjectService<Discoverer> _discoverersService;
+        private readonly ISpaceObjectService<Discoverer> _service;
 
         public DiscoverersController(ISpaceObjectService<Discoverer> context)
         {
-            _discoverersService = context;
+            _service = context;
         }
 
         // GET: Discoverers
         public async Task<IActionResult> Index()
         {
-            var dis = await _discoverersService.GetAllSpaceObjectsAsync(); //TU
+            var dis = await _service.GetAllSpaceObjectsAsync(); //TU
 
             if (dis == null)
             {
@@ -39,17 +39,17 @@ namespace Universe.Controllers
         // GET: Discoverers/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _discoverersService.GetSpaceObjectByIdAsync(id) == null) // TU
+            if (id == null) // TU
             {
                 return NotFound();
             }
-            var galaxy = await _discoverersService.GetSpaceObjectByIdAsync((int)id);
-            if (galaxy == null)
+            var dis = await _service.GetSpaceObjectByIdAsync((int)id);
+            if (dis == null)
             {
                 return NotFound();
             }
 
-            return View(galaxy);
+            return View(dis);
         }
         // POST: Discoverers/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -60,7 +60,7 @@ namespace Universe.Controllers
         {
             if (ModelState.IsValid)
             {
-                await _discoverersService.AddSpaceObjectAsync(discoverer);   //TU
+                await _service.AddSpaceObjectAsync(discoverer);   //TU
                 return RedirectToAction(nameof(Index));
             }
             return View(discoverer);
@@ -69,17 +69,16 @@ namespace Universe.Controllers
         // GET: Discoverers/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _discoverersService.GetSpaceObjectByIdAsync(id) == null)
+            if (id == null)
             {
                 return NotFound();
             }
-
-            var galaxy = await _discoverersService.GetSpaceObjectByIdAsync(id);
-            if (galaxy == null)
+            var dis = await _service.GetSpaceObjectByIdAsync(id);
+            if (dis == null)
             {
                 return NotFound();
             }
-            return View(galaxy);
+            return View(dis);
         }
 
         // POST: Discoverers/Edit/5
@@ -98,7 +97,7 @@ namespace Universe.Controllers
             {
                 try
                 {
-                    await _discoverersService.UpdateSpaceObjectAsync(discoverer);
+                    await _service.UpdateSpaceObjectAsync(discoverer);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -125,21 +124,17 @@ namespace Universe.Controllers
         // GET: Discoverers/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _discoverersService.GetSpaceObjectByIdAsync(id) == null)
+            if (id == null)
             {
                 return NotFound();
             }
-            else // To poprawiono ale nie zostalo to wykonane jawnie !! poprawić w innych projektach metode delete bo nigdzie wczesniej nie usuwala tej encji
-            {
-                await _discoverersService.RemoveSpaceObjectAsync((int)id);
-            }
-            var galaxy = await _discoverersService.GetSpaceObjectByIdAsync(id);
-            if (galaxy == null)
+            var dis = await _service.GetSpaceObjectByIdAsync(id);
+            if (dis == null)
             {
                 return NotFound();
             }
 
-            return View(galaxy);
+            return View(dis);
         }
 
         // POST: Discoverers/Delete/5
@@ -147,22 +142,17 @@ namespace Universe.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_discoverersService.GetSpaceObjectByIdAsync(id) == null)
+            var dis = await _service.GetSpaceObjectByIdAsync(id);
+            if (dis != null)
             {
-                return Problem("Entity set 'DbUniverse.Galaxies'  is null.");
+                await _service.RemoveSpaceObjectAsync(id);
             }
-            var galaxy = await _discoverersService.GetSpaceObjectByIdAsync(id);
-            if (galaxy != null)
-            {
-                await _discoverersService.RemoveSpaceObjectAsync(id);
-            }
-
             return RedirectToAction(nameof(Index));
         }
 
         private bool DiscovererExists(int id)
         {
-            return _discoverersService.SpaceObjectExists(id);
+            return _service.SpaceObjectExists(id);
         }
     }
 }

@@ -7,7 +7,7 @@
 namespace UI_Universe.Migrations
 {
     /// <inheritdoc />
-    public partial class migracja1 : Migration
+    public partial class nazwa : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

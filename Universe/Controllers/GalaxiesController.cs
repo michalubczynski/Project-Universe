@@ -13,22 +13,20 @@ namespace Universe.Controllers
 {
     public class GalaxiesController : Controller
     {
-        private readonly ISpaceObjectService<Galaxy> _galaxyService;
+        private readonly ISpaceObjectService<Galaxy> _service;
         public GalaxiesController(ISpaceObjectService<Galaxy> galaxyService)
         {
-            _galaxyService = galaxyService;
+            _service = galaxyService;
         }
 
         // GET: Galaxies
         public async Task<IActionResult> Index()
         {
-            var galaxies = await _galaxyService.GetAllSpaceObjectsAsync(); //TU
-
+            var galaxies = await _service.GetAllSpaceObjectsAsync(); //TU
             if (galaxies == null)
             {
                 return NotFound();
             } //TU
-
             return View(galaxies);
         }
 
@@ -39,7 +37,7 @@ namespace Universe.Controllers
             {
                 return NotFound();
             }
-            var galaxy = await _galaxyService.GetSpaceObjectByIdAsync((int)id);
+            var galaxy = await _service.GetSpaceObjectByIdAsync((int)id);
             if (galaxy == null)
             {
                 return NotFound();
@@ -58,7 +56,7 @@ namespace Universe.Controllers
         {
             if (ModelState.IsValid)
             {
-                await _galaxyService.AddSpaceObjectAsync(galaxy);   //TU
+                await _service.AddSpaceObjectAsync(galaxy);   //TU
                 return RedirectToAction(nameof(Index));
             }
             return View(galaxy);
@@ -72,7 +70,7 @@ namespace Universe.Controllers
                 return NotFound();
             }
 
-            var galaxy = await _galaxyService.GetSpaceObjectByIdAsync(id);
+            var galaxy = await _service.GetSpaceObjectByIdAsync(id);
             if (galaxy == null)
             {
                 return NotFound();
@@ -96,12 +94,12 @@ namespace Universe.Controllers
             {
                 try
                 {
-                    await _galaxyService.UpdateSpaceObjectAsync(galaxy);
+                    await _service.UpdateSpaceObjectAsync(galaxy);
                     //await _unitOfWork.GetRepository<Galaxy>().SaveAsync(); // Może być bez tego bo wywoływana jest w UpdateGalaxyAsync()
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!GalaxyExists(galaxy.Id))
+                    if (GalaxyExists(galaxy.Id))
                     {
                         return NotFound();
                     }
@@ -122,16 +120,12 @@ namespace Universe.Controllers
             {
                 return NotFound();
             }
-            else // To poprawiono ale nie zostalo to wykonane jawnie !! poprawić w innych projektach metode delete bo nigdzie wczesniej nie usuwala tej encji
+            var galaxy = await _service.GetSpaceObjectByIdAsync(id);
+            if (galaxy == null)
             {
-                await _galaxyService.RemoveSpaceObjectAsync((int)id);
+                return NotFound();
             }
-            //var galaxy = await _galaxyService.GetSpaceObjectByIdAsync(id);
-            //if (galaxy == null)
-            //{
-            //    return NotFound();
-            //}
-            return RedirectToAction(nameof(Index));
+            return View(galaxy);
         }
 
         // POST: Galaxies/Delete/5
@@ -139,20 +133,18 @@ namespace Universe.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var galaxy = await _galaxyService.GetSpaceObjectByIdAsync(id);
-            if (galaxy == null) {
+            var galaxy = await _service.GetSpaceObjectByIdAsync(id);
+            if (galaxy == null)
+            {
                 return Problem("Entity set 'DbUniverse.Galaxies'  is null.");
-            }
-            else {
-                await _galaxyService.RemoveSpaceObjectAsync(id);
-            }
-            
+            }    
+            await _service.RemoveSpaceObjectAsync(id);
             return RedirectToAction(nameof(Index));
         }
 
         private bool GalaxyExists(int id)
         {
-            return _galaxyService.SpaceObjectExists(id);
+            return _service.SpaceObjectExists(id);
         }
     }
 }

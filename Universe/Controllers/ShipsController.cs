@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Threading.Tasks;
+using BLL;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Universe.Models;
 using Universe.Models.discoverer;
+using Universe.Models.planet;
 using Universe.Models.ship;
 using Universe.Models.star;
 using Universe.Models.starsystem;
@@ -15,48 +18,38 @@ namespace Universe.Controllers
 {
     public class ShipsController : Controller
     {
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly ISpaceObjectService<Ship> _service;
 
-        public ShipsController(IUnitOfWork context)
+        public ShipsController(ISpaceObjectService<Ship> context)
         {
-            _unitOfWork = context;
+            _service = context;
         }
 
         // GET: Ships
         public async Task<IActionResult> Index()
         {
-            var ships = await _unitOfWork.GetRepository<Ship>().GetListAsync(); //TU
-
-            if (ships == null)
+            var ship = await _service.GetAllSpaceObjectsAsync(); //TU
+            if (ship == null)
             {
                 return NotFound();
             }
-            return View(ships);
+            return View(ship);
         }
 
         // GET: Ships/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _unitOfWork.GetRepository<Ship>() == null)
+            if (id == null) // TU
             {
                 return NotFound();
             }
-
-            var ship = await _unitOfWork.GetRepository<Ship>()
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var ship = await _service.GetSpaceObjectByIdAsync((int)id);
             if (ship == null)
             {
                 return NotFound();
             }
 
             return View(ship);
-        }
-
-        // GET: Ships/Create
-        public IActionResult Create()
-        {
-            ViewData["ShipId"] = new SelectList(_unitOfWork.GetRepository<Ship>().GetList(), "ShipId", "Name");
-            return View();
         }
 
         // POST: Ships/Create
@@ -68,28 +61,31 @@ namespace Universe.Controllers
         {
             if (ModelState.IsValid)
             {
-                _unitOfWork.GetRepository<Ship>().Insert(ship);
-                await _unitOfWork.SaveChangesAsync();
+                await _service.AddSpaceObjectAsync(ship);   //TU
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["DiscovererId"] = new SelectList(_unitOfWork.GetRepository<Discoverer>().GetList(), "DiscovererId", "Name", ship.Id);
+            //ViewData["DiscovererId"] = new SelectList(_unitOfWork.GetRepository<Discoverer>().GetList(), "DiscovererId", "Name", ship.Id);
             return View(ship);
         }
 
         // GET: Ships/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _unitOfWork.GetRepository<Ship>() == null)
+            if (id == null)
             {
                 return NotFound();
             }
-
-            var ship = await _unitOfWork.GetRepository<Ship>().GetByIDAsync(id);
+            var ship = await _service.GetSpaceObjectByIdAsync(id);
             if (ship == null)
             {
                 return NotFound();
             }
-            ViewData["DiscovererId"] = new SelectList(_unitOfWork.GetRepository<Discoverer>().GetList(), "DiscovererId", "Name", ship.Discoverer);
+            // ogarnac to
+
+            //if (discoverer.ShipId != null)
+            //    ViewData["ShipId"] = new SelectList(_unitOfWork.GetRepository<Ship>().Include(m => m.Discoverer), "DiscovererId", "Name", discoverer.ShipId);
+            //else
+            //    ViewData["ShipId"] = new SelectList(new ArrayList(0));
             return View(ship);
         }
 
@@ -109,8 +105,7 @@ namespace Universe.Controllers
             {
                 try
                 {
-                    _unitOfWork.Update(ship);
-                    await _unitOfWork.SaveChangesAsync();
+                    await _service.UpdateSpaceObjectAsync(ship);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -125,19 +120,23 @@ namespace Universe.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["DiscovererId"] = new SelectList(_unitOfWork.GetRepository<Discoverer>().GetList(), "DiscovererId", "Name", ship.Discoverer);
+            // ogarnac to
+
+            //if (discoverer.ShipId != null)
+            //    ViewData["ShipId"] = new SelectList(_unitOfWork.GetRepository<Ship>().Include(m => m.Discoverer), "DiscovererId", "Name", discoverer.ShipId);
+            //else
+            //    ViewData["ShipId"] = new SelectList(new ArrayList(0));
             return View(ship);
         }
+
         // GET: Ships/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _unitOfWork.GetRepository<Ship>() == null)
+            if (id == null)
             {
                 return NotFound();
             }
-
-            var ship = await _unitOfWork.GetRepository<Ship>().FirstOrDefaultAsync(m => m.Id == id);
-
+            var ship = await _service.GetSpaceObjectByIdAsync(id);
             if (ship == null)
             {
                 return NotFound();
@@ -151,22 +150,16 @@ namespace Universe.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_unitOfWork.GetRepository<Ship>() == null)
-            {
-                return Problem("Entity set 'DbUniverse.Ships'  is null.");
-            }
-            var ship = await _unitOfWork.GetRepository<Ship>().GetByIDAsync(id);
+            var ship = await _service.GetSpaceObjectByIdAsync(id);
             if (ship != null)
             {
-                _unitOfWork.GetRepository<Ship>().Delete(id);
+                await _service.RemoveSpaceObjectAsync(id);
             }
-
-            await _unitOfWork.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
         private bool ShipExists(int id)
         {
-            return (_unitOfWork.GetRepository<Ship>()?.Any(e => e.Id == id)).GetValueOrDefault();
+            return _service.SpaceObjectExists(id);
         }
     }
 }

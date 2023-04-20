@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BLL;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Universe.Models;
+using Universe.Models.discoverer;
+using Universe.Models.galaxy;
 using Universe.Models.planet;
 using Universe.Models.star;
 using Universe.Models.starsystem;
@@ -14,49 +17,38 @@ namespace Universe.Controllers
 {
     public class PlanetsController : Controller
     {
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly ISpaceObjectService<Planet> _service;
 
-        public PlanetsController(IUnitOfWork u)
+        public PlanetsController(ISpaceObjectService<Planet> u)
         {
-            _unitOfWork = u;
+            _service = u;
         }
 
         // GET: Planets
         public async Task<IActionResult> Index()
         {
-            var planets = await _unitOfWork.GetRepository<Planet>().GetListAsync(); //TU
-
-            if (planets == null)
+            var planet = await _service.GetAllSpaceObjectsAsync(); //TU
+            if (planet == null)
             {
                 return NotFound();
             }
-            return View(planets);
+            return View(planet);
         }
 
         // GET: Planets/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _unitOfWork.GetRepository<Planet>() == null)
+            if (id == null) // TU
+            {
+                return NotFound();
+            }
+            var planet = await _service.GetSpaceObjectByIdAsync((int)id);
+            if (planet == null)
             {
                 return NotFound();
             }
 
-            var plantet = await _unitOfWork.GetRepository<Planet>()
-                .Include(s => s.StarSystem)
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (plantet == null)
-            {
-                return NotFound();
-            }
-
-            return View(plantet);
-        }
-
-        // GET: Planets/Create
-        public IActionResult Create()
-        {
-            ViewData["PlanetId"] = new SelectList(_unitOfWork.GetRepository<StarSystem>().GetList(), "PlanetId", "Name");
-            return View();
+            return View(planet);
         }
 
         // POST: Planets/Create
@@ -68,28 +60,24 @@ namespace Universe.Controllers
         {
             if (ModelState.IsValid)
             {
-                _unitOfWork.GetRepository<Planet>().Insert(planet);
-                await _unitOfWork.SaveChangesAsync();
+                await _service.AddSpaceObjectAsync(planet);   //TU
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["StarSystemId"] = new SelectList(_unitOfWork.GetRepository<StarSystem>().GetList(), "PlanetId", "Name", planet.Id);
             return View(planet);
         }
 
         // GET: Planets/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _unitOfWork.GetRepository<Planet>() == null)
+            if (id == null)
             {
                 return NotFound();
             }
-
-            var planet = await _unitOfWork.GetRepository<Planet>().GetByIDAsync(id);
+            var planet = await _service.GetSpaceObjectByIdAsync(id);
             if (planet == null)
             {
                 return NotFound();
             }
-            ViewData["StarSystemId"] = new SelectList(_unitOfWork.GetRepository<StarSystem>().GetList(), "StarSystemId", "Name", planet.StarSystemId);
             return View(planet);
         }
 
@@ -109,12 +97,12 @@ namespace Universe.Controllers
             {
                 try
                 {
-                    _unitOfWork.Update(planet);
-                    await _unitOfWork.SaveChangesAsync();
+                    await _service.UpdateSpaceObjectAsync(planet);
+                    //await _unitOfWork.GetRepository<Galaxy>().SaveAsync(); // Może być bez tego bo wywoływana jest w UpdateGalaxyAsync()
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PlanetExists(planet.Id))
+                    if(PlanetExists(planet.Id))
                     {
                         return NotFound();
                     }
@@ -125,25 +113,22 @@ namespace Universe.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["StarSystemId"] = new SelectList(_unitOfWork.GetRepository<StarSystem>().GetList(), "StarSysyemId", "Name", planet.StarSystemId);
+            //ViewData["StarSystemId"] = new SelectList(_unitOfWork.GetRepository<StarSystem>().GetList(), "StarSysyemId", "Name", planet.StarSystemId);
             return View(planet);
         }
 
         // GET: Planets/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _unitOfWork.GetRepository<Planet>() == null)
+            if (id == null)
             {
                 return NotFound();
             }
-
-            var planet = await _unitOfWork.GetRepository<Planet>().Include(s => s.StarSystem).FirstOrDefaultAsync(m => m.Id == id);
-
+            var planet = await _service.GetSpaceObjectByIdAsync(id);
             if (planet == null)
             {
                 return NotFound();
             }
-
             return View(planet);
         }
 
@@ -152,23 +137,18 @@ namespace Universe.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_unitOfWork.GetRepository<Planet>() == null)
+            var planet = await _service.GetSpaceObjectByIdAsync(id);
+            if (planet == null)
             {
-                return Problem("Entity set 'DbUniverse.Planets'  is null.");
+                return Problem("Entity set 'DbUniverse.Galaxies'  is null.");
             }
-            var planet = await _unitOfWork.GetRepository<Planet>().GetByIDAsync(id);
-            if (planet != null)
-            {
-                _unitOfWork.GetRepository<Planet>().Delete(id);
-            }
-
-            await _unitOfWork.SaveChangesAsync();
+            await _service.RemoveSpaceObjectAsync(id);
             return RedirectToAction(nameof(Index));
         }
 
         private bool PlanetExists(int id)
         {
-            return (_unitOfWork.GetRepository<Planet>()?.Any(e => e.Id == id)).GetValueOrDefault();
+            return _service.SpaceObjectExists(id);
         }
     }
 }

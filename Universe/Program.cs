@@ -7,6 +7,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Configuration.Json;
 using BLL;
 using Universe.Models.galaxy;
+using Universe.Models.discoverer;
+using Universe.Models.planet;
+using Universe.Models.ship;
+using Universe.Models.star;
+using Universe.Models.starsystem;
 
 internal class Program
 {
@@ -21,6 +26,11 @@ internal class Program
         builder.Services.AddDbContext<DbUniverse>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("cs"), b=> b.MigrationsAssembly("UI_Universe")));
         builder.Services.AddTransient<IUnitOfWork,UnitOfWork>();
         builder.Services.AddTransient<ISpaceObjectService<Galaxy>, SpaceObjectService<Galaxy>>();
+        builder.Services.AddTransient<ISpaceObjectService<Discoverer>, SpaceObjectService<Discoverer>>();
+        builder.Services.AddTransient<ISpaceObjectService<Planet>, SpaceObjectService<Planet>>();
+        builder.Services.AddTransient<ISpaceObjectService<Ship>, SpaceObjectService<Ship>>();
+        builder.Services.AddTransient<ISpaceObjectService<Star>, SpaceObjectService<Star>>();
+        builder.Services.AddTransient<ISpaceObjectService<StarSystem>, SpaceObjectService<StarSystem>>();
 
 
         var app = builder.Build();

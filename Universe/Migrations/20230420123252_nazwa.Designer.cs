@@ -12,8 +12,8 @@ using Models;
 namespace UI_Universe.Migrations
 {
     [DbContext(typeof(DbUniverse))]
-    [Migration("20230420093946_migracja1")]
-    partial class migracja1
+    [Migration("20230420123252_nazwa")]
+    partial class nazwa
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
