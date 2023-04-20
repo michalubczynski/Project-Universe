@@ -60,8 +60,8 @@ namespace BLL
 
         public async Task RemoveSpaceObjectAsync(int id)
         {
-            var obj = await _unitOfWork.GetRepository<T>().GetByIDAsync(id);
-            _unitOfWork.GetRepository<T>().DeleteByT(obj);
+            //var obj = await _unitOfWork.GetRepository<T>().GetByIDAsync(id);
+            _unitOfWork.GetRepository<T>().Delete(id);
             await _unitOfWork.SaveChangesAsync();
         }
 
