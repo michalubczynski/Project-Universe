@@ -15,9 +15,9 @@ namespace Universe.Models.galaxy
     [Table("Galaxies")]
     public class Galaxy : SpaceObject
     {
-        [Required] public string Name { get; set; }
+        [Required][StringLength(100)] public string Name { get; set; }
          public TypeOfGalaxy Type { get; set; }
-         public double Mass { get; set; } // 'M☉' unit is Solar Mass
+        [Range(1, sizeof(double))] public double Mass { get; set; } // 'M☉' unit of Solar Mass
 
         // 1:Galaxy-N:StarSystems
         public ICollection<Planet>? StarSystems { get; set; } 

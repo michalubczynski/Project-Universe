@@ -18,17 +18,17 @@ namespace Universe.Models.star
             Neutron_stars,
             Black_holes
         }
-        [Required] public string Name { get; set; }
+        [Required][StringLength(100)] public string Name { get; set; }
         [Required] public TypeOfStar Type { get; set; }
-        [Required] public double Temperature { get; set; }
-        [Required] public double Radius { get; set; }
-        [Required] public int Age { get; set; }
-        [Required] public double Luminosity { get; set;}
-        [Required] public double Mass { get; set;}
+        [Required][Range(1, sizeof(double))] public double Temperature { get; set; }
+        [Required][Range(1, sizeof(double))] public double Radius { get; set; }
+        [Required][Range(1, sizeof(double))] public int Age { get; set; }
+        [Required][Range(1, sizeof(double))] public double Luminosity { get; set;}
+        [Required][Range(1, sizeof(double))] public double Mass { get; set;}
 
         public int StarSystemId { get; set; }
         [ForeignKey(nameof(StarSystemId))]
-        public StarSystem StarSystem { get; set; } // <ML> "?" is necessary?
+        public StarSystem StarSystem { get; set; } 
 
         public void Configure(EntityTypeBuilder<Star> builder)
         {

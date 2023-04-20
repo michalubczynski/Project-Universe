@@ -18,9 +18,9 @@ namespace Universe.Models.planet
     [Table("Planets")]
     public class Planet : SpaceObject, IEntityTypeConfiguration<Planet>
     {
-        [Required] public string Name { get; set;}
+        [Required][StringLength(100)] public string Name { get; set;}
         public TypeOfPlanets Type { get; set; }
-        public double Mass { get; set; }
+        [Range(0, sizeof(double))] public double Mass { get; set; }
         public int? StarSystemId { get; set; }
         [ForeignKey(nameof(StarSystemId))]
         public StarSystem? StarSystem { get; set; } // <ML> "?" is necessary?
