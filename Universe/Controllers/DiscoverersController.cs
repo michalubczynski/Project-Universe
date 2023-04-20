@@ -4,28 +4,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using BLL;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Universe.Models;
 using Universe.Models.discoverer;
+using Universe.Models.galaxy;
 using Universe.Models.ship;
 
 namespace Universe.Controllers
 {
     public class DiscoverersController : Controller
     {
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly ISpaceObjectService<Discoverer> _discoverersService;
 
-        public DiscoverersController(IUnitOfWork context)
+        public DiscoverersController(ISpaceObjectService<Discoverer> context)
         {
-            _unitOfWork = context;
+            _discoverersService = context;
         }
 
         // GET: Discoverers
         public async Task<IActionResult> Index()
         {
-            var dis = await _unitOfWork.GetRepository<Discoverer>().GetListAsync(); //TU
+            var dis = await _discoverersService.GetAllSpaceObjectsAsync(); //TU
 
             if (dis == null)
             {
@@ -37,28 +39,18 @@ namespace Universe.Controllers
         // GET: Discoverers/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _unitOfWork.GetRepository<Discoverer>() == null)
+            if (id == null || _discoverersService.GetSpaceObjectByIdAsync(id) == null) // TU
+            {
+                return NotFound();
+            }
+            var galaxy = await _discoverersService.GetSpaceObjectByIdAsync((int)id);
+            if (galaxy == null)
             {
                 return NotFound();
             }
 
-            var dis = await _unitOfWork.GetRepository<Discoverer>()
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (dis == null)
-            {
-                return NotFound();
-            }
-
-            return View(dis);
+            return View(galaxy);
         }
-
-        // GET: Discoverers/Create
-        public IActionResult Create()
-        {
-            ViewData["DiscovererId"] = new SelectList(_unitOfWork.GetRepository<Discoverer>().GetList(), "DiscovererId", "Name");
-            return View();
-        }
-
         // POST: Discoverers/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -68,32 +60,26 @@ namespace Universe.Controllers
         {
             if (ModelState.IsValid)
             {
-                _unitOfWork.GetRepository<Discoverer>().Insert(discoverer);
-                await _unitOfWork.SaveChangesAsync();
+                await _discoverersService.AddSpaceObjectAsync(discoverer);   //TU
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ShipId"] = new SelectList(_unitOfWork.GetRepository<Ship>()?.GetList(), "DiscovererId", "Name", discoverer.ShipId);
             return View(discoverer);
         }
 
         // GET: Discoverers/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _unitOfWork.GetRepository<Discoverer>() == null)
+            if (id == null || _discoverersService.GetSpaceObjectByIdAsync(id) == null)
             {
                 return NotFound();
             }
 
-            var dis = await _unitOfWork.GetRepository<Discoverer>().GetByIDAsync(id);
-            if (dis == null)
+            var galaxy = await _discoverersService.GetSpaceObjectByIdAsync(id);
+            if (galaxy == null)
             {
                 return NotFound();
             }
-            if (dis.ShipId != null)
-                ViewData["ShipId"] = new SelectList(_unitOfWork.GetRepository<Ship>().Include(m => m.Discoverer), "DiscovererId", "Name", dis.ShipId);
-            else
-                ViewData["ShipId"] = new SelectList(new ArrayList(0));
-            return View(dis);
+            return View(galaxy);
         }
 
         // POST: Discoverers/Edit/5
@@ -112,8 +98,7 @@ namespace Universe.Controllers
             {
                 try
                 {
-                    _unitOfWork.Update(discoverer);
-                    await _unitOfWork.SaveChangesAsync();
+                    await _discoverersService.UpdateSpaceObjectAsync(discoverer);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -128,29 +113,33 @@ namespace Universe.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            if (discoverer.ShipId != null)
-                ViewData["ShipId"] = new SelectList(_unitOfWork.GetRepository<Ship>().Include(m => m.Discoverer), "DiscovererId", "Name", discoverer.ShipId);
-            else
-                ViewData["ShipId"] = new SelectList(new ArrayList(0));
+            // ogarnac to
+
+            //if (discoverer.ShipId != null)
+            //    ViewData["ShipId"] = new SelectList(_unitOfWork.GetRepository<Ship>().Include(m => m.Discoverer), "DiscovererId", "Name", discoverer.ShipId);
+            //else
+            //    ViewData["ShipId"] = new SelectList(new ArrayList(0));
             return View(discoverer);
         }
 
         // GET: Discoverers/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _unitOfWork.GetRepository<Discoverer>() == null)
+            if (id == null || _discoverersService.GetSpaceObjectByIdAsync(id) == null)
+            {
+                return NotFound();
+            }
+            else // To poprawiono ale nie zostalo to wykonane jawnie !! poprawić w innych projektach metode delete bo nigdzie wczesniej nie usuwala tej encji
+            {
+                await _discoverersService.RemoveSpaceObjectAsync((int)id);
+            }
+            var galaxy = await _discoverersService.GetSpaceObjectByIdAsync(id);
+            if (galaxy == null)
             {
                 return NotFound();
             }
 
-            var dis = await _unitOfWork.GetRepository<Discoverer>().FirstOrDefaultAsync(m => m.Id == id);
-
-            if (dis == null)
-            {
-                return NotFound();
-            }
-
-            return View(dis);
+            return View(galaxy);
         }
 
         // POST: Discoverers/Delete/5
@@ -158,23 +147,22 @@ namespace Universe.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_unitOfWork.GetRepository<Discoverer>() == null)
+            if (_discoverersService.GetSpaceObjectByIdAsync(id) == null)
             {
-                return Problem("Entity set 'DbUniverse.Discoverers'  is null.");
+                return Problem("Entity set 'DbUniverse.Galaxies'  is null.");
             }
-            var dis = await _unitOfWork.GetRepository<Discoverer>().GetByIDAsync(id);
-            if (dis != null)
+            var galaxy = await _discoverersService.GetSpaceObjectByIdAsync(id);
+            if (galaxy != null)
             {
-                _unitOfWork.GetRepository<Discoverer>().Delete(id);
+                await _discoverersService.RemoveSpaceObjectAsync(id);
             }
 
-            await _unitOfWork.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool DiscovererExists(int id)
         {
-            return (_unitOfWork.GetRepository<Discoverer>()?.Any(e => e.Id == id)).GetValueOrDefault();
+            return _discoverersService.SpaceObjectExists(id);
         }
     }
 }
