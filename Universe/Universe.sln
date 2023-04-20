@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementy rozwiązania", "El
 		Web.config = Web.config
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingBLL", "..\TestingBLL\TestingBLL.csproj", "{0CD57FB6-3C32-43A7-A97A-2A4AD5F29A39}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{9718C048-34A3-47C3-A8AB-CE4F413A6F26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9718C048-34A3-47C3-A8AB-CE4F413A6F26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9718C048-34A3-47C3-A8AB-CE4F413A6F26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CD57FB6-3C32-43A7-A97A-2A4AD5F29A39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CD57FB6-3C32-43A7-A97A-2A4AD5F29A39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CD57FB6-3C32-43A7-A97A-2A4AD5F29A39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CD57FB6-3C32-43A7-A97A-2A4AD5F29A39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -2,6 +2,8 @@
 using BLL_BuisnessLogicLayer;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
+using Universe.Models.galaxy;
+using Universe.Models.starsystem;
 
 namespace TestingBLL.Controllers
 {
@@ -21,10 +23,10 @@ namespace TestingBLL.Controllers
             await workService.HireNewDiscoverer(name, surname, age);
         }
 
-        [HttpPost("UsunMiasto")]
-        public async Task UsunMiasto(int idMiasta)
+        [HttpPost("PrzeniesSystemGwiazd")]
+        public async Task MoveStarSystemToAnotherGalaxy(StarSystem starsystemToMove, Galaxy destinationGalaxy)
         {
-            await this.workService.UsunMiasto(idMiasta);
+            await workService.MoveStarSystemToAnotherGalaxy(starsystemToMove, destinationGalaxy);
         }
     }
 }
