@@ -6,6 +6,7 @@ using Universe.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Configuration.Json;
 using BLL;
+using Universe.Models.galaxy;
 
 internal class Program
 {
@@ -19,7 +20,7 @@ internal class Program
         builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
         builder.Services.AddDbContext<DbUniverse>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("cs"), b=> b.MigrationsAssembly("UI_Universe")));
         builder.Services.AddTransient<IUnitOfWork,UnitOfWork>();
-        builder.Services.AddTransient<IGalaxyService, GalaxyService>();
+        builder.Services.AddTransient<ISpaceObjectService<Galaxy>, SpaceObjectService<Galaxy>>();
 
 
         var app = builder.Build();

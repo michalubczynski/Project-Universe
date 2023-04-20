@@ -45,7 +45,7 @@ namespace Universe.Controllers
 
             var star = await _unitOfWork.GetRepository<Star>()
                 .Include(s => s.StarSystem)
-                .FirstOrDefaultAsync(m => m.StarId == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (star == null)
             {
                 return NotFound();
@@ -74,7 +74,7 @@ namespace Universe.Controllers
                 await _unitOfWork.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["StarSystemId"] = new SelectList(_unitOfWork.GetRepository<StarSystem>().GetList(), "StarId", "Name", star.StarId);
+            ViewData["StarSystemId"] = new SelectList(_unitOfWork.GetRepository<StarSystem>().GetList(), "StarId", "Name", star.Id);
             return View(star);
         }
 
@@ -102,7 +102,7 @@ namespace Universe.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("StarId,Name,Type,Temperature,Radius,Age,Luminosity,Mass,StarSystemId")] Star star)
         {
-            if (id != star.StarId)
+            if (id != star.Id)
             {
                 return NotFound();
             }
@@ -116,7 +116,7 @@ namespace Universe.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!StarExists(star.StarId))
+                    if (!StarExists(star.Id))
                     {
                         return NotFound();
                     }
@@ -139,7 +139,7 @@ namespace Universe.Controllers
                 return NotFound();
             }
 
-            var star = await _unitOfWork.GetRepository<Star>().Include(s => s.StarSystem).FirstOrDefaultAsync(m => m.StarId == id);
+            var star = await _unitOfWork.GetRepository<Star>().Include(s => s.StarSystem).FirstOrDefaultAsync(m => m.Id == id);
 
             if (star == null)
             {
@@ -170,7 +170,7 @@ namespace Universe.Controllers
 
         private bool StarExists(int id)
         {
-            return (_unitOfWork.GetRepository<Star>()?.Any(e => e.StarId == id)).GetValueOrDefault();
+            return (_unitOfWork.GetRepository<Star>()?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

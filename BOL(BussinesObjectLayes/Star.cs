@@ -2,12 +2,13 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Universe.Models.spaceobject;
 using Universe.Models.starsystem;
 
 namespace Universe.Models.star
 {
     [Table("Stars")]
-    public class Star : IEntityTypeConfiguration<Star>
+    public class Star : SpaceObject, IEntityTypeConfiguration<Star>
     {
         public enum TypeOfStar
         {
@@ -17,9 +18,6 @@ namespace Universe.Models.star
             Neutron_stars,
             Black_holes
         }
-
-        [Key]
-        public int StarId { get; set; }
         [Required] public string Name { get; set; }
         [Required] public TypeOfStar Type { get; set; }
         [Required] public double Temperature { get; set; }

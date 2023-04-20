@@ -1,16 +1,16 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Universe.Models.discoverer;
+using Universe.Models.spaceobject;
 using Universe.Models.galaxy;
 using Universe.Models.planet;
 using Universe.Models.star;
+using Universe.Models.discoverer;
 
 namespace Universe.Models.starsystem
 {
     [Table("StarSystems")]
-    public class StarSystem
+    public class StarSystem : SpaceObject
     {   //Wymaga poprawy w strukturze bo StarSystem nie ma Masy. To tylko kierunkowe skupiska gwiazd na sferze niebieskiej, a nie obiekty fizyczne z określoną masą. 
-        [Key] public int StarSystemId { get; set; }
         [Required] public String Name { get; set; }
 
         // N:Starsystems-1:Galaxy

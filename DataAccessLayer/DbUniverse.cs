@@ -65,44 +65,44 @@ namespace Models
 
             //FluentApi Refilling data
             modelBuilder.Entity<Galaxy>().HasData(
-            new Galaxy { GalaxyId = 1, Mass = 10e12, Name = "Droga Mleczna", Type = TypeOfGalaxy.spiral },
-            new Galaxy { GalaxyId = 2, Mass = 10e12, Name = "Messier 87", Type = TypeOfGalaxy.elliptical },
-            new Galaxy { GalaxyId = 3, Mass = 10e15, Name = "GAL-CLUS-022058s", Type = TypeOfGalaxy.peculiar },
-            new Galaxy { GalaxyId = 4, Mass = 10e9, Name = "Wielka Mgławica Magellana", Type = TypeOfGalaxy.irregular }
+            new Galaxy { Id = 1, Mass = 10e12, Name = "Droga Mleczna", Type = TypeOfGalaxy.spiral },
+            new Galaxy { Id = 2, Mass = 10e12, Name = "Messier 87", Type = TypeOfGalaxy.elliptical },
+            new Galaxy { Id = 3, Mass = 10e15, Name = "GAL-CLUS-022058s", Type = TypeOfGalaxy.peculiar },
+            new Galaxy { Id = 4, Mass = 10e9, Name = "Wielka Mgławica Magellana", Type = TypeOfGalaxy.irregular }
             );
             modelBuilder.Entity<StarSystem>().HasData(
-            new StarSystem { StarSystemId = 1, Name = "Wolarz", GalaxyId = 1 },
-            new StarSystem { StarSystemId = 2, Name = "Orzel", GalaxyId = 2 },
-            new StarSystem { StarSystemId = 3, Name = "Skorpion", GalaxyId = 3 },
-            new StarSystem { StarSystemId = 4, Name = "Strzelec", GalaxyId = 4 }
+            new StarSystem { Id = 1, Name = "Wolarz", GalaxyId = 1 },
+            new StarSystem { Id = 2, Name = "Orzel", GalaxyId = 2 },
+            new StarSystem { Id = 3, Name = "Skorpion", GalaxyId = 3 },
+            new StarSystem { Id = 4, Name = "Strzelec", GalaxyId = 4 }
                 );
             modelBuilder.Entity<Planet>().HasData(
-                new Planet { PlanetId = 1, Mass = 2e12, Type = TypeOfPlanets.Gas_Giants, Name = "Jupiter", StarSystemId = 1 },
-                new Planet { PlanetId = 2, Mass = 2e12, Type = TypeOfPlanets.Gas_Giants, Name = "Neptune", StarSystemId = 1 },
-                new Planet { PlanetId = 3, Mass = 2e12, Type = TypeOfPlanets.Gas_Giants, Name = "Uranus", StarSystemId = 1 },
-                new Planet { PlanetId = 4, Mass = 2e12, Type = TypeOfPlanets.Gas_Giants, Name = "Saturn", StarSystemId = 1 },
-                new Planet { PlanetId = 5, Mass = 3e12, Type = TypeOfPlanets.Dwarf_Planets, Name = "Pluto", StarSystemId = 1 },
-                new Planet { PlanetId = 6, Mass = 4e12, Type = TypeOfPlanets.Super_Earth, Name = "Kepler-438b", StarSystemId = 2 },
-                new Planet { PlanetId = 7, Mass = 5e12, Type = TypeOfPlanets.Terrestrial_Planets, Name = "Earth", StarSystemId = 1 },
-                new Planet { PlanetId = 8, Mass = 5e12, Type = TypeOfPlanets.Terrestrial_Planets, Name = "Mars", StarSystemId = 1 },
-                new Planet { PlanetId = 9, Mass = 6e12, Type = TypeOfPlanets.Outer_Planets, Name = "Charon", StarSystemId = 3 }
+                new Planet { Id = 1, Mass = 2e12, Type = TypeOfPlanets.Gas_Giants, Name = "Jupiter", StarSystemId = 1 },
+                new Planet { Id = 2, Mass = 2e12, Type = TypeOfPlanets.Gas_Giants, Name = "Neptune", StarSystemId = 1 },
+                new Planet { Id = 3, Mass = 2e12, Type = TypeOfPlanets.Gas_Giants, Name = "Uranus", StarSystemId = 1 },
+                new Planet { Id = 4, Mass = 2e12, Type = TypeOfPlanets.Gas_Giants, Name = "Saturn", StarSystemId = 1 },
+                new Planet { Id = 5, Mass = 3e12, Type = TypeOfPlanets.Dwarf_Planets, Name = "Pluto", StarSystemId = 1 },
+                new Planet { Id = 6, Mass = 4e12, Type = TypeOfPlanets.Super_Earth, Name = "Kepler-438b", StarSystemId = 2 },
+                new Planet { Id = 7, Mass = 5e12, Type = TypeOfPlanets.Terrestrial_Planets, Name = "Earth", StarSystemId = 1 },
+                new Planet { Id = 8, Mass = 5e12, Type = TypeOfPlanets.Terrestrial_Planets, Name = "Mars", StarSystemId = 1 },
+                new Planet { Id = 9, Mass = 6e12, Type = TypeOfPlanets.Outer_Planets, Name = "Charon", StarSystemId = 3 }
                 );
             modelBuilder.Entity<Star>().HasData(
-                new Star { StarId = 1, Age = (int)10e3, Luminosity = 23, Mass = 10e5, Name = "Zeta", Radius = 22.1, Temperature = 30, Type = Star.TypeOfStar.Main_sequence_stars, StarSystemId = 1 },
-                new Star { StarId = 2, Age = (int)10e2, Luminosity = 233, Mass = 10e4, Name = "Aldebaran", Radius = 232.1, Temperature = 303, Type = Star.TypeOfStar.Red_giant_stars, StarSystemId = 1 },
-                new Star { StarId = 3, Age = (int)10e3, Luminosity = 3, Mass = 10e5, Name = "SiriusB", Radius = 322.1, Temperature = 130, Type = Star.TypeOfStar.White_dwarf_stars, StarSystemId = 1 },
-                new Star { StarId = 4, Age = (int)10e4, Luminosity = 235, Mass = 10e7, Name = "PSR_B1509-58", Radius = 2.1, Temperature = 0, Type = Star.TypeOfStar.Neutron_stars, StarSystemId = 3 },
-                new Star { StarId = 5, Age = (int)10e4, Luminosity = 0, Mass = 10e7, Name = "Cygnus X-1", Radius = 33334.1, Temperature = -22, Type = Star.TypeOfStar.Black_holes, StarSystemId = 2 }
+                new Star { Id = 1, Age = (int)10e3, Luminosity = 23, Mass = 10e5, Name = "Zeta", Radius = 22.1, Temperature = 30, Type = Star.TypeOfStar.Main_sequence_stars, StarSystemId = 1 },
+                new Star { Id = 2, Age = (int)10e2, Luminosity = 233, Mass = 10e4, Name = "Aldebaran", Radius = 232.1, Temperature = 303, Type = Star.TypeOfStar.Red_giant_stars, StarSystemId = 1 },
+                new Star { Id = 3, Age = (int)10e3, Luminosity = 3, Mass = 10e5, Name = "SiriusB", Radius = 322.1, Temperature = 130, Type = Star.TypeOfStar.White_dwarf_stars, StarSystemId = 1 },
+                new Star { Id = 4, Age = (int)10e4, Luminosity = 235, Mass = 10e7, Name = "PSR_B1509-58", Radius = 2.1, Temperature = 0, Type = Star.TypeOfStar.Neutron_stars, StarSystemId = 3 },
+                new Star { Id = 5, Age = (int)10e4, Luminosity = 0, Mass = 10e7, Name = "Cygnus X-1", Radius = 33334.1, Temperature = -22, Type = Star.TypeOfStar.Black_holes, StarSystemId = 2 }
                 );
             modelBuilder.Entity<Ship>().HasData(
-            new Ship { ShipId = 1, MaxSpeed = 10, ShipModel = "Super", ShipName = "Mewa", SingleChargeRange = 12 },
-            new Ship { ShipId = 2, MaxSpeed = 100, ShipModel = "Duper", ShipName = " Jaszczomp", SingleChargeRange = 120 },
-            new Ship { ShipId = 3, MaxSpeed = 1000, ShipModel = "DuperSuper", ShipName = "Orzel", SingleChargeRange = 122 }
+            new Ship { Id = 1, MaxSpeed = 10, ShipModel = "Super", ShipName = "Mewa", SingleChargeRange = 12 },
+            new Ship { Id = 2, MaxSpeed = 100, ShipModel = "Duper", ShipName = " Jaszczomp", SingleChargeRange = 120 },
+            new Ship { Id = 3, MaxSpeed = 1000, ShipModel = "DuperSuper", ShipName = "Orzel", SingleChargeRange = 122 }
             );
             modelBuilder.Entity<Discoverer>().HasData(
-                new Discoverer { DiscovererId = 1, Name = "Piotrek", Surname = "Piotrowski", Age = 43, ShipId = 1 },
-                new Discoverer { DiscovererId = 2, Name = "Marek", Surname = "Markowski", Age = 34 },
-                new Discoverer { DiscovererId = 3, Name = "Darek", Surname = "Darkowski", Age = 30 }
+                new Discoverer { Id = 1, Name = "Piotrek", Surname = "Piotrowski", Age = 43, ShipId = 1 },
+                new Discoverer { Id = 2, Name = "Marek", Surname = "Markowski", Age = 34 },
+                new Discoverer { Id = 3, Name = "Darek", Surname = "Darkowski", Age = 30 }
                 );
 
         }

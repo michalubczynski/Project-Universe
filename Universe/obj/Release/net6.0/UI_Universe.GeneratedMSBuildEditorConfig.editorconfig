@@ -9,153 +9,153 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = UI_Universe
 build_property.RootNamespace = UI_Universe
-build_property.ProjectDir = C:\Users\Majkel\Documents\GitHub\UniverseDB\Universe\
+build_property.ProjectDir = C:\Users\Administrator\Documents\GitHub\UniverseDB\Universe\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Majkel\Documents\GitHub\UniverseDB\Universe
+build_property.MSBuildProjectDirectory = C:\Users\Administrator\Documents\GitHub\UniverseDB\Universe
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/Discoverers/Create.cshtml]
+[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/Views/Discoverers/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzY292ZXJlcnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/Discoverers/Delete.cshtml]
+[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/Views/Discoverers/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzY292ZXJlcnNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/Discoverers/Details.cshtml]
+[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/Views/Discoverers/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzY292ZXJlcnNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/Discoverers/Edit.cshtml]
+[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/Views/Discoverers/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzY292ZXJlcnNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/Discoverers/Index.cshtml]
+[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/Views/Discoverers/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzY292ZXJlcnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/Galaxies/Create.cshtml]
+[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/Views/Galaxies/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FsYXhpZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/Galaxies/Delete.cshtml]
+[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/Views/Galaxies/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FsYXhpZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/Galaxies/Details.cshtml]
+[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/Views/Galaxies/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FsYXhpZXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/Galaxies/Edit.cshtml]
+[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/Views/Galaxies/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FsYXhpZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/Galaxies/Index.cshtml]
+[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/Views/Galaxies/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FsYXhpZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/Home/Index.cshtml]
+[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/Planets/Create.cshtml]
+[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/Views/Planets/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhbmV0c1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/Planets/Delete.cshtml]
+[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/Views/Planets/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhbmV0c1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/Planets/Details.cshtml]
+[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/Views/Planets/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhbmV0c1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/Planets/Edit.cshtml]
+[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/Views/Planets/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhbmV0c1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/Planets/Index.cshtml]
+[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/Views/Planets/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhbmV0c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/Shared/Error.cshtml]
+[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/Ships/Create.cshtml]
+[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/Views/Ships/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hpcHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/Ships/Delete.cshtml]
+[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/Views/Ships/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hpcHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/Ships/Details.cshtml]
+[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/Views/Ships/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hpcHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/Ships/Edit.cshtml]
+[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/Views/Ships/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hpcHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/Ships/Index.cshtml]
+[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/Views/Ships/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hpcHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/StarSystems/Create.cshtml]
+[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/Views/StarSystems/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhclN5c3RlbXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/StarSystems/Delete.cshtml]
+[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/Views/StarSystems/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhclN5c3RlbXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/StarSystems/Details.cshtml]
+[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/Views/StarSystems/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhclN5c3RlbXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/StarSystems/Edit.cshtml]
+[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/Views/StarSystems/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhclN5c3RlbXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/StarSystems/Index.cshtml]
+[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/Views/StarSystems/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhclN5c3RlbXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/Stars/Create.cshtml]
+[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/Views/Stars/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhcnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/Stars/Delete.cshtml]
+[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/Views/Stars/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhcnNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/Stars/Details.cshtml]
+[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/Views/Stars/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhcnNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/Stars/Edit.cshtml]
+[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/Views/Stars/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhcnNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/Stars/Index.cshtml]
+[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/Views/Stars/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhcnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/_ViewImports.cshtml]
+[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/_ViewStart.cshtml]
+[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/Views/Shared/_Layout.cshtml]
+[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-zb6854hvjq

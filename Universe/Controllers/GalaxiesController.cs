@@ -13,9 +13,8 @@ namespace Universe.Controllers
 {
     public class GalaxiesController : Controller
     {
-        private readonly IGalaxyService _galaxyService;
-
-        public GalaxiesController(IGalaxyService galaxyService)
+        private readonly ISpaceObjectService<Galaxy> _galaxyService;
+        public GalaxiesController(ISpaceObjectService<Galaxy> galaxyService)
         {
             _galaxyService = galaxyService;
         }
@@ -23,7 +22,7 @@ namespace Universe.Controllers
         // GET: Galaxies
         public async Task<IActionResult> Index()
         {
-            var galaxies = await _galaxyService.GetAllGalaxiesAsync(); //TU
+            var galaxies = await _galaxyService.GetAllSpaceObjectsAsync(); //TU
 
             if (galaxies == null)
             {
@@ -36,11 +35,11 @@ namespace Universe.Controllers
         // GET: Galaxies/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _galaxyService.GetGalaxyByIdAsync(id) == null) // TU
+            if (id == null || _galaxyService.GetSpaceObjectByIdAsync(id) == null) // TU
             {
                 return NotFound();
             }
-            var galaxy = await _galaxyService.GetGalaxyByIdAsync((int)id);
+            var galaxy = await _galaxyService.GetSpaceObjectByIdAsync((int)id);
             if (galaxy == null)
             {
                 return NotFound();
@@ -59,7 +58,7 @@ namespace Universe.Controllers
         {
             if (ModelState.IsValid)
             {
-                await _galaxyService.AddGalaxyAsync(galaxy);   //TU
+                await _galaxyService.AddSpaceObjectAsync(galaxy);   //TU
                 return RedirectToAction(nameof(Index));
             }
             return View(galaxy);
@@ -68,12 +67,12 @@ namespace Universe.Controllers
         // GET: Galaxies/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _galaxyService.GetGalaxyByIdAsync(id) == null)
+            if (id == null || _galaxyService.GetSpaceObjectByIdAsync(id) == null)
             {
                 return NotFound();
             }
 
-            var galaxy = await _galaxyService.GetGalaxyByIdAsync(id);
+            var galaxy = await _galaxyService.GetSpaceObjectByIdAsync(id);
             if (galaxy == null)
             {
                 return NotFound();
@@ -88,7 +87,7 @@ namespace Universe.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("GalaxyId,Name,Type,Mass")] Galaxy galaxy)
         {
-            if (id != galaxy.GalaxyId)
+            if (id != galaxy.Id)
             {
                 return NotFound();
             }
@@ -97,12 +96,12 @@ namespace Universe.Controllers
             {
                 try
                 {
-                    await _galaxyService.UpdateGalaxyAsync(galaxy);
+                    await _galaxyService.UpdateSpaceObjectAsync(galaxy);
                     //await _unitOfWork.GetRepository<Galaxy>().SaveAsync(); // Może być bez tego bo wywoływana jest w UpdateGalaxyAsync()
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!GalaxyExists(galaxy.GalaxyId))
+                    if (!GalaxyExists(galaxy.Id))
                     {
                         return NotFound();
                     }
@@ -119,15 +118,15 @@ namespace Universe.Controllers
         // GET: Galaxies/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _galaxyService.GetGalaxyByIdAsync(id) == null)
+            if (id == null || _galaxyService.GetSpaceObjectByIdAsync(id) == null)
             {
                 return NotFound();
             }
             else // To poprawiono ale nie zostalo to wykonane jawnie !! poprawić w innych projektach metode delete bo nigdzie wczesniej nie usuwala tej encji
             {
-                await _galaxyService.RemoveGalaxyAsync((int)id);
+                await _galaxyService.RemoveSpaceObjectAsync((int)id);
             }
-            var galaxy = await _galaxyService.GetGalaxyByIdAsync(id);
+            var galaxy = await _galaxyService.GetSpaceObjectByIdAsync(id);
             if (galaxy == null)
             {
                 return NotFound();
@@ -141,14 +140,14 @@ namespace Universe.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_galaxyService.GetGalaxyByIdAsync(id) == null)
+            if (_galaxyService.GetSpaceObjectByIdAsync(id) == null)
             {
                 return Problem("Entity set 'DbUniverse.Galaxies'  is null.");
             }
-            var galaxy = await _galaxyService.GetGalaxyByIdAsync(id);
+            var galaxy = await _galaxyService.GetSpaceObjectByIdAsync(id);
             if (galaxy != null)
             {
-                await _galaxyService.RemoveGalaxyAsync(id);
+                await _galaxyService.RemoveSpaceObjectAsync(id);
             }
             
             return RedirectToAction(nameof(Index));
@@ -156,7 +155,7 @@ namespace Universe.Controllers
 
         private bool GalaxyExists(int id)
         {
-            return _galaxyService.GalaxyExists(id);
+            return _galaxyService.SpaceObjectExists(id);
         }
     }
 }

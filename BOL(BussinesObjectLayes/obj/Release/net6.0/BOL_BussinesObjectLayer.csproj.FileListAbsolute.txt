@@ -12,3 +12,17 @@ C:\Users\Majkel\Documents\GitHub\UniverseDB\BOL(BussinesObjectLayes\obj\Release\
 C:\Users\Majkel\Documents\GitHub\UniverseDB\BOL(BussinesObjectLayes\obj\Release\net6.0\BOL_BussinesObjectLayer.pdb
 C:\Users\Majkel\Documents\GitHub\UniverseDB\BOL(BussinesObjectLayes\obj\Release\net6.0\BOL_BussinesObjectLayer.genruntimeconfig.cache
 C:\Users\Majkel\Documents\GitHub\UniverseDB\BOL(BussinesObjectLayes\obj\Release\net6.0\ref\BOL_BussinesObjectLayer.dll
+C:\Users\Administrator\Documents\GitHub\UniverseDB\BOL(BussinesObjectLayes\bin\Release\net6.0\BOL_BussinesObjectLayer.deps.json
+C:\Users\Administrator\Documents\GitHub\UniverseDB\BOL(BussinesObjectLayes\bin\Release\net6.0\BOL_BussinesObjectLayer.runtimeconfig.json
+C:\Users\Administrator\Documents\GitHub\UniverseDB\BOL(BussinesObjectLayes\bin\Release\net6.0\BOL_BussinesObjectLayer.dll
+C:\Users\Administrator\Documents\GitHub\UniverseDB\BOL(BussinesObjectLayes\bin\Release\net6.0\BOL_BussinesObjectLayer.pdb
+C:\Users\Administrator\Documents\GitHub\UniverseDB\BOL(BussinesObjectLayes\obj\Release\net6.0\BOL_BussinesObjectLayer.csproj.AssemblyReference.cache
+C:\Users\Administrator\Documents\GitHub\UniverseDB\BOL(BussinesObjectLayes\obj\Release\net6.0\BOL_BussinesObjectLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Documents\GitHub\UniverseDB\BOL(BussinesObjectLayes\obj\Release\net6.0\BOL_BussinesObjectLayer.AssemblyInfoInputs.cache
+C:\Users\Administrator\Documents\GitHub\UniverseDB\BOL(BussinesObjectLayes\obj\Release\net6.0\BOL_BussinesObjectLayer.AssemblyInfo.cs
+C:\Users\Administrator\Documents\GitHub\UniverseDB\BOL(BussinesObjectLayes\obj\Release\net6.0\BOL_BussinesObjectLayer.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Documents\GitHub\UniverseDB\BOL(BussinesObjectLayes\obj\Release\net6.0\BOL_BussinesObjectLayer.dll
+C:\Users\Administrator\Documents\GitHub\UniverseDB\BOL(BussinesObjectLayes\obj\Release\net6.0\refint\BOL_BussinesObjectLayer.dll
+C:\Users\Administrator\Documents\GitHub\UniverseDB\BOL(BussinesObjectLayes\obj\Release\net6.0\BOL_BussinesObjectLayer.pdb
+C:\Users\Administrator\Documents\GitHub\UniverseDB\BOL(BussinesObjectLayes\obj\Release\net6.0\BOL_BussinesObjectLayer.genruntimeconfig.cache
+C:\Users\Administrator\Documents\GitHub\UniverseDB\BOL(BussinesObjectLayes\obj\Release\net6.0\ref\BOL_BussinesObjectLayer.dll

@@ -43,7 +43,7 @@ namespace Universe.Controllers
             }
 
             var ship = await _unitOfWork.GetRepository<Ship>()
-                .FirstOrDefaultAsync(m => m.ShipId == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (ship == null)
             {
                 return NotFound();
@@ -72,7 +72,7 @@ namespace Universe.Controllers
                 await _unitOfWork.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["DiscovererId"] = new SelectList(_unitOfWork.GetRepository<Discoverer>().GetList(), "DiscovererId", "Name", ship.ShipId);
+            ViewData["DiscovererId"] = new SelectList(_unitOfWork.GetRepository<Discoverer>().GetList(), "DiscovererId", "Name", ship.Id);
             return View(ship);
         }
 
@@ -100,7 +100,7 @@ namespace Universe.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ShipId,ShipName,ShipModel,MaxSpeed,SingleChargeRange")] Ship ship)
         {
-            if (id != ship.ShipId)
+            if (id != ship.Id)
             {
                 return NotFound();
             }
@@ -114,7 +114,7 @@ namespace Universe.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ShipExists(ship.ShipId))
+                    if (!ShipExists(ship.Id))
                     {
                         return NotFound();
                     }
@@ -136,7 +136,7 @@ namespace Universe.Controllers
                 return NotFound();
             }
 
-            var ship = await _unitOfWork.GetRepository<Ship>().FirstOrDefaultAsync(m => m.ShipId == id);
+            var ship = await _unitOfWork.GetRepository<Ship>().FirstOrDefaultAsync(m => m.Id == id);
 
             if (ship == null)
             {
@@ -166,7 +166,7 @@ namespace Universe.Controllers
         }
         private bool ShipExists(int id)
         {
-            return (_unitOfWork.GetRepository<Ship>()?.Any(e => e.ShipId == id)).GetValueOrDefault();
+            return (_unitOfWork.GetRepository<Ship>()?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Universe.Models.spaceobject;
 using Universe.Models.starsystem;
 
 namespace Universe.Models.planet
@@ -15,10 +16,8 @@ namespace Universe.Models.planet
         Outer_Planets
     }
     [Table("Planets")]
-    public class Planet : IEntityTypeConfiguration<Planet>
+    public class Planet : SpaceObject, IEntityTypeConfiguration<Planet>
     {
-        [Key]
-        public int PlanetId { get; set; }
         [Required] public string Name { get; set;}
         public TypeOfPlanets Type { get; set; }
         public double Mass { get; set; }

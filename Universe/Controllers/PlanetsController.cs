@@ -43,7 +43,7 @@ namespace Universe.Controllers
 
             var plantet = await _unitOfWork.GetRepository<Planet>()
                 .Include(s => s.StarSystem)
-                .FirstOrDefaultAsync(m => m.PlanetId == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (plantet == null)
             {
                 return NotFound();
@@ -72,7 +72,7 @@ namespace Universe.Controllers
                 await _unitOfWork.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["StarSystemId"] = new SelectList(_unitOfWork.GetRepository<StarSystem>().GetList(), "PlanetId", "Name", planet.PlanetId);
+            ViewData["StarSystemId"] = new SelectList(_unitOfWork.GetRepository<StarSystem>().GetList(), "PlanetId", "Name", planet.Id);
             return View(planet);
         }
 
@@ -100,7 +100,7 @@ namespace Universe.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("PlanetId,Name,Type,Mass,StarSystemId")] Planet planet)
         {
-            if (id != planet.PlanetId)
+            if (id != planet.Id)
             {
                 return NotFound();
             }
@@ -114,7 +114,7 @@ namespace Universe.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PlanetExists(planet.PlanetId))
+                    if (!PlanetExists(planet.Id))
                     {
                         return NotFound();
                     }
@@ -137,7 +137,7 @@ namespace Universe.Controllers
                 return NotFound();
             }
 
-            var planet = await _unitOfWork.GetRepository<Planet>().Include(s => s.StarSystem).FirstOrDefaultAsync(m => m.PlanetId == id);
+            var planet = await _unitOfWork.GetRepository<Planet>().Include(s => s.StarSystem).FirstOrDefaultAsync(m => m.Id == id);
 
             if (planet == null)
             {
@@ -168,7 +168,7 @@ namespace Universe.Controllers
 
         private bool PlanetExists(int id)
         {
-            return (_unitOfWork.GetRepository<Planet>()?.Any(e => e.PlanetId == id)).GetValueOrDefault();
+            return (_unitOfWork.GetRepository<Planet>()?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

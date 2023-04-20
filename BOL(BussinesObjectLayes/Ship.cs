@@ -1,14 +1,14 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Universe.Models.discoverer;
+using Universe.Models.spaceobject;
+
 
 namespace Universe.Models.ship
 {
     [Table("Ships")]
-    public class Ship
+    public class Ship : SpaceObject
     {
-        [Key]
-        public int ShipId { get; set; }
         [Required]
         public string ShipName { get; set; }
         public string ShipModel { get; set; }

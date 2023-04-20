@@ -43,7 +43,7 @@ namespace Universe.Controllers
             }
 
             var dis = await _unitOfWork.GetRepository<Discoverer>()
-                .FirstOrDefaultAsync(m => m.DiscovererId == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (dis == null)
             {
                 return NotFound();
@@ -103,7 +103,7 @@ namespace Universe.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("DiscovererId,Name,Surname,Age,ShipId")] Discoverer discoverer)
         {
-            if (id != discoverer.DiscovererId)
+            if (id != discoverer.Id)
             {
                 return NotFound();
             }
@@ -117,7 +117,7 @@ namespace Universe.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!DiscovererExists(discoverer.DiscovererId))
+                    if (!DiscovererExists(discoverer.Id))
                     {
                         return NotFound();
                     }
@@ -143,7 +143,7 @@ namespace Universe.Controllers
                 return NotFound();
             }
 
-            var dis = await _unitOfWork.GetRepository<Discoverer>().FirstOrDefaultAsync(m => m.DiscovererId == id);
+            var dis = await _unitOfWork.GetRepository<Discoverer>().FirstOrDefaultAsync(m => m.Id == id);
 
             if (dis == null)
             {
@@ -174,7 +174,7 @@ namespace Universe.Controllers
 
         private bool DiscovererExists(int id)
         {
-            return (_unitOfWork.GetRepository<Discoverer>()?.Any(e => e.DiscovererId == id)).GetValueOrDefault();
+            return (_unitOfWork.GetRepository<Discoverer>()?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

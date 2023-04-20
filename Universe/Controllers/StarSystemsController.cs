@@ -49,7 +49,7 @@ namespace Universe.Controllers
 
             var starSystem = await _unitOfWork.GetRepository<StarSystem>()
                 .Include(s => s.Galaxy)
-                .FirstOrDefaultAsync(m => m.StarSystemId == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (starSystem == null)
             {
                 return NotFound();
@@ -106,7 +106,7 @@ namespace Universe.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("StarSystemId,Name,GalaxyId")] StarSystem starSystem)
         {
-            if (id != starSystem.StarSystemId)
+            if (id != starSystem.Id)
             {
                 return NotFound();
             }
@@ -120,7 +120,7 @@ namespace Universe.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!StarSystemExists(starSystem.StarSystemId))
+                    if (!StarSystemExists(starSystem.Id))
                     {
                         return NotFound();
                     }
@@ -143,7 +143,7 @@ namespace Universe.Controllers
                 return NotFound();
             }
 
-            var starSystem = await _unitOfWork.GetRepository<StarSystem>().Include(s => s.Galaxy).FirstOrDefaultAsync(m => m.StarSystemId == id);
+            var starSystem = await _unitOfWork.GetRepository<StarSystem>().Include(s => s.Galaxy).FirstOrDefaultAsync(m => m.Id == id);
 
             if (starSystem == null)
             {
@@ -174,7 +174,7 @@ namespace Universe.Controllers
 
         private bool StarSystemExists(int id)
         {
-          return (_unitOfWork.GetRepository<StarSystem>()?.Any(e => e.StarSystemId == id)).GetValueOrDefault();
+          return (_unitOfWork.GetRepository<StarSystem>()?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
