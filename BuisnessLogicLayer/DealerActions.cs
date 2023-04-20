@@ -11,7 +11,6 @@ namespace BuisnessLogicLayer
     {
         public bool CreateShip();
         public bool RepairShip();
-  
     }
 
     internal class DealerActions:IDealerOperation

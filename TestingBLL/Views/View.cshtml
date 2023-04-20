@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewData["Title"] = "View";
+}
+
+@model MyProject.Models.WorkViewModel
+
+<h1>Work</h1>
+
+<h2>Get All Planets Count</h2>
+
+<form asp-action="GetAllPlanetsCount">
+    <button type="submit">Get Count</button>
+</form>
+
+<h2>Get Heaviest Planet</h2>
+
+<form asp-action="GetHeaviestPlanet">
+    <button type="submit">Get Heaviest Planet</button>
+</form>
+
+<h2>Add Random Stars</h2>
+
+<form asp-action="AddRandomStars" method="post">
+    <label for="count">Count:</label>
+    <input type="number" id="count" name="count" />
+    <button type="submit">Add Stars</button>
+</form>
+
+<h2>Move Star System To Another Galaxy</h2>
+
+<form asp-action="MoveStarSystemToAnotherGalaxy" method="post">
+    <label for="starSystemId">Star System Id:</label>
+    <input type="number" id="starSystemId" name="starSystemId" />
+    <label for="galaxyId">Galaxy Id:</label>
+    <input type="number" id="galaxyId" name="galaxyId" />
+    <button type="submit">Move Star System</button>
+</form>
+
+<h2>Make New Ship</h2>
+
+<form asp-action="MakeNewShip" method="post">
+    <label for="maxRange">Max Range:</label>
+    <input type="number" id="maxRange" name="maxRange" />
+    <label for="maxSpeed">Max Speed:</label>
+    <input type="number" id="maxSpeed" name="maxSpeed" />
+    <label for="model">Model:</label>
+    <input type="text" id="model" name="model" />
+    <label for="discovererName">Discoverer Name:</label>
+    <input type="text" id="discovererName" name="discovererName" />
+    <label for="discovererSurname">Discoverer Surname:</label>
+    <input type="text" id="discovererSurname" name="discovererSurname" />
+    <label for="discovererAge">Discoverer Age:</label>
+    <input type="number" id="discovererAge" name="discovererAge" />
+    <button type="submit">Make Ship</button>
+</form>
+
+<h2>Hire New Discoverer</h2>
+
+<form asp-action="HireNewDiscoverer" method="post">
+    <label for="discovererName">Discoverer Name:</label>
+    <input type="text" id="discovererName" name="discovererName" />
+    <label for="discovererSurname">Discoverer Surname:</label>
+    <input type="text" id="discovererSurname" name="discovererSurname" />
+    <label for="discovererAge">Discoverer Age:</label>
+    <input type="number" id="discovererAge" name="discovererAge" />
+    <button type="submit">Hire Discoverer</button>
+</form>
+
+<h2>Reward Explorer By New Ship</h2>
+
+<form asp-action="RewardExplorerByNewShip" method="post">
+    <label for="discovererName">Discoverer Name:</label>
+    <input type="text" id="discovererName" name="discovererName" />
+    <label for="discovererSurname">Discoverer Surname:</label>
+</form>

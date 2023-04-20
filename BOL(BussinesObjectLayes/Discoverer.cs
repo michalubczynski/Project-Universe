@@ -10,13 +10,6 @@ namespace Universe.Models.discoverer
     [Table("Discoverers")]
     public class Discoverer : SpaceObject
     {
-        public Discoverer(string name, string surname, int age)
-        {
-            Name = name;
-            Surname = surname;
-            Age = age;
-        }
-
         [Required] public string Name { get; set; }
         [Required] public string Surname { get; set; }
         [Required] public int Age { get; set; }

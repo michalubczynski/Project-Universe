@@ -95,16 +95,15 @@ namespace Models
                 new Star { Id = 5, Age = (int)10e4, Luminosity = 0, Mass = 10e7, Name = "Cygnus X-1", Radius = 33334.1, Temperature = -22, Type = Star.TypeOfStar.Black_holes, StarSystemId = 2 }
                 );
             modelBuilder.Entity<Ship>().HasData(
-            new Ship { Id = 1, MaxSpeed = 10, ShipModel = "m0001", ShipName = "StarShip_1", SingleChargeRange = 12 },
-            new Ship { Id = 2, MaxSpeed = 100, ShipModel = "m0002", ShipName = " StarShip_2", SingleChargeRange = 120 },
-            new Ship { Id = 3, MaxSpeed = 1000, ShipModel = "m0003", ShipName = "StarShip_3", SingleChargeRange = 122 }
+                new Ship { Id = 1, MaxSpeed = 10, ShipModel = "m0001", ShipName = "StarShip_1", SingleChargeRange = 12, IfBroken = false, Discoverer = null },
+                new Ship { Id = 2, MaxSpeed = 100, ShipModel = "m0002", ShipName = " StarShip_2", SingleChargeRange = 120, IfBroken = false },
+                new Ship { Id = 3, MaxSpeed = 1000, ShipModel = "m0003", ShipName = "StarShip_3", SingleChargeRange = 122, IfBroken = true }
             );
             modelBuilder.Entity<Discoverer>().HasData(
                 new Discoverer { Id = 1, Name = "Piotrek", Surname = "Piotrowski", Age = 43, ShipId = 1 },
                 new Discoverer { Id = 2, Name = "Marek", Surname = "Markowski", Age = 34 },
                 new Discoverer { Id = 3, Name = "Darek", Surname = "Darkowski", Age = 30 }
-                );
-
+            );
         }
     }
 }

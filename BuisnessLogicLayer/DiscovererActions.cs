@@ -15,12 +15,13 @@ namespace BuisnessLogicLayer
 {
     public interface IDiscovererOperation
     {
-        void DiscoverStar(Star s);
-        void DiscoverPlanet(Planet p);
-        void DiscoverStarSystem(StarSystem ss);
-        void DiscoverGalaxy(Galaxy g);
-        public void ReserveShip(Ship s);
+        void DiscoverStar(Star o);
+        void DiscoverPlanet(Planet o);
+        void DiscoverStarSystem(StarSystem o);
+        void DiscoverGalaxy(Galaxy o);
+        public void ReserveShip(Ship o);
         public void ReturnShip();
+        public void MarkBroken();
     }
 
     internal class DiscovererActions : IDiscovererOperation
@@ -68,29 +69,39 @@ namespace BuisnessLogicLayer
                     o.Discoverer = d;
                     disRepo.Update(d);
                     _unitOfWork.GetRepository<Ship>().Update(o);
+                    disRepo.Update(d);
                     await _unitOfWork.SaveChangesAsync();
                 }
             }
-            else {
-                // nie mozna wypozyczyc bo ktos to ma
-            }
+            // nie mozna wypozyczyc bo ktos to ma
         }
 
         public async void ReturnShip()
         {
-            Discoverer d = await _unitOfWork.GetRepository<Discoverer>().GetByIDAsync(Id);
+            var discRepo = _unitOfWork.GetRepository<Discoverer>();
+            var shipRepo = _unitOfWork.GetRepository<Ship>();
+            var d = discRepo.GetByIDAsync(Id).Result;
+            var s = d.Ship;
             if (d != null)
             {
-                if (d.Ship != null)
+                if (s != null)
                 {
-                    d.Ship.Discoverer = null;
+                    s.Discoverer = null;
                     d.Ship = null;
+                    shipRepo.Update(s);
+                    discRepo.Update(d);
+                    await _unitOfWork.SaveChangesAsync();
                 }
-                else
-                {
-                    // nie mozna wypozyczyc bo nie ma statku
-                }
+                // nie mozna wypozyczyc bo nie ma statku
             }
+        }
+        public async void MarkBroken()
+        {
+            var ship = _unitOfWork.GetRepository<Discoverer>().GetByID(Id).Ship;
+            if (ship != null)
+                ship.IfBroken = true;
+            _unitOfWork.GetRepository<Ship>().Update(ship);
+            await _unitOfWork.SaveChangesAsync();
         }
     }
 }
