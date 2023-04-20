@@ -105,7 +105,8 @@ namespace UI_Universe.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<int>("Type")
                         .HasColumnType("int");
@@ -161,7 +162,8 @@ namespace UI_Universe.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<int?>("StarSystemId")
                         .HasColumnType("int");
@@ -283,24 +285,24 @@ namespace UI_Universe.Migrations
                         {
                             Id = 1,
                             MaxSpeed = 10,
-                            ShipModel = "Super",
-                            ShipName = "Mewa",
+                            ShipModel = "m0001",
+                            ShipName = "StarShip_1",
                             SingleChargeRange = 12
                         },
                         new
                         {
                             Id = 2,
                             MaxSpeed = 100,
-                            ShipModel = "Duper",
-                            ShipName = " Jaszczomp",
+                            ShipModel = "m0002",
+                            ShipName = " StarShip_2",
                             SingleChargeRange = 120
                         },
                         new
                         {
                             Id = 3,
                             MaxSpeed = 1000,
-                            ShipModel = "DuperSuper",
-                            ShipName = "Orzel",
+                            ShipModel = "m0003",
+                            ShipName = "StarShip_3",
                             SingleChargeRange = 122
                         });
                 });
@@ -324,7 +326,8 @@ namespace UI_Universe.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<double>("Radius")
                         .HasColumnType("float");
@@ -420,7 +423,8 @@ namespace UI_Universe.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
 
