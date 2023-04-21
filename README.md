@@ -1,4 +1,4 @@
-# UniverseDB
+# BalenciagaDB
 Universe database + mvc
 
 W systemie będzie występować 3 użytkowników – 
