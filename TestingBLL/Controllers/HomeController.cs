@@ -1,6 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BLL_BuisnessLogicLayer;
+using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using TestingBLL.Models;
+using Universe.Models.discoverer;
+using Universe.Models.galaxy;
+using Universe.Models.ship;
+using Universe.Models.starsystem;
 
 namespace TestingBLL.Controllers
 {
