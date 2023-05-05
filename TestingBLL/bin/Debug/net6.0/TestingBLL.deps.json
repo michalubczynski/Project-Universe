@@ -9,6 +9,7 @@
       "TestingBLL/1.0.0": {
         "dependencies": {
           "BLL_BuisnessLogicLayer": "1.0.0",
+          "DAL_DataAccessLayer": "1.0.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.13"
         },
         "runtime": {

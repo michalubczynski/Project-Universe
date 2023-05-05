@@ -1,3 +1,4 @@
+using BLL_BuisnessLogicLayer;
 using Microsoft.EntityFrameworkCore;
 using Models;
 using Universe.Models;
@@ -6,8 +7,15 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<DbUniverse>();
+
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
+
+builder.Services.AddScoped<IWorkService, Service>();
+builder.Services.AddTransient<IWorkService, Service>();
+
 var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -25,6 +33,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Service}/{action=Index}/{id?}");
+    pattern: "{controller=Service}/{action=GetAllPlanetsCount}/{id?}");
 
 app.Run();
