@@ -4,6 +4,7 @@ using Models;
 using Universe.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Configuration.AddJsonFile("appsettings.json");
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -33,6 +34,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Service}/{action=GetHeaviestPlanet}/{id?}");
+    pattern: "{controller=Service}/{action=GetAllPlanetsCount}");
 
 app.Run();
