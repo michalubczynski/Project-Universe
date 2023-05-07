@@ -7,7 +7,7 @@
 namespace DAL_DataAccessLayer.Migrations
 {
     /// <inheritdoc />
-    public partial class first : Migration
+    public partial class migracjiaiaia : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

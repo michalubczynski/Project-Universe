@@ -19,48 +19,48 @@ namespace TestingBLL.Controllers
         public async Task<IActionResult> GetAllPlanetsCount()
         {
             var count = await _workService.GetAllPlanetsCount();
-            return Ok(count);
+            return View(count);
         }
 
         public async Task<IActionResult> GetHeaviestPlanet()
         {
             var planet = await _workService.GetHeaviestPlanet();
-            return Ok(planet);
+            return View(planet);
         }
 
         [HttpPost]
         public async Task<IActionResult> AddRandomStars(int count)
         {
             await _workService.AddRandomStars(count);
-            return Ok();
+            return View();
         }
 
         [HttpPost]
         public async Task<IActionResult> MoveStarSystemToAnotherGalaxy(StarSystem starsystemToMove, Galaxy destinationGalaxy)
         {
             await _workService.MoveStarSystemToAnotherGalaxy(starsystemToMove, destinationGalaxy);
-            return Ok();
+            return View();
         }
 
         [HttpPost]
         public async Task<IActionResult> MakeNewShip(int MaxRange, int MaxSpeed, string? model = null, Discoverer? discoverer = null)
         {
             await _workService.MakeNewShip(MaxRange, MaxSpeed, model, discoverer);
-            return Ok();
+            return View();
         }
 
         [HttpPost]
         public async Task<IActionResult> HireNewDiscoverer(string name, string surname, int age)
         {
             await _workService.HireNewDiscoverer(name, surname, age);
-            return Ok();
+            return View();
         }
 
         [HttpPost]
         public async Task<IActionResult> RewardExplorerByNewShip(Discoverer discovererToAward, Ship newShip)
         {
             await _workService.RewardExplorerByNewShip(discovererToAward, newShip);
-            return Ok();
+            return View();
         }
         public IActionResult Index()
         {
