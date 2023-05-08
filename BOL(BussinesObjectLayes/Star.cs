@@ -8,7 +8,7 @@ using Universe.Models.starsystem;
 namespace Universe.Models.star
 {
     [Table("Stars")]
-    public class Star : SpaceObject, IEntityTypeConfiguration<Star>
+    public class Star : DbEntity, IEntityTypeConfiguration<Star>
     {
         public enum TypeOfStar
         {
@@ -18,7 +18,6 @@ namespace Universe.Models.star
             Neutron_stars,
             Black_holes
         }
-        [Required][StringLength(100)] public string Name { get; set; }
         [Required] public TypeOfStar Type { get; set; }
         [Required][Range(1, sizeof(double))] public double Temperature { get; set; }
         [Required][Range(1, sizeof(double))] public double Radius { get; set; }

@@ -13,9 +13,8 @@ namespace Universe.Models.galaxy
         irregular //nieregularna
     }
     [Table("Galaxies")]
-    public class Galaxy : SpaceObject
+    public class Galaxy : DbEntity
     {
-        [Required][StringLength(100)] public string Name { get; set; }
          public TypeOfGalaxy Type { get; set; }
         [Range(1, sizeof(double))] public double Mass { get; set; } // 'M☉' unit of Solar Mass
 

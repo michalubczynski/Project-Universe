@@ -25,12 +25,12 @@ internal class Program
         builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
         builder.Services.AddDbContext<DbUniverse>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("cs"), b=> b.MigrationsAssembly("UI_Universe")));
         builder.Services.AddTransient<IUnitOfWork,UnitOfWork>();
-        builder.Services.AddTransient<ISpaceObjectService<Galaxy>, SpaceObjectService<Galaxy>>();
-        builder.Services.AddTransient<ISpaceObjectService<Discoverer>, SpaceObjectService<Discoverer>>();
-        builder.Services.AddTransient<ISpaceObjectService<Planet>, SpaceObjectService<Planet>>();
-        builder.Services.AddTransient<ISpaceObjectService<Ship>, SpaceObjectService<Ship>>();
-        builder.Services.AddTransient<ISpaceObjectService<Star>, SpaceObjectService<Star>>();
-        builder.Services.AddTransient<ISpaceObjectService<StarSystem>, SpaceObjectService<StarSystem>>();
+        builder.Services.AddTransient<IEntityService<Galaxy>, SpaceObjectService<Galaxy>>();
+        builder.Services.AddTransient<IEntityService<Discoverer>, SpaceObjectService<Discoverer>>();
+        builder.Services.AddTransient<IEntityService<Planet>, SpaceObjectService<Planet>>();
+        builder.Services.AddTransient<IEntityService<Ship>, SpaceObjectService<Ship>>();
+        builder.Services.AddTransient<IEntityService<Star>, SpaceObjectService<Star>>();
+        builder.Services.AddTransient<IEntityService<StarSystem>, SpaceObjectService<StarSystem>>();
 
 
         var app = builder.Build();

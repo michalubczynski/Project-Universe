@@ -18,9 +18,9 @@ namespace Universe.Controllers
 {
     public class ShipsController : Controller
     {
-        private readonly ISpaceObjectService<Ship> _service;
+        private readonly IEntityService<Ship> _service;
 
-        public ShipsController(ISpaceObjectService<Ship> context)
+        public ShipsController(IEntityService<Ship> context)
         {
             _service = context;
         }

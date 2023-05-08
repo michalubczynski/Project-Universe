@@ -17,9 +17,9 @@ namespace Universe.Controllers
 {
     public class DiscoverersController : Controller
     {
-        private readonly ISpaceObjectService<Discoverer> _service;
+        private readonly IEntityService<Discoverer> _service;
 
-        public DiscoverersController(ISpaceObjectService<Discoverer> context)
+        public DiscoverersController(IEntityService<Discoverer> context)
         {
             _service = context;
         }

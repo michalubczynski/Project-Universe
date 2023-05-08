@@ -17,9 +17,9 @@ namespace Universe.Controllers
 {
     public class PlanetsController : Controller
     {
-        private readonly ISpaceObjectService<Planet> _service;
+        private readonly IEntityService<Planet> _service;
 
-        public PlanetsController(ISpaceObjectService<Planet> u)
+        public PlanetsController(IEntityService<Planet> u)
         {
             _service = u;
         }

@@ -13,8 +13,8 @@ namespace Universe.Controllers
 {
     public class GalaxiesController : Controller
     {
-        private readonly ISpaceObjectService<Galaxy> _service;
-        public GalaxiesController(ISpaceObjectService<Galaxy> galaxyService)
+        private readonly IEntityService<Galaxy> _service;
+        public GalaxiesController(IEntityService<Galaxy> galaxyService)
         {
             _service = galaxyService;
         }

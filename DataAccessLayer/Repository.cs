@@ -2,12 +2,13 @@
 using Models;
 using System.Linq;
 using System.Linq.Expressions;
+using Universe.Models.spaceobject;
 using Universe.Models.starsystem;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace Universe.Models
 {
-    public class Repository<T> : IRepository<T>, IDisposable where T : class
+    public class Repository<T> : IRepository<T>, IDisposable where T : DbEntity
     {
         private DbUniverse context;
         private readonly DbSet<T> _dbSet;

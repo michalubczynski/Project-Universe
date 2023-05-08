@@ -82,7 +82,7 @@ namespace BLL_BuisnessLogicLayer
             }
             else { _model = model; }
 
-            Ship newShip = new Ship { ShipName = newestIdShip.ToString(), ShipModel = _model, MaxSpeed = MaxSpeed, SingleChargeRange = MaxRange, Discoverer = discoverer, IfBroken = false };
+            Ship newShip = new Ship { Name = newestIdShip.ToString(), ShipModel = _model, MaxSpeed = MaxSpeed, SingleChargeRange = MaxRange, Discoverer = discoverer, IfBroken = false };
             _unitOfWork.GetRepository<Ship>().Insert(newShip);
             await _unitOfWork.SaveChangesAsync();
 

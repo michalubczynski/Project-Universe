@@ -34,6 +34,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Service}/{action=MakeNewShip}");
+    pattern: "{controller=Service}/{action=GetHeaviestPlanet}");
 
 app.Run();

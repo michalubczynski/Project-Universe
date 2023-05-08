@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Universe.Models;
+using Universe.Models.spaceobject;
 
 namespace DAL_DataAccessLayer
 {
@@ -16,7 +17,12 @@ namespace DAL_DataAccessLayer
             _repositories = new Dictionary<Type, object>();
         }
 
-        public IRepository<T> GetRepository<T>() where T : class
+        public void AddRepository<T>(IRepository<T> repo) where T : DbEntity
+        {
+            _repositories.Add(repo.GetType(), repo);
+        }
+
+        public IRepository<T> GetRepository<T>() where T : DbEntity
         {
             if (_repositories.TryGetValue(typeof(T), out var repository))
             {
@@ -24,7 +30,7 @@ namespace DAL_DataAccessLayer
             }
 
             // Tworzenie klasy fake dla repozytorium
-            var fakeRepository = new FakeRepository<T>(entity => );
+            var fakeRepository = new FakeRepository<T>();
             _repositories.Add(typeof(T), fakeRepository);
 
             return fakeRepository;
@@ -46,7 +52,7 @@ namespace DAL_DataAccessLayer
             // Implementacja dla testowego UnitOfWork (opcjonalne)
         }
 
-        public void Update<T>(T entity) where T : class
+        public void Update<T>(T entity) where T : DbEntity
         {
             throw new NotImplementedException();
         }

@@ -18,18 +18,18 @@ namespace Projekt_xUnit
          new Planet { Id = 3, Name = "Planet C", Mass = 15 }
         };
 
-            var fakeRepository = new FakeRepository<Planet>(entity => entity.Id);
+            var fakeRepository = new FakeRepository<Planet>();
 
-            foreach (var planet in planets)
+            foreach (var p in planets)
             {
-                fakeRepository.Insert(planet);
+                fakeRepository.Insert(p);
             }
 
             TestUnitOfWork unitOfWork = new TestUnitOfWork();
-            unitOfWork.
+            unitOfWork.AddRepository(fakeRepository);
             var service = new Service(unitOfWork);
-
-            service.GetHeaviestPlanet();
+            var result = service.GetHeaviestPlanet();
+            Assert.Equal(3, result.Id);
         }
     }
 }

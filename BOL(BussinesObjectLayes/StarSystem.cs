@@ -9,10 +9,8 @@ using Universe.Models.discoverer;
 namespace Universe.Models.starsystem
 {
     [Table("StarSystems")]
-    public class StarSystem : SpaceObject
-    {   //Wymaga poprawy w strukturze bo StarSystem nie ma Masy. To tylko kierunkowe skupiska gwiazd na sferze niebieskiej, a nie obiekty fizyczne z określoną masą. 
-        [Required][StringLength(100)] public String Name { get; set; }
-
+    public class StarSystem : DbEntity
+    {   //Wymaga poprawy w strukturze bo StarSystem nie ma Masy. To tylko kierunkowe skupiska gwiazd na sferze niebieskiej, a nie obiekty fizyczne z określoną masą
         // N:Starsystems-1:Galaxy
         public int GalaxyId { get; set; }
         [ForeignKey(nameof(GalaxyId))]

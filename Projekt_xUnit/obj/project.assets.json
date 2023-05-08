@@ -11585,24 +11585,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Majkel\\.nuget\\packages\\": {},
-    "D:\\SDKVisual\\NuGetPackages": {}
+    "C:\\Users\\Administrator\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\Projekt_xUnit\\Projekt_xUnit.csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\Projekt_xUnit\\Projekt_xUnit.csproj",
       "projectName": "Projekt_xUnit",
-      "projectPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\Projekt_xUnit\\Projekt_xUnit.csproj",
-      "packagesPath": "C:\\Users\\Majkel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\Projekt_xUnit\\obj\\",
+      "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\Projekt_xUnit\\Projekt_xUnit.csproj",
+      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\Projekt_xUnit\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "D:\\SDKVisual\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Majkel\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11616,8 +11611,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\Universe\\UI_Universe.csproj": {
-              "projectPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\Universe\\UI_Universe.csproj"
+            "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\Universe\\UI_Universe.csproj": {
+              "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\Universe\\UI_Universe.csproj"
             }
           }
         }

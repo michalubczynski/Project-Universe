@@ -5,26 +5,23 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Universe.Models;
+using Universe.Models.spaceobject;
 
 namespace DAL_DataAccessLayer
 {
-    public class FakeRepository<T> : IRepository<T> where T : class
+    public class FakeRepository<T> : IRepository<T> where T : DbEntity
     {
         private List<T> _entities;
-        private readonly Func<T, int> _getEntityIdFunc; //delegat do identyfikacji encji
 
 
-        public FakeRepository(Func<T, int> getEntityIdFunc)
+        public FakeRepository()
         {
-         
             _entities = new List<T>();
-            _getEntityIdFunc = getEntityIdFunc; // delegat, który będzie identyfikować unikalny identyfikator encji dla danego typu.
-
         }
 
         public void Delete(int deletedId)
         {
-            T entityToDelete = _entities.FirstOrDefault(e => _getEntityIdFunc(e) == deletedId);
+            T entityToDelete = _entities.FirstOrDefault(e => e.Id == deletedId);
             if (entityToDelete != null)
             {
                 _entities.Remove(entityToDelete);
@@ -33,7 +30,7 @@ namespace DAL_DataAccessLayer
 
         public T GetByID(int id)
         {
-            return _entities.FirstOrDefault(e => _getEntityIdFunc(e) == id);
+            return _entities.FirstOrDefault(e => e.Id == id);
         }
 
         public IEnumerable<T> GetList()
@@ -96,7 +93,7 @@ namespace DAL_DataAccessLayer
         {
             if (id.HasValue)
             {
-                return _entities.FirstOrDefault(e => _getEntityIdFunc(e) == id.Value);
+                return _entities.FirstOrDefault(e => e.Id == id.Value);
             }
             return null;
         }
@@ -127,7 +124,7 @@ namespace DAL_DataAccessLayer
         {
             if (id is int entityId)
             {
-                return _entities.FirstOrDefault(e => _getEntityIdFunc(e) == entityId);
+                return _entities.FirstOrDefault(e => e.Id == entityId);
             }
             return null;
         }

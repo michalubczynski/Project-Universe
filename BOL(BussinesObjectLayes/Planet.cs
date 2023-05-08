@@ -16,9 +16,8 @@ namespace Universe.Models.planet
         Outer_Planets
     }
     [Table("Planets")]
-    public class Planet : SpaceObject, IEntityTypeConfiguration<Planet>
+    public class Planet : DbEntity, IEntityTypeConfiguration<Planet>
     {
-        [Required][StringLength(100)] public string Name { get; set;}
         public TypeOfPlanets Type { get; set; }
         [Range(0, sizeof(double))] public double Mass { get; set; }
         public int? StarSystemId { get; set; }

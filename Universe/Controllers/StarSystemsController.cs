@@ -15,9 +15,9 @@ namespace Universe.Controllers
 {
     public class StarSystemsController : Controller
     {
-        private readonly ISpaceObjectService<StarSystem> _service;
+        private readonly IEntityService<StarSystem> _service;
 
-        public StarSystemsController(ISpaceObjectService<StarSystem> s)
+        public StarSystemsController(IEntityService<StarSystem> s)
         {
             _service = s;
         }

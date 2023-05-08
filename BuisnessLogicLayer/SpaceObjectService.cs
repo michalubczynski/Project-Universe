@@ -12,7 +12,7 @@ using Universe.Models.star;
 
 namespace BLL
 {
-    public interface ISpaceObjectService<T> where T : SpaceObject
+    public interface IEntityService<T> where T : DbEntity
     {
         Task<IEnumerable<T>> GetAllSpaceObjectsAsync();
         Task<T> GetSpaceObjectByIdAsync(int? id);
@@ -21,7 +21,7 @@ namespace BLL
         Task RemoveSpaceObjectAsync(int id);
         bool SpaceObjectExists(int id);
     }
-    public class SpaceObjectService<T> : ISpaceObjectService<T> where T : SpaceObject
+    public class SpaceObjectService<T> : IEntityService<T> where T : DbEntity
     {
         private readonly IUnitOfWork _unitOfWork;
         public SpaceObjectService(IUnitOfWork unitOfWork)

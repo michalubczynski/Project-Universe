@@ -1,9 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
+using Universe.Models.spaceobject;
 
 namespace Universe.Models
 {
-    public interface IRepository<T> : IDisposable
+    public interface IRepository<T> : IDisposable where T : DbEntity
     {
         IEnumerable<T> GetList();
         Task<IEnumerable<T>> GetListAsync();
