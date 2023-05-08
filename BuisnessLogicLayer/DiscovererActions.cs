@@ -24,7 +24,7 @@ namespace BuisnessLogicLayer
         public void MarkBroken();
     }
 
-    internal class DiscovererActions : IDiscovererOperation
+    public class DiscovererActions : IDiscovererOperation
     {
         private readonly IUnitOfWork _unitOfWork;
         public int Id { get; set; }
