@@ -27,7 +27,7 @@ namespace BuisnessLogicLayer
     public class DiscovererActions : IDiscovererOperation
     {
         private readonly IUnitOfWork _unitOfWork;
-        public int Id { get; set; }
+        public int Id { get; set; } // kogo/czego jest to ID? Discoverera? 
 
         public DiscovererActions(IUnitOfWork unitOfWork, int id)
         {
