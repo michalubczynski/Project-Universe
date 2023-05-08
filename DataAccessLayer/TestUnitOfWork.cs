@@ -19,7 +19,7 @@ namespace DAL_DataAccessLayer
 
         public void AddRepository<T>(IRepository<T> repo) where T : DbEntity
         {
-            _repositories.Add(repo.GetType(), repo);
+            _repositories.Add(typeof(T), repo);
         }
 
         public IRepository<T> GetRepository<T>() where T : DbEntity
