@@ -1,9 +1,9 @@
 # UniverseDB
 Baza danych galaktyk oraz ich odkrywców + statki kosmiczne
 
-W systemie będzie występować 3 użytkowników – 
+W systemie występuje 3 użytkowników – 
 
-• Odkrywca, który będzie miał możliwość Dodawania(odkrywania) planet/gwiazd/etc.. do bazy danych oraz nabywania statków kosmicznych:
+• Odkrywca, który ma możliwość Dodawania(odkrywania) planet/gwiazd/etc.. do bazy danych oraz nabywania statków kosmicznych:
 
 - Task<int> GetAllPlanetsCount(); - liczba znanych planet
 - Task<Planet> GetHeaviestPlanet(); - najcięższa planeta
@@ -16,12 +16,45 @@ W systemie będzie występować 3 użytkowników –
 - public void ReturnShip(); - zwracanie statku
 - public void MarkBroken(); - oznaczenie statku jako uszkodzony
         
-• Administracja będzie miał możliwość tworzenia nowych odkrywców oraz przenoszenia planet lub całych układów słonecznych pomiędzy galaktykami:
+• Administracja ma możliwość tworzenia nowych odkrywców oraz przenoszenia planet lub całych układów słonecznych pomiędzy galaktykami:
         
 - Task MoveStarSystemToAnotherGalaxy(StarSystem starsystemToMove, Galaxy destinationGalaxy); - przenoszenie systemów gwiezdnych między galaktykami
 - Task HireNewDiscoverer(string name, string surname, int age); - zatrudnienie nowego odkrywcy
 
-• Dealer będzie miał możliwość tworzenia nowych statków kosmicznych:
+• Dealer będzie ma tworzenia nowych statków kosmicznych:
         
 - Task MakeNewShip(int MaxRange, int MaxSpeed, string? model = null, Discoverer? discoverer = null); - zbudowanie statku
 - Task RewardExplorerByNewShip(Discoverer discovererToAward, Ship newShip); - przydzielenie odkrywcy nowego statku
+
+ • TESTY
+        W ramach testów  Xunit cztery metody testowe, z których każda używa innej metody testowania:
+
+1. Metoda "BLLTest":
+-Tworzy listę obiektów typu Planet i fałszywe repozytorium dla nich.
+-Dodaje planety do repozytorium za pomocą pętli foreach.
+-Tworzy obiekt TestUnitOfWork, dodaje fałszywe repozytorium do niego i tworzy nowy obiekt Service, używając unitOfWork.
+-Wywołuje metodę "GetHeaviestPlanet" z serwisu i sprawdza, czy zwrócona planeta ma poprawne ID.
+        
+Ten test używa fałszywego repozytorium i testowego unit of work, aby przetestować warstwę serwisową.
+        
+2. Metoda "MockTest":
+-Tworzy mock repozytorium dla obiektów typu Planet przy użyciu biblioteki Moq.
+-Tworzy dwa obiekty typu Planet i ustawia mock repozytorium tak, aby zwracały je, gdy wywoływana jest metoda "GetListAsync".
+-Tworzy nowy obiekt UnitOfWork, dodaje mock repozytorium do niego i tworzy nowy obiekt Service, używając unitOfWork.
+-Wywołuje metodę "GetAllPlanetsCount" z serwisu i sprawdza, czy zwrócona liczba jest poprawna.
+        
+Ten test używa mock repozytorium i rzeczywistego unit of work, aby przetestować warstwę serwisową.
+        
+3. Metoda "AddRandomStarsTest":
+-Tworzy nowy kontekst bazy danych w pamięci za pomocą metody GetTestDbContext.
+-Tworzy repozytorium dla obiektów typu Star przy użyciu kontekstu i dodaje je do nowego obiektu UnitOfWork.
+-Tworzy nowy obiekt Service, używając unitOfWork.
+-Wywołuje metodę "AddRandomStars" z serwisu z liczbą 2 i sprawdza, czy liczba gwiazd w repozytorium wynosi 2.
+Ten test używa rzeczywistego repozytorium i rzeczywistego unit of work, aby przetestować warstwę serwisową.
+4.Metoda "DummyPlanetRepoTest":
+-Tworzy akcję, która tworzy repozytorium dla obiektów typu Planet z wartością null.
+-Sprawdza, czy akcja wywołuje wyjątek typu NullReferenceException.
+        
+Ten test ma na celu przetestowanie zachowania aplikacji, gdy próbujemy utworzyć repozytorium z wartością null.
+        
+        
