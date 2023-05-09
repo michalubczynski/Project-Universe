@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "6ss299Mp8Y+ToDytfYWCCfONMQN/MIqBj/r6TSbDpwfXi1hqwqySRKftWk/gmun9lfAERnKR4RMPr7ODO6qoVg==",
+  "dgSpecHash": "jZrtvyGsEgTdYM0Pp4tUB3AyjTdLlBE+bhNPqv9eJ9dqGq/ZW8K0hMzmIAVGEvbptyVcNWifoDfz792dLzbH9A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\Projekt_xUnit\\Projekt_xUnit.csproj",
   "expectedPackageFiles": [
@@ -40,6 +40,7 @@
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.5\\microsoft.entityframeworkcore.7.0.5.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.5\\microsoft.entityframeworkcore.abstractions.7.0.5.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.5\\microsoft.entityframeworkcore.analyzers.7.0.5.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\7.0.5\\microsoft.entityframeworkcore.inmemory.7.0.5.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\7.0.5\\microsoft.entityframeworkcore.relational.7.0.5.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\7.0.5\\microsoft.entityframeworkcore.sqlserver.7.0.5.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\7.0.0\\microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
