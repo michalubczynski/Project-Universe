@@ -29,7 +29,7 @@ namespace Projekt_xUnit
             unitOfWork.AddRepository(fakeRepository);
             var service = new Service(unitOfWork);
             var result = service.GetHeaviestPlanet();
-            Assert.Equal(3, result.Id);
+            Assert.Equal(planets.ElementAt(2).Id, result.Result.Id);
         }
     }
 }

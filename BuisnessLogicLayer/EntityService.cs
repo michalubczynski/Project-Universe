@@ -21,10 +21,10 @@ namespace BLL
         Task RemoveSpaceObjectAsync(int id);
         bool SpaceObjectExists(int id);
     }
-    public class SpaceObjectService<T> : IEntityService<T> where T : DbEntity
+    public class EntityService<T> : IEntityService<T> where T : DbEntity
     {
         private readonly IUnitOfWork _unitOfWork;
-        public SpaceObjectService(IUnitOfWork unitOfWork)
+        public EntityService(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
