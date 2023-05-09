@@ -9,6 +9,7 @@
       "DAL_DataAccessLayer/1.0.0": {
         "dependencies": {
           "BOL_BussinesObjectLayer": "1.0.0",
+          "DAL_Interfaces": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.5",
           "Microsoft.EntityFrameworkCore.Abstractions": "7.0.5",
           "Microsoft.EntityFrameworkCore.Design": "7.0.5",
@@ -758,6 +759,14 @@
         "runtime": {
           "BOL_BussinesObjectLayer.dll": {}
         }
+      },
+      "DAL_Interfaces/1.0.0": {
+        "dependencies": {
+          "BOL_BussinesObjectLayer": "1.0.0"
+        },
+        "runtime": {
+          "DAL_Interfaces.dll": {}
+        }
       }
     }
   },
@@ -1265,6 +1274,11 @@
       "hashPath": "system.windows.extensions.5.0.0.nupkg.sha512"
     },
     "BOL_BussinesObjectLayer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DAL_Interfaces/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

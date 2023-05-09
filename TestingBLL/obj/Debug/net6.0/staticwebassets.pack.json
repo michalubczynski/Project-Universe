@@ -1,8 +1,8 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\TestingBLL\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\TestingBLL.bundle.scp.css",
-      "PackagePath": "staticwebassets\\TestingBLL.bundle.scp.css"
+      "Id": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\TestingBLL\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Tests_BLL.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Tests_BLL.bundle.scp.css"
     },
     {
       "Id": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\TestingBLL\\wwwroot\\css\\site.css",
@@ -245,20 +245,20 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.TestingBLL.Microsoft.AspNetCore.StaticWebAssets.props",
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Tests_BLL.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
     {
-      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.TestingBLL.props",
-      "PackagePath": "build\\TestingBLL.props"
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.Tests_BLL.props",
+      "PackagePath": "build\\Tests_BLL.props"
     },
     {
-      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.TestingBLL.props",
-      "PackagePath": "buildMultiTargeting\\TestingBLL.props"
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.Tests_BLL.props",
+      "PackagePath": "buildMultiTargeting\\Tests_BLL.props"
     },
     {
-      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.TestingBLL.props",
-      "PackagePath": "buildTransitive\\TestingBLL.props"
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.Tests_BLL.props",
+      "PackagePath": "buildTransitive\\Tests_BLL.props"
     }
   ],
   "ElementsToRemove": []

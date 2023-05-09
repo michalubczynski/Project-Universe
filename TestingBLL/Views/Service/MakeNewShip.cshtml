@@ -1,31 +1,31 @@
 ﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+	For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 
 <h2>Make New Ship</h2>
 <form asp-action="MakeNewShip" method="post">
-    <div class="form-group">
-        <label>Max Range:</label>
-        <input type="number" name="MaxRange" class="form-control" required />
-    </div>
-    <div class="form-group">
-        <label>Max Speed:</label>
-        <input type="number" name="MaxSpeed" class="form-control" required />
-    </div>
-    <div class="form-group">
-        <label>Model:</label>
-        <input type="text" name="model" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label>Discoverer:</label>
-        <select name="discoverer" class="form-control">
-            <option value="">Select a discoverer...</option>
-            @foreach (var discoverer in ViewBag.Discoverers)
-            {
-                <option value="@discoverer.Id">@discoverer.Name @discoverer.Surname</option>
-            }
-        </select>
-    </div>
-    <button type="submit" class="btn btn-primary">Create</button>
+	<div class="form-group">
+		<label>Max Range:</label>
+		<input type="number" name="MaxRange" class="form-control" required />
+	</div>
+	<div class="form-group">
+		<label>Max Speed:</label>
+		<input type="number" name="MaxSpeed" class="form-control" required />
+	</div>
+	<div class="form-group">
+		<label>Model:</label>
+		<input type="text" name="model" class="form-control" />
+	</div>
+	<div class="form-group">
+		<label>Discoverer:</label>
+		<select name="discoverer" class="form-control">
+			<option value="">Select a discoverer...</option>
+			@foreach (var discoverer in ViewBag.Discoverers)
+			{
+				<option value="@discoverer.Id">@discoverer.Name @discoverer.Surname</option>
+			}
+		</select>
+	</div>
+	<button type="submit" class="btn btn-primary">Create</button>
 </form>
 

@@ -10,6 +10,8 @@
         "dependencies": {
           "BLL_BuisnessLogicLayer": "1.0.0",
           "BOL_BussinesObjectLayer": "1.0.0",
+          "DAL_DataAccessLayer": "1.0.0",
+          "DAL_Interfaces": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.5",
           "Microsoft.EntityFrameworkCore.Abstractions": "7.0.5",
           "Microsoft.EntityFrameworkCore.Design": "7.0.5",
@@ -2463,7 +2465,7 @@
       "BLL_BuisnessLogicLayer/1.0.0": {
         "dependencies": {
           "BOL_BussinesObjectLayer": "1.0.0",
-          "DAL_DataAccessLayer": "1.0.0"
+          "DAL_Interfaces": "1.0.0"
         },
         "runtime": {
           "BLL_BuisnessLogicLayer.dll": {}
@@ -2483,6 +2485,7 @@
       "DAL_DataAccessLayer/1.0.0": {
         "dependencies": {
           "BOL_BussinesObjectLayer": "1.0.0",
+          "DAL_Interfaces": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.5",
           "Microsoft.EntityFrameworkCore.Abstractions": "7.0.5",
           "Microsoft.EntityFrameworkCore.Relational": "7.0.5",
@@ -2491,6 +2494,14 @@
         },
         "runtime": {
           "DAL_DataAccessLayer.dll": {}
+        }
+      },
+      "DAL_Interfaces/1.0.0": {
+        "dependencies": {
+          "BOL_BussinesObjectLayer": "1.0.0"
+        },
+        "runtime": {
+          "DAL_Interfaces.dll": {}
         }
       }
     }
@@ -3814,6 +3825,11 @@
       "sha512": ""
     },
     "DAL_DataAccessLayer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DAL_Interfaces/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -3758,7 +3758,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "BOL_BussinesObjectLayer": "1.0.0",
-          "DAL_DataAccessLayer": "1.0.0"
+          "DAL_Interfaces": "1.0.0"
         },
         "compile": {
           "bin/placeholder/BLL_BuisnessLogicLayer.dll": {}
@@ -3788,6 +3788,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "BOL_BussinesObjectLayer": "1.0.0",
+          "DAL_Interfaces": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.5",
           "Microsoft.EntityFrameworkCore.Abstractions": "7.0.5",
           "Microsoft.EntityFrameworkCore.Relational": "7.0.5",
@@ -3799,6 +3800,19 @@
         },
         "runtime": {
           "bin/placeholder/DAL_DataAccessLayer.dll": {}
+        }
+      },
+      "DAL_Interfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "BOL_BussinesObjectLayer": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DAL_Interfaces.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DAL_Interfaces.dll": {}
         }
       }
     }
@@ -10695,6 +10709,11 @@
       "type": "project",
       "path": "../DataAccessLayer/DAL_DataAccessLayer.csproj",
       "msbuildProject": "../DataAccessLayer/DAL_DataAccessLayer.csproj"
+    },
+    "DAL_Interfaces/1.0.0": {
+      "type": "project",
+      "path": "../DAL_Interfaces/DAL_Interfaces.csproj",
+      "msbuildProject": "../DAL_Interfaces/DAL_Interfaces.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -10716,9 +10735,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\TestingBLL\\TestingBLL.csproj",
-      "projectName": "TestingBLL",
-      "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\TestingBLL\\TestingBLL.csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\TestingBLL\\Tests_BLL.csproj",
+      "projectName": "Tests_BLL",
+      "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\TestingBLL\\Tests_BLL.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\TestingBLL\\obj\\",
       "projectStyle": "PackageReference",

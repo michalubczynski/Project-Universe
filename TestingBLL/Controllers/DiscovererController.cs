@@ -2,16 +2,16 @@
 
 namespace TestingBLL.Controllers
 {
-    public class DiscovererController : Controller
-    {
+	public class DiscovererController : Controller
+	{
 
-        //AddRandomStars()
-        //GetAllPlanetsCount()
-        //GetHeaviestPlanet()
+		//AddRandomStars()
+		//GetAllPlanetsCount()
+		//GetHeaviestPlanet()
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-    }
+		public IActionResult Index()
+		{
+			return View();
+		}
+	}
 }

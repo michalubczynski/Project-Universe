@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BOL(BussinesObjectLayes\BOL_BussinesObjectLayer.csproj" />
+    <ProjectReference Include="..\DAL_Interfaces\DAL_Interfaces.csproj" />
   </ItemGroup>
 
 </Project>

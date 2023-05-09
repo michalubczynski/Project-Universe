@@ -6,8 +6,14 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI_Universe", "UI_Universe.csproj", "{686ADFE9-6A07-4F42-AF5D-F1E94C309BD2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BLL_BuisnessLogicLayer", "..\BuisnessLogicLayer\BLL_BuisnessLogicLayer.csproj", "{E8BCF60C-E96E-45C9-906C-9CE5BBCD7FF6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{13335A37-E620-432E-99D0-289C0ED4C5E1} = {13335A37-E620-432E-99D0-289C0ED4C5E1}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL_DataAccessLayer", "..\DataAccessLayer\DAL_DataAccessLayer.csproj", "{37683526-B9D5-49A1-BD7D-A4606D77861E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{13335A37-E620-432E-99D0-289C0ED4C5E1} = {13335A37-E620-432E-99D0-289C0ED4C5E1}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BOL_BussinesObjectLayer", "..\BOL(BussinesObjectLayes\BOL_BussinesObjectLayer.csproj", "{9718C048-34A3-47C3-A8AB-CE4F413A6F26}"
 EndProject
@@ -17,9 +23,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementy rozwiązania", "El
 		Web.config = Web.config
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestingBLL", "..\TestingBLL\TestingBLL.csproj", "{0CD57FB6-3C32-43A7-A97A-2A4AD5F29A39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests_BLL", "..\TestingBLL\Tests_BLL.csproj", "{0CD57FB6-3C32-43A7-A97A-2A4AD5F29A39}"
+	ProjectSection(ProjectDependencies) = postProject
+		{13335A37-E620-432E-99D0-289C0ED4C5E1} = {13335A37-E620-432E-99D0-289C0ED4C5E1}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projekt_xUnit", "..\Projekt_xUnit\Projekt_xUnit.csproj", "{BAAB0583-974B-4A50-927A-3EDC84C97DFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests_xUnit", "..\Projekt_xUnit\Tests_xUnit.csproj", "{BAAB0583-974B-4A50-927A-3EDC84C97DFE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{13335A37-E620-432E-99D0-289C0ED4C5E1} = {13335A37-E620-432E-99D0-289C0ED4C5E1}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL_Interfaces", "..\DAL_Interfaces\DAL_Interfaces.csproj", "{13335A37-E620-432E-99D0-289C0ED4C5E1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9718C048-34A3-47C3-A8AB-CE4F413A6F26} = {9718C048-34A3-47C3-A8AB-CE4F413A6F26}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +68,10 @@ Global
 		{BAAB0583-974B-4A50-927A-3EDC84C97DFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BAAB0583-974B-4A50-927A-3EDC84C97DFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BAAB0583-974B-4A50-927A-3EDC84C97DFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13335A37-E620-432E-99D0-289C0ED4C5E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13335A37-E620-432E-99D0-289C0ED4C5E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13335A37-E620-432E-99D0-289C0ED4C5E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13335A37-E620-432E-99D0-289C0ED4C5E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
