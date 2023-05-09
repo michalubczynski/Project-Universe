@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "VPb2X2ITpQJCKszRXPAw0hnn9U8DhWJJtrvG4xyRBHfxHfB/ipCHkAXjesDOEeDAZ8HBs1KBwqajmdbwITGyyw==",
+  "dgSpecHash": "hs3L7Xr3168YXfoLbdHzc4eWCXVZ0sbzhE3nKFrRYQiXoN0I15aHXVRK0L5sPvLFLaWLIqf0DfYk67QgzpgMQA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\TestingBLL\\Tests_BLL.csproj",
   "expectedPackageFiles": [
@@ -39,6 +39,7 @@
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.5\\microsoft.entityframeworkcore.abstractions.7.0.5.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.5\\microsoft.entityframeworkcore.analyzers.7.0.5.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.entityframeworkcore.design\\7.0.5\\microsoft.entityframeworkcore.design.7.0.5.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\7.0.5\\microsoft.entityframeworkcore.inmemory.7.0.5.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\7.0.5\\microsoft.entityframeworkcore.relational.7.0.5.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\7.0.5\\microsoft.entityframeworkcore.sqlserver.7.0.5.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\7.0.5\\microsoft.entityframeworkcore.tools.7.0.5.nupkg.sha512",

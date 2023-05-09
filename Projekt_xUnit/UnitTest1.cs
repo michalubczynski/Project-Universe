@@ -67,7 +67,7 @@ namespace Projekt_xUnit
 			var unitOfWork = new TestUnitOfWork();
 			unitOfWork.AddRepository(starsRepo);
 			var service = new Service(unitOfWork);
-			var count = 1;
+			var count = 2;
 			var result = service.AddRandomStars(count);
 			Assert.Equal(count, unitOfWork.GetRepository<Star>().GetList().Count());
 		}

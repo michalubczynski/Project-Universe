@@ -13,17 +13,7 @@ using Universe.Models.starsystem;
 
 namespace BLL_BuisnessLogicLayer
 {
-	public interface IWorkService
-	{
-		Task<int> GetAllPlanetsCount();
-		Task<Planet> GetHeaviestPlanet();
-		Task AddRandomStars(int count);
-		Task MoveStarSystemToAnotherGalaxy(StarSystem starsystemToMove, Galaxy destinationGalaxy);
-		Task MakeNewShip(int MaxRange, int MaxSpeed, string? model = null, Discoverer? discoverer = null);
-		Task HireNewDiscoverer(string name, string surname, int age);
-		Task RewardExplorerByNewShip(Discoverer discovererToAward, Ship newShip);
-	}
-	public class Service : IWorkService
+	public class Service : IService
 	{
 		private readonly IUnitOfWork _unitOfWork;
 		public Service(IUnitOfWork unitOfWork)

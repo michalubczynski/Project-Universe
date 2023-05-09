@@ -297,3 +297,4 @@ C:\Users\Administrator\Documents\GitHub\UniverseDB\TestingBLL\obj\Debug\net6.0\r
 C:\Users\Administrator\Documents\GitHub\UniverseDB\TestingBLL\obj\Debug\net6.0\Tests_BLL.pdb
 C:\Users\Administrator\Documents\GitHub\UniverseDB\TestingBLL\obj\Debug\net6.0\Tests_BLL.genruntimeconfig.cache
 C:\Users\Administrator\Documents\GitHub\UniverseDB\TestingBLL\obj\Debug\net6.0\ref\Tests_BLL.dll
+C:\Users\Administrator\Documents\GitHub\UniverseDB\TestingBLL\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.InMemory.dll

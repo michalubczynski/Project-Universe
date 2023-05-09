@@ -594,3 +594,4 @@ C:\Users\Administrator\Documents\GitHub\UniverseDB\Universe\obj\Debug\net6.0\ref
 C:\Users\Administrator\Documents\GitHub\UniverseDB\Universe\obj\Debug\net6.0\UI_Universe.pdb
 C:\Users\Administrator\Documents\GitHub\UniverseDB\Universe\obj\Debug\net6.0\UI_Universe.genruntimeconfig.cache
 C:\Users\Administrator\Documents\GitHub\UniverseDB\Universe\obj\Debug\net6.0\ref\UI_Universe.dll
+C:\Users\Administrator\Documents\GitHub\UniverseDB\Universe\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.InMemory.dll

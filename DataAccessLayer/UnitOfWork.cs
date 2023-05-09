@@ -14,7 +14,10 @@ namespace Universe.Models
 			_context = context;
 			_repositories = new Dictionary<Type, object>();
 		}
-		public UnitOfWork() { }
+		public UnitOfWork()
+		{
+			_repositories = new Dictionary<Type, object>();
+		}
 		public void AddRepository<T>(IRepository<T> repo) where T : DbEntity
 		{
 			_repositories.Add(typeof(T), repo);
@@ -25,19 +28,14 @@ namespace Universe.Models
 			{
 				return (IRepository<T>)repository;
 			}
-
 			var newRepository = new Repository<T>(_context);
 			_repositories.Add(typeof(T), newRepository);
-
 			return newRepository;
-
 		}
-
 		public void SaveChanges()
 		{
 			_context.SaveChanges();
 		}
-
 		public async Task SaveChangesAsync(CancellationToken cancellationToken = default)
 		{
 			 await _context.SaveChangesAsync(cancellationToken);
@@ -53,7 +51,6 @@ namespace Universe.Models
 				_disposed = true;
 			}
 		}
-
 		public void Dispose()
 		{
 			Dispose(true);

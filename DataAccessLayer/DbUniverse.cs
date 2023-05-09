@@ -53,11 +53,12 @@ namespace Models
 			return await Set<T>().FirstOrDefaultAsync(predicate);
 		}
 
-		//protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-		//{
-		//	string connectionString = "Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = baza; Integrated Security = True; Connect Timeout = 30; Encrypt = False; Trust Server Certificate = False; Application Intent = ReadWrite; Multi Subnet Failover = False";
-		//	optionsBuilder.UseSqlServer(connectionString);
-		//}
+		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+		{
+			//string connectionString = "Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = baza; Integrated Security = True; Connect Timeout = 30; Encrypt = False; Trust Server Certificate = False; Application Intent = ReadWrite; Multi Subnet Failover = False";
+			//optionsBuilder.UseSqlServer(connectionString);
+			optionsBuilder.UseInMemoryDatabase("MyInMemoryDatabase");
+		}
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			modelBuilder.Entity<Ship>().HasOne(d => d.Discoverer).WithOne(s => s.Ship).HasForeignKey<Discoverer>(d => d.ShipId);

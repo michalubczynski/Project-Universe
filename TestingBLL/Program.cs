@@ -14,8 +14,8 @@ builder.Services.AddDbContext<DbUniverse>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 
-builder.Services.AddScoped<IWorkService, Service>();
-builder.Services.AddTransient<IWorkService, Service>();
+builder.Services.AddScoped<IService, Service>();
+builder.Services.AddTransient<IService, Service>();
 
 var app = builder.Build();
 // Configure the HTTP request pipeline.
@@ -34,6 +34,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
 	name: "default",
-	pattern: "{controller=Service}/{action=HireNewDiscoverer}");
+	pattern: "{controller=Service}/{action=AddRandomStars}");
 
 app.Run();

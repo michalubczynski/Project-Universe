@@ -9,9 +9,9 @@ namespace TestingBLL.Controllers
 {
 	public class ServiceController : Controller
 	{
-		private readonly IWorkService _workService;
+		private readonly IService _workService;
 
-		public ServiceController(IWorkService workService)
+		public ServiceController(IService workService)
 		{
 			_workService = workService;
 		}
@@ -34,14 +34,22 @@ namespace TestingBLL.Controllers
 			await _workService.AddRandomStars(count);
 			return View();
 		}
-
+		[HttpGet]
+		public IActionResult AddRandomStars()
+		{
+			return View();
+		}
 		[HttpPost]
 		public async Task<IActionResult> MoveStarSystemToAnotherGalaxy(StarSystem starsystemToMove, Galaxy destinationGalaxy)
 		{
 			await _workService.MoveStarSystemToAnotherGalaxy(starsystemToMove, destinationGalaxy);
 			return View();
 		}
-
+		[HttpGet]
+		public IActionResult MoveStarSystemToAnotherGalaxy()
+		{
+			return View();
+		}
 		[HttpPost]
 		public async Task<IActionResult> MakeNewShip(int MaxRange, int MaxSpeed, string? model = null, Discoverer? discoverer = null)
 		{
@@ -65,6 +73,11 @@ namespace TestingBLL.Controllers
 		public async Task<IActionResult> RewardExplorerByNewShip(Discoverer discovererToAward, Ship newShip)
 		{
 			await _workService.RewardExplorerByNewShip(discovererToAward, newShip);
+			return View();
+		}
+		[HttpPost]
+		public IActionResult RewardExplorerByNewShip()
+		{
 			return View();
 		}
 		public IActionResult Index()
