@@ -1,6 +1,8 @@
 using BLL_BuisnessLogicLayer;
 using BuisnessLogicLayer;
 using DAL_DataAccessLayer;
+using System.Numerics;
+using Universe.Models;
 using Universe.Models.galaxy;
 using Universe.Models.planet;
 
@@ -30,6 +32,16 @@ namespace Projekt_xUnit
             var service = new Service(unitOfWork);
             var result = service.GetHeaviestPlanet();
             Assert.Equal(planets.ElementAt(2).Id, result.Result.Id);
+        }
+        [Fact]
+        public void Test2()
+        {
+            var mockRepo = new MockEntityRepository<Planet>().MockCountAsync(3).MockGetByID(new Planet { Id = 1, Name = "Planet A", Mass = 10 });
+            var unitOfWork = new UnitOfWork();
+            unitOfWork.AddRepository(mockRepo.Object);
+            var service = new Service(unitOfWork);
+            var result = service.GetAllPlanetsCount();
+            Assert.Equal(3, result.Result);
         }
     }
 }

@@ -156,6 +156,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.5, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.18.4, )"
             }
           },
           "imports": [

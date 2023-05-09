@@ -14,15 +14,18 @@ namespace Universe.Models
     {
         private readonly DbUniverse _context;
         private Dictionary<Type, object> _repositories;
-
+        private bool _disposed = false;
 
         public UnitOfWork(DbUniverse context)
         {
             _context = context;
             _repositories = new Dictionary<Type, object>();
         }
-        private bool _disposed = false;
-
+        public UnitOfWork() { }
+        public void AddRepository<T>(IRepository<T> repo) where T : DbEntity
+        {
+            _repositories.Add(typeof(T), repo);
+        }
         public IRepository<T> GetRepository<T>() where T : DbEntity
         {
             if (_repositories.TryGetValue(typeof(T), out var repository))

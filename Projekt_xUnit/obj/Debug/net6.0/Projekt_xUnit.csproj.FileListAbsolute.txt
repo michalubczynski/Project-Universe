@@ -361,3 +361,6 @@ C:\Users\Administrator\Documents\GitHub\UniverseDB\Projekt_xUnit\obj\Debug\net6.
 C:\Users\Administrator\Documents\GitHub\UniverseDB\Projekt_xUnit\obj\Debug\net6.0\Projekt_xUnit.pdb
 C:\Users\Administrator\Documents\GitHub\UniverseDB\Projekt_xUnit\obj\Debug\net6.0\Projekt_xUnit.genruntimeconfig.cache
 C:\Users\Administrator\Documents\GitHub\UniverseDB\Projekt_xUnit\obj\Debug\net6.0\ref\Projekt_xUnit.dll
+C:\Users\Administrator\Documents\GitHub\UniverseDB\Projekt_xUnit\bin\Debug\net6.0\Castle.Core.dll
+C:\Users\Administrator\Documents\GitHub\UniverseDB\Projekt_xUnit\bin\Debug\net6.0\Moq.dll
+C:\Users\Administrator\Documents\GitHub\UniverseDB\Projekt_xUnit\bin\Debug\net6.0\Moq.EntityFrameworkCore.dll
