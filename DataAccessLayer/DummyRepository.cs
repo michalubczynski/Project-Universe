@@ -12,6 +12,8 @@ namespace DAL_DataAccessLayer
 {
     public class DummyRepository<T> : IRepository<T> where T : DbEntity
     {
+
+
         private DbUniverse _context;
         public DummyRepository(DbUniverse context)
         {
