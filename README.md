@@ -34,29 +34,22 @@ W systemie występuje 3 użytkowników –
 -Dodaje planety do repozytorium za pomocą pętli foreach.
 -Tworzy obiekt TestUnitOfWork, dodaje fake repozytorium do niego i tworzy nowy obiekt Service, używając unitOfWork.
 -Wywołuje metodę "GetHeaviestPlanet" z serwisu i sprawdza, czy zwrócona planeta ma poprawne ID.
-        
- test używa fałszywego repozytorium i testowego unit of work, aby przetestować warstwę serwisową.
-        
+                
 2. Metoda "MockTest":
 -Tworzy mockowe repozytorium dla obiektów typu Planet przy użyciu biblioteki Moq.
--Tworzy dwa obiekty typu Planet i ustawia mock repozytorium tak, aby zwracały je, gdy wywoływana jest metoda "GetListAsync".
+-Tworzy dwa obiekty typu Planet i ustawia mockowe repozytorium tak, aby zwracały je, gdy wywoływana jest metoda "GetListAsync".
 -Tworzy nowy obiekt UnitOfWork, dodaje mockowe repozytorium do niego i tworzy nowy obiekt Service, używając unitOfWork.
 -Wywołuje metodę "GetAllPlanetsCount" z serwisu i sprawdza, czy zwrócona liczba jest poprawna.
-        
- test używa mock repozytorium i rzeczywistego unit of work, aby przetestować warstwę serwisową.
-        
+          
 3. Metoda "AddRandomStarsTest":
 -Tworzy nowy kontekst bazy danych w pamięci za pomocą metody GetTestDbContext.
 -Tworzy repozytorium dla obiektów typu Star przy użyciu kontekstu i dodaje je do nowego obiektu UnitOfWork.
 -Tworzy nowy obiekt Service, używając unitOfWork.
 -Wywołuje metodę "AddRandomStars" z serwisu z liczbą 2 i sprawdza, czy liczba gwiazd w repozytorium wynosi 2.
         
- test używa rzeczywistego repozytorium i rzeczywistego unit of work, aby przetestować warstwę serwisową.
-        
 4.Metoda "DummyPlanetRepoTest":
 -Tworzy akcję, która tworzy repozytorium dla obiektów typu Planet z wartością null.
 -Sprawdza, czy akcja wywołuje wyjątek typu NullReferenceException.
         
- test ma na celu przetestowanie zachowania aplikacji, gdy próbujemy utworzyć repozytorium z wartością null.
         
         
