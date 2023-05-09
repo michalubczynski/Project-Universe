@@ -1,6 +1,7 @@
 using BLL_BuisnessLogicLayer;
 using Microsoft.EntityFrameworkCore;
 using Models;
+using Moq;
 using Tests_xUnit.FakeClasses;
 using Universe.Models;
 using Universe.Models.planet;
@@ -15,9 +16,9 @@ namespace Projekt_xUnit
 		{
 
 		var planets = new List<Planet>{
-		 new Planet { Id = 1, Name = "Planet A", Mass = 10 },
-		 new Planet { Id = 2, Name = "Planet B", Mass = 5 },
-		 new Planet { Id = 3, Name = "Planet C", Mass = 15 }
+			new Planet { Id = 1, Name = "Planet A", Mass = 10 },
+			new Planet { Id = 2, Name = "Planet B", Mass = 5 },
+			new Planet { Id = 3, Name = "Planet C", Mass = 15 }
 		};
 
 			var fakeRepository = new FakeRepository<Planet>();
@@ -36,12 +37,23 @@ namespace Projekt_xUnit
 		[Fact]
 		public void MockTest()
 		{
-			var mockRepo = new MockEntityRepository<Planet>().MockCountAsync(3).MockGetByID(new Planet { Id = 1, Name = "Planet A", Mass = 10 });
+			var mockRepo = new Mock<IRepository<Planet>>();
+			var p1 = new Planet
+			{
+				Id = 0,
+				Name = "aaa"
+			};
+			var p2 = new Planet
+			{
+				Id = 1,
+				Name = "bbb"
+			};
+			mockRepo.Setup(x => x.GetListAsync().Result).Returns(new List<Planet> {p1, p2});
 			var unitOfWork = new UnitOfWork();
 			unitOfWork.AddRepository(mockRepo.Object);
 			var service = new Service(unitOfWork);
 			var result = service.GetAllPlanetsCount();
-			Assert.Equal(3, result.Result);
+			Assert.Equal(2, result.Result);
 		}
 		public static DbUniverse GetTestDbContext(string dbName)
 		{
@@ -64,7 +76,7 @@ namespace Projekt_xUnit
 		{
 			var testContext = GetTestDatabase();
 			var starsRepo = new Repository<Star>(testContext);
-			var unitOfWork = new TestUnitOfWork();
+			var unitOfWork = new UnitOfWork();
 			unitOfWork.AddRepository(starsRepo);
 			var service = new Service(unitOfWork);
 			var count = 2;

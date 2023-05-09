@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.IdentityModel.Tokens;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,15 +31,18 @@ namespace BLL_BuisnessLogicLayer
 			var starSystemRepo = _unitOfWork.GetRepository<StarSystem>();
 			for (int i = 0; i < count; i++)
 			{
-				stars[i].Id = _unitOfWork.GetRepository<Star>().GetList().Last().Id + 1;
-				stars[i].Name = "Random Star no. " + rng.Next() + "." + rng.Next();
-				stars[i].StarSystemId = rng.Next(0, starSystemRepo.GetList().Last().Id);
-				stars[i].StarSystem = starSystemRepo.GetByIDAsync(stars[i].StarSystemId).Result;
-				stars[i].Age = rng.Next();
-				stars[i].Mass = rng.NextDouble() * rng.Next();
-				stars[i].Radius = rng.NextDouble() * rng.Next();
-				stars[i].Luminosity = rng.NextDouble() * rng.Next();
-				stars[i].Temperature = rng.NextDouble() * rng.Next();
+				stars[i] = new Star {
+					Id = (starSystemRepo.CountAsync().Result == 0) ? 0 : _unitOfWork.GetRepository<Star>().GetList().Last().Id + 1,
+					Age = rng.Next(),
+					Luminosity = rng.NextDouble() * rng.Next(),
+					Mass = rng.NextDouble() * rng.Next(),
+					Name = "Random Star no. " + rng.Next() + "." + rng.Next(),
+					Radius = rng.NextDouble() * rng.Next(),
+					Temperature = rng.NextDouble() * rng.Next(),
+					Type = Star.TypeOfStar.Main_sequence_stars,
+					StarSystemId = (starSystemRepo.GetList().Count() == 0) ? 0 : rng.Next(0, starSystemRepo.GetList().Count() - 1),
+					StarSystem = (starSystemRepo.GetList().Count() == 0) ? null : starSystemRepo.GetByIDAsync(stars[i].StarSystemId).Result
+				};
 				await _unitOfWork.GetRepository<Star>().InsertAsync(stars[i]);
 			}
 			await _unitOfWork.SaveChangesAsync();
