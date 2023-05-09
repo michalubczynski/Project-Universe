@@ -76,5 +76,11 @@ namespace Projekt_xUnit
             var result = service.AddRandomStars(count);
             Assert.Equal(count, unitOfWork.GetRepository<Star>().GetList().Count());
         }
+        [Fact]
+        public void DummyPlanetRepoTest()
+        {
+            Action dummyActCreate = () => new Repository<Planet>(null);
+            Assert.Throws<NullReferenceException>(dummyActCreate);
+        }
     }
 }

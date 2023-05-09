@@ -588,3 +588,5 @@ C:\Users\Administrator\Documents\GitHub\UniverseDB\TestingBLL\bin\Debug\net6.0\S
 C:\Users\Administrator\Documents\GitHub\UniverseDB\TestingBLL\bin\Debug\net6.0\System.Text.Encodings.Web.dll
 C:\Users\Administrator\Documents\GitHub\UniverseDB\TestingBLL\bin\Debug\net6.0\System.Text.Json.dll
 C:\Users\Administrator\Documents\GitHub\UniverseDB\TestingBLL\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\Administrator\Documents\GitHub\UniverseDB\TestingBLL\bin\Debug\net6.0\Castle.Core.dll
+C:\Users\Administrator\Documents\GitHub\UniverseDB\TestingBLL\bin\Debug\net6.0\Moq.dll
