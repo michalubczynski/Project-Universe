@@ -30,31 +30,33 @@ W systemie występuje 3 użytkowników –
         W ramach testów  Xunit cztery metody testowe, z których każda używa innej metody testowania:
 
 1. Metoda "BLLTest":
--Tworzy listę obiektów typu Planet i fałszywe repozytorium dla nich.
+-Tworzy listę obiektów typu Planet i fake repozytorium dla nich.
 -Dodaje planety do repozytorium za pomocą pętli foreach.
--Tworzy obiekt TestUnitOfWork, dodaje fałszywe repozytorium do niego i tworzy nowy obiekt Service, używając unitOfWork.
+-Tworzy obiekt TestUnitOfWork, dodaje fake repozytorium do niego i tworzy nowy obiekt Service, używając unitOfWork.
 -Wywołuje metodę "GetHeaviestPlanet" z serwisu i sprawdza, czy zwrócona planeta ma poprawne ID.
         
-Ten test używa fałszywego repozytorium i testowego unit of work, aby przetestować warstwę serwisową.
+ test używa fałszywego repozytorium i testowego unit of work, aby przetestować warstwę serwisową.
         
 2. Metoda "MockTest":
--Tworzy mock repozytorium dla obiektów typu Planet przy użyciu biblioteki Moq.
+-Tworzy mockowe repozytorium dla obiektów typu Planet przy użyciu biblioteki Moq.
 -Tworzy dwa obiekty typu Planet i ustawia mock repozytorium tak, aby zwracały je, gdy wywoływana jest metoda "GetListAsync".
--Tworzy nowy obiekt UnitOfWork, dodaje mock repozytorium do niego i tworzy nowy obiekt Service, używając unitOfWork.
+-Tworzy nowy obiekt UnitOfWork, dodaje mockowe repozytorium do niego i tworzy nowy obiekt Service, używając unitOfWork.
 -Wywołuje metodę "GetAllPlanetsCount" z serwisu i sprawdza, czy zwrócona liczba jest poprawna.
         
-Ten test używa mock repozytorium i rzeczywistego unit of work, aby przetestować warstwę serwisową.
+ test używa mock repozytorium i rzeczywistego unit of work, aby przetestować warstwę serwisową.
         
 3. Metoda "AddRandomStarsTest":
 -Tworzy nowy kontekst bazy danych w pamięci za pomocą metody GetTestDbContext.
 -Tworzy repozytorium dla obiektów typu Star przy użyciu kontekstu i dodaje je do nowego obiektu UnitOfWork.
 -Tworzy nowy obiekt Service, używając unitOfWork.
 -Wywołuje metodę "AddRandomStars" z serwisu z liczbą 2 i sprawdza, czy liczba gwiazd w repozytorium wynosi 2.
-Ten test używa rzeczywistego repozytorium i rzeczywistego unit of work, aby przetestować warstwę serwisową.
+        
+ test używa rzeczywistego repozytorium i rzeczywistego unit of work, aby przetestować warstwę serwisową.
+        
 4.Metoda "DummyPlanetRepoTest":
 -Tworzy akcję, która tworzy repozytorium dla obiektów typu Planet z wartością null.
 -Sprawdza, czy akcja wywołuje wyjątek typu NullReferenceException.
         
-Ten test ma na celu przetestowanie zachowania aplikacji, gdy próbujemy utworzyć repozytorium z wartością null.
+ test ma na celu przetestowanie zachowania aplikacji, gdy próbujemy utworzyć repozytorium z wartością null.
         
         
