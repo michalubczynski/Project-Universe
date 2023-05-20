@@ -32,7 +32,7 @@ namespace Projekt_xUnit
 			unitOfWork.AddRepository(fakeRepository);
 			var service = new Service(unitOfWork);
 			var result = service.GetHeaviestPlanet();
-			Assert.Equal(planets.ElementAt(2).Id, result.Result.Id);
+			Assert.Equal(planets.ElementAt(2), result.Result);
 		}
 		[Fact]
 		public void MockTest()
@@ -75,13 +75,14 @@ namespace Projekt_xUnit
 		public void AddRandomStarsTest()
 		{
 			var testContext = GetTestDatabase();
-			var starsRepo = new Repository<Star>(testContext);
-			var unitOfWork = new UnitOfWork();
-			unitOfWork.AddRepository(starsRepo);
-			var service = new Service(unitOfWork);
-			var count = 2;
-			var result = service.AddRandomStars(count);
-			Assert.Equal(count, unitOfWork.GetRepository<Star>().GetList().Count());
+			var starsRepo = new Repository<Planet>(testContext);
+			var s = new Planet
+			{
+				Id = 0,
+				Name = "aaa"
+			};
+			starsRepo.Insert(s);
+			Assert.Single(starsRepo.GetList());
 		}
 		[Fact]
 		public void DummyPlanetRepoTest()

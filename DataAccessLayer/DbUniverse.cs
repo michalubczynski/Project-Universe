@@ -58,6 +58,7 @@ namespace Models
 			//string connectionString = "Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = baza; Integrated Security = True; Connect Timeout = 30; Encrypt = False; Trust Server Certificate = False; Application Intent = ReadWrite; Multi Subnet Failover = False";
 			//optionsBuilder.UseSqlServer(connectionString);
 			optionsBuilder.UseInMemoryDatabase("MyInMemoryDatabase");
+			optionsBuilder.EnableSensitiveDataLogging();
 		}
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
