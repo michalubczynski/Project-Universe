@@ -28,6 +28,7 @@
     <ProjectReference Include="..\BuisnessLogicLayer\BLL_BuisnessLogicLayer.csproj" />
     <ProjectReference Include="..\DAL_Interfaces\DAL_Interfaces.csproj" />
     <ProjectReference Include="..\DataAccessLayer\DAL_DataAccessLayer.csproj" />
+    <ProjectReference Include="..\TestingBLL\Tests_BLL.csproj" />
   </ItemGroup>
 
 </Project>
