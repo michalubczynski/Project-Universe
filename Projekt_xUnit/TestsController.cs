@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TestingBLL.Controllers;
+using Tests_xUnit.FakeClasses;
+using Universe.Models.planet;
 
 namespace Tests_xUnit
 {
 	public class TestsController
 	{
-		// punkt 1
+		// 1
 		[Fact]
 		public void GetAllPlanetsCountTest()
 		{
@@ -24,6 +26,30 @@ namespace Tests_xUnit
 			// var viewResult = (ViewResult)result;
 			// w przykadzie dziaa, a u nas blad kompilacji...
 			Assert.Equal("5", result.Result.ToString());
+		}
+		// 3.1
+		[Fact]
+		public void APIRandomStarsTest()
+		{
+			var mockService = new MockService();
+			var serviceAPIController = new ServiceAPIController(mockService);
+			var count = 6;
+			serviceAPIController.AddRandomStars(count);
+			Assert.Equal(count, mockService.StarCount);
+		}
+		// 3.2
+		[Fact]
+		public void APIGetHeaviestPlanetTest()
+		{
+			var mockService = new Mock<IService>();
+			var p = new Planet
+			{
+				Id = 1
+			};
+			mockService.Setup(m => m.GetHeaviestPlanet().Result).Returns(p);
+			var serviceAPIController = new ServiceAPIController(mockService.Object);
+			var result = serviceAPIController.GetHeaviestPlanet().Result;
+			Assert.Equal<Planet>(p, result);
 		}
 	}
 }
