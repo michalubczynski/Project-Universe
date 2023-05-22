@@ -21,11 +21,9 @@ namespace Tests_xUnit
 			mockBLL.Setup(m => m.GetAllPlanetsCount().Result).Returns(count);
 			var serviceController = new ServiceController(mockBLL.Object);
 			var result = serviceController.GetAllPlanetsCount();
-			var viewResult = (IActionResult)result;
-
+			// var viewResult = (ViewResult)result;
 			// w przykadzie dziaa, a u nas blad kompilacji...
-			var viewResult = (ViewResult)result;
-			Assert.Equal(5, viewResult.ViewData["Liczba"]);
+			Assert.Equal("5", result.Result.ToString());
 		}
 	}
 }
