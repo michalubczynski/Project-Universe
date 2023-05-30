@@ -1,4 +1,4 @@
 export class GalaxyRequest {
-    constructor(public TypeOfGalaxy: TypeOfGalaxy) {
+    constructor(public type: TypeOfGalaxy,public mass:number) {
     }
 }
