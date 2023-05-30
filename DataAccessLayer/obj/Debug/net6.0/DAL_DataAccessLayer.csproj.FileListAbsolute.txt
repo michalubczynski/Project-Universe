@@ -34,3 +34,5 @@ C:\Users\Administrator\Documents\GitHub\UniverseDB\DataAccessLayer\obj\Debug\net
 C:\Users\Administrator\Documents\GitHub\UniverseDB\DataAccessLayer\obj\Debug\net6.0\DAL_DataAccessLayer.pdb
 C:\Users\Administrator\Documents\GitHub\UniverseDB\DataAccessLayer\obj\Debug\net6.0\DAL_DataAccessLayer.genruntimeconfig.cache
 C:\Users\Administrator\Documents\GitHub\UniverseDB\DataAccessLayer\obj\Debug\net6.0\ref\DAL_DataAccessLayer.dll
+C:\Users\Majkel\Documents\GitHub\UniverseDB\DataAccessLayer\bin\Debug\net6.0\DAL_Interfaces.dll
+C:\Users\Majkel\Documents\GitHub\UniverseDB\DataAccessLayer\bin\Debug\net6.0\DAL_Interfaces.pdb
