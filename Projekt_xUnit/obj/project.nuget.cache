@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "3vbbpSFe9vtg24dUWG+66htfJkH3UuMXsG90zzbpIXhfFcvI08rpwKuAghadhlYLx2OhlRgWHW2pI388h724Iw==",
+  "dgSpecHash": "+Mmu5i9js9I3Cv6tWNpPKEl8585JWllkOJ3WnqtnyUrq1XA0/h5K0nUxcDLArp1CQKkIFAt0R+zwGp0LVeaKog==",
   "success": true,
   "projectFilePath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\Projekt_xUnit\\Tests_xUnit.csproj",
   "expectedPackageFiles": [
@@ -107,6 +107,7 @@
     "C:\\Users\\Administrator\\.nuget\\packages\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",

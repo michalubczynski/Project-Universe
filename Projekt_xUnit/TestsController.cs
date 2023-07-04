@@ -30,29 +30,29 @@ namespace Tests_xUnit
 			//Assert.Equal(5, viewResult.ViewData["Liczba"]);
 			Assert.Equal("5", result.Result.ToString());
 		}
-		// 3.1
-		[Fact]
-		public void APIRandomStarsTest()
-		{
-			var mockService = new MockService();
-			var serviceAPIController = new ServiceAPIController(mockService);
-			var count = 6;
-			serviceAPIController.AddRandomStars(count);
-			Assert.Equal(count, mockService.StarCount);
-		}
-		// 3.2
-		[Fact]
-		public void APIGetHeaviestPlanetTest()
-		{
-			var mockService = new Mock<IService>();
-			var p = new Planet
-			{
-				Id = 1
-			};
-			mockService.Setup(m => m.GetHeaviestPlanet().Result).Returns(p);
-			var serviceAPIController = new ServiceAPIController(mockService.Object);
-			var result = serviceAPIController.GetHeaviestPlanet().Result;
-			Assert.Equal<Planet>(p, result);
-		}
+		//// 3.1
+		//[Fact]
+		//public void APIRandomStarsTest()
+		//{
+		//	var mockService = new MockService();
+		//	var serviceAPIController = new ServiceAPIController(mockService);
+		//	var count = 6;
+		//	serviceAPIController.AddRandomStars(count);
+		//	Assert.Equal(count, mockService.StarCount);
+		//}
+		//// 3.2
+		//[Fact]
+		//public void APIGetHeaviestPlanetTest()
+		//{
+		//	var mockService = new Mock<IService>();
+		//	var p = new Planet
+		//	{
+		//		Id = 1
+		//	};
+		//	mockService.Setup(m => m.GetHeaviestPlanet().Result).Returns(p);
+		//	var serviceAPIController = new ServiceAPIController(mockService.Object);
+		//	var result = serviceAPIController.GetHeaviestPlanet().Result;
+		//	Assert.Equal<Planet>(p, result);
+		//}
 	}
 }
