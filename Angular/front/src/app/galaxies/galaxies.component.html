@@ -1,0 +1,26 @@
+<a routerLink="add">Dodaj Nowa Galaktyke</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>Typ Galaktyki</th>
+            <th>Masa</th>
+            <th>Uklad Gwiezdny</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let galaxy of galaxies">
+            <td>{{galaxy.type}}</td>
+            <td>{{galaxy.mass}}</td>
+            <td>{{galaxy.}}</td>
+            <td>
+                <a [routerLink]="galaxy.id + '/edit'">Edit</a>
+            </td>
+            <td>
+                <button (click)="onDeleteClick(galaxy)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

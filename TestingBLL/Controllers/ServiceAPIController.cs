@@ -33,12 +33,25 @@ namespace TestingBLL.Controllers
 		{
 			_iService.AddRandomStars(count);
 		}
-		[HttpPost]
+
+	/*	[HttpPost]
 		public void MoveStarSystemToAnotherGalaxy(StarSystem starsystemToMove, Galaxy destinationGalaxy)
 		{
 			_iService.MoveStarSystemToAnotherGalaxy(starsystemToMove, destinationGalaxy);
-		}
-		[HttpPost]
+		}*/
+
+
+        [HttpPost]
+        public void MoveStarSystemToAnotherGalaxy([FromBody] dynamic requestBody)
+        {
+            StarSystem starsystemToMove = requestBody.starsystemToMove.ToObject<StarSystem>();
+            Galaxy destinationGalaxy = requestBody.destinationGalaxy.ToObject<Galaxy>();
+
+            _iService.MoveStarSystemToAnotherGalaxy(starsystemToMove, destinationGalaxy);
+        }
+
+
+        [HttpPost]
 		public void MakeNewShip(int MaxRange, int MaxSpeed, string? model = null, Discoverer? discoverer = null)
 		{
 			_iService.MakeNewShip(MaxRange, MaxSpeed, model, discoverer);
@@ -48,10 +61,19 @@ namespace TestingBLL.Controllers
 		{
 			_iService.HireNewDiscoverer(name, surname, age);
 		}
-		[HttpPost]
-		public void RewardExplorerByNewShip(Discoverer discovererToAward, Ship newShip)
-		{
-			_iService.RewardExplorerByNewShip(discovererToAward, newShip);
-		}
-	}
+
+
+        [HttpPost]
+        public void RewardExplorerByNewShip([FromBody] Discoverer discovererToAward, [FromQuery] Ship newShip)
+        {
+            _iService.RewardExplorerByNewShip(discovererToAward, newShip);
+        }
+
+
+        /*	[HttpPost]
+            public void RewardExplorerByNewShip(Discoverer discovererToAward, Ship newShip)
+            {
+                _iService.RewardExplorerByNewShip(discovererToAward, newShip);
+            }*/
+    }
 }

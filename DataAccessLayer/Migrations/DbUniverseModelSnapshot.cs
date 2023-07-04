@@ -50,7 +50,8 @@ namespace DAL_DataAccessLayer.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<int?>("ShipId")
                         .HasColumnType("int");
@@ -268,11 +269,11 @@ namespace DAL_DataAccessLayer.Migrations
                     b.Property<int>("MaxSpeed")
                         .HasColumnType("int");
 
-                    b.Property<string>("ShipModel")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ShipName")
+                    b.Property<string>("ShipModel")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -289,8 +290,8 @@ namespace DAL_DataAccessLayer.Migrations
                             Id = 1,
                             IfBroken = false,
                             MaxSpeed = 10,
+                            Name = "StarShip_1",
                             ShipModel = "m0001",
-                            ShipName = "StarShip_1",
                             SingleChargeRange = 12
                         },
                         new
@@ -298,8 +299,8 @@ namespace DAL_DataAccessLayer.Migrations
                             Id = 2,
                             IfBroken = false,
                             MaxSpeed = 100,
+                            Name = " StarShip_2",
                             ShipModel = "m0002",
-                            ShipName = " StarShip_2",
                             SingleChargeRange = 120
                         },
                         new
@@ -307,8 +308,8 @@ namespace DAL_DataAccessLayer.Migrations
                             Id = 3,
                             IfBroken = true,
                             MaxSpeed = 1000,
+                            Name = "StarShip_3",
                             ShipModel = "m0003",
-                            ShipName = "StarShip_3",
                             SingleChargeRange = 122
                         });
                 });

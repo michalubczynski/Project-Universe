@@ -40,7 +40,7 @@ namespace TestingBLL.Controllers
 			return View();
 		}
 		[HttpPost]
-		public async Task<IActionResult> MoveStarSystemToAnotherGalaxy(StarSystem starsystemToMove, Galaxy destinationGalaxy)
+		public async Task<IActionResult> MoveStarSystemToAnotherGalaxy([FromBody] StarSystem starsystemToMove, [FromQuery] Galaxy destinationGalaxy)
 		{
 			await _workService.MoveStarSystemToAnotherGalaxy(starsystemToMove, destinationGalaxy);
 			return View();
