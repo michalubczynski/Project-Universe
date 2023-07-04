@@ -598,3 +598,4 @@ C:\Users\Majkel\Documents\GitHub\UniverseDB\TestingBLL\obj\Debug\net6.0\refint\T
 C:\Users\Majkel\Documents\GitHub\UniverseDB\TestingBLL\obj\Debug\net6.0\Tests_BLL.pdb
 C:\Users\Majkel\Documents\GitHub\UniverseDB\TestingBLL\obj\Debug\net6.0\Tests_BLL.genruntimeconfig.cache
 C:\Users\Majkel\Documents\GitHub\UniverseDB\TestingBLL\obj\Debug\net6.0\ref\Tests_BLL.dll
+C:\Users\Administrator\Documents\GitHub\UniverseDB\TestingBLL\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
