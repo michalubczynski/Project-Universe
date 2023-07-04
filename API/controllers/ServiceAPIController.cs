@@ -8,9 +8,10 @@ using Universe.Models.starsystem;
 
 namespace TestingBLL.Controllers
 {
-	[Route("[controller]")]
 	[ApiController]
-	public class ServiceAPIController : ControllerBase
+    [Route("[controller]")]
+
+    public class ServiceAPIController : ControllerBase
 	{
 		private readonly IService _iService;
 		public ServiceAPIController(IService workService)
@@ -22,11 +23,11 @@ namespace TestingBLL.Controllers
 		{
 			return await _iService.GetAllPlanetsCount();
 		}
-		[HttpGet(Name = "GetHeaviestPlanet")]
-		public async Task<Planet> GetHeaviestPlanet()
-		{
-			return await _iService.GetHeaviestPlanet();
-		}
+		/*		[HttpGet(Name = "GetHeaviestPlanet")]
+				public async Task<Planet> GetHeaviestPlanet()
+				{
+					return await _iService.GetHeaviestPlanet();
+				}*/
 		[HttpPost(Name = "AddRandomStars")]
 		public void AddRandomStars(int count)
 		{
@@ -37,16 +38,16 @@ namespace TestingBLL.Controllers
 		//{
 		//	_iService.MoveStarSystemToAnotherGalaxy(starsystemToMove, destinationGalaxy);
 		//}
-		[HttpPost(Name = "MakeNewShip")]
+/*		[HttpPost(Name = "MakeNewShip")]
 		public void MakeNewShip(int MaxRange, int MaxSpeed, string? model = null, Discoverer? discoverer = null)
 		{
 			_iService.MakeNewShip(MaxRange, MaxSpeed, model, discoverer);
-		}
-		[HttpPost(Name = "HireNewDiscoverer")]
-		public void HireNewDiscoverer(string name, string surname, int age)
-		{
-			_iService.HireNewDiscoverer(name, surname, age);
-		}
+		}*/
+		/*		[HttpPost(Name = "HireNewDiscoverer")]
+				public void HireNewDiscoverer(string name, string surname, int age)
+				{
+					_iService.HireNewDiscoverer(name, surname, age);
+				}*/
 		//[HttpPost]
 		//public void RewardExplorerByNewShip([FromBody] Discoverer discovererToAward, [FromBody] Ship newShip)
 		//{

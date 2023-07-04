@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\BOL(BussinesObjectLayes\BOL_BussinesObjectLayer.csproj" />
     <ProjectReference Include="..\BuisnessLogicLayer\BLL_BuisnessLogicLayer.csproj" />
+    <ProjectReference Include="..\DataAccessLayer\DAL_DataAccessLayer.csproj" />
   </ItemGroup>
 
 </Project>
