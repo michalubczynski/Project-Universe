@@ -20,5 +20,8 @@ namespace BLL_BuisnessLogicLayer
 		Task MakeNewShip(int MaxRange, int MaxSpeed, string? model = null, Discoverer? discoverer = null);
 		Task HireNewDiscoverer(string name, string surname, int age);
 		Task RewardExplorerByNewShip(Discoverer discovererToAward, Ship newShip);
-	}
+		Task<IEnumerable<Discoverer>> ShowDetailsDiscovererers();
+
+
+    }
 }

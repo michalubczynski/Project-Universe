@@ -1,6 +1,7 @@
 ﻿using BLL_BuisnessLogicLayer;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using System.Numerics;
 using Universe.Models.discoverer;
 using Universe.Models.galaxy;
 using Universe.Models.planet;
@@ -74,8 +75,16 @@ namespace TestingBLL.Controllers
             return Ok();
         }
 
+        [HttpGet("discoverer/Show")]
+        [ProducesResponseType(typeof(IEnumerable<Discoverer>), 200)]
+        public async Task<IActionResult> ShowDiscoverers()
+        {
+           var list = await _iService.ShowDetailsDiscovererers();
+            return Ok(list);
+        }
 
-        [HttpPost("explorer/reward")]
+
+        [HttpPost("explorer/AssignShiptoExploler")]
         [ProducesResponseType(200)]
         public async Task<IActionResult> RewardExplorerByNewShip(Discoverer discovererToAward, [FromQuery] Ship newShip)
         {
