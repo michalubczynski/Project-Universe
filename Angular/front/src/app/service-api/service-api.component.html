@@ -1,0 +1,15 @@
+<h2>Planets Count: {{ planetsCount }}</h2>
+<h2>Heaviest Planet: {{ heaviestPlanet | json }}</h2>
+
+<h2>Discoverers:</h2>
+<ul>
+  <li *ngFor="let discoverer of discoverers">{{ discoverer.name }} {{ discoverer.surname }}</li>
+</ul>
+
+<h2>Hire New Discoverer:</h2>
+<form (submit)="hireNewDiscoverer(name.value, surname.value, age.value)">
+  <input type="text" #name placeholder="Name" required>
+  <input type="text" #surname placeholder="Surname" required>
+  <input type="number" #age placeholder="Age" required>
+  <button type="submit">Hire</button>
+</form>

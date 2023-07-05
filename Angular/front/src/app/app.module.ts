@@ -1,22 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { GalaxyComponent } from './galaxy/galaxy.component';
-import { GalaxiesComponent } from './galaxies/galaxies.component';
-import { GalaxyFormComponent } from './galaxy-form/galaxy-form.component';
+import { ServiceApiComponent } from './service-api/service-api.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GalaxyComponent,
-    GalaxiesComponent,
-    GalaxyFormComponent
+    ServiceApiComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
