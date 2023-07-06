@@ -28,13 +28,17 @@ namespace BLL_BuisnessLogicLayer
 			{
 				throw new InvalidDataException();
 			}
-			Star[] stars = new Star[1];
+			var stars = new Star[count];
 			var rng = new Random();
 			var starSystemRepo = _unitOfWork.GetRepository<StarSystem>();
+			var starSystemIDs = new int[starSystemRepo.GetList().Count()];
+			for (int i = 0; i < starSystemIDs.Length; i++)
+			{
+				starSystemIDs[i] = starSystemRepo.GetList().ElementAt(i).Id;
+			}
 			for (int i = 0; i < count; i++)
 			{
 				stars[i] = new Star();
-				stars[i].Id = (starSystemRepo.CountAsync().Result == 0) ? 0 : _unitOfWork.GetRepository<Star>().GetList().Last().Id + 1;
 				stars[i].Age = rng.Next();
 				stars[i].Luminosity = rng.NextDouble() * rng.Next();
 				stars[i].Mass = rng.NextDouble() * rng.Next();
@@ -42,7 +46,7 @@ namespace BLL_BuisnessLogicLayer
 				stars[i].Radius = rng.NextDouble() * rng.Next();
 				stars[i].Temperature = rng.NextDouble() * rng.Next();
 				stars[i].Type = Star.TypeOfStar.Main_sequence_stars;
-				stars[i].StarSystemId = (starSystemRepo.GetList().Count() == 0) ? 0 : rng.Next(0, starSystemRepo.GetList().Count() - 1);
+				stars[i].StarSystemId = (starSystemRepo.GetList().Count() == 0) ? 0 : starSystemIDs[rng.Next(0, starSystemRepo.GetList().Count() - 1)];
 				stars[i].StarSystem = (starSystemRepo.GetList().Count() == 0) ? null : starSystemRepo.GetByIDAsync(stars[i].StarSystemId).Result;
 
 				await _unitOfWork.GetRepository<Star>().InsertAsync(stars[i]);
