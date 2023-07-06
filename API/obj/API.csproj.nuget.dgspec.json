@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\API\\API.csproj": {}
+    "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\API\\API.csproj": {
+    "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\API\\API.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\API\\obj\\",
+        "projectPath": "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\API\\API.csproj",
+        "packagesPath": "C:\\Users\\Andrew\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\API\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Andrew\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,14 +32,14 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj": {
-                "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj"
+              "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj": {
+                "projectPath": "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj"
               },
-              "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\BuisnessLogicLayer\\BLL_BuisnessLogicLayer.csproj": {
-                "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\BuisnessLogicLayer\\BLL_BuisnessLogicLayer.csproj"
+              "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\BuisnessLogicLayer\\BLL_BuisnessLogicLayer.csproj": {
+                "projectPath": "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\BuisnessLogicLayer\\BLL_BuisnessLogicLayer.csproj"
               },
-              "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\DAL_DataAccessLayer.csproj": {
-                "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\DAL_DataAccessLayer.csproj"
+              "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\DAL_DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\DAL_DataAccessLayer.csproj"
               }
             }
           }
@@ -88,21 +92,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj": {
+    "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj",
         "projectName": "BOL_BussinesObjectLayer",
-        "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\obj\\",
+        "projectPath": "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj",
+        "packagesPath": "C:\\Users\\Andrew\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Andrew\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -173,21 +181,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\BuisnessLogicLayer\\BLL_BuisnessLogicLayer.csproj": {
+    "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\BuisnessLogicLayer\\BLL_BuisnessLogicLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\BuisnessLogicLayer\\BLL_BuisnessLogicLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\BuisnessLogicLayer\\BLL_BuisnessLogicLayer.csproj",
         "projectName": "BLL_BuisnessLogicLayer",
-        "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\BuisnessLogicLayer\\BLL_BuisnessLogicLayer.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\BuisnessLogicLayer\\obj\\",
+        "projectPath": "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\BuisnessLogicLayer\\BLL_BuisnessLogicLayer.csproj",
+        "packagesPath": "C:\\Users\\Andrew\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\BuisnessLogicLayer\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Andrew\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -201,11 +213,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj": {
-                "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj"
+              "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj": {
+                "projectPath": "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj"
               },
-              "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\DAL_Interfaces\\DAL_Interfaces.csproj": {
-                "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\DAL_Interfaces\\DAL_Interfaces.csproj"
+              "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\DAL_Interfaces\\DAL_Interfaces.csproj": {
+                "projectPath": "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\DAL_Interfaces\\DAL_Interfaces.csproj"
               }
             }
           }
@@ -235,21 +247,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\DAL_Interfaces\\DAL_Interfaces.csproj": {
+    "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\DAL_Interfaces\\DAL_Interfaces.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\DAL_Interfaces\\DAL_Interfaces.csproj",
+        "projectUniqueName": "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\DAL_Interfaces\\DAL_Interfaces.csproj",
         "projectName": "DAL_Interfaces",
-        "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\DAL_Interfaces\\DAL_Interfaces.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\DAL_Interfaces\\obj\\",
+        "projectPath": "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\DAL_Interfaces\\DAL_Interfaces.csproj",
+        "packagesPath": "C:\\Users\\Andrew\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\DAL_Interfaces\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Andrew\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -263,8 +279,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj": {
-                "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj"
+              "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj": {
+                "projectPath": "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj"
               }
             }
           }
@@ -294,21 +310,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\DAL_DataAccessLayer.csproj": {
+    "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\DAL_DataAccessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\DAL_DataAccessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\DAL_DataAccessLayer.csproj",
         "projectName": "DAL_DataAccessLayer",
-        "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\DAL_DataAccessLayer.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\obj\\",
+        "projectPath": "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\DAL_DataAccessLayer.csproj",
+        "packagesPath": "C:\\Users\\Andrew\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Andrew\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -322,11 +342,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj": {
-                "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj"
+              "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj": {
+                "projectPath": "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj"
               },
-              "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\DAL_Interfaces\\DAL_Interfaces.csproj": {
-                "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\DAL_Interfaces\\DAL_Interfaces.csproj"
+              "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\DAL_Interfaces\\DAL_Interfaces.csproj": {
+                "projectPath": "C:\\Users\\Andrew\\Documents\\GitHub\\UniverseDB\\DAL_Interfaces\\DAL_Interfaces.csproj"
               }
             }
           }
@@ -394,7 +414,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

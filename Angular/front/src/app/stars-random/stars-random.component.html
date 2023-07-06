@@ -1,0 +1,6 @@
+<h2>Random Stars</h2>
+<label for="countSelect">Number of Stars to add:</label>
+<select id="countSelect" [(ngModel)]="count">
+  <option *ngFor="let option of countOptions" [value]="option">{{ option }}</option>
+</select>
+<button (click)="addRandomStars()">Add Stars</button>
