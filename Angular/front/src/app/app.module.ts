@@ -11,6 +11,7 @@ import { DiscoverersComponent } from './discoverers/discoverers.component';
 import { HireDiscovererComponent } from './hire-discoverer/hire-discoverer.component';
 import { StarsRandomComponent } from './stars-random/stars-random.component';
 import { StarsCountComponent } from './stars-count/stars-count.component';
+import { ShipNewComponent } from './ship-new/ship-new.component';
 
 
 const routes: Routes = [
@@ -21,7 +22,9 @@ const routes: Routes = [
   { path: 'discoverers', component: DiscoverersComponent },
   { path: 'hire-discoverer', component: HireDiscovererComponent },
   { path: 'stars-random', component: StarsRandomComponent },
-  { path: 'stars-count', component: StarsCountComponent }
+  { path: 'stars-count', component: StarsCountComponent },
+  { path: 'ship-new', component: ShipNewComponent }
+
 
 ];
 
@@ -35,6 +38,7 @@ const routes: Routes = [
     HireDiscovererComponent,
     StarsRandomComponent,
     StarsCountComponent,
+    ShipNewComponent,
   ],
   imports: [
     BrowserModule,
