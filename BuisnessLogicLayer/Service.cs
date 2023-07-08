@@ -1,4 +1,5 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using Microsoft.Identity.Client;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,7 +49,6 @@ namespace BLL_BuisnessLogicLayer
 				stars[i].Type = Star.TypeOfStar.Main_sequence_stars;
 				stars[i].StarSystemId = (starSystemRepo.GetList().Count() == 0) ? 0 : starSystemIDs[rng.Next(0, starSystemRepo.GetList().Count() - 1)];
 				stars[i].StarSystem = (starSystemRepo.GetList().Count() == 0) ? null : starSystemRepo.GetByIDAsync(stars[i].StarSystemId).Result;
-
 				await _unitOfWork.GetRepository<Star>().InsertAsync(stars[i]);
 			}
 
@@ -77,6 +77,7 @@ namespace BLL_BuisnessLogicLayer
 		public async Task HireNewDiscoverer(string name, string surname, int age)
 		{
 			_unitOfWork.GetRepository<Discoverer>().Insert(new Discoverer { Name = name, Surname = surname, Age = age });
+			_unitOfWork.GetRepository<Discoverer>().Save();
 			await _unitOfWork.SaveChangesAsync();
 		}
 
@@ -106,28 +107,57 @@ namespace BLL_BuisnessLogicLayer
 				newShip = new Ship { Name = newestIdShip.ToString(), ShipModel = _model, MaxSpeed = MaxSpeed, SingleChargeRange = MaxRange, Discoverer = discoverer, IfBroken = false };
 			}
 			_unitOfWork.GetRepository<Ship>().Insert(newShip);
+			_unitOfWork.GetRepository<Ship>().Save();
 			await _unitOfWork.SaveChangesAsync();
 
 		}
 
 		public async Task MoveStarSystemToAnotherGalaxy(int starsystemID, int destinationGalaxyID)
 		{
-			var starSystem = await _unitOfWork.GetRepository<StarSystem>().GetByIDAsync(starsystemID);
-			var destinationGalaxy = await _unitOfWork.GetRepository<Galaxy>().GetByIDAsync(destinationGalaxyID);
-			if (destinationGalaxy == null || starSystem == null)
+			var starSystenRepo = _unitOfWork.GetRepository<StarSystem>();
+			var starSystem = starSystenRepo.GetByID(starsystemID);
+			var galaxyRepo = _unitOfWork.GetRepository<Galaxy>();
+			var galaxy = galaxyRepo.GetByID(destinationGalaxyID);
+			if (galaxy == null || starSystem == null)
 				throw new InvalidDataException();
 			starSystem.GalaxyId = destinationGalaxyID;
+			starSystenRepo.Update(starSystem);
+			if (galaxy.StarSystems == null)
+			{
+				galaxy.StarSystems = new List<StarSystem>();
+			}
+			galaxy.StarSystems.Add(starSystem);
+
+			// nie zapisuje sie
+			galaxyRepo.Update(galaxy);
 			await _unitOfWork.SaveChangesAsync();
 		}
 
-		public async Task RewardExplorerByNewShip(int discovererToAwardID, Ship newShip)
+		public async Task RewardExplorerByNewShip(int discovererID, string shipModel, string shipName, int maxSpeed, int singleChargeRange)
 		{
-			var discoverer = await _unitOfWork.GetRepository<Discoverer>().GetByIDAsync(discovererToAwardID);
+			var discovererRepo = _unitOfWork.GetRepository<Discoverer>();
+			var discoverer = await discovererRepo.GetByIDAsync(discovererID);
 			if (discoverer == null)
 				throw new InvalidDataException();
-			discoverer.ShipId = newShip.Id;
-			newShip.Discoverer = discoverer;
+			var s = new Ship() {
+				Name = shipName,
+				ShipModel = shipModel,
+				MaxSpeed = maxSpeed,
+				SingleChargeRange = singleChargeRange,
+				Discoverer = discoverer
+			};
+			var shipRepo = _unitOfWork.GetRepository<Ship>();
+			shipRepo.Insert(s);
 			await _unitOfWork.SaveChangesAsync();
+			discoverer.ShipId = s.Id;
+
+			// nie zapisuje sie
+			discoverer.Ship = s;
+			discovererRepo.Update(discoverer);
+			await discovererRepo.SaveAsync();
+			s.Discoverer = discoverer;
+			shipRepo.Update(s);
+			await shipRepo.SaveAsync();
 		}
 
         public async Task<IEnumerable<StarSystem>> GetAllStarSystems()

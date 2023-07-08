@@ -13,7 +13,6 @@ namespace TestingBLL.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-
     public class ServiceAPIController : ControllerBase
     {
         private readonly IService _iService;
@@ -21,7 +20,6 @@ namespace TestingBLL.Controllers
         {
             _iService = workService;
         }
-
 
         [HttpGet("planets/count")]
         [ProducesResponseType(typeof(int), 200)]
@@ -38,10 +36,6 @@ namespace TestingBLL.Controllers
             var count = await _iService.GetAllStarsCount();
             return Ok(count);
         }
-
-
-
-
 
         [HttpGet("planets/heaviest")]
         [ProducesResponseType(typeof(Planet), 200)]
@@ -67,7 +61,6 @@ namespace TestingBLL.Controllers
             return Ok(galax);
         }
 
-
         [HttpPost("stars/random")]
         [ProducesResponseType(typeof(Star[]), 200)]
         public async Task<IActionResult> AddRandomStars(int count)
@@ -75,7 +68,6 @@ namespace TestingBLL.Controllers
             await _iService.AddRandomStars(count);
             return Ok();
         }
-
 
         [HttpPost("starsystem/move")]
         [ProducesResponseType(200)]
@@ -85,7 +77,6 @@ namespace TestingBLL.Controllers
             return Ok();
         }
 
-
         [HttpPost("ship/new")]
         [ProducesResponseType(200)]
         public async Task<IActionResult> MakeNewShip(int MaxRange, int MaxSpeed, string? model = null, int? discoverer = null)
@@ -93,7 +84,6 @@ namespace TestingBLL.Controllers
             await _iService.MakeNewShip(MaxRange, MaxSpeed, model, discoverer);
             return Ok();
         }
-
 
         [HttpPost("discoverer/hire")]
         [ProducesResponseType(200)]
@@ -111,15 +101,12 @@ namespace TestingBLL.Controllers
             return Ok(list);
         }
 
-
         [HttpPost("explorer/AssignShiptoExploler")]
         [ProducesResponseType(200)]
-        public async Task<IActionResult> RewardExplorerByNewShip(int discovererToAward, Ship newShip)
+        public async Task<IActionResult> RewardExplorerByNewShip(int discovererID, string shipModel, string shipName, int maxSpeed, int singleChargeRange)
         {
-            await _iService.RewardExplorerByNewShip(discovererToAward, newShip);
+            await _iService.RewardExplorerByNewShip(discovererID, shipModel, shipName, maxSpeed, singleChargeRange);
             return Ok();
         }
-
-
     }
 }

@@ -16,5 +16,5 @@ namespace Universe.Models.ship
 		// 1:Ship-1:Discoverer
 		public Discoverer? Discoverer { get; set; }
 		public bool IfBroken { get; set; }
-}
+	}
 }
