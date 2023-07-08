@@ -14,7 +14,8 @@ namespace BLL_BuisnessLogicLayer
 	public interface IService
 	{
 		Task<int> GetAllPlanetsCount();
-		Task<Planet> GetHeaviestPlanet();
+        Task<int> GetAllStarsCount();
+        Task<Planet> GetHeaviestPlanet();
 		Task AddRandomStars(int count);
 		Task MoveStarSystemToAnotherGalaxy(int starSystemId, int galaxyId);
 		Task MakeNewShip(int MaxRange, int MaxSpeed, string? model = null, int? discovererID = null);

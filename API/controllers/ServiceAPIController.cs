@@ -6,6 +6,7 @@ using Universe.Models.discoverer;
 using Universe.Models.galaxy;
 using Universe.Models.planet;
 using Universe.Models.ship;
+using Universe.Models.star;
 using Universe.Models.starsystem;
 
 namespace TestingBLL.Controllers
@@ -30,6 +31,17 @@ namespace TestingBLL.Controllers
             return Ok(count);
         }
 
+        [HttpGet("stars/count")]
+        [ProducesResponseType(typeof(int), 200)]
+        public async Task<IActionResult> GetAllStarsCount()
+        {
+            var count = await _iService.GetAllStarsCount();
+            return Ok(count);
+        }
+
+
+
+
 
         [HttpGet("planets/heaviest")]
         [ProducesResponseType(typeof(Planet), 200)]
@@ -40,8 +52,10 @@ namespace TestingBLL.Controllers
         }
 
 
+
+
         [HttpPost("stars/random")]
-        [ProducesResponseType(200)]
+        [ProducesResponseType(typeof(Star[]), 200)]
         public async Task<IActionResult> AddRandomStars(int count)
         {
             await _iService.AddRandomStars(count);

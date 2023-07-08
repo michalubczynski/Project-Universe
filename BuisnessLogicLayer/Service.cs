@@ -51,16 +51,24 @@ namespace BLL_BuisnessLogicLayer
 
 				await _unitOfWork.GetRepository<Star>().InsertAsync(stars[i]);
 			}
-			await _unitOfWork.SaveChangesAsync();
-		}
 
-		public async Task<int> GetAllPlanetsCount()
+            await _unitOfWork.SaveChangesAsync();
+
+        }
+
+        public async Task<int> GetAllPlanetsCount()
 		{
 			var planets = await _unitOfWork.GetRepository<Planet>().GetListAsync();
 			return planets.Count();
 		}
 
-		public async Task<Planet> GetHeaviestPlanet()
+        public async Task<int> GetAllStarsCount()
+        {
+            var stars = await _unitOfWork.GetRepository<Star>().GetListAsync();
+            return stars.Count();
+        }
+
+        public async Task<Planet> GetHeaviestPlanet()
 		{
 			var planets = await _unitOfWork.GetRepository<Planet>().GetListAsync();
 			return planets.MaxBy(p => p.Mass);
