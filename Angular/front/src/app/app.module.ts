@@ -12,6 +12,8 @@ import { HireDiscovererComponent } from './hire-discoverer/hire-discoverer.compo
 import { StarsRandomComponent } from './stars-random/stars-random.component';
 import { StarsCountComponent } from './stars-count/stars-count.component';
 import { ShipNewComponent } from './ship-new/ship-new.component';
+import { StarsystemAllComponent } from './starsystem-all/starsystem-all.component';
+import { GalaxyAllComponent } from './galaxy-all/galaxy-all.component';
 
 
 const routes: Routes = [
@@ -23,9 +25,9 @@ const routes: Routes = [
   { path: 'hire-discoverer', component: HireDiscovererComponent },
   { path: 'stars-random', component: StarsRandomComponent },
   { path: 'stars-count', component: StarsCountComponent },
-  { path: 'ship-new', component: ShipNewComponent }
-
-
+  { path: 'ship-new', component: ShipNewComponent },
+  { path: 'galaxy-all', component: GalaxyAllComponent },
+  { path: 'starsystem-all', component: StarsystemAllComponent }
 ];
 
 @NgModule({
@@ -39,6 +41,8 @@ const routes: Routes = [
     StarsRandomComponent,
     StarsCountComponent,
     ShipNewComponent,
+    StarsystemAllComponent,
+    GalaxyAllComponent,
   ],
   imports: [
     BrowserModule,
