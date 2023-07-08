@@ -26,6 +26,11 @@ namespace Tests_xUnit.FakeClasses
 			throw new NotImplementedException();
 		}
 
+		public Task<int> GetAllStarsCount()
+		{
+			throw new NotImplementedException();
+		}
+
 		public Task<Planet> GetHeaviestPlanet()
 		{
 			throw new NotImplementedException();
@@ -36,17 +41,22 @@ namespace Tests_xUnit.FakeClasses
 			throw new NotImplementedException();
 		}
 
-		public Task MakeNewShip(int MaxRange, int MaxSpeed, string? model = null, Discoverer? discoverer = null)
+		public Task MakeNewShip(int MaxRange, int MaxSpeed, string? model = null, int? discoverer = null)
 		{
 			throw new NotImplementedException();
 		}
 
-		public Task MoveStarSystemToAnotherGalaxy(StarSystem starsystemToMove, Galaxy destinationGalaxy)
+		public Task MoveStarSystemToAnotherGalaxy(int starsystemToMove, int destinationGalaxy)
 		{
 			throw new NotImplementedException();
 		}
 
-		public Task RewardExplorerByNewShip(Discoverer discovererToAward, Ship newShip)
+		public Task RewardExplorerByNewShip(int discovererToAward, Ship newShip)
+		{
+			throw new NotImplementedException();
+		}
+
+		public Task<IEnumerable<Discoverer>> ShowDetailsDiscovererers()
 		{
 			throw new NotImplementedException();
 		}

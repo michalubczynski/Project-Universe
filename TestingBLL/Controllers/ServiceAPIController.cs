@@ -42,17 +42,15 @@ namespace TestingBLL.Controllers
 
 
         [HttpPost]
-        public void MoveStarSystemToAnotherGalaxy([FromBody] dynamic requestBody)
-        {
-            StarSystem starsystemToMove = requestBody.starsystemToMove.ToObject<StarSystem>();
-            Galaxy destinationGalaxy = requestBody.destinationGalaxy.ToObject<Galaxy>();
+        public void MoveStarSystemToAnotherGalaxy(int starsystemID, int destinationGalaxyID)
+		{
+			_iService.MoveStarSystemToAnotherGalaxy(starsystemID, destinationGalaxyID);
 
-            _iService.MoveStarSystemToAnotherGalaxy(starsystemToMove, destinationGalaxy);
-        }
+		}
 
 
         [HttpPost]
-		public void MakeNewShip(int MaxRange, int MaxSpeed, string? model = null, Discoverer? discoverer = null)
+		public void MakeNewShip(int MaxRange, int MaxSpeed, string? model = null, int? discoverer = null)
 		{
 			_iService.MakeNewShip(MaxRange, MaxSpeed, model, discoverer);
 		}
@@ -64,7 +62,7 @@ namespace TestingBLL.Controllers
 
 
         [HttpPost]
-        public void RewardExplorerByNewShip([FromBody] Discoverer discovererToAward, [FromQuery] Ship newShip)
+        public void RewardExplorerByNewShip(int discovererToAward, Ship newShip)
         {
             _iService.RewardExplorerByNewShip(discovererToAward, newShip);
         }
