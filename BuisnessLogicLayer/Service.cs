@@ -129,5 +129,15 @@ namespace BLL_BuisnessLogicLayer
 			newShip.Discoverer = discoverer;
 			await _unitOfWork.SaveChangesAsync();
 		}
-	}
+
+        public async Task<IEnumerable<StarSystem>> GetAllStarSystems()
+        {
+            return await _unitOfWork.GetRepository<StarSystem>().GetListAsync();
+        }
+
+        public async Task<IEnumerable<Galaxy>> GetAllGalaxies()
+        {
+            return await _unitOfWork.GetRepository<Galaxy>().GetListAsync();
+        }
+    }
 }

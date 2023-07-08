@@ -51,7 +51,21 @@ namespace TestingBLL.Controllers
             return Ok(planet);
         }
 
+        [HttpGet("starsystem/all")]
+        [ProducesResponseType(typeof(StarSystem[]), 200)]
+        public async Task<IActionResult> GetAllStarSystems()
+        {
+            var starsystems = await _iService.GetAllStarSystems();
+            return Ok(starsystems);
+        }
 
+        [HttpGet("Galaxy/all")]
+        [ProducesResponseType(typeof(Galaxy[]), 200)]
+        public async Task<IActionResult> GetAllGalaxies()
+        {
+            var galax = await _iService.GetAllGalaxies();
+            return Ok(galax);
+        }
 
 
         [HttpPost("stars/random")]
