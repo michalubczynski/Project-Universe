@@ -51,16 +51,16 @@ namespace TestingBLL.Controllers
 
         [HttpPost("starsystem/move")]
         [ProducesResponseType(200)]
-        public async Task<IActionResult> MoveStarSystemToAnotherGalaxy([FromBody] StarSystem starsystemToMove, [FromQuery] Galaxy destinationGalaxy)
+        public async Task<IActionResult> MoveStarSystemToAnotherGalaxy(int starsystemToMoveID, int destinationGalaxyID)
         {
-            await _iService.MoveStarSystemToAnotherGalaxy(starsystemToMove, destinationGalaxy);
+            await _iService.MoveStarSystemToAnotherGalaxy(starsystemToMoveID, destinationGalaxyID);
             return Ok();
         }
 
 
         [HttpPost("ship/new")]
         [ProducesResponseType(200)]
-        public async Task<IActionResult> MakeNewShip(int MaxRange, int MaxSpeed, string? model = null, Discoverer? discoverer = null)
+        public async Task<IActionResult> MakeNewShip(int MaxRange, int MaxSpeed, string? model = null, int? discoverer = null)
         {
             await _iService.MakeNewShip(MaxRange, MaxSpeed, model, discoverer);
             return Ok();
@@ -86,7 +86,7 @@ namespace TestingBLL.Controllers
 
         [HttpPost("explorer/AssignShiptoExploler")]
         [ProducesResponseType(200)]
-        public async Task<IActionResult> RewardExplorerByNewShip(Discoverer discovererToAward, [FromQuery] Ship newShip)
+        public async Task<IActionResult> RewardExplorerByNewShip(int discovererToAward, Ship newShip)
         {
             await _iService.RewardExplorerByNewShip(discovererToAward, newShip);
             return Ok();

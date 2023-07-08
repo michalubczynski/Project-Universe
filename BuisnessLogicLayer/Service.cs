@@ -78,7 +78,7 @@ namespace BLL_BuisnessLogicLayer
 			return discoverers;
         }
 
-        public async Task MakeNewShip(int MaxRange, int MaxSpeed, string? model = null, Discoverer? discoverer= null)
+        public async Task MakeNewShip(int MaxRange, int MaxSpeed, string? model = null, int? discovererId= null)
 		{
 			int newestIdShip = _unitOfWork.GetRepository<Ship>().GetList().Last().Id+1;
 			string _model;
@@ -87,24 +87,38 @@ namespace BLL_BuisnessLogicLayer
 				_model = _unitOfWork.GetRepository<Ship>().GetList().Last().ShipModel;
 			}
 			else { _model = model; }
-
-			Ship newShip = new Ship { Name = newestIdShip.ToString(), ShipModel = _model, MaxSpeed = MaxSpeed, SingleChargeRange = MaxRange, Discoverer = discoverer, IfBroken = false };
+			Ship newShip;
+			if (discovererId == null)
+			{
+				newShip = new Ship { Name = newestIdShip.ToString(), ShipModel = _model, MaxSpeed = MaxSpeed, SingleChargeRange = MaxRange, Discoverer = null, IfBroken = false };
+			}
+			else
+			{
+				var discoverer = _unitOfWork.GetRepository<Discoverer>().GetByID(discovererId.Value);
+				newShip = new Ship { Name = newestIdShip.ToString(), ShipModel = _model, MaxSpeed = MaxSpeed, SingleChargeRange = MaxRange, Discoverer = discoverer, IfBroken = false };
+			}
 			_unitOfWork.GetRepository<Ship>().Insert(newShip);
 			await _unitOfWork.SaveChangesAsync();
 
 		}
 
-		public async Task MoveStarSystemToAnotherGalaxy(StarSystem starsystemToMove, Galaxy destinationGalaxy)
+		public async Task MoveStarSystemToAnotherGalaxy(int starsystemID, int destinationGalaxyID)
 		{
-			var starSystem = await _unitOfWork.GetRepository<StarSystem>().GetByIDAsync(starsystemToMove.Id);
-			starSystem.GalaxyId = destinationGalaxy.Id;
+			var starSystem = await _unitOfWork.GetRepository<StarSystem>().GetByIDAsync(starsystemID);
+			var destinationGalaxy = await _unitOfWork.GetRepository<Galaxy>().GetByIDAsync(destinationGalaxyID);
+			if (destinationGalaxy == null || starSystem == null)
+				throw new InvalidDataException();
+			starSystem.GalaxyId = destinationGalaxyID;
 			await _unitOfWork.SaveChangesAsync();
 		}
 
-		public async Task RewardExplorerByNewShip(Discoverer discovererToAward, Ship newShip)
+		public async Task RewardExplorerByNewShip(int discovererToAwardID, Ship newShip)
 		{
-			var discoverer = await _unitOfWork.GetRepository<Discoverer>().GetByIDAsync(discovererToAward.Id);
+			var discoverer = await _unitOfWork.GetRepository<Discoverer>().GetByIDAsync(discovererToAwardID);
+			if (discoverer == null)
+				throw new InvalidDataException();
 			discoverer.ShipId = newShip.Id;
+			newShip.Discoverer = discoverer;
 			await _unitOfWork.SaveChangesAsync();
 		}
 	}
