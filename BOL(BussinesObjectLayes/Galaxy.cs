@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using Universe.Models.spaceobject;
 using Universe.Models.planet;
 using Universe.Models.starsystem;
+using System.Collections;
 
 namespace Universe.Models.galaxy
 {
@@ -18,9 +19,7 @@ namespace Universe.Models.galaxy
 	{
 		 public TypeOfGalaxy Type { get; set; }
 		[Range(1, sizeof(double))] public double Mass { get; set; } // 'M☉' unit of Solar Mass
-
 		// 1:Galaxy-N:StarSystems
 		public ICollection<StarSystem>? StarSystems { get; set; } 
-
 	}
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System.Collections;
 using System.Linq.Expressions;
 using Universe.Models.discoverer;
 using Universe.Models.galaxy;
@@ -67,16 +68,16 @@ namespace Models
 
 			//FluentApi Refilling data
 			modelBuilder.Entity<Galaxy>().HasData(
-			new Galaxy { Id = 1, Mass = 10e12, Name = "Droga Mleczna", Type = TypeOfGalaxy.spiral },
-			new Galaxy { Id = 2, Mass = 10e12, Name = "Messier 87", Type = TypeOfGalaxy.elliptical },
-			new Galaxy { Id = 3, Mass = 10e15, Name = "GAL-CLUS-022058s", Type = TypeOfGalaxy.peculiar },
-			new Galaxy { Id = 4, Mass = 10e9, Name = "Wielka Mgławica Magellana", Type = TypeOfGalaxy.irregular }
+			new Galaxy { Id = 1, Mass = 10e12, Name = "Droga Mleczna", Type = TypeOfGalaxy.spiral, StarSystems = new List<StarSystem>() },
+			new Galaxy { Id = 2, Mass = 10e12, Name = "Messier 87", Type = TypeOfGalaxy.elliptical, StarSystems = new List<StarSystem>() },
+			new Galaxy { Id = 3, Mass = 10e15, Name = "GAL-CLUS-022058s", Type = TypeOfGalaxy.peculiar, StarSystems = new List<StarSystem>() },
+			new Galaxy { Id = 4, Mass = 10e9, Name = "Wielka Mgławica Magellana", Type = TypeOfGalaxy.irregular, StarSystems = new List<StarSystem>() }
 			);
 			modelBuilder.Entity<StarSystem>().HasData(
-			new StarSystem { Id = 1, Name = "Wolarz", GalaxyId = 1 },
-			new StarSystem { Id = 2, Name = "Orzel", GalaxyId = 2 },
-			new StarSystem { Id = 3, Name = "Skorpion", GalaxyId = 3 },
-			new StarSystem { Id = 4, Name = "Strzelec", GalaxyId = 4 }
+			new StarSystem { Id = 1, Name = "Wolarz", GalaxyId = 1, Discoverers = new List<Discoverer>(), Planets = new List<Planet>(), Stars = new List<Star>() },
+			new StarSystem { Id = 2, Name = "Orzel", GalaxyId = 2, Discoverers = new List<Discoverer>(), Planets = new List<Planet>(), Stars = new List<Star>() },
+			new StarSystem { Id = 3, Name = "Skorpion", GalaxyId = 3, Discoverers = new List<Discoverer>(), Planets = new List<Planet>(), Stars = new List<Star>() },
+			new StarSystem { Id = 4, Name = "Strzelec", GalaxyId = 4, Discoverers = new List<Discoverer>(), Planets = new List<Planet>(), Stars = new List<Star>() }
 				);
 			modelBuilder.Entity<Planet>().HasData(
 				new Planet { Id = 1, Mass = 2e12, Type = TypeOfPlanets.Gas_Giants, Name = "Jupiter", StarSystemId = 1 },
