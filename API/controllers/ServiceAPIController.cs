@@ -85,6 +85,16 @@ namespace TestingBLL.Controllers
             return Ok();
         }
 
+        [HttpGet("ship/all")]
+        [ProducesResponseType(typeof(IEnumerable<Ship>), 200)]
+        public async Task<IActionResult> ShowShips()
+        {
+            var list = await _iService.ShowAllShips();
+            return Ok(list);
+        }
+
+
+
         [HttpPost("discoverer/hire")]
         [ProducesResponseType(200)]
         public async Task<IActionResult> HireNewDiscoverer(string name, string surname, int age)

@@ -6,8 +6,8 @@ import { Star } from "./Star.model";
 export class StarSystem {
   public galaxyId!: number;
   public galaxy!: Galaxy;
-  public planets: Planet[] = [];
-  public stars: Star[] = [];
-  public discoverers: Discoverer[] = [];
+  public planets!: Planet[];
+  public stars!: Star[];
+  public discoverers!: Discoverer[];
   public name!:string;
 }

@@ -14,6 +14,7 @@ import { StarsCountComponent } from './stars-count/stars-count.component';
 import { ShipNewComponent } from './ship-new/ship-new.component';
 import { StarsystemAllComponent } from './starsystem-all/starsystem-all.component';
 import { GalaxyAllComponent } from './galaxy-all/galaxy-all.component';
+import { ShipAllComponent } from './ship-all/ship-all.component';
 
 
 const routes: Routes = [
@@ -27,7 +28,9 @@ const routes: Routes = [
   { path: 'stars-count', component: StarsCountComponent },
   { path: 'ship-new', component: ShipNewComponent },
   { path: 'galaxy-all', component: GalaxyAllComponent },
-  { path: 'starsystem-all', component: StarsystemAllComponent }
+  { path: 'starsystem-all', component: StarsystemAllComponent },
+  { path: 'ship-all', component: ShipAllComponent }
+
 ];
 
 @NgModule({
@@ -43,6 +46,7 @@ const routes: Routes = [
     ShipNewComponent,
     StarsystemAllComponent,
     GalaxyAllComponent,
+    ShipAllComponent,
   ],
   imports: [
     BrowserModule,

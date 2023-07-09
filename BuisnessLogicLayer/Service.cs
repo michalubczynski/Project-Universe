@@ -87,6 +87,12 @@ namespace BLL_BuisnessLogicLayer
 			return discoverers;
         }
 
+        public async Task<IEnumerable<Ship>> ShowAllShips()
+        {
+            var Ships = await _unitOfWork.GetRepository<Ship>().GetListAsync();
+            return Ships;
+        }
+
         public async Task MakeNewShip(int MaxRange, int MaxSpeed, string? model = null, int? discovererId= null)
 		{
 			int newestIdShip = _unitOfWork.GetRepository<Ship>().GetList().Last().Id+1;
