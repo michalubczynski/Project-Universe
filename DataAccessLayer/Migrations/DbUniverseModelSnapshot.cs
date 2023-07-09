@@ -155,9 +155,6 @@ namespace DAL_DataAccessLayer.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("GalaxyId")
-                        .HasColumnType("int");
-
                     b.Property<double>("Mass")
                         .HasColumnType("float");
 
@@ -173,8 +170,6 @@ namespace DAL_DataAccessLayer.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("GalaxyId");
 
                     b.HasIndex("StarSystemId");
 
@@ -492,10 +487,6 @@ namespace DAL_DataAccessLayer.Migrations
 
             modelBuilder.Entity("Universe.Models.planet.Planet", b =>
                 {
-                    b.HasOne("Universe.Models.galaxy.Galaxy", null)
-                        .WithMany("StarSystems")
-                        .HasForeignKey("GalaxyId");
-
                     b.HasOne("Universe.Models.starsystem.StarSystem", "StarSystem")
                         .WithMany("Planets")
                         .HasForeignKey("StarSystemId");
@@ -517,7 +508,7 @@ namespace DAL_DataAccessLayer.Migrations
             modelBuilder.Entity("Universe.Models.starsystem.StarSystem", b =>
                 {
                     b.HasOne("Universe.Models.galaxy.Galaxy", "Galaxy")
-                        .WithMany()
+                        .WithMany("StarSystems")
                         .HasForeignKey("GalaxyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

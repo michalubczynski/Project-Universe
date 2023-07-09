@@ -367,11 +367,6 @@ C:\Users\Majkel\Documents\GitHub\UniverseDB\Projekt_xUnit\obj\Debug\net6.0\Tests
 C:\Users\Majkel\Documents\GitHub\UniverseDB\Projekt_xUnit\obj\Debug\net6.0\Tests_xUnit.genruntimeconfig.cache
 C:\Users\Majkel\Documents\GitHub\UniverseDB\Projekt_xUnit\obj\Debug\net6.0\ref\Tests_xUnit.dll
 C:\Users\Administrator\Documents\GitHub\UniverseDB\Projekt_xUnit\bin\Debug\net6.0\CoverletSourceRootsMapping
-C:\Users\Administrator\Documents\GitHub\UniverseDB\Projekt_xUnit\obj\Debug\net6.0\Tests_xUnit.csproj.AssemblyReference.cache
-C:\Users\Administrator\Documents\GitHub\UniverseDB\Projekt_xUnit\obj\Debug\net6.0\Tests_xUnit.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Administrator\Documents\GitHub\UniverseDB\Projekt_xUnit\obj\Debug\net6.0\Tests_xUnit.AssemblyInfoInputs.cache
-C:\Users\Administrator\Documents\GitHub\UniverseDB\Projekt_xUnit\obj\Debug\net6.0\Tests_xUnit.AssemblyInfo.cs
-C:\Users\Administrator\Documents\GitHub\UniverseDB\Projekt_xUnit\obj\Debug\net6.0\Tests_xUnit.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Documents\GitHub\UniverseDB\Projekt_xUnit\bin\Debug\net6.0\testhost.dll
 C:\Users\Administrator\Documents\GitHub\UniverseDB\Projekt_xUnit\bin\Debug\net6.0\Tests_BLL.deps.json
 C:\Users\Administrator\Documents\GitHub\UniverseDB\Projekt_xUnit\bin\Debug\net6.0\Tests_BLL.runtimeconfig.json
@@ -729,6 +724,11 @@ C:\Users\Administrator\Documents\GitHub\UniverseDB\Projekt_xUnit\bin\Debug\net6.
 C:\Users\Administrator\Documents\GitHub\UniverseDB\Projekt_xUnit\bin\Debug\net6.0\DAL_DataAccessLayer.pdb
 C:\Users\Administrator\Documents\GitHub\UniverseDB\Projekt_xUnit\bin\Debug\net6.0\Tests_BLL.pdb
 C:\Users\Administrator\Documents\GitHub\UniverseDB\Projekt_xUnit\bin\Debug\net6.0\BOL_BussinesObjectLayer.pdb
+C:\Users\Administrator\Documents\GitHub\UniverseDB\Projekt_xUnit\obj\Debug\net6.0\Tests_xUnit.csproj.AssemblyReference.cache
+C:\Users\Administrator\Documents\GitHub\UniverseDB\Projekt_xUnit\obj\Debug\net6.0\Tests_xUnit.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Documents\GitHub\UniverseDB\Projekt_xUnit\obj\Debug\net6.0\Tests_xUnit.AssemblyInfoInputs.cache
+C:\Users\Administrator\Documents\GitHub\UniverseDB\Projekt_xUnit\obj\Debug\net6.0\Tests_xUnit.AssemblyInfo.cs
+C:\Users\Administrator\Documents\GitHub\UniverseDB\Projekt_xUnit\obj\Debug\net6.0\Tests_xUnit.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Documents\GitHub\UniverseDB\Projekt_xUnit\obj\Debug\net6.0\Tests_xUnit.csproj.CopyComplete
 C:\Users\Administrator\Documents\GitHub\UniverseDB\Projekt_xUnit\obj\Debug\net6.0\Tests_xUnit.dll
 C:\Users\Administrator\Documents\GitHub\UniverseDB\Projekt_xUnit\obj\Debug\net6.0\refint\Tests_xUnit.dll

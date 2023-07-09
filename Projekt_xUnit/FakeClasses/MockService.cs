@@ -21,12 +21,22 @@ namespace Tests_xUnit.FakeClasses
 			return Task.CompletedTask;
 		}
 
+		public Task<IEnumerable<Galaxy>> GetAllGalaxies()
+		{
+			throw new NotImplementedException();
+		}
+
 		public Task<int> GetAllPlanetsCount()
 		{
 			throw new NotImplementedException();
 		}
 
 		public Task<int> GetAllStarsCount()
+		{
+			throw new NotImplementedException();
+		}
+
+		public Task<IEnumerable<StarSystem>> GetAllStarSystems()
 		{
 			throw new NotImplementedException();
 		}
@@ -51,7 +61,7 @@ namespace Tests_xUnit.FakeClasses
 			throw new NotImplementedException();
 		}
 
-		public Task RewardExplorerByNewShip(int discovererToAward, Ship newShip)
+		public Task RewardExplorerByNewShip(int discovererID, string shipModel, string shipName, int maxSpeed, int singleChargeRange)
 		{
 			throw new NotImplementedException();
 		}

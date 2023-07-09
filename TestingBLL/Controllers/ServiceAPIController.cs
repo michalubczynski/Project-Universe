@@ -62,9 +62,9 @@ namespace TestingBLL.Controllers
 
 
         [HttpPost]
-        public void RewardExplorerByNewShip(int discovererToAward, Ship newShip)
+        public void RewardExplorerByNewShip(int discovererID, string shipModel, string shipName, int maxSpeed, int singleChargeRange)
         {
-            _iService.RewardExplorerByNewShip(discovererToAward, newShip);
+            _iService.RewardExplorerByNewShip(discovererID, shipModel, shipName, maxSpeed, singleChargeRange);
         }
 
 

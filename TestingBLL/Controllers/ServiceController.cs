@@ -143,9 +143,9 @@ namespace TestingBLL.Controllers
 
         [HttpPost("explorer/reward")]
         [ProducesResponseType(200)]
-        public async Task<IActionResult> RewardExplorerByNewShip(int discovererToAward, Ship newShip)
+        public async Task<IActionResult> RewardExplorerByNewShip(int discovererID, string shipModel, string shipName, int maxSpeed, int singleChargeRange)
         {
-            await _workService.RewardExplorerByNewShip(discovererToAward, newShip);
+            await _workService.RewardExplorerByNewShip(discovererID, shipModel, shipName, maxSpeed, singleChargeRange);
             return Ok();
         }
 
