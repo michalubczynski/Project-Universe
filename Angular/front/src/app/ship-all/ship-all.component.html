@@ -1,13 +1,24 @@
 <div *ngIf="ships">
-    <h2>Ships</h2>
-    <ul>
-      <li *ngFor="let ship of ships">
-       <p> Name: {{ ship.name }}</p>
-       <p> Model: {{ ship.shipModel }}</p>
-       <p> Max Capable speed: {{ ship.maxSpeed }}</p>
-       <p> Single Charge Range: {{ ship.singleChargeRange }}</p>
-       <p> Owner: {{ ship.discoverer }}</p>
-       <p> Require repairs: {{ ship.ifBroken }}</p>
-      </li>
-    </ul>
-  </div>
+  <table class="ships-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Model</th>
+        <th>Max Capable Speed</th>
+        <th>Single Charge Range</th>
+        <th>Owner</th>
+        <th>Require Repairs</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ship of ships">
+        <td>{{ ship.name }}</td>
+        <td>{{ ship.shipModel }}</td>
+        <td>{{ ship.maxSpeed }}</td>
+        <td>{{ ship.singleChargeRange }}</td>
+        <td>{{ ship.discoverer }}</td>
+        <td>{{ ship.ifBroken }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

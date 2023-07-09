@@ -1,8 +1,20 @@
-
-<h2>Hire New Discoverer:</h2>
-<form (submit)="hireNewDiscoverer()">
-  <input type="text" [(ngModel)]="name" placeholder="Name" required>
-  <input type="text" [(ngModel)]="surname" placeholder="Surname" required>
-  <input type="number" [(ngModel)]="age" placeholder="Age" required>
-  <button type="submit">Hire</button>
+<form (ngSubmit)="hireNewDiscoverer()">
+  <table class="hire-discoverer-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Age</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input type="text" [(ngModel)]="newDiscoverer.name" name="name" placeholder="Name" required></td>
+        <td><input type="text" [(ngModel)]="newDiscoverer.surname" name="surname" placeholder="Surname" required></td>
+        <td><input type="number" [(ngModel)]="newDiscoverer.age" name="age" placeholder="Age" required></td>
+        <td><button type="submit">Hire</button></td>
+      </tr>
+    </tbody>
+  </table>
 </form>

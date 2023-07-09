@@ -1,1 +1,19 @@
-<h2>Heaviest Planet: {{ heaviestPlanet | json }}</h2>
+<table class="planet-table">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Mass</th>
+        <th>Star System</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ heaviestPlanet.type }}</td>
+        <td>{{ heaviestPlanet.mass }}</td>
+        <td>{{ heaviestPlanet.starSystem }}</td>
+        <td>{{ heaviestPlanet.name }}</td>
+      </tr>
+    </tbody>
+  </table>
+  

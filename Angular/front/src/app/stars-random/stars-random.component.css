@@ -1,0 +1,30 @@
+.random-stars {
+    margin-bottom: 20px;
+  }
+  
+  .random-stars h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .random-stars label {
+    margin-right: 10px;
+  }
+  
+  .random-stars select {
+    padding: 5px;
+  }
+  
+  .random-stars .add-stars-button {
+    padding: 5px 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .random-stars .add-stars-button:hover {
+    background-color: #45a049;
+  }
+  

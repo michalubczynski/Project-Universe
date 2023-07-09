@@ -1,5 +1,14 @@
-
-<h2>Discoverers:</h2>
-<ul>
-  <li *ngFor="let discoverer of discoverers">{{ discoverer.name }} {{ discoverer.surname }}</li>
-</ul>
+<table class="discoverers-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Surname</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let discoverer of discoverers">
+      <td>{{ discoverer.name }}</td>
+      <td>{{ discoverer.surname }}</td>
+    </tr>
+  </tbody>
+</table>

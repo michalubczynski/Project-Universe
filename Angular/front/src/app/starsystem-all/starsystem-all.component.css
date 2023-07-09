@@ -1,0 +1,25 @@
+.star-systems {
+    margin-bottom: 20px;
+  }
+  
+  .star-systems h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .star-systems ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .star-systems li {
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+  }
+  
+  .star-systems li p {
+    margin: 0;
+  }
+  

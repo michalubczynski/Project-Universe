@@ -1,30 +1,27 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
-var host = "http://localhost:5080";
+import { Component, OnInit } from '@angular/core';
 
+const host = 'http://localhost:5080';
 
 interface Discoverer {
   surname: string;
-  age:number;
-  ShipId?: number;  
+  age: number;
   ship?: number;
-  starSystems?: number;
   id: number;
-  name:string;
+  name: string;
 }
-
 
 @Component({
   selector: 'app-ship-new',
   templateUrl: './ship-new.component.html',
   styleUrls: ['./ship-new.component.css']
 })
-export class ShipNewComponent {
+export class ShipNewComponent implements OnInit {
   maxRange!: number;
   maxSpeed!: number;
   model!: string;
   selectedDiscoverer!: number;
-  discoverers!: any[]; // Typ danych Discoverer może wymagać dostosowania
+  discoverers!: Discoverer[];
 
   successMessage: boolean = false;
 
@@ -42,10 +39,9 @@ export class ShipNewComponent {
     });
   }
 
-
   makeNewShip() {
     const url = `${host}/ServiceAPI/ship/new?MaxRange=${this.maxRange}&MaxSpeed=${this.maxSpeed}&model=${this.model}&discoverer=${this.selectedDiscoverer}`;
-    this.http.post(url,{}).subscribe(() => {
+    this.http.post(url, {}).subscribe(() => {
       this.successMessage = true;
     });
   }

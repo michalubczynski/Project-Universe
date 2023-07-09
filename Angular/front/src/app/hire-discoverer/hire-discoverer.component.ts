@@ -1,7 +1,7 @@
-
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-var host = "http://localhost:5080";
+
+const host = 'http://localhost:5080';
 
 @Component({
   selector: 'app-hire-discoverer',
@@ -9,33 +9,31 @@ var host = "http://localhost:5080";
   styleUrls: ['./hire-discoverer.component.css']
 })
 export class HireDiscovererComponent {
-  name!: string;
-  surname!: string;
-  age!: string;
+  newDiscoverer = {
+    name: '',
+    surname: '',
+    age: 0
+  };
 
   constructor(private http: HttpClient) { }
 
-  hireNewDiscoverer(): void {
+  hireNewDiscoverer() {
+    const url = `${host}/ServiceAPI/discoverer/hire?name=${encodeURIComponent(this.newDiscoverer.name)}&surname=${encodeURIComponent(this.newDiscoverer.surname)}&age=${this.newDiscoverer.age}`;
 
-    const parsedAge = parseInt(this.age, 10); 
-
-
-    const body = {
-      name: this.name,
-      surname: this.surname,
-      age: parsedAge
-    };
-
-
-    this.http.post(host+'/ServiceAPI/discoverer/hire', body).subscribe((response: any) => {
-
-      const hiredPerson = response; // Dane zatrudnionej osoby
-      // Wyświetl komunikat potwierdzający z danymi zatrudnionej osoby
+    this.http.post(url, {}).subscribe(
+      (response: any) => {
+        const hiredPerson = response;
         const message = 'Pomyślnie zatrudniono: ' + hiredPerson.name + ' ' + hiredPerson.surname;
-        alert(message); 
-    });
+        alert(message);
 
+        // Reset form fields
+        this.newDiscoverer.name = '';
+        this.newDiscoverer.surname = '';
+        this.newDiscoverer.age = 0;
+      },
+      (error: any) => {
+        console.error('An error occurred while hiring a new discoverer:', error);
+      }
+    );
   }
 }
-
-
