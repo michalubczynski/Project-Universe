@@ -144,7 +144,8 @@ namespace BLL_BuisnessLogicLayer
 				ShipModel = shipModel,
 				MaxSpeed = maxSpeed,
 				SingleChargeRange = singleChargeRange,
-				Discoverer = discoverer
+				Discoverer = discoverer,
+				IfBroken = false
 			};
 			var shipRepo = _unitOfWork.GetRepository<Ship>();
 			shipRepo.Insert(s);
