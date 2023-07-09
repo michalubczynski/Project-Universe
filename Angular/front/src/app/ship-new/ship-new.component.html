@@ -15,13 +15,13 @@
     </label>
     <br>
     <label>
-      Discoverer:
+      Optional Discoverer to assign Ship:
       <select [(ngModel)]="selectedDiscoverer" name="discoverer">
         <option *ngFor="let discoverer of discoverers" [value]="discoverer.id">{{ discoverer.name }} {{ discoverer.surname }} {{ 'age: '+discoverer.age }}, {{'current ship: '+discoverer.ship}}</option>
       </select>
     </label>
     <br>
-    <button type="submit">Assign New Ship</button>
+    <button type="submit">Create New Ship</button>
   </form>
   
   <div *ngIf="successMessage">Successfully created a new ship!</div>

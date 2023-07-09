@@ -1,0 +1,13 @@
+<div *ngIf="ships">
+    <h2>Ships</h2>
+    <ul>
+      <li *ngFor="let ship of ships">
+       <p> Name: {{ ship.name }}</p>
+       <p> Model: {{ ship.shipModel }}</p>
+       <p> Max Capable speed: {{ ship.maxSpeed }}</p>
+       <p> Single Charge Range: {{ ship.singleChargeRange }}</p>
+       <p> Owner: {{ ship.discoverer }}</p>
+       <p> Require repairs: {{ ship.ifBroken }}</p>
+      </li>
+    </ul>
+  </div>
