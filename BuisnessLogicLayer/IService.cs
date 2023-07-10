@@ -15,9 +15,9 @@ namespace BLL_BuisnessLogicLayer
 	{
 		int GetAllPlanetsCount();
         int GetAllStarsCount();
-        Task<IQueryable<StarSystem>> GetAllStarSystems();
+        IQueryable<StarSystem> GetAllStarSystems();
         IQueryable<Galaxy> GetAllGalaxies();
-        Task<IQueryable<Ship>> ShowAllShips();
+        IQueryable<Ship> ShowAllShips();
         Planet GetHeaviestPlanet();
 		Task AddRandomStars(int count);
 		Task MoveStarSystemToAnotherGalaxy(int starSystemId, int galaxyId);

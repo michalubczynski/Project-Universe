@@ -23,17 +23,17 @@ namespace TestingBLL.Controllers
 
         [HttpGet("planets/count")]
         [ProducesResponseType(typeof(int), 200)]
-        public async Task<IActionResult> GetAllPlanetsCount()
+        public IActionResult GetAllPlanetsCount()
         {
-            var count = await _iService.GetAllPlanetsCount();
+            var count = _iService.GetAllPlanetsCount();
             return Ok(count);
         }
 
         [HttpGet("stars/count")]
         [ProducesResponseType(typeof(int), 200)]
-        public async Task<IActionResult> GetAllStarsCount()
+        public IActionResult GetAllStarsCount()
         {
-            var count = await _iService.GetAllStarsCount();
+            var count = _iService.GetAllStarsCount();
             return Ok(count);
         }
 
@@ -47,9 +47,9 @@ namespace TestingBLL.Controllers
 
         [HttpGet("starsystem/all")]
         [ProducesResponseType(typeof(StarSystem[]), 200)]
-        public async Task<IActionResult> GetAllStarSystems()
+        public IActionResult GetAllStarSystems()
         {
-            var starsystems = await _iService.GetAllStarSystems();
+            var starsystems = _iService.GetAllStarSystems();
             return Ok(starsystems);
         }
 
@@ -87,9 +87,9 @@ namespace TestingBLL.Controllers
 
         [HttpGet("ship/all")]
         [ProducesResponseType(typeof(IEnumerable<Ship>), 200)]
-        public async Task<IActionResult> ShowShips()
+        public IActionResult ShowShips()
         {
-            var list = await _iService.ShowAllShips();
+            var list = _iService.ShowAllShips();
             return Ok(list);
         }
 

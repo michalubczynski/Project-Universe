@@ -75,5 +75,15 @@ namespace Tests_xUnit.FakeClasses
 		{
 			throw new NotImplementedException();
 		}
+
+		IQueryable<StarSystem> IService.GetAllStarSystems()
+		{
+			throw new NotImplementedException();
+		}
+
+		IQueryable<Ship> IService.ShowAllShips()
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

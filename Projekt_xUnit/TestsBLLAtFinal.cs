@@ -148,7 +148,7 @@ namespace Tests_xUnit
 		}
 
 		[Fact]
-        public async Task ShowAllShips_ShouldReturnAllShipsWithDiscoverers()
+        public void ShowAllShips_ShouldReturnAllShipsWithDiscoverers()
         {
             // Arrange
             var shipRepoMock = new Mock<IRepository<Ship>>();
@@ -161,7 +161,7 @@ namespace Tests_xUnit
             _unitOfWorkMock.Setup(uow => uow.GetRepository<Ship>()).Returns(shipRepoMock.Object);
 
             // Act
-            var result = await _service.ShowAllShips();
+            var result = _service.ShowAllShips();
 
             // Assert
             Assert.Equal(ships, result);
@@ -265,10 +265,10 @@ namespace Tests_xUnit
             // Arrange
 
             List<Discoverer> discovererList = new List<Discoverer>
-        {
-            new Discoverer { Name = "John", Surname = "Doe", Age = 30 },
-            new Discoverer { Name = "Jane", Surname = "Smith", Age = 25 }
-        };
+            {
+                new Discoverer { Name = "John", Surname = "Doe", Age = 30 },
+                new Discoverer { Name = "Jane", Surname = "Smith", Age = 25 }
+            };
 
             var discovererRepoMock = new Mock<IRepository<Discoverer>>();
             discovererRepoMock.Setup(r => r.GetList()).Returns(discovererList.AsQueryable());

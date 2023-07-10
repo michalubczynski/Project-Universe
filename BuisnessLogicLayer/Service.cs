@@ -85,20 +85,12 @@ namespace BLL_BuisnessLogicLayer
 
         public async Task KillDiscoverer(string name, string surname, int age)
         {
-			//var discoverer = await _unitOfWork.GetRepository<Discoverer>().FirstOrDefaultAsync(d => d.Name == name && d.Surname == surname && d.Age == age);
-			IEnumerable<Discoverer> enumerableList = _unitOfWork.GetRepository<Discoverer>().GetList();
-			//if (discoverer != null)
-			//{
-			//    _unitOfWork.GetRepository<Discoverer>().Delete(discoverer.Id);
-			//    await _unitOfWork.SaveChangesAsync();
-			//}
-			//ALTERNATIVE METHOD OF DELETE !!!!
-
-			foreach (Discoverer discoverer in enumerableList)
+			var dList = _unitOfWork.GetRepository<Discoverer>().GetList();
+			foreach (Discoverer d in dList)
 			{
-				if (discoverer.Name == name && discoverer.Surname == surname && discoverer.Age == age)
+				if (d.Name == name && d.Surname == surname && d.Age == age)
 				{
-					_unitOfWork.GetRepository<Discoverer>().Delete(discoverer.Id);
+					_unitOfWork.GetRepository<Discoverer>().Delete(d.Id);
 
 				}
 			}
@@ -115,7 +107,7 @@ namespace BLL_BuisnessLogicLayer
 			return discoverers;
         }
 
-        public async Task<IQueryable<Ship>> ShowAllShips()
+        public IQueryable<Ship> ShowAllShips()
         {
             var Ships = _unitOfWork.GetRepository<Ship>().GetList().Include(s => s.Discoverer);
             return Ships;
@@ -161,8 +153,6 @@ namespace BLL_BuisnessLogicLayer
 				galaxy.StarSystems = new List<StarSystem>();
 			}
 			galaxy.StarSystems.Add(starSystem);
-
-			// nie zapisuje sie
 			galaxyRepo.Update(galaxy);
 			await _unitOfWork.SaveChangesAsync();
 		}
@@ -185,8 +175,6 @@ namespace BLL_BuisnessLogicLayer
 			shipRepo.Insert(s);
 			await _unitOfWork.SaveChangesAsync();
 			discoverer.ShipId = s.Id;
-
-			// nie zapisuje sie
 			discoverer.Ship = s;
 			discovererRepo.Update(discoverer);
 			await discovererRepo.SaveAsync();
@@ -195,7 +183,7 @@ namespace BLL_BuisnessLogicLayer
 			await shipRepo.SaveAsync();
 		}
 
-        public async Task<IQueryable<StarSystem>> GetAllStarSystems()
+        public IQueryable<StarSystem> GetAllStarSystems()
         {
             return _unitOfWork.GetRepository<StarSystem>().GetList();
         }
