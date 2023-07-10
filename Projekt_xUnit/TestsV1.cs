@@ -2,6 +2,8 @@ using BLL_BuisnessLogicLayer;
 using Microsoft.EntityFrameworkCore;
 using Models;
 using Moq;
+using System.Collections;
+using System.Linq;
 using Tests_xUnit.FakeClasses;
 using Universe.Models;
 using Universe.Models.planet;
@@ -32,7 +34,7 @@ namespace Projekt_xUnit
 			unitOfWork.AddRepository(fakeRepository);
 			var service = new Service(unitOfWork);
 			var result = service.GetHeaviestPlanet();
-			Assert.Equal(planets.ElementAt(2), result.Result);
+			Assert.Equal(planets.ElementAt(2), result);
 		}
 		[Fact]
 		public void MockTest()
@@ -48,7 +50,7 @@ namespace Projekt_xUnit
 				Id = 1,
 				Name = "bbb"
 			};
-			mockRepo.Setup(x => x.GetListAsync().Result).Returns(new List<Planet> {p1, p2});
+			mockRepo.Setup(x => x.GetList().AsEnumerable<Planet>()).Returns(new List<Planet>{p1, p2});
 			var unitOfWork = new UnitOfWork();
 			unitOfWork.AddRepository(mockRepo.Object);
 			var service = new Service(unitOfWork);

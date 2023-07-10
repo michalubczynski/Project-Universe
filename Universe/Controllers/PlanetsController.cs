@@ -25,9 +25,9 @@ namespace Universe.Controllers
         }
 
         // GET: Planets
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            var planet = await _service.GetAllSpaceObjectsAsync(); //TU
+            var planet = _service.GetAllSpaceObjects(); //TU
             if (planet == null)
             {
                 return NotFound();

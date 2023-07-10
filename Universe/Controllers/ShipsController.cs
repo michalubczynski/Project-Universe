@@ -28,7 +28,7 @@ namespace Universe.Controllers
         // GET: Ships
         public async Task<IActionResult> Index()
         {
-            var ship = await _service.GetAllSpaceObjectsAsync(); //TU
+            var ship = _service.GetAllSpaceObjects(); //TU
             if (ship == null)
             {
                 return NotFound();

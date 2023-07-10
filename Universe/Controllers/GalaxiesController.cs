@@ -20,9 +20,9 @@ namespace Universe.Controllers
         }
 
         // GET: Galaxies
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            var galaxies = await _service.GetAllSpaceObjectsAsync(); //TU
+            var galaxies = _service.GetAllSpaceObjects(); //TU
             if (galaxies == null)
             {
                 return NotFound();
