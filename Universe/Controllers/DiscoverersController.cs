@@ -25,9 +25,9 @@ namespace Universe.Controllers
         }
 
         // GET: Discoverers
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            var dis = await _service.GetAllSpaceObjectsAsync(); //TU
+            var dis = _service.GetAllSpaceObjects(); //TU
 
             if (dis == null)
             {

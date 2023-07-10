@@ -49,7 +49,7 @@ namespace BLL_BuisnessLogicLayer
 				stars[i].Temperature = rng.NextDouble() * rng.Next();
 				stars[i].Type = Star.TypeOfStar.Main_sequence_stars;
 				stars[i].StarSystemId = (starSystemRepo.GetList().Count() == 0) ? 0 : starSystemIDs[rng.Next(0, starSystemRepo.GetList().Count() - 1)];
-				stars[i].StarSystem = (starSystemRepo.GetList().Count() == 0) ? null : starSystemRepo.GetByIDAsync(stars[i].StarSystemId).Result;
+				stars[i].StarSystem = (starSystemRepo.GetList().Count() == 0) ? null : starSystemRepo.GetByID(stars[i].StarSystemId);
 				await _unitOfWork.GetRepository<Star>().InsertAsync(stars[i]);
 			}
 
@@ -57,22 +57,22 @@ namespace BLL_BuisnessLogicLayer
 
         }
 
-        public async Task<int> GetAllPlanetsCount()
+        public Task<int> GetAllPlanetsCount()
 		{
-			var planets = await _unitOfWork.GetRepository<Planet>().GetListAsync();
-			return planets.Count();
+			var planets = _unitOfWork.GetRepository<Planet>().GetList();
+			return Task.FromResult(planets.Count());
 		}
 
         public async Task<int> GetAllStarsCount()
         {
-            var stars = await _unitOfWork.GetRepository<Star>().GetListAsync();
-            return stars.Count();
+            var stars = _unitOfWork.GetRepository<Star>().GetList();
+            return await stars.CountAsync();
         }
 
-        public async Task<Planet> GetHeaviestPlanet()
+        public Planet GetHeaviestPlanet()
 		{
-			var planets = await _unitOfWork.GetRepository<Planet>().GetListAsync();
-			return planets.MaxBy(p => p.Mass);
+			var planets = _unitOfWork.GetRepository<Planet>().GetList();
+			return planets.MaxBy(x => x.Mass);
 		}
 
 		public async Task HireNewDiscoverer(string name, string surname, int age)
@@ -109,13 +109,13 @@ namespace BLL_BuisnessLogicLayer
 
 
 
-        public async Task<IEnumerable<Discoverer>> ShowDetailsDiscovererers()
+        public IQueryable<Discoverer> ShowDetailsDiscovererers()
         {
-            var discoverers = await _unitOfWork.GetRepository<Discoverer>().GetListAsync();
+            var discoverers = _unitOfWork.GetRepository<Discoverer>().GetList().Include(d => d.Ship);
 			return discoverers;
         }
 
-        public async Task<IEnumerable<Ship>> ShowAllShips()
+        public async Task<IQueryable<Ship>> ShowAllShips()
         {
             var Ships = _unitOfWork.GetRepository<Ship>().GetList().Include(s => s.Discoverer);
             return Ships;
@@ -170,7 +170,7 @@ namespace BLL_BuisnessLogicLayer
 		public async Task RewardExplorerByNewShip(int discovererID, string shipModel, string shipName, int maxSpeed, int singleChargeRange)
 		{
 			var discovererRepo = _unitOfWork.GetRepository<Discoverer>();
-			var discoverer = await discovererRepo.GetByIDAsync(discovererID);
+			var discoverer = discovererRepo.GetByID(discovererID);
 			if (discoverer == null)
 				throw new InvalidDataException();
 			var s = new Ship() {
@@ -195,14 +195,14 @@ namespace BLL_BuisnessLogicLayer
 			await shipRepo.SaveAsync();
 		}
 
-        public async Task<IEnumerable<StarSystem>> GetAllStarSystems()
+        public async Task<IQueryable<StarSystem>> GetAllStarSystems()
         {
-            return await _unitOfWork.GetRepository<StarSystem>().GetListAsync();
+            return _unitOfWork.GetRepository<StarSystem>().GetList();
         }
 
-        public async Task<IEnumerable<Galaxy>> GetAllGalaxies()
+        public IQueryable<Galaxy> GetAllGalaxies()
         {
-            return await _unitOfWork.GetRepository<Galaxy>().GetListAsync();
+            return _unitOfWork.GetRepository<Galaxy>().GetList();
         }
     }
 }

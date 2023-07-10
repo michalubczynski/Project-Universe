@@ -49,9 +49,9 @@ namespace Tests_xUnit
 			{
 				Id = 1
 			};
-			mockService.Setup(m => m.GetHeaviestPlanet().Result).Returns(p);
+			mockService.Setup(m => m.GetHeaviestPlanet()).Returns(p);
 			var serviceAPIController = new ServiceAPIController(mockService.Object);
-			var result = serviceAPIController.GetHeaviestPlanet().Result;
+			var result = serviceAPIController.GetHeaviestPlanet();
 			Assert.Equal<Planet>(p, result);
 		}
 	}

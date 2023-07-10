@@ -21,7 +21,7 @@ namespace Tests_xUnit.FakeClasses
 			return Task.CompletedTask;
 		}
 
-		public Task<IEnumerable<Galaxy>> GetAllGalaxies()
+		public IQueryable<Galaxy> GetAllGalaxies()
 		{
 			throw new NotImplementedException();
 		}
@@ -36,12 +36,12 @@ namespace Tests_xUnit.FakeClasses
 			throw new NotImplementedException();
 		}
 
-		public Task<IEnumerable<StarSystem>> GetAllStarSystems()
+		public Task<IQueryable<StarSystem>> GetAllStarSystems()
 		{
 			throw new NotImplementedException();
 		}
 
-		public Task<Planet> GetHeaviestPlanet()
+		public Planet GetHeaviestPlanet()
 		{
 			throw new NotImplementedException();
 		}
@@ -66,12 +66,12 @@ namespace Tests_xUnit.FakeClasses
 			throw new NotImplementedException();
 		}
 
-		public Task<IEnumerable<Ship>> ShowAllShips()
+		public Task<IQueryable<Ship>> ShowAllShips()
 		{
 			throw new NotImplementedException();
 		}
 
-		public Task<IEnumerable<Discoverer>> ShowDetailsDiscovererers()
+		public IQueryable<Discoverer> ShowDetailsDiscovererers()
 		{
 			throw new NotImplementedException();
 		}

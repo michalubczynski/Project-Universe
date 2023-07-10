@@ -89,7 +89,7 @@ namespace Tests_xUnit.FakeClasses
             }
         }
 
-        public async Task<T> GetByIDAsync(int? id)
+        public T GetByIDAsync(int? id)
         {
             if (id.HasValue)
             {

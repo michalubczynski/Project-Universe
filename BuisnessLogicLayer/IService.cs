@@ -15,15 +15,15 @@ namespace BLL_BuisnessLogicLayer
 	{
 		Task<int> GetAllPlanetsCount();
         Task<int> GetAllStarsCount();
-        Task<IEnumerable<StarSystem>> GetAllStarSystems();
-        Task<IEnumerable<Galaxy>> GetAllGalaxies();
-        Task<IEnumerable<Ship>> ShowAllShips();
-        Task<Planet> GetHeaviestPlanet();
+        Task<IQueryable<StarSystem>> GetAllStarSystems();
+        IQueryable<Galaxy> GetAllGalaxies();
+        Task<IQueryable<Ship>> ShowAllShips();
+        Planet GetHeaviestPlanet();
 		Task AddRandomStars(int count);
 		Task MoveStarSystemToAnotherGalaxy(int starSystemId, int galaxyId);
 		Task MakeNewShip(int MaxRange, int MaxSpeed, string? model = null, int? discovererID = null);
 		Task HireNewDiscoverer(string name, string surname, int age);
 		Task RewardExplorerByNewShip(int discovererID, string shipModel, string shipName, int maxSpeed, int singleChargeRange);
-		Task<IEnumerable<Discoverer>> ShowDetailsDiscovererers();
+		IQueryable<Discoverer> ShowDetailsDiscovererers();
     }
 }

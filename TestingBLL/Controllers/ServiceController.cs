@@ -28,9 +28,9 @@ namespace TestingBLL.Controllers
 
         [HttpGet("planets/heaviest")]
         [ProducesResponseType(typeof(Planet), 200)]
-        public async Task<IActionResult> GetHeaviestPlanet()
+        public IActionResult GetHeaviestPlanet()
         {
-            var planet = await _workService.GetHeaviestPlanet();
+            var planet = _workService.GetHeaviestPlanet();
             return Ok(planet);
         }
 

@@ -25,7 +25,7 @@ namespace Universe.Controllers
         // GET: StarSystems
         public async Task<IActionResult> Index()
         {
-            var objs = await _service.GetAllSpaceObjectsAsync(); //
+            var objs = _service.GetAllSpaceObjects(); //
             if (objs == null)
             {
                 return NotFound();

@@ -57,11 +57,6 @@ namespace Universe.Models
 		{
 			return context.Set<T>();
 		}
-		public async Task<IEnumerable<T>> GetListAsync()
-		{
-			return await context.Set<T>().ToListAsync();
-		}
-
 /*        public void Insert(T inserted)
 		{
 

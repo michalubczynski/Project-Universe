@@ -39,9 +39,9 @@ namespace TestingBLL.Controllers
 
         [HttpGet("planets/heaviest")]
         [ProducesResponseType(typeof(Planet), 200)]
-        public async Task<IActionResult> GetHeaviestPlanet()
+        public IActionResult GetHeaviestPlanet()
         {
-            var planet = await _iService.GetHeaviestPlanet();
+            var planet = _iService.GetHeaviestPlanet();
             return Ok(planet);
         }
 
@@ -55,9 +55,9 @@ namespace TestingBLL.Controllers
 
         [HttpGet("Galaxy/all")]
         [ProducesResponseType(typeof(Galaxy[]), 200)]
-        public async Task<IActionResult> GetAllGalaxies()
+        public IActionResult GetAllGalaxies()
         {
-            var galax = await _iService.GetAllGalaxies();
+            var galax = _iService.GetAllGalaxies();
             return Ok(galax);
         }
 
@@ -105,9 +105,9 @@ namespace TestingBLL.Controllers
 
         [HttpGet("discoverer/Show")]
         [ProducesResponseType(typeof(IEnumerable<Discoverer>), 200)]
-        public async Task<IActionResult> ShowDiscoverers()
+        public IActionResult ShowDiscoverers()
         {
-           var list = await _iService.ShowDetailsDiscovererers();
+           var list = _iService.ShowDetailsDiscovererers();
             return Ok(list);
         }
 
