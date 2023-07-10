@@ -68,11 +68,11 @@ namespace Tests_xUnit
             // Arrange
             var planetRepoMock = new Mock<IRepository<Planet>>();
             var planets = new List<Planet> { new Planet(), new Planet() };
-            planetRepoMock.Setup(r => r.GetListAsync()).ReturnsAsync(planets);
+            planetRepoMock.Setup(r => r.GetList()).Returns(planets.AsQueryable());
             _unitOfWorkMock.Setup(uow => uow.GetRepository<Planet>()).Returns(planetRepoMock.Object);
 
             // Act
-            var count = await _service.GetAllPlanetsCount();
+            var count = _service.GetAllPlanetsCount();
 
             // Assert
             Assert.Equal(planets.Count, count);
@@ -84,32 +84,32 @@ namespace Tests_xUnit
             // Arrange
             var starRepoMock = new Mock<IRepository<Star>>();
             var stars = new List<Star> { new Star(), new Star(), new Star() };
-            starRepoMock.Setup(r => r.GetListAsync()).ReturnsAsync(stars);
+            starRepoMock.Setup(r => r.GetList()).Returns(stars.AsQueryable());
             _unitOfWorkMock.Setup(uow => uow.GetRepository<Star>()).Returns(starRepoMock.Object);
 
             // Act
-            var count = await _service.GetAllStarsCount();
+            var count = _service.GetAllStarsCount();
 
             // Assert
-            Assert.Equal(stars.Count, count);
+            Assert.Equal(stars.Count(), count);
         }
 
         [Fact]
-        public async Task GetHeaviestPlanet_ShouldReturnHeaviestPlanet()
+        public void GetHeaviestPlanet_ShouldReturnHeaviestPlanet()
         {
             // Arrange
             var planetRepoMock = new Mock<IRepository<Planet>>();
             var planets = new List<Planet>
-    {
-        new Planet { Mass = 10 },
-        new Planet { Mass = 15 },
-        new Planet { Mass = 5 }
-    };
-            planetRepoMock.Setup(r => r.GetListAsync()).ReturnsAsync(planets);
+            {
+                new Planet { Mass = 10 },
+                new Planet { Mass = 15 },
+                new Planet { Mass = 5 }
+            };
+            planetRepoMock.Setup(r => r.GetList()).Returns(planets.AsQueryable());
             _unitOfWorkMock.Setup(uow => uow.GetRepository<Planet>()).Returns(planetRepoMock.Object);
 
             // Act
-            var heaviestPlanet = await _service.GetHeaviestPlanet();
+            var heaviestPlanet = _service.GetHeaviestPlanet();
 
             // Assert
             Assert.Equal(15, heaviestPlanet.Mass);
@@ -132,22 +132,22 @@ namespace Tests_xUnit
         }
 
         [Fact]
-        public async Task ShowDetailsDiscoverers_ShouldReturnAllDiscoverers()
-        {
-            // Arrange
-            var discovererRepoMock = new Mock<IRepository<Discoverer>>();
+        public void ShowDetailsDiscoverers_ShouldReturnAllDiscoverers()
+		{
+			// Arrange
+			var discovererRepoMock = new Mock<IRepository<Discoverer>>();
             var discoverers = new List<Discoverer> { new Discoverer(), new Discoverer() };
-            discovererRepoMock.Setup(r => r.GetListAsync()).ReturnsAsync(discoverers);
+            discovererRepoMock.Setup(r => r.GetList()).Returns(discoverers.AsQueryable());
             _unitOfWorkMock.Setup(uow => uow.GetRepository<Discoverer>()).Returns(discovererRepoMock.Object);
 
             // Act
-            var result = await _service.ShowDetailsDiscovererers();
+            var result = _service.ShowDetailsDiscovererers();
 
             // Assert
             Assert.Equal(discoverers, result);
-        }
+		}
 
-        [Fact]
+		[Fact]
         public async Task ShowAllShips_ShouldReturnAllShipsWithDiscoverers()
         {
             // Arrange
@@ -229,7 +229,7 @@ namespace Tests_xUnit
 
             var discovererRepoMock = new Mock<IRepository<Discoverer>>();
             var discoverer = new Discoverer { Id = discovererId };
-            discovererRepoMock.Setup(r => r.GetByIDAsync(discovererId)).ReturnsAsync(discoverer);
+            discovererRepoMock.Setup(r => r.GetByID(discovererId)).Returns(discoverer);
             _unitOfWorkMock.Setup(uow => uow.GetRepository<Discoverer>()).Returns(discovererRepoMock.Object);
 
             var shipRepoMock = new Mock<IRepository<Ship>>();
@@ -245,16 +245,16 @@ namespace Tests_xUnit
             _unitOfWorkMock.Verify(uow => uow.SaveChangesAsync(It.IsAny<CancellationToken>()), Times.Once);
         }
         [Fact]
-        public async Task GetAllGalaxies_ShouldReturnAllGalaxies()
+        public void GetAllGalaxies_ShouldReturnAllGalaxies()
         {
             // Arrange
             var galaxyRepoMock = new Mock<IRepository<Galaxy>>();
             var galaxies = new List<Galaxy> { new Galaxy(), new Galaxy() };
-            galaxyRepoMock.Setup(r => r.GetListAsync()).ReturnsAsync(galaxies);
+            galaxyRepoMock.Setup(r => r.GetList()).Returns(galaxies.AsQueryable());
             _unitOfWorkMock.Setup(uow => uow.GetRepository<Galaxy>()).Returns(galaxyRepoMock.Object);
 
             // Act
-            var result = await _service.GetAllGalaxies();
+            var result = _service.GetAllGalaxies();
 
             // Assert
             Assert.Equal(galaxies, result);
@@ -271,7 +271,7 @@ namespace Tests_xUnit
         };
 
             var discovererRepoMock = new Mock<IRepository<Discoverer>>();
-            discovererRepoMock.Setup(r => r.GetListAsync()).ReturnsAsync(discovererList.AsEnumerable());
+            discovererRepoMock.Setup(r => r.GetList()).Returns(discovererList.AsQueryable());
             _unitOfWorkMock.Setup(uow => uow.GetRepository<Discoverer>()).Returns(discovererRepoMock.Object);
 
             discovererRepoMock.Setup(r => r.Delete(It.IsAny<Discoverer>().Id))
@@ -297,7 +297,7 @@ namespace Tests_xUnit
             };
 
             var discovererRepoMock = new Mock<IRepository<Discoverer>>();
-            discovererRepoMock.Setup(r => r.GetListAsync()).ReturnsAsync(discovererList.AsEnumerable());
+            discovererRepoMock.Setup(r => r.GetList()).Returns(discovererList.AsQueryable());
             _unitOfWorkMock.Setup(uow => uow.GetRepository<Discoverer>()).Returns(discovererRepoMock.Object);
 
             // Act

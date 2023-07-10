@@ -16,14 +16,14 @@ namespace Tests_xUnit
 	{
 		// 1
 		[Fact]
-		public async Task GetAllPlanetsCountTest()
+		public void GetAllPlanetsCountTest()
 		{
             // Arrange
             Mock<IService> mockBLL = new Mock<IService>(); //var mockRepo = new Mock<IBrainstormSessionRepository>();
-            mockBLL.Setup(repo => repo.GetAllPlanetsCount().Result).Returns(3); //mockRepo.Setup(repo => repo.ListAsync()).ReturnsAsync(GetTestSessions());
+            mockBLL.Setup(repo => repo.GetAllPlanetsCount()).Returns(3); //mockRepo.Setup(repo => repo.ListAsync()).ReturnsAsync(GetTestSessions());
             ServiceController serviceController = new ServiceController(mockBLL.Object); //var controller = new HomeController(mockRepo.Object);
             // Act
-            var result = await serviceController.GetAllPlanetsCount(); //var result = await controller.Index();
+            var result = serviceController.GetAllPlanetsCount(); //var result = await controller.Index();
             // Assert
             var viewResult = Assert.IsType<ViewResult>(result);
             var model = Assert.IsAssignableFrom<int>(viewResult.ViewData.Model);

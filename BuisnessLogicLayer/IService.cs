@@ -13,8 +13,8 @@ namespace BLL_BuisnessLogicLayer
 {
 	public interface IService
 	{
-		Task<int> GetAllPlanetsCount();
-        Task<int> GetAllStarsCount();
+		int GetAllPlanetsCount();
+        int GetAllStarsCount();
         Task<IQueryable<StarSystem>> GetAllStarSystems();
         IQueryable<Galaxy> GetAllGalaxies();
         Task<IQueryable<Ship>> ShowAllShips();

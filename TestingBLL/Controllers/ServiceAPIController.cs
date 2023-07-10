@@ -19,9 +19,9 @@ namespace TestingBLL.Controllers
 			_iService = workService;
 		}
 		[HttpGet]
-		public async Task<int> GetAllPlanetsCount()
+		public int GetAllPlanetsCount()
 		{
-			return await _iService.GetAllPlanetsCount();
+			return _iService.GetAllPlanetsCount();
 		}
 		[HttpGet]
 		public Planet GetHeaviestPlanet()

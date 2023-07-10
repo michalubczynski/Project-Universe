@@ -17,9 +17,9 @@ namespace API.Pages
 
         public IEnumerable<Discoverer> Discoverers { get; set; }
 
-        public async Task OnGet()
+        public void OnGet()
         {
-            Discoverers = await _iService.ShowDetailsDiscovererers();
+            Discoverers = _iService.ShowDetailsDiscovererers();
         }
     }
 }

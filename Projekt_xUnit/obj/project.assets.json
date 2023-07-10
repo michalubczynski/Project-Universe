@@ -4131,6 +4131,29 @@
           "build/netcoreapp3.1/xunit.runner.visualstudio.props": {}
         }
       },
+      "BLL_API_SERVICE/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "BLL_BuisnessLogicLayer": "1.0.0",
+          "DAL_DataAccessLayer": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "7.0.5",
+          "Microsoft.EntityFrameworkCore.Abstractions": "7.0.5",
+          "Microsoft.EntityFrameworkCore.Relational": "7.0.5",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.5",
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.13",
+          "Swashbuckle.AspNetCore.SwaggerUI": "6.5.0"
+        },
+        "compile": {
+          "bin/placeholder/BLL_API_SERVICE.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BLL_API_SERVICE.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "BLL_BuisnessLogicLayer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -4193,29 +4216,6 @@
         "runtime": {
           "bin/placeholder/DAL_Interfaces.dll": {}
         }
-      },
-      "Tests_BLL/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "BLL_BuisnessLogicLayer": "1.0.0",
-          "DAL_DataAccessLayer": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "7.0.5",
-          "Microsoft.EntityFrameworkCore.Abstractions": "7.0.5",
-          "Microsoft.EntityFrameworkCore.Relational": "7.0.5",
-          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.5",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.13",
-          "Swashbuckle.AspNetCore.SwaggerUI": "6.5.0"
-        },
-        "compile": {
-          "bin/placeholder/Tests_BLL.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Tests_BLL.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
       }
     }
   },
@@ -11536,6 +11536,11 @@
         "xunit.runner.visualstudio.nuspec"
       ]
     },
+    "BLL_API_SERVICE/1.0.0": {
+      "type": "project",
+      "path": "../TestingBLL/BLL_API_SERVICE.csproj",
+      "msbuildProject": "../TestingBLL/BLL_API_SERVICE.csproj"
+    },
     "BLL_BuisnessLogicLayer/1.0.0": {
       "type": "project",
       "path": "../BuisnessLogicLayer/BLL_BuisnessLogicLayer.csproj",
@@ -11555,15 +11560,11 @@
       "type": "project",
       "path": "../DAL_Interfaces/DAL_Interfaces.csproj",
       "msbuildProject": "../DAL_Interfaces/DAL_Interfaces.csproj"
-    },
-    "Tests_BLL/1.0.0": {
-      "type": "project",
-      "path": "../TestingBLL/Tests_BLL.csproj",
-      "msbuildProject": "../TestingBLL/Tests_BLL.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "BLL_API_SERVICE >= 1.0.0",
       "BLL_BuisnessLogicLayer >= 1.0.0",
       "DAL_DataAccessLayer >= 1.0.0",
       "DAL_Interfaces >= 1.0.0",
@@ -11572,7 +11573,6 @@
       "Moq >= 4.18.4",
       "Moq.EntityFrameworkCore >= 7.0.0.2",
       "System.Linq.Queryable >= 4.3.0",
-      "Tests_BLL >= 1.0.0",
       "coverlet.collector >= 3.2.0",
       "xunit >= 2.4.2",
       "xunit.runner.visualstudio >= 2.4.5"
@@ -11614,8 +11614,8 @@
             "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\DAL_DataAccessLayer.csproj": {
               "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\DAL_DataAccessLayer.csproj"
             },
-            "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\TestingBLL\\Tests_BLL.csproj": {
-              "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\TestingBLL\\Tests_BLL.csproj"
+            "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\TestingBLL\\BLL_API_SERVICE.csproj": {
+              "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\TestingBLL\\BLL_API_SERVICE.csproj"
             }
           }
         }

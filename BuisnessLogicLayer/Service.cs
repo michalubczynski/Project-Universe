@@ -57,16 +57,16 @@ namespace BLL_BuisnessLogicLayer
 
         }
 
-        public Task<int> GetAllPlanetsCount()
+        public int GetAllPlanetsCount()
 		{
 			var planets = _unitOfWork.GetRepository<Planet>().GetList();
-			return Task.FromResult(planets.Count());
+			return planets.Count();
 		}
 
-        public async Task<int> GetAllStarsCount()
+        public int GetAllStarsCount()
         {
             var stars = _unitOfWork.GetRepository<Star>().GetList();
-            return await stars.CountAsync();
+            return stars.Count();
         }
 
         public Planet GetHeaviestPlanet()

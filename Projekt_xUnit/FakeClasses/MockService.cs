@@ -26,12 +26,12 @@ namespace Tests_xUnit.FakeClasses
 			throw new NotImplementedException();
 		}
 
-		public Task<int> GetAllPlanetsCount()
+		public int GetAllPlanetsCount()
 		{
 			throw new NotImplementedException();
 		}
 
-		public Task<int> GetAllStarsCount()
+		public int GetAllStarsCount()
 		{
 			throw new NotImplementedException();
 		}

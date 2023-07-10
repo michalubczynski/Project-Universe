@@ -50,12 +50,12 @@ namespace Projekt_xUnit
 				Id = 1,
 				Name = "bbb"
 			};
-			mockRepo.Setup(x => x.GetList().AsEnumerable<Planet>()).Returns(new List<Planet>{p1, p2});
+			mockRepo.Setup(x => x.GetList()).Returns(new List<Planet>{p1, p2}.AsQueryable());
 			var unitOfWork = new UnitOfWork();
 			unitOfWork.AddRepository(mockRepo.Object);
 			var service = new Service(unitOfWork);
 			var result = service.GetAllPlanetsCount();
-			Assert.Equal(2, result.Result);
+			Assert.Equal(2, result);
 		}
 		public static DbUniverse GetTestDbContext(string dbName)
 		{
@@ -84,6 +84,7 @@ namespace Projekt_xUnit
 				Name = "aaa"
 			};
 			starsRepo.Insert(s);
+			starsRepo.Save();
 			Assert.Single(starsRepo.GetList());
 		}
 		[Fact]

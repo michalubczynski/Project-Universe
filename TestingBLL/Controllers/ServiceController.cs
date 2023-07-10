@@ -19,9 +19,9 @@ namespace TestingBLL.Controllers
 
         [HttpGet("planets/count")]
         [ProducesResponseType(typeof(int), 200)]
-        public async Task<IActionResult> GetAllPlanetsCount()
+        public IActionResult GetAllPlanetsCount()
         {
-            var count = await _workService.GetAllPlanetsCount();
+            var count = _workService.GetAllPlanetsCount();
             return Ok(count);
         }
 
