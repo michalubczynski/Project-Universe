@@ -66,6 +66,11 @@ namespace Tests_xUnit.FakeClasses
 			throw new NotImplementedException();
 		}
 
+		public Task<IEnumerable<Ship>> ShowAllShips()
+		{
+			throw new NotImplementedException();
+		}
+
 		public Task<IEnumerable<Discoverer>> ShowDetailsDiscovererers()
 		{
 			throw new NotImplementedException();

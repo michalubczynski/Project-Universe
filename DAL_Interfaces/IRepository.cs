@@ -6,7 +6,7 @@ namespace Universe.Models
 {
 	public interface IRepository<T> : IDisposable where T : DbEntity
 	{
-		IEnumerable<T> GetList();
+		IQueryable<T> GetList();
 		Task<IEnumerable<T>> GetListAsync();
 		T GetByID(int id);
 		void Delete(int deletedId);

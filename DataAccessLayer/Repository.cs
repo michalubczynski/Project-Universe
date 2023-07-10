@@ -53,9 +53,9 @@ namespace Universe.Models
 			return context.Set<T>().Find(id);
 		}
 
-		public IEnumerable<T> GetList()
+		public IQueryable<T> GetList()
 		{
-			return context.Set<T>().ToList();
+			return context.Set<T>();
 		}
 		public async Task<IEnumerable<T>> GetListAsync()
 		{

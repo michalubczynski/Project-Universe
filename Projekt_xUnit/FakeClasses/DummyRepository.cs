@@ -69,7 +69,7 @@ namespace Tests_xUnit.FakeClasses
             throw new InvalidOperationException();
         }
 
-        public IEnumerable<T> GetList()
+        public IQueryable<T> GetList()
         {
             if (_context == null) throw new InvalidOperationException();
             throw new InvalidOperationException();

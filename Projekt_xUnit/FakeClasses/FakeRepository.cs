@@ -33,9 +33,9 @@ namespace Tests_xUnit.FakeClasses
             return _entities.FirstOrDefault(e => e.Id == id);
         }
 
-        public IEnumerable<T> GetList()
+        public IQueryable<T> GetList()
         {
-            return _entities.ToList();
+            return _entities.ToList().AsQueryable();
         }
 
         public async Task<IEnumerable<T>> GetListAsync()

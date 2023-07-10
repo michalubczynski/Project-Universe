@@ -1,4 +1,5 @@
-﻿using Microsoft.Identity.Client;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
@@ -89,7 +90,7 @@ namespace BLL_BuisnessLogicLayer
 
         public async Task<IEnumerable<Ship>> ShowAllShips()
         {
-            var Ships = await _unitOfWork.GetRepository<Ship>().GetListAsync();
+            var Ships = _unitOfWork.GetRepository<Ship>().GetList().Include(s => s.Discoverer);
             return Ships;
         }
 
