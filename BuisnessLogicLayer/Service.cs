@@ -81,6 +81,33 @@ namespace BLL_BuisnessLogicLayer
 			_unitOfWork.GetRepository<Discoverer>().Save();
 			await _unitOfWork.SaveChangesAsync();
 		}
+        //    System.InvalidCastException : Unable to cast object of type 'System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[Universe.Models.discoverer.Discoverer]]' to type 'System.Collections.Generic.IEnumerable`1[Universe.Models.discoverer.Discoverer]'.
+
+        public async Task KillDiscoverer(string name, string surname, int age)
+        {
+			//var discoverer = await _unitOfWork.GetRepository<Discoverer>().FirstOrDefaultAsync(d => d.Name == name && d.Surname == surname && d.Age == age);
+			IEnumerable<Discoverer> enumerableList = _unitOfWork.GetRepository<Discoverer>().GetList();
+			//if (discoverer != null)
+			//{
+			//    _unitOfWork.GetRepository<Discoverer>().Delete(discoverer.Id);
+			//    await _unitOfWork.SaveChangesAsync();
+			//}
+			//ALTERNATIVE METHOD OF DELETE !!!!
+
+			foreach (Discoverer discoverer in enumerableList)
+			{
+				if (discoverer.Name == name && discoverer.Surname == surname && discoverer.Age == age)
+				{
+					_unitOfWork.GetRepository<Discoverer>().Delete(discoverer.Id);
+
+				}
+			}
+			_unitOfWork.GetRepository<Discoverer>().Save();
+			await _unitOfWork.SaveChangesAsync();
+		}
+
+
+
 
         public async Task<IEnumerable<Discoverer>> ShowDetailsDiscovererers()
         {

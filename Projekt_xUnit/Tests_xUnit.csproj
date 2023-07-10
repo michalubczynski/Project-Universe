@@ -13,7 +13,7 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
     <PackageReference Include="Moq" Version="4.18.4" />
     <PackageReference Include="Moq.EntityFrameworkCore" Version="7.0.0.2" />
-    <PackageReference Include="xunit" Version="2.4.2" />
+    <PackageReference Include="xunit" Version="2.5.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
@@ -28,7 +28,7 @@
     <ProjectReference Include="..\BuisnessLogicLayer\BLL_BuisnessLogicLayer.csproj" />
     <ProjectReference Include="..\DAL_Interfaces\DAL_Interfaces.csproj" />
     <ProjectReference Include="..\DataAccessLayer\DAL_DataAccessLayer.csproj" />
-    <ProjectReference Include="..\TestingBLL\Tests_BLL.csproj" />
+    <ProjectReference Include="..\TestingBLL\BLL_API_SERVICE.csproj" />
   </ItemGroup>
 
 </Project>

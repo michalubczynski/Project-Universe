@@ -67,11 +67,5 @@ namespace TestingBLL.Controllers
             _iService.RewardExplorerByNewShip(discovererID, shipModel, shipName, maxSpeed, singleChargeRange);
         }
 
-
-        /*	[HttpPost]
-            public void RewardExplorerByNewShip(Discoverer discovererToAward, Ship newShip)
-            {
-                _iService.RewardExplorerByNewShip(discovererToAward, newShip);
-            }*/
     }
 }

@@ -1,0 +1,21 @@
+﻿@page
+@model API.Pages.DiscovererModel
+
+<table class="discoverers-table">
+    <thead>Wszyscy zarejestrowani odkrywcy:</thead>
+    <thead>
+        <tr>
+            <th>Imię</th>
+            <th>Nazwisko</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var discoverer in Model.Discoverers)
+        {
+            <tr>
+                <td>@discoverer.Name</td>
+                <td>@discoverer.Surname</td>
+            </tr>
+        }
+    </tbody>
+</table>

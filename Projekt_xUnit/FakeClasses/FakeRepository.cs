@@ -40,7 +40,7 @@ namespace Tests_xUnit.FakeClasses
 
         public async Task<IEnumerable<T>> GetListAsync()
         {
-            return _entities.ToList();
+             return  _entities.ToList();
         }
 
         public async Task<int> SaveAsync()

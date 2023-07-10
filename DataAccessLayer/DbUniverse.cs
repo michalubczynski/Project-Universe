@@ -20,10 +20,14 @@ namespace Models
 		public DbSet<Ship> Ships { get; set; }
 		public DbSet<Planet> Planets { get; set; }
 
-
-		public DbUniverse(DbContextOptions<DbUniverse> options):base(options) { 
-		
-		}
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=BAZA;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
+            optionsBuilder.UseSqlServer(connectionString);
+            //optionsBuilder.UseInMemoryDatabase("MyInMemoryDatabase");
+            optionsBuilder.EnableSensitiveDataLogging();
+        }
+        public DbUniverse(DbContextOptions<DbUniverse> options):base(options) {}
 
 		public async Task<int> CountAsync<T>(Expression<Func<T, bool>> predicate = null) where T : class
 		{
@@ -54,13 +58,7 @@ namespace Models
 			return await Set<T>().FirstOrDefaultAsync(predicate);
 		}
 
-		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-		{
-			string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=baza;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
-			optionsBuilder.UseSqlServer(connectionString);
-			//optionsBuilder.UseInMemoryDatabase("MyInMemoryDatabase");
-			optionsBuilder.EnableSensitiveDataLogging();
-		}
+
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			modelBuilder.Entity<Ship>().HasOne(d => d.Discoverer).WithOne(s => s.Ship).HasForeignKey<Discoverer>(d => d.ShipId);
