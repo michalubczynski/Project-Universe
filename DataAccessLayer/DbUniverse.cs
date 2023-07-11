@@ -58,7 +58,6 @@ namespace Models
 			return await Set<T>().FirstOrDefaultAsync(predicate);
 		}
 
-
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			modelBuilder.Entity<Ship>().HasOne(d => d.Discoverer).WithOne(s => s.Ship).HasForeignKey<Discoverer>(d => d.ShipId);
