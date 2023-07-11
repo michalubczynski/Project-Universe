@@ -13,4 +13,5 @@ export enum TypeOfPlanets {
     public mass!: number;
     public starSystemId!: number;
     public starSystem!: StarSystem;
+    public name!: String;
   }

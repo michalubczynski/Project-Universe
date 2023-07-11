@@ -16,7 +16,8 @@
         <td>{{ ship.shipModel }}</td>
         <td>{{ ship.maxSpeed }}</td>
         <td>{{ ship.singleChargeRange }}</td>
-        <td>{{ ship.discoverer }}</td>
+        <td *ngIf="ship.discoverer != null" >{{ ship.discoverer?.surname }}</td>  
+        <td *ngIf="ship.discoverer == null" > Brak Pilota</td>
         <td>{{ ship.ifBroken }}</td>
       </tr>
     </tbody>

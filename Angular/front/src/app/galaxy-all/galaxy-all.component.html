@@ -10,7 +10,24 @@
     <tr *ngFor="let galaxy of galaxies">
       <td>{{ galaxy.type }}</td>
       <td>{{ galaxy.mass }}</td>
-      <td>{{ galaxy.starSystems }}</td>
+      <td>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <!-- Add more table headers for other properties if needed -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let starSystem of galaxy.starSystems">
+              <td>{{ starSystem.id }}</td>
+              <td>{{ starSystem.name }}</td>
+              <!-- Add more table cells for other properties if needed -->
+            </tr>
+          </tbody>
+        </table>
+      </td>
     </tr>
   </tbody>
 </table>

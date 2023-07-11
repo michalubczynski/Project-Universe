@@ -9,10 +9,12 @@
     </thead>
     <tbody>
       <tr>
-        <td>{{ heaviestPlanet.type }}</td>
-        <td>{{ heaviestPlanet.mass }}</td>
-        <td>{{ heaviestPlanet.starSystem }}</td>
-        <td>{{ heaviestPlanet.name }}</td>
+        <td>{{ heaviestPlanet?.type }}</td>
+        <td>{{ heaviestPlanet?.mass }}</td>
+        
+        <td *ngIf="heaviestPlanet?.starSystemId != null">{{ currentStarSystem?.name }}</td>
+        <td *ngIf="heaviestPlanet?.starSystemId == null"> Nie przypisano </td>
+        <td>{{ heaviestPlanet?.name }}</td>
       </tr>
     </tbody>
   </table>

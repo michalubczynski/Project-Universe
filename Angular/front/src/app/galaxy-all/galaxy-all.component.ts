@@ -10,11 +10,15 @@ var host = "http://localhost:5080";
 })
 export class GalaxyAllComponent implements OnInit {
   galaxies: Galaxy[] = [];
+  
 
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     this.getAllGalaxies();
+    for (const galaxy of this.galaxies){
+      console.log(galaxy.mass);
+    }
   }
 
   getAllGalaxies(): void {
@@ -26,5 +30,7 @@ export class GalaxyAllComponent implements OnInit {
         console.error('Error occurred while retrieving galaxies:', error);
       }
     );
+
+
   }
 }
