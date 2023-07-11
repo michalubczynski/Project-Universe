@@ -20,20 +20,19 @@ namespace Tests_xUnit
 		//public async Task<IActionResult> HireNewDiscoverer(string name, string surname, int age)
 		//public IActionResult ShowDiscoverers()
 		//public async Task<IActionResult> RewardExplorerByNewShip(int discovererID, string shipModel, string shipName, int maxSpeed, int singleChargeRange)
-
-		[Fact]
-		public void GetAllPlanetsCountTestShouldReturnValidNumber()
-		{
-			var count = 3;
-			var mockBLL = new Mock<Service>();
-			mockBLL.Setup(s => s.GetAllPlanetsCount()).Returns(3);
-			var api = new ServiceAPIController(mockBLL.Object);
-			var apiResult = api.GetAllPlanetsCount();
-			var okResult = Assert.IsType<OkObjectResult>(apiResult);
-			var result = Assert.IsType<int>(okResult.Value);
-			Assert.Equal(count, result);
-		}
-		[Fact]
+        [Fact]
+        public void GetAllPlanetsCountTestShouldReturnValidNumber()
+        {
+            var count = 3;
+            var mockService = new Mock<IService>();
+            mockService.Setup(s => s.GetAllPlanetsCount()).Returns(3);
+            var api = new ServiceAPIController(mockService.Object);
+            var apiResult = api.GetAllPlanetsCount();
+            var okResult = Assert.IsType<OkObjectResult>(apiResult);
+            var result = Assert.IsType<int>(okResult.Value);
+            Assert.Equal(count, result);
+        }
+        [Fact]
 		public void GetAllStarsCountTestShouldReturnValidNumber()
 		{
 			var count = 5;

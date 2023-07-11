@@ -57,7 +57,7 @@ namespace BLL_BuisnessLogicLayer
 
         }
 
-        public int GetAllPlanetsCount()
+        public virtual int GetAllPlanetsCount()
 		{
 			var planets = _unitOfWork.GetRepository<Planet>().GetList();
 			return planets.Count();
