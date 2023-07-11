@@ -10,11 +10,11 @@ namespace TestingBLL.Controllers
 {
 	[Route("api/[controller]")]
 	[ApiController]
-	public class ServiceAPIController : ControllerBase
+	public class TestingServiceAPIController : ControllerBase
 	{
 		private readonly IService _iService;
 
-		public ServiceAPIController(IService workService)
+		public TestingServiceAPIController(IService workService)
 		{
 			_iService = workService;
 		}

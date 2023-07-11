@@ -1,7 +1,5 @@
 ﻿using BLL_BuisnessLogicLayer;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
-using System.Numerics;
 using Universe.Models.discoverer;
 using Universe.Models.galaxy;
 using Universe.Models.planet;
@@ -9,7 +7,7 @@ using Universe.Models.ship;
 using Universe.Models.star;
 using Universe.Models.starsystem;
 
-namespace TestingBLL.Controllers
+namespace API.Controllers
 {
     [ApiController]
     [Route("[controller]")]

@@ -1,5 +1,6 @@
 ﻿using Moq;
 using BLL_BuisnessLogicLayer;
+using API.Controllers;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Tests_xUnit
@@ -25,10 +26,11 @@ namespace Tests_xUnit
 		{
 			var count = 3;
 			var mockBLL = new Mock<Service>();
-			mockBLL.Setup(s => s.GetAllPlanetsCount()).Returns(count);
+			mockBLL.Setup(s => s.GetAllPlanetsCount()).Returns(3);
 			var api = new ServiceAPIController(mockBLL.Object);
-			var result = api.GetAllPlanetsCount();
-			Assert.IsAssignableFrom<IActionResult>(result);
+			var apiResult = api.GetAllPlanetsCount();
+			var okResult = Assert.IsType<OkObjectResult>(apiResult);
+			var result = Assert.IsType<int>(okResult.Value);
 			Assert.Equal(count, result);
 		}
 		[Fact]
@@ -38,18 +40,19 @@ namespace Tests_xUnit
 			var mockBLL = new Mock<Service>();
 			mockBLL.Setup(s => s.GetAllStarsCount()).Returns(count);
 			var api = new ServiceAPIController(mockBLL.Object);
-			var result = api.GetAllStarsCount();
-			Assert.IsAssignableFrom<IActionResult>(result);
+			var apiResult = api.GetAllStarsCount();
+			var result = Assert.IsAssignableFrom<int>(apiResult);
 			Assert.Equal(count, result);
 		}
-		public void GetAllStarsCountTestShouldReturnValidNumber()
+		[Fact]
+		public void GetHeaviestPlanetTestShouldReturnNull()
 		{
 			var count = 5;
 			var mockBLL = new Mock<Service>();
 			mockBLL.Setup(s => s.GetAllStarsCount()).Returns(count);
 			var api = new ServiceAPIController(mockBLL.Object);
-			var result = api.GetAllStarsCount();
-			Assert.IsAssignableFrom<IActionResult>(result);
+			var apiResult = api.GetAllStarsCount();
+			var result = Assert.IsAssignableFrom<int>(apiResult);
 			Assert.Equal(count, result);
 		}
 	}
