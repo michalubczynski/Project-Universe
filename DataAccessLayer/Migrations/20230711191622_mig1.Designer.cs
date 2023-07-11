@@ -12,7 +12,7 @@ using Models;
 namespace DAL_DataAccessLayer.Migrations
 {
     [DbContext(typeof(DbUniverse))]
-    [Migration("20230711143804_mig1")]
+    [Migration("20230711191622_mig1")]
     partial class mig1
     {
         /// <inheritdoc />
@@ -20,7 +20,7 @@ namespace DAL_DataAccessLayer.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.8")
+                .HasAnnotation("ProductVersion", "7.0.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);

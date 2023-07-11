@@ -32,7 +32,7 @@ namespace NurFurDiscoverer.Controllers
 		public async Task<IActionResult> FireDiscoverer(int id)
 		{
 			await _iService.FireDiscoverer(id);
-            return RedirectToAction("Discoverers", "ShowDiscoverers");
+            return RedirectToAction("Show", "Discoverer");
         }
 	}
 }
