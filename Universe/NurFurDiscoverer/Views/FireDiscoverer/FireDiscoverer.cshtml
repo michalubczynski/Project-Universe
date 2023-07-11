@@ -1,6 +1,54 @@
 ﻿@using Universe.Models.discoverer;
 @model IEnumerable<Discoverer>
 
+<style>
+    .discoverers-container {
+        margin: 20px;
+    }
+
+    .discoverers-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .discoverers-table th,
+        .discoverers-table td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .discoverers-table th {
+            background-color: #f2f2f2;
+            text-align: left;
+        }
+
+        .discoverers-table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .discoverers-table tbody tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .discoverers-table td:last-child {
+            text-align: center;
+        }
+
+        .discoverers-table button {
+            padding: 5px 10px;
+            background-color: darkred;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+            .discoverers-table button:hover {
+                background-color: #0056b3;
+            }
+</style>
+
 <div class="discoverers-container">
     <h1>Wszyscy zarejestrowani odkrywcy</h1>
     <table class="discoverers-table">

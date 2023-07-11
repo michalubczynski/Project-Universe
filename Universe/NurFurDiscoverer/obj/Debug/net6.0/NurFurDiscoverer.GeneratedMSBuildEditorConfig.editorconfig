@@ -9,45 +9,45 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = NurFurDiscoverer
 build_property.RootNamespace = NurFurDiscoverer
-build_property.ProjectDir = C:\Users\Administrator\Documents\GitHub\UniverseDB\Universe\NurFurDiscoverer\
+build_property.ProjectDir = C:\Users\Majkel\Documents\GitHub\UniverseDB\Universe\NurFurDiscoverer\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Administrator\Documents\GitHub\UniverseDB\Universe\NurFurDiscoverer
+build_property.MSBuildProjectDirectory = C:\Users\Majkel\Documents\GitHub\UniverseDB\Universe\NurFurDiscoverer
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/NurFurDiscoverer/Views/Discoverers/Discoverers.cshtml]
+[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/NurFurDiscoverer/Views/Discoverers/Discoverers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzY292ZXJlcnNcRGlzY292ZXJlcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/NurFurDiscoverer/Views/FireDiscoverer/FireDiscoverer.cshtml]
+[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/NurFurDiscoverer/Views/FireDiscoverer/FireDiscoverer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlyZURpc2NvdmVyZXJcRmlyZURpc2NvdmVyZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/NurFurDiscoverer/Views/Home/Index.cshtml]
+[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/NurFurDiscoverer/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/NurFurDiscoverer/Views/Home/Privacy.cshtml]
+[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/NurFurDiscoverer/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/NurFurDiscoverer/Views/Shared/Error.cshtml]
+[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/NurFurDiscoverer/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/NurFurDiscoverer/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/NurFurDiscoverer/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/NurFurDiscoverer/Views/_ViewImports.cshtml]
+[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/NurFurDiscoverer/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/NurFurDiscoverer/Views/_ViewStart.cshtml]
+[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/NurFurDiscoverer/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Documents/GitHub/UniverseDB/Universe/NurFurDiscoverer/Views/Shared/_Layout.cshtml]
+[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/NurFurDiscoverer/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-mbqmk621uj

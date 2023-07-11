@@ -3547,19 +3547,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Administrator\\.nuget\\packages\\": {}
+    "C:\\Users\\Majkel\\.nuget\\packages\\": {},
+    "D:\\SDKVisual\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\Universe\\NurFurDiscoverer\\NurFurDiscoverer.csproj",
+      "projectUniqueName": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\Universe\\NurFurDiscoverer\\NurFurDiscoverer.csproj",
       "projectName": "NurFurDiscoverer",
-      "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\Universe\\NurFurDiscoverer\\NurFurDiscoverer.csproj",
-      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\Universe\\NurFurDiscoverer\\obj\\",
+      "projectPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\Universe\\NurFurDiscoverer\\NurFurDiscoverer.csproj",
+      "packagesPath": "C:\\Users\\Majkel\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\Universe\\NurFurDiscoverer\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "D:\\SDKVisual\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Majkel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3567,20 +3572,21 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj": {
-              "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj"
+            "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj": {
+              "projectPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BOL(BussinesObjectLayes\\BOL_BussinesObjectLayer.csproj"
             },
-            "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\BuisnessLogicLayer\\BLL_BuisnessLogicLayer.csproj": {
-              "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\BuisnessLogicLayer\\BLL_BuisnessLogicLayer.csproj"
+            "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BuisnessLogicLayer\\BLL_BuisnessLogicLayer.csproj": {
+              "projectPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BuisnessLogicLayer\\BLL_BuisnessLogicLayer.csproj"
             },
-            "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\DAL_DataAccessLayer.csproj": {
-              "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\DAL_DataAccessLayer.csproj"
+            "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\DAL_DataAccessLayer.csproj": {
+              "projectPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\DAL_DataAccessLayer.csproj"
             }
           }
         }
@@ -3619,7 +3625,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

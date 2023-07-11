@@ -3,33 +3,76 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - NurFurDiscoverer</title>
+    <title>@ViewData["Title"] - Zarząd odkrywcami</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/NurFurDiscoverer.styles.css" asp-append-version="true" />
+    <style>
+        /* Custom styles specific to NurFurDiscoverer */
+        /* Add your custom styles here */
+
+        /* Example styles */
+        .navbar {
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: #555555;
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 1.2rem;
+            color: #555555;
+            transition: color 0.3s ease;
+        }
+
+            .navbar-nav .nav-link:hover {
+                color: #007bff;
+            }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        .footer {
+            padding: 10px 0;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+            .footer a {
+                color: #6c757d;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+                .footer a:hover {
+                    color: #007bff;
+                }
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">NurFurDiscoverer</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Zarząd odkrywcami</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Strona główna</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link" asp-area="" asp-controller="Discoverers" asp-action="ShowDiscoverers">Pokaż odkrywców</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Discoverers" asp-action="ShowDiscoverers">Show Discoverers!</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="FireDiscoverer" asp-action="FireDiscoverer">Fire Discoverer</a>
+                            <a class="nav-link" asp-area="" asp-controller="FireDiscoverer" asp-action="FireDiscoverer">Zwolnij nieroba!</a>
                         </li>
                     </ul>
                 </div>
