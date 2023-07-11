@@ -26,6 +26,11 @@ namespace Tests_xUnit.FakeClasses
 			return Task.CompletedTask;
 		}
 
+		public Task FireDiscoverer(int id)
+		{
+			throw new NotImplementedException();
+		}
+
 		public IQueryable<Galaxy> GetAllGalaxies()
 		{
 			throw new NotImplementedException();

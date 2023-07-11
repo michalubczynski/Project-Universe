@@ -25,5 +25,6 @@ namespace BLL_BuisnessLogicLayer
 		Task HireNewDiscoverer(string name, string surname, int age);
 		Task RewardExplorerByNewShip(int discovererID, string shipModel, string shipName, int maxSpeed, int singleChargeRange);
 		IQueryable<Discoverer> ShowDetailsDiscovererers();
+		Task FireDiscoverer(int id);
     }
 }

@@ -12,8 +12,8 @@ using Models;
 namespace DAL_DataAccessLayer.Migrations
 {
     [DbContext(typeof(DbUniverse))]
-    [Migration("20230710102654_Init")]
-    partial class Init
+    [Migration("20230711143804_mig1")]
+    partial class mig1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

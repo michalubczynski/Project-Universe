@@ -81,25 +81,6 @@ namespace BLL_BuisnessLogicLayer
 			_unitOfWork.GetRepository<Discoverer>().Save();
 			await _unitOfWork.SaveChangesAsync();
 		}
-        //    System.InvalidCastException : Unable to cast object of type 'System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[Universe.Models.discoverer.Discoverer]]' to type 'System.Collections.Generic.IEnumerable`1[Universe.Models.discoverer.Discoverer]'.
-
-        public async Task KillDiscoverer(string name, string surname, int age)
-        {
-			var dList = _unitOfWork.GetRepository<Discoverer>().GetList();
-			foreach (Discoverer d in dList)
-			{
-				if (d.Name == name && d.Surname == surname && d.Age == age)
-				{
-					_unitOfWork.GetRepository<Discoverer>().Delete(d.Id);
-
-				}
-			}
-			_unitOfWork.GetRepository<Discoverer>().Save();
-			await _unitOfWork.SaveChangesAsync();
-		}
-
-
-
 
         public IQueryable<Discoverer> ShowDetailsDiscovererers()
         {
@@ -192,5 +173,13 @@ namespace BLL_BuisnessLogicLayer
         {
             return _unitOfWork.GetRepository<Galaxy>().GetList().Include(g => g.StarSystems);
         }
-    }
+
+		public async Task FireDiscoverer(int id)
+		{
+			var repo = _unitOfWork.GetRepository<Discoverer>();
+			repo.Delete(id);
+			await repo.SaveAsync();
+			await _unitOfWork.SaveChangesAsync();
+		}
+	}
 }
