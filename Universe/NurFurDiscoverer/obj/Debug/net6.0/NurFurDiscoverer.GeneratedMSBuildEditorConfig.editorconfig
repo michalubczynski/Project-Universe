@@ -16,8 +16,8 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Majkel\Documents\GitHub\UniverseDB\Universe\NurFurDiscoverer
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/NurFurDiscoverer/Views/Discoverers.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzY292ZXJlcnMuY3NodG1s
+[C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/NurFurDiscoverer/Views/Discoverers/Discoverers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzY292ZXJlcnNcRGlzY292ZXJlcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Majkel/Documents/GitHub/UniverseDB/Universe/NurFurDiscoverer/Views/Home/Index.cshtml]

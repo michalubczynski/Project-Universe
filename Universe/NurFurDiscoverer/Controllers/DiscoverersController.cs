@@ -22,7 +22,12 @@ namespace NurFurDiscoverer.Controllers
         public IActionResult ShowDiscoverers()
         {
             var list = _iService.ShowDetailsDiscovererers();
-            return Ok(list);
+            if (list == null)
+            {
+                return NotFound();
+            }
+            return View("Discoverers", list);
+
         }
     }
 }
