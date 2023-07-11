@@ -175,21 +175,21 @@ namespace Tests_xUnit
 			int maxRange = 100;
 			int maxSpeed = 200;
 			int discovererId = 1;
-
 			var shipRepoMock = new Mock<IRepository<Ship>>();
 			var discovererRepoMock = new Mock<IRepository<Discoverer>>();
 			var discoverer = new Discoverer { Id = discovererId };
 			discovererRepoMock.Setup(r => r.GetByID(discovererId)).Returns(discoverer);
-			_unitOfWorkMock.Setup(uow => uow.GetRepository<Ship>()).Returns(shipRepoMock.Object);
-			_unitOfWorkMock.Setup(uow => uow.GetRepository<Discoverer>()).Returns(discovererRepoMock.Object);
+			var mockUOW = new Mock<IUnitOfWork>();
+			mockUOW.Setup(uow => uow.GetRepository<Ship>()).Returns(shipRepoMock.Object);
+			mockUOW.Setup(uow => uow.GetRepository<Discoverer>()).Returns(discovererRepoMock.Object);
+			var service = new Service(mockUOW.Object);
 
 			// Act
-			await _service.MakeNewShip(maxRange, maxSpeed, discovererId: discovererId);
+			await service.MakeNewShip(maxRange, maxSpeed, discovererId: discovererId);
 
 			// Assert
 			shipRepoMock.Verify(r => r.Insert(It.IsAny<Ship>()), Times.Once);
 			shipRepoMock.Verify(r => r.Save(), Times.Once);
-			_unitOfWorkMock.Verify(uow => uow.SaveChangesAsync(It.IsAny<CancellationToken>()), Times.Once);
 		}
 
 		[Fact]

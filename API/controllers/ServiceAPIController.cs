@@ -116,5 +116,12 @@ namespace API.Controllers
             await _iService.RewardExplorerByNewShip(discovererID, shipModel, shipName, maxSpeed, singleChargeRange);
             return Ok();
         }
-    }
+		[HttpPost("discoverer/hire")]
+		[ProducesResponseType(200)]
+		public async Task<IActionResult> FireDiscoverer(int id)
+		{
+			await _iService.FireDiscoverer(id);
+			return Ok();
+		}
+	}
 }

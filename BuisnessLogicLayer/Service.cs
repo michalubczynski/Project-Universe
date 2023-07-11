@@ -96,22 +96,23 @@ namespace BLL_BuisnessLogicLayer
 
         public async Task MakeNewShip(int MaxRange, int MaxSpeed, string? model = null, int? discovererId= null)
 		{
-			int newestIdShip = _unitOfWork.GetRepository<Ship>().GetList().Last().Id+1;
-			string _model;
-			if (model == null)
-			{
-				_model = _unitOfWork.GetRepository<Ship>().GetList().Last().ShipModel;
-			}
-			else { _model = model; }
+			Random random = new Random();
+			const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+			var stringBuilder = new StringBuilder(10);
+				for (int i = 0; i < 10; i++)
+				{
+					int randomIndex = random.Next(chars.Length);
+					stringBuilder.Append(chars[randomIndex]);
+				}
 			Ship newShip;
 			if (discovererId == null)
 			{
-				newShip = new Ship { Name = newestIdShip.ToString(), ShipModel = _model, MaxSpeed = MaxSpeed, SingleChargeRange = MaxRange, Discoverer = null, IfBroken = false };
+				newShip = new Ship { Name = stringBuilder.ToString(), ShipModel = model, MaxSpeed = MaxSpeed, SingleChargeRange = MaxRange, Discoverer = null, IfBroken = false };
 			}
 			else
 			{
 				var discoverer = _unitOfWork.GetRepository<Discoverer>().GetByID(discovererId.Value);
-				newShip = new Ship { Name = newestIdShip.ToString(), ShipModel = _model, MaxSpeed = MaxSpeed, SingleChargeRange = MaxRange, Discoverer = discoverer, IfBroken = false };
+				newShip = new Ship { Name = stringBuilder.ToString(), ShipModel = model, MaxSpeed = MaxSpeed, SingleChargeRange = MaxRange, Discoverer = discoverer, IfBroken = false };
 			}
 			_unitOfWork.GetRepository<Ship>().Insert(newShip);
 			_unitOfWork.GetRepository<Ship>().Save();
