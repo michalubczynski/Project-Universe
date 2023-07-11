@@ -7,15 +7,14 @@ using Universe.Models.starsystem;
 using Universe.Models.galaxy;
 using Universe.Models.ship;
 using Universe.Models.discoverer;
+using Tests_xUnit.FakeClasses;
 
 namespace Tests_xUnit
 {
 	public class APITestsFINAL
 	{
 		// to zostalo
-		//public async Task<IActionResult> AddRandomStars(int count)
 		//public async Task<IActionResult> MoveStarSystemToAnotherGalaxy(int starsystemToMoveID, int destinationGalaxyID)
-		//public async Task<IActionResult> MakeNewShip(int MaxRange, int MaxSpeed, string? model = null, int? discoverer = null)
 		//public async Task<IActionResult> HireNewDiscoverer(string name, string surname, int age)
 		//public async Task<IActionResult> RewardExplorerByNewShip(int discovererID, string shipModel, string shipName, int maxSpeed, int singleChargeRange)
 		[Fact]
@@ -197,6 +196,35 @@ namespace Tests_xUnit
 			var okResult = Assert.IsType<OkObjectResult>(apiResult);
 			var result = Assert.IsType<EnumerableQuery<Discoverer>>(okResult.Value);
 			Assert.Equal(s, result);
+		}
+		[Fact]
+		public void RandomStarsTest()
+		{
+			var mockBLL = new MockService();
+			mockBLL.StarCount = 1;
+			var api = new ServiceAPIController(mockBLL);
+			var apiResult = api.AddRandomStars(3);
+			Assert.IsType<OkResult>(apiResult.Result);
+			Assert.Equal(3, mockBLL.StarCount);
+		}
+		[Fact]
+		public void MakeNewShipTest()
+		{
+			var mockBLL = new MockService();
+			var maxRange = 1;
+			var maxSpeed = 1;
+			var model = "s";
+			var api = new ServiceAPIController(mockBLL);
+			var apiResult = api.MakeNewShip(maxRange, maxSpeed, model);
+			Assert.IsType<OkResult>(apiResult.Result);
+			Assert.Equal(maxSpeed, mockBLL.Ship.MaxSpeed);
+			Assert.Equal(model, mockBLL.Ship.ShipModel);
+			Assert.Equal(maxRange, mockBLL.Ship.SingleChargeRange);
+		}
+		[Fact]
+		public void RewardExplorerByNewShipTest()
+		{
+			var mockBLL = new MockService();
 		}
 	}
 }

@@ -1,4 +1,5 @@
 ﻿using BLL_BuisnessLogicLayer;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,8 @@ namespace Tests_xUnit.FakeClasses
 	internal class MockService : IService
 	{
 		public int StarCount {get; set;}
+		public Ship Ship {get; set;}
+		public Discoverer Discoverer {get; set;}
 		public Task AddRandomStars(int count)
 		{
 			StarCount = count;
@@ -33,10 +36,10 @@ namespace Tests_xUnit.FakeClasses
 
 		public int GetAllStarsCount()
 		{
-			throw new NotImplementedException();
+			return StarCount;
 		}
 
-		public Task<IQueryable<StarSystem>> GetAllStarSystems()
+		public IQueryable<StarSystem> GetAllStarSystems()
 		{
 			throw new NotImplementedException();
 		}
@@ -51,37 +54,43 @@ namespace Tests_xUnit.FakeClasses
 			throw new NotImplementedException();
 		}
 
-		public Task MakeNewShip(int MaxRange, int MaxSpeed, string? model = null, int? discoverer = null)
+		public Task MakeNewShip(int MaxRange, int MaxSpeed, string? model = null, int? discovererID = null)
 		{
-			throw new NotImplementedException();
+			Ship = new Ship()
+			{
+				MaxSpeed = MaxSpeed,
+				ShipModel = model,
+				SingleChargeRange = MaxRange
+			};
+			return Task.CompletedTask;
 		}
 
-		public Task MoveStarSystemToAnotherGalaxy(int starsystemToMove, int destinationGalaxy)
+		public Task MoveStarSystemToAnotherGalaxy(int starSystemId, int galaxyId)
 		{
 			throw new NotImplementedException();
 		}
 
 		public Task RewardExplorerByNewShip(int discovererID, string shipModel, string shipName, int maxSpeed, int singleChargeRange)
 		{
-			throw new NotImplementedException();
+			Discoverer = new Discoverer() {
+				Id = discovererID
+			};
+			Ship = new Ship()
+			{
+				MaxSpeed = maxSpeed,
+				ShipModel = shipModel,
+				SingleChargeRange = singleChargeRange,
+
+			};
+			return Task.CompletedTask;
 		}
 
-		public Task<IQueryable<Ship>> ShowAllShips()
+		public IQueryable<Ship> ShowAllShips()
 		{
 			throw new NotImplementedException();
 		}
 
 		public IQueryable<Discoverer> ShowDetailsDiscovererers()
-		{
-			throw new NotImplementedException();
-		}
-
-		IQueryable<StarSystem> IService.GetAllStarSystems()
-		{
-			throw new NotImplementedException();
-		}
-
-		IQueryable<Ship> IService.ShowAllShips()
 		{
 			throw new NotImplementedException();
 		}

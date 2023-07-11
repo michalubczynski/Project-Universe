@@ -5,6 +5,7 @@ using Universe.Models.galaxy;
 using Universe.Models.planet;
 using Universe.Models.star;
 using Universe.Models.discoverer;
+using System.Text.Json.Serialization;
 
 namespace Universe.Models.starsystem
 {
@@ -14,6 +15,7 @@ namespace Universe.Models.starsystem
 		// N:Starsystems-1:Galaxy
 		public int GalaxyId { get; set; }
 		[ForeignKey(nameof(GalaxyId))]
+		[JsonIgnore]
 		public Galaxy Galaxy { get; set; }
 
 		// 1:StarSystem-N:Planets

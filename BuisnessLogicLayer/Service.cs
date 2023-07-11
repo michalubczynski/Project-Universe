@@ -190,7 +190,7 @@ namespace BLL_BuisnessLogicLayer
 
         public IQueryable<Galaxy> GetAllGalaxies()
         {
-            return _unitOfWork.GetRepository<Galaxy>().GetList();
+            return _unitOfWork.GetRepository<Galaxy>().GetList().Include(g => g.StarSystems);
         }
     }
 }
