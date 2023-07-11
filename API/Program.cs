@@ -12,14 +12,18 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container
 builder.Services.AddControllers().AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
-builder.Services.AddControllersWithViews();
-builder.Services.AddRazorPages(); // Add this line to register Razor Pages
+builder.Services.AddRazorPages(); 
+
 builder.Services.AddDbContext<DbUniverse>();
+
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
+
 builder.Services.AddScoped<IService, Service>();
 builder.Services.AddTransient<IService, Service>();
+
 builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Universe", Version = "v1" });
@@ -35,31 +39,22 @@ if (app.Environment.IsDevelopment())
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "Universe");
     });
-
+    app.UseCors(options => options.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod());
     app.UseRouting();
+    app.UseAuthorization();
 
     app.UseEndpoints(endpoints =>
     {
         endpoints.MapControllers();
-        endpoints.MapRazorPages(); // Add this line to enable routing for Razor Pages
-    });
-}
-else
-{
-    // ...
-
-    app.UseRouting();
-
-    app.UseEndpoints(endpoints =>
-    {
-        endpoints.MapControllers();
+        endpoints.MapRazorPages();
     });
 }
 
-app.UseHttpsRedirection();
-app.UseStaticFiles();
-app.UseCors(options => options.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod());
-app.UseAuthorization();
+
+
+/*app.UseHttpsRedirection();
+app.UseStaticFiles();*/
+
 
 app.Map("/Discoverer", discovererApp =>
 {
