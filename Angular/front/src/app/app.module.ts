@@ -15,6 +15,7 @@ import { ShipNewComponent } from './ship-new/ship-new.component';
 import { StarsystemAllComponent } from './starsystem-all/starsystem-all.component';
 import { GalaxyAllComponent } from './galaxy-all/galaxy-all.component';
 import { ShipAllComponent } from './ship-all/ship-all.component';
+import { FireDiscovererComponent } from './fire-discoverer/fire-discoverer.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'heaviest-planet', component: HeaviestPlanetComponent },
   { path: 'discoverers', component: DiscoverersComponent },
   { path: 'hire-discoverer', component: HireDiscovererComponent },
+  { path: 'fire-discoverer', component: FireDiscovererComponent },
   { path: 'stars-random', component: StarsRandomComponent },
   { path: 'stars-count', component: StarsCountComponent },
   { path: 'ship-new', component: ShipNewComponent },
@@ -47,6 +49,7 @@ const routes: Routes = [
     StarsystemAllComponent,
     GalaxyAllComponent,
     ShipAllComponent,
+    FireDiscovererComponent,
   ],
   imports: [
     BrowserModule,
