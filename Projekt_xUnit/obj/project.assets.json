@@ -11723,24 +11723,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Majkel\\.nuget\\packages\\": {},
-    "D:\\SDKVisual\\NuGetPackages": {}
+    "C:\\Users\\Administrator\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\Projekt_xUnit\\Tests_xUnit.csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\Projekt_xUnit\\Tests_xUnit.csproj",
       "projectName": "Tests_xUnit",
-      "projectPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\Projekt_xUnit\\Tests_xUnit.csproj",
-      "packagesPath": "C:\\Users\\Majkel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\Projekt_xUnit\\obj\\",
+      "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\Projekt_xUnit\\Tests_xUnit.csproj",
+      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\Projekt_xUnit\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "D:\\SDKVisual\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Majkel\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11754,20 +11749,20 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\API\\API.csproj": {
-              "projectPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\API\\API.csproj"
+            "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\API\\API.csproj": {
+              "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\API\\API.csproj"
             },
-            "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BuisnessLogicLayer\\BLL_BuisnessLogicLayer.csproj": {
-              "projectPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\BuisnessLogicLayer\\BLL_BuisnessLogicLayer.csproj"
+            "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\BuisnessLogicLayer\\BLL_BuisnessLogicLayer.csproj": {
+              "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\BuisnessLogicLayer\\BLL_BuisnessLogicLayer.csproj"
             },
-            "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\DAL_Interfaces\\DAL_Interfaces.csproj": {
-              "projectPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\DAL_Interfaces\\DAL_Interfaces.csproj"
+            "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\DAL_Interfaces\\DAL_Interfaces.csproj": {
+              "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\DAL_Interfaces\\DAL_Interfaces.csproj"
             },
-            "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\DAL_DataAccessLayer.csproj": {
-              "projectPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\DAL_DataAccessLayer.csproj"
+            "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\DAL_DataAccessLayer.csproj": {
+              "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\DataAccessLayer\\DAL_DataAccessLayer.csproj"
             },
-            "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\TestingBLL\\BLL_API_SERVICE.csproj": {
-              "projectPath": "C:\\Users\\Majkel\\Documents\\GitHub\\UniverseDB\\TestingBLL\\BLL_API_SERVICE.csproj"
+            "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\TestingBLL\\BLL_API_SERVICE.csproj": {
+              "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\UniverseDB\\TestingBLL\\BLL_API_SERVICE.csproj"
             }
           }
         }
@@ -11835,7 +11830,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

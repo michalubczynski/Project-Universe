@@ -16,7 +16,7 @@ namespace Tests_xUnit
 		{
             // Arrange
             Mock<IService> mockBLL = new Mock<IService>(); //var mockRepo = new Mock<IBrainstormSessionRepository>();
-            mockBLL.Setup(repo => repo.GetAllPlanetsCount()).Returns(3); //mockRepo.Setup(repo => repo.ListAsync()).ReturnsAsync(GetTestSessions());
+            mockBLL.Setup(s => s.GetAllPlanetsCount()).Returns(3); //mockRepo.Setup(repo => repo.ListAsync()).ReturnsAsync(GetTestSessions());
             var serviceController = new ServiceAPIController(mockBLL.Object); //var controller = new HomeController(mockRepo.Object);
             // Act
             var result = serviceController.GetAllPlanetsCount(); //var result = await controller.Index();

@@ -69,10 +69,10 @@ namespace BLL_BuisnessLogicLayer
             return stars.Count();
         }
 
-        public Planet GetHeaviestPlanet()
+        public virtual Planet GetHeaviestPlanet()
 		{
-			var planets = _unitOfWork.GetRepository<Planet>().GetList();
-			return planets.MaxBy(x => x.Mass);
+			var planet = _unitOfWork.GetRepository<Planet>().GetList().OrderByDescending(x => x.Mass).FirstOrDefault();
+			return planet;
 		}
 
 		public async Task HireNewDiscoverer(string name, string surname, int age)
