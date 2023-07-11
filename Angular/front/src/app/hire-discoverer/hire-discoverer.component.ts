@@ -12,20 +12,24 @@ export class HireDiscovererComponent {
   newDiscoverer = {
     name: '',
     surname: '',
-    age: 0
+    age: 20
   };
 
   constructor(private http: HttpClient) { }
 
   hireNewDiscoverer() {
     const url = `${host}/ServiceAPI/discoverer/hire?name=${encodeURIComponent(this.newDiscoverer.name)}&surname=${encodeURIComponent(this.newDiscoverer.surname)}&age=${this.newDiscoverer.age}`;
-
+  
     this.http.post(url, {}).subscribe(
       (response: any) => {
-        const hiredPerson = response;
-        const message = 'Pomyślnie zatrudniono: ' + hiredPerson.name + ' ' + hiredPerson.surname;
-        alert(message);
-
+        if (response && response.name && response.surname) {
+          const hiredPerson = response;
+          const message = 'Pomyślnie zatrudniono: ' + hiredPerson.name + ' ' + hiredPerson.surname;
+          alert(message);
+        } else {
+          console.error('Invalid response data:', response);
+        }
+  
         // Reset form fields
         this.newDiscoverer.name = '';
         this.newDiscoverer.surname = '';

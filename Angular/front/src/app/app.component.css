@@ -24,4 +24,14 @@
   .navigation-menu li a:hover {
     background-color: #ddd;
   }
-  
+  table{
+    border-style: dashed;
+    border-left: black;
+  }
+  td{
+    border-style:groove;
+    text-align: left;
+  }
+  tr{
+    border-style:ridge ;
+  }
