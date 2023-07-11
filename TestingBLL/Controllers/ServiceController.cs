@@ -1,21 +1,17 @@
 ﻿using BLL_BuisnessLogicLayer;
 using Microsoft.AspNetCore.Mvc;
-using Universe.Models.discoverer;
-using Universe.Models.galaxy;
 using Universe.Models.planet;
-using Universe.Models.ship;
-using Universe.Models.starsystem;
 
 namespace TestingBLL.Controllers
 {
-	public class ServiceController : Controller
-	{
-		private readonly IService _workService;
+    public class ServiceController : Controller
+    {
+        private readonly IService _workService;
 
-		public ServiceController(IService workService)
-		{
-			_workService = workService;
-		}
+        public ServiceController(IService workService)
+        {
+            _workService = workService;
+        }
 
         [HttpGet("planets/count")]
         [ProducesResponseType(typeof(int), 200)]
@@ -75,8 +71,8 @@ namespace TestingBLL.Controllers
         }
 
         public IActionResult Index()
-		{
-			return View();
-		}
-	}
+        {
+            return View();
+        }
+    }
 }

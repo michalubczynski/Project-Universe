@@ -1,6 +1,5 @@
 ﻿using BLL_BuisnessLogicLayer;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace API.controllers
 {

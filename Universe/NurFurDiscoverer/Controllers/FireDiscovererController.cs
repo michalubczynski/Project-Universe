@@ -28,11 +28,11 @@ namespace NurFurDiscoverer.Controllers
             }
             return View("FireDiscoverer", list);
         }
-		[HttpPost("discoverer/fire/{id}")]
-		public async Task<IActionResult> FireDiscoverer(int id)
-		{
-			await _iService.FireDiscoverer(id);
+        [HttpPost("discoverer/fire/{id}")]
+        public async Task<IActionResult> FireDiscoverer(int id)
+        {
+            await _iService.FireDiscoverer(id);
             return RedirectToAction("Show", "Discoverer");
         }
-	}
+    }
 }

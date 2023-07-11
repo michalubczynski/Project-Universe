@@ -21,11 +21,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementy rozwiązania", "El
 		Web.config = Web.config
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BLL_API_SERVICE", "..\TestingBLL\BLL_API_SERVICE.csproj", "{0CD57FB6-3C32-43A7-A97A-2A4AD5F29A39}"
-	ProjectSection(ProjectDependencies) = postProject
-		{13335A37-E620-432E-99D0-289C0ED4C5E1} = {13335A37-E620-432E-99D0-289C0ED4C5E1}
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests_xUnit", "..\Projekt_xUnit\Tests_xUnit.csproj", "{BAAB0583-974B-4A50-927A-3EDC84C97DFE}"
 	ProjectSection(ProjectDependencies) = postProject
 		{13335A37-E620-432E-99D0-289C0ED4C5E1} = {13335A37-E620-432E-99D0-289C0ED4C5E1}
@@ -44,7 +39,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "..\API\API.csproj", 
 		{E8BCF60C-E96E-45C9-906C-9CE5BBCD7FF6} = {E8BCF60C-E96E-45C9-906C-9CE5BBCD7FF6}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NurFurDiscoverer", "NurFurDiscoverer\NurFurDiscoverer.csproj", "{34312FEE-53C5-4FF4-BC0E-E6259CC8ACEB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NurFurDiscoverer", "NurFurDiscoverer\NurFurDiscoverer.csproj", "{34312FEE-53C5-4FF4-BC0E-E6259CC8ACEB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -64,10 +59,6 @@ Global
 		{9718C048-34A3-47C3-A8AB-CE4F413A6F26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9718C048-34A3-47C3-A8AB-CE4F413A6F26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9718C048-34A3-47C3-A8AB-CE4F413A6F26}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0CD57FB6-3C32-43A7-A97A-2A4AD5F29A39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0CD57FB6-3C32-43A7-A97A-2A4AD5F29A39}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0CD57FB6-3C32-43A7-A97A-2A4AD5F29A39}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0CD57FB6-3C32-43A7-A97A-2A4AD5F29A39}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BAAB0583-974B-4A50-927A-3EDC84C97DFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BAAB0583-974B-4A50-927A-3EDC84C97DFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BAAB0583-974B-4A50-927A-3EDC84C97DFE}.Release|Any CPU.ActiveCfg = Release|Any CPU

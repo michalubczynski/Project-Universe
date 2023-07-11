@@ -1,8 +1,6 @@
 using BLL_BuisnessLogicLayer;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Universe.Models.discoverer;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace API.Pages
 {
