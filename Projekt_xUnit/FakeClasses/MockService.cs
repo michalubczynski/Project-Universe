@@ -18,6 +18,8 @@ namespace Tests_xUnit.FakeClasses
 		public int StarCount {get; set;}
 		public Ship Ship {get; set;}
 		public Discoverer Discoverer {get; set;}
+		public StarSystem StarSystem {get; set;}
+		public Galaxy Galaxy {get; set;}
 		public Task AddRandomStars(int count)
 		{
 			StarCount = count;
@@ -51,7 +53,13 @@ namespace Tests_xUnit.FakeClasses
 
 		public Task HireNewDiscoverer(string name, string surname, int age)
 		{
-			throw new NotImplementedException();
+			Discoverer = new Discoverer()
+			{
+				Name = name,
+				Surname = surname,
+				Age = age
+			};
+			return Task.CompletedTask;
 		}
 
 		public Task MakeNewShip(int MaxRange, int MaxSpeed, string? model = null, int? discovererID = null)
@@ -67,7 +75,13 @@ namespace Tests_xUnit.FakeClasses
 
 		public Task MoveStarSystemToAnotherGalaxy(int starSystemId, int galaxyId)
 		{
-			throw new NotImplementedException();
+			StarSystem.Galaxy = Galaxy;
+			StarSystem.GalaxyId = Galaxy.Id;
+			Galaxy.StarSystems = new List<StarSystem>
+			{
+				StarSystem
+			};
+			return Task.CompletedTask;
 		}
 
 		public Task RewardExplorerByNewShip(int discovererID, string shipModel, string shipName, int maxSpeed, int singleChargeRange)
@@ -80,8 +94,10 @@ namespace Tests_xUnit.FakeClasses
 				MaxSpeed = maxSpeed,
 				ShipModel = shipModel,
 				SingleChargeRange = singleChargeRange,
-
+				Name = shipName,
+				Discoverer = Discoverer
 			};
+			Discoverer.Ship = Ship;
 			return Task.CompletedTask;
 		}
 

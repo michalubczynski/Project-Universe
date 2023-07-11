@@ -15,8 +15,6 @@ namespace Tests_xUnit
 	{
 		// to zostalo
 		//public async Task<IActionResult> MoveStarSystemToAnotherGalaxy(int starsystemToMoveID, int destinationGalaxyID)
-		//public async Task<IActionResult> HireNewDiscoverer(string name, string surname, int age)
-		//public async Task<IActionResult> RewardExplorerByNewShip(int discovererID, string shipModel, string shipName, int maxSpeed, int singleChargeRange)
 		[Fact]
 		public void GetAllPlanetsCountTestShouldReturnValidNumber()
 		{
@@ -225,6 +223,51 @@ namespace Tests_xUnit
 		public void RewardExplorerByNewShipTest()
 		{
 			var mockBLL = new MockService();
+			var maxRange = 1;
+			var maxSpeed = 1;
+			var model = "s";
+			var dID = 1;
+			var name = "s";
+			var api = new ServiceAPIController(mockBLL);
+			var apiResult = api.RewardExplorerByNewShip(dID, model, name, maxSpeed, maxRange);
+			Assert.IsType<OkResult>(apiResult.Result);
+			Assert.Equal(maxSpeed, mockBLL.Ship.MaxSpeed);
+			Assert.Equal(model, mockBLL.Ship.ShipModel);
+			Assert.Equal(maxRange, mockBLL.Ship.SingleChargeRange);
+			Assert.Equal(dID, mockBLL.Discoverer.Id);
+			Assert.Equal(name, mockBLL.Ship.Name);
+			Assert.Equal(mockBLL.Discoverer, mockBLL.Ship.Discoverer);
+		}
+		[Fact]
+		public void HireNewDiscovererTest()
+		{
+			var mockBLL = new MockService();
+			var name = "d";
+			var age = 1;
+			var surname = "s";
+			var api = new ServiceAPIController(mockBLL);
+			var apiResult = api.HireNewDiscoverer(name, surname, age);
+			Assert.IsType<OkResult>(apiResult.Result);
+			Assert.Equal(name, mockBLL.Discoverer.Name);
+			Assert.Equal(surname, mockBLL.Discoverer.Surname);
+			Assert.Equal(age, mockBLL.Discoverer.Age);
+		}
+		[Fact]
+		public void MoveStarSystemToAnotherGalaxyTest()
+		{
+			var mockBLL = new MockService();
+			mockBLL.Galaxy = new Galaxy() {
+				Id = 1
+			};
+			mockBLL.StarSystem = new StarSystem()
+			{
+				Id = 1
+			};
+			var api = new ServiceAPIController(mockBLL);
+			var apiResult = api.MoveStarSystemToAnotherGalaxy(1, 1);
+			Assert.IsType<OkResult>(apiResult.Result);
+			Assert.Equal(mockBLL.StarSystem, mockBLL.Galaxy.StarSystems.First());
+			Assert.Equal(mockBLL.StarSystem.GalaxyId, mockBLL.Galaxy.Id);
 		}
 	}
 }
