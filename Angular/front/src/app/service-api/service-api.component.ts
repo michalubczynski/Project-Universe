@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Planet } from '../Models/Planet.model';
 var host = "http://localhost:5080";
 
 @Component({
@@ -10,7 +11,8 @@ var host = "http://localhost:5080";
 
 export class ServiceApiComponent implements OnInit {
   planetsCount!: number;
-  heaviestPlanet: any;
+  heaviestPlanet: Planet | undefined;
+
   discoverers: any[] = [];
 
   constructor(private http: HttpClient) { }

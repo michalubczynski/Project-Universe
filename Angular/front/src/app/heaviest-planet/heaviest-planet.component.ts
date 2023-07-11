@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Planet } from '../Models/Planet.model';
+import { StarSystem } from '../Models/star-system.model';
 var host = "http://localhost:5080";
 
 @Component({
@@ -8,12 +10,14 @@ var host = "http://localhost:5080";
   styleUrls: ['./heaviest-planet.component.css']
 })
 export class HeaviestPlanetComponent implements OnInit {
-  heaviestPlanet: any;
-
+  heaviestPlanet: Planet | undefined;
+  starSystems: StarSystem[] = [];
+  currentStarSystem: StarSystem | undefined;
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     this.getHeaviestPlanet();
+    this.getAllStarSystems();
   }
 
   getHeaviestPlanet(): void {
@@ -21,6 +25,19 @@ export class HeaviestPlanetComponent implements OnInit {
       this.heaviestPlanet = planet;
     });
   }
-
+  getAllStarSystems(): void {
+    this.http.get<any>(host + '/ServiceAPI/starsystem/all').subscribe(_starSystem => {
+      this.starSystems = _starSystem;
+      console.log('Retrieved star systems:', this.starSystems);
+      this.compareStarSystem();
+    });
+  }
+  compareStarSystem(): void {  
+    for (const starSystem of this.starSystems) {
+      if (this.heaviestPlanet?.starSystemId == starSystem.id) {
+        this.currentStarSystem = starSystem;
+      }
+    }
+  }
 
 }
