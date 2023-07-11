@@ -1,5 +1,6 @@
 ﻿using API.Controllers;
 using BLL_BuisnessLogicLayer;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using TestingBLL.Controllers;
@@ -19,13 +20,14 @@ namespace Tests_xUnit
             mockBLL.Setup(s => s.GetAllPlanetsCount()).Returns(3); //mockRepo.Setup(repo => repo.ListAsync()).ReturnsAsync(GetTestSessions());
             var serviceController = new ServiceAPIController(mockBLL.Object); //var controller = new HomeController(mockRepo.Object);
             // Act
-            var result = serviceController.GetAllPlanetsCount(); //var result = await controller.Index();
-            // Assert
-            var viewResult = Assert.IsType<ViewResult>(result);
-            var model = Assert.IsAssignableFrom<int>(viewResult.ViewData.Model);
-            Assert.Equal(3, model);
+            var apiResult = serviceController.GetAllPlanetsCount(); //var result = await controller.Index();
 
-        }
+
+			var okResult = Assert.IsType<OkObjectResult>(apiResult);
+			var result = Assert.IsType<int>(okResult.Value);
+			Assert.Equal(3, result);
+
+		}
 		// 3.1
 		[Fact]
 		public void APIRandomStarsTest()

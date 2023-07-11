@@ -33,31 +33,30 @@ namespace BLL_BuisnessLogicLayer
 			var stars = new Star[count];
 			var rng = new Random();
 			var starSystemRepo = _unitOfWork.GetRepository<StarSystem>();
-			var starSystemIDs = new int[starSystemRepo.GetList().Count()];
-			for (int i = 0; i < starSystemIDs.Length; i++)
-			{
-				starSystemIDs[i] = starSystemRepo.GetList().ElementAt(i).Id;
-			}
+			var starSystems = starSystemRepo.GetList().ToList();
+			var starSystemIDs = starSystems.Select(s => s.Id).ToArray();
+
 			for (int i = 0; i < count; i++)
 			{
 				stars[i] = new Star();
 				stars[i].Age = rng.Next();
-				stars[i].Luminosity = rng.NextDouble() * rng.Next();
-				stars[i].Mass = rng.NextDouble() * rng.Next();
+				stars[i].Luminosity = rng.NextDouble() * int.MaxValue;
+				stars[i].Mass = rng.NextDouble() * int.MaxValue;
 				stars[i].Name = "Random Star no. " + rng.Next() + "." + rng.Next();
-				stars[i].Radius = rng.NextDouble() * rng.Next();
-				stars[i].Temperature = rng.NextDouble() * rng.Next();
+				stars[i].Radius = rng.NextDouble() * int.MaxValue;
+				stars[i].Temperature = rng.NextDouble() * int.MaxValue;
 				stars[i].Type = Star.TypeOfStar.Main_sequence_stars;
-				stars[i].StarSystemId = (starSystemRepo.GetList().Count() == 0) ? 0 : starSystemIDs[rng.Next(0, starSystemRepo.GetList().Count() - 1)];
-				stars[i].StarSystem = (starSystemRepo.GetList().Count() == 0) ? null : starSystemRepo.GetByID(stars[i].StarSystemId);
+				stars[i].StarSystemId = (starSystems.Count == 0) ? 0 : starSystemIDs[rng.Next(0, starSystems.Count - 1)];
+				stars[i].StarSystem = starSystems.FirstOrDefault(s => s.Id == stars[i].StarSystemId);
+
 				await _unitOfWork.GetRepository<Star>().InsertAsync(stars[i]);
 			}
 
-            await _unitOfWork.SaveChangesAsync();
+			await _unitOfWork.SaveChangesAsync();
+		}
 
-        }
 
-        public virtual int GetAllPlanetsCount()
+		public virtual int GetAllPlanetsCount()
 		{
 			var planets = _unitOfWork.GetRepository<Planet>().GetList();
 			return planets.Count();

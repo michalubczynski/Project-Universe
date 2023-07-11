@@ -91,17 +91,16 @@ namespace API.Controllers
             return Ok(list);
         }
 
+		[HttpPost("discoverer/hire")]
+		[ProducesResponseType(200)]
+		public async Task<IActionResult> HireNewDiscoverer(string name, string surname, int age)
+		{
+			await _iService.HireNewDiscoverer(name, surname, age);
+			var discoverer = new Discoverer { Name = name, Surname = surname, Age = age };
+			return Ok(discoverer);
+		}
 
-
-        [HttpPost("discoverer/hire")]
-        [ProducesResponseType(200)]
-        public async Task<IActionResult> HireNewDiscoverer(string name, string surname, int age)
-        {
-            await _iService.HireNewDiscoverer(name, surname, age);
-            return Ok();
-        }
-
-        [HttpGet("discoverer/Show")]
+		[HttpGet("discoverer/Show")]
         [ProducesResponseType(typeof(IEnumerable<Discoverer>), 200)]
         public IActionResult ShowDiscoverers()
         {

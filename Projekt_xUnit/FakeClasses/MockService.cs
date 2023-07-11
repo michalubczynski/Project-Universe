@@ -13,13 +13,14 @@ using Universe.Models.starsystem;
 
 namespace Tests_xUnit.FakeClasses
 {
-	internal class MockService : IService
+	public class MockService : IService
 	{
 		public int StarCount {get; set;}
 		public Ship Ship {get; set;}
 		public Discoverer Discoverer {get; set;}
 		public StarSystem StarSystem {get; set;}
 		public Galaxy Galaxy {get; set;}
+		public List<Discoverer> discoverers { get; set;}
 		public Task AddRandomStars(int count)
 		{
 			StarCount = count;
@@ -28,7 +29,9 @@ namespace Tests_xUnit.FakeClasses
 
 		public Task FireDiscoverer(int id)
 		{
-			throw new NotImplementedException();
+			var dis = discoverers.AsEnumerable().Select(d => d).Where(d => d.Id == id).First();
+			discoverers.Remove(dis);
+			return Task.CompletedTask;
 		}
 
 		public IQueryable<Galaxy> GetAllGalaxies()

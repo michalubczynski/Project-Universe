@@ -247,7 +247,7 @@ namespace Tests_xUnit
 			var surname = "s";
 			var api = new ServiceAPIController(mockBLL);
 			var apiResult = api.HireNewDiscoverer(name, surname, age);
-			Assert.IsType<OkResult>(apiResult.Result);
+			Assert.IsType<OkObjectResult>(apiResult.Result);
 			Assert.Equal(name, mockBLL.Discoverer.Name);
 			Assert.Equal(surname, mockBLL.Discoverer.Surname);
 			Assert.Equal(age, mockBLL.Discoverer.Age);
@@ -268,6 +268,44 @@ namespace Tests_xUnit
 			Assert.IsType<OkResult>(apiResult.Result);
 			Assert.Equal(mockBLL.StarSystem, mockBLL.Galaxy.StarSystems.First());
 			Assert.Equal(mockBLL.StarSystem.GalaxyId, mockBLL.Galaxy.Id);
+		}
+		[Fact]
+		public void FireDiscovererTestShouldFireDiscoverer() {
+			var mockBLL = new MockService();
+			mockBLL.discoverers = new List<Discoverer>()
+			{
+				new Discoverer()
+				{
+					Id = 0
+				},
+				new Discoverer()
+				{
+					Id = 1
+				}
+			};
+			var api = new ServiceAPIController(mockBLL);
+			var apiResult = api.FireDiscoverer(1);
+			Assert.IsType<OkResult>(apiResult.Result);
+			Assert.Single(mockBLL.discoverers);
+		}
+		[Fact]
+		public void FireDiscovererTestShouldNOTFireDiscoverer()
+		{
+			var mockBLL = new MockService();
+			mockBLL.discoverers = new List<Discoverer>()
+			{
+				new Discoverer()
+				{
+					Id = 0
+				},
+				new Discoverer()
+				{
+					Id = 1
+				}
+			};
+			var api = new ServiceAPIController(mockBLL);
+			var apiResult = api.FireDiscoverer(2);
+			Assert.Equal(2, mockBLL.discoverers.Count);
 		}
 	}
 }

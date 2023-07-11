@@ -1,0 +1,29 @@
+﻿@using Universe.Models.discoverer;
+@model IEnumerable<Discoverer>
+
+<div class="discoverers-container">
+    <h1>Wszyscy zarejestrowani odkrywcy</h1>
+    <table class="discoverers-table">
+        <thead>
+            <tr>
+                <th>Imię</th>
+                <th>Nazwisko</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var discoverer in Model)
+            {
+                <tr>
+                    <td>@discoverer.Name</td>
+                    <td>@discoverer.Surname</td>
+                    <td>
+                        <form method="post" asp-action="FireDiscoverer" asp-route-id="@discoverer.Id">
+                            <button type="submit">Fire</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

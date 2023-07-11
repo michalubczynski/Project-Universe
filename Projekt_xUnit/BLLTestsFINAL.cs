@@ -260,30 +260,6 @@ namespace Tests_xUnit
 			Assert.Equal(galaxies, result);
 		}
 		[Fact]
-		//public async Task FireDiscoverer_WithExistingDiscoverer_ShouldDeleteDiscoverer()
-		//{
-		//	// Arrange
-
-		//	List<Discoverer> discovererList = new List<Discoverer>
-		//	{
-		//		new Discoverer { Id = 1 },
-		//		new Discoverer { Id = 2 }
-		//	};
-
-		//	var mockUOW = new Mock<IUnitOfWork>();
-		//	var discovererRepoMock = new Mock<IRepository<Discoverer>>();
-		//	discovererRepoMock.Setup(r => r.Delete(1))
-		//		.Callback(discoverer => discovererList.Remove(discoverer));
-		//	mockUOW.Setup(uow => uow.GetRepository<Discoverer>()).Returns(discovererRepoMock.Object);
-		//	var service = new Service(mockUOW.Object);
-
-
-		//	// Act
-		//	await service.FireDiscoverer(1);
-
-		//	// Assert
-		//	Assert.Single(discovererList);
-		//}
 		public async Task FireDiscoverer_WithExistingDiscoverer_ShouldDeleteDiscoverer()
 		{
 			// Arrange
